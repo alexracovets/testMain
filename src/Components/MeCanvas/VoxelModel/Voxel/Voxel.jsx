@@ -13,7 +13,7 @@ const Voxel = React.memo(({ index }) => {
     const activePage = useStore(state => state.activePage);
     const [currentPosition, setCurrentPosition] = useState(null);
     const tlNoramal = gsap.timeline({})
-    const tlPasive = gsap.timeline({});
+    const tlPasive = gsap.timeline({ ease: "expoScale(0.5,7,none)"});
 
     useEffect(() => {
         const instance = instanceRef.current;
@@ -48,17 +48,10 @@ const Voxel = React.memo(({ index }) => {
                 x: currentPosition[0],
                 y: currentPosition[1] + (Math.random() - 0.5),
                 z: currentPosition[2],
-                ease: "expoScale(0.5,7,none)",
                 duration: 2,
+                repeat: -1,
+                yoyo: true
             });
-            tlPasive.to(instance.position, {
-                x: currentPosition[0],
-                y: currentPosition[1],
-                z: currentPosition[2],
-                ease: "expoScale(0.5,7,none)",
-                duration: 2,
-                delay: 2
-            }, "<");
         }
         return () => tlPasive.kill()
     }, [currentPosition])
