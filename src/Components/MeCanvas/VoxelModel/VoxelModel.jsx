@@ -4,7 +4,6 @@ import { useLoader } from "@react-three/fiber";
 import { Instances } from "@react-three/drei";
 
 import Voxel from "./Voxel/Voxel";
-import voxelsData from './voxel.json';
 const matcap = '/3.png';
 const COUNT = 5000;
 export default function VoxelModel() {
@@ -26,7 +25,6 @@ export default function VoxelModel() {
                 <Voxel
                     key={idx}
                     index={idx}
-                    voxelsData={voxelsData}
                 />
             )}
         </Instances>
