@@ -1,12 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
+import create from 'zustand';
 
-import stateIndustriesReducer from './reducers/stateIndustries';
-import statePagesReducer from './reducers/statePages';
-const store = configureStore({
-    reducer: {
-        stateIndustries: stateIndustriesReducer,
-        statePages: statePagesReducer
-    },
-});
+const useStore = create((set) => ({
+    activePage: -1,
+    changeActivePage: (newPage) => set({ activePage: newPage })
+}));
 
-export default store;
+export default useStore;

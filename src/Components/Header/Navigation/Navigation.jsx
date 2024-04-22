@@ -2,12 +2,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import s from '../Header.module.scss';
-import { changeActivePage } from '../../../store/reducers/statePages';
-import { useDispatch } from "react-redux";
+import useStore from "../../../store/store";
 export default function Navigation() {
     const [isBurger, setIsBurger] = useState(false);
     const location = useLocation();
-    const dispatch = useDispatch();
+    const changeActivePage = useStore((state) => state.changeActivePage)
     const pageRoutes = useMemo(() => ({
         '/': 0,
         '/about': 1,
@@ -18,8 +17,8 @@ export default function Navigation() {
 
     const checkPage = useCallback(() => {
         const pageId = pageRoutes[location.pathname] ?? -1;
-        dispatch(changeActivePage(pageId));
-    }, [location.pathname, dispatch, pageRoutes]);
+        changeActivePage(pageId)
+    }, [location.pathname, pageRoutes, changeActivePage]);
 
     useEffect(() => {
         checkPage();
