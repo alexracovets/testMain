@@ -1,0 +1,32 @@
+@import '../../global/variable.scss';
+$flip_bg: url('/image/icons/fliper/fliper_bg.svg');
+
+.flip {
+    display: block;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 34rem;
+    margin: 1.5rem 0;
+
+
+    &>div {
+        font-size: 3.5rem;
+        font-family: "Bebas Neue", sans-serif;
+        color: $color-white;
+        font-weight: 400;
+        letter-spacing: 0.045rem;
+        line-height: 4.5rem;
+        width: 2.875rem !important;
+        height: 4.125rem;
+        margin: 0.3125rem 0.08rem;
+        border-radius: 0.2rem;
+        background: none;
+        background-image: $flip_bg;
+        background-size: cover;
+        padding: 0;
+        border: none !important;
+    }
+}

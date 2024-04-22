@@ -1,0 +1,39 @@
+@import '../../../global/variable.scss';
+
+.strengths {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    width: 100%;
+
+    li {
+        width: calc(100% / 3);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.8125rem 0;
+        border-bottom: 0.0625rem solid $color-neutral-50;
+
+        &:nth-last-of-type(1),
+        &:nth-last-of-type(2),
+        &:nth-last-of-type(3) {
+            border-bottom: none;
+        }
+
+        img {
+            width: 1.125rem;
+            margin-right: 1rem;
+        }
+
+        span {
+            font-family: $font-JB_Mono;
+            color: $color-white;
+            font-size: 0.875rem;
+            font-weight: 300;
+            line-height: 1.3125rem;
+            letter-spacing: -0.08rem;
+            width: 100%;
+        }
+    }
+}
