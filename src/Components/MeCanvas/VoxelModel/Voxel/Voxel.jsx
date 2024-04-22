@@ -28,14 +28,14 @@ const Voxel = React.memo(({ index }) => {
             y: position[1],
             z: position[2],
             ease: "expoScale(0.5,7,none)",
-            duration: .5,
+            duration: 1,
         })
         tlNoramal.to(instance.scale, {
             x: sizes[activePage],
             y: sizes[activePage],
             z: sizes[activePage],
             ease: "expoScale(0.5,7,none)",
-            duration: .5,
+            duration: 1,
             onComplete: () => setCurrentPosition(position)
         }, "<");
         return () => tlNoramal.kill()
