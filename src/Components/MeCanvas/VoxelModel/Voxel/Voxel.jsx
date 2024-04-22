@@ -1,7 +1,8 @@
 import { Instance } from "@react-three/drei";
-import { useEffect, useRef, useState } from "react";
-import PropTypes from 'prop-types'; 
+import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import { useSelector } from "react-redux";
+import { useSpring, a } from '@react-spring/three';
 
 const sizes = [0.15, 0.2267, 0.28, 0.316];
 
@@ -16,17 +17,21 @@ function Animation({ setScale, setPosition, index, voxelsData }) {
 }
 
 export default function Voxel({ index, voxelsData }) {
-    const meshRef = useRef();
     const [scale, setScale] = useState(0);
-    const [position, setPosition] = useState([0, 0, 0]) 
+    const [position, setPosition] = useState([0, 0, 0]);
+
+    const { positionSpring, scaleSpring } = useSpring({
+        positionSpring: position,
+        scaleSpring: scale
+    }); 
+    
     return (
         <>
             <Animation setScale={setScale} setPosition={setPosition} voxelsData={voxelsData} index={index} />
-            <Instance
-                ref={meshRef}
-                scale={scale}
-                position={position}
-            />
+            <a.group position={positionSpring} scale={scaleSpring}>
+                <Instance />
+            </a.group>
+
         </>
 
     )
