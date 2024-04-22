@@ -29,6 +29,18 @@ const Voxel = React.memo(({ index }) => {
         ]
         setCurrentPosition(null)
         tlNoramal.to(instance.position, {
+            x: (Math.random() - 0.5) * 5,
+            y: (Math.random() - 0.5) * 5,
+            z: (Math.random() - 0.5) * 5,
+            duration: 1,
+        })
+        tlNoramal.to(instance.scale, {
+            x: 0.1,
+            y: 0.1,
+            z: 0.1,
+            duration: 1,
+        }, "<");
+        tlNoramal.to(instance.position, {
             x: position[0],
             y: position[1],
             z: position[2],
