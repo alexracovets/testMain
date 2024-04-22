@@ -63,7 +63,7 @@ function voxelizeModel(importedScene, count, gridSize) {
             }
         }
 
-        return newPosition;
+        return positions;
     }
 
     return voxelizer(gridSize, count);
