@@ -3,14 +3,14 @@ import { Instance } from "@react-three/drei";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
-import useStore from "../../../../store/store";
+import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel.json';
 
 const sizes = [0.15, 0.2267, 0.28, 0.316];
 
 const Voxel = React.memo(({ index }) => {
     const instanceRef = useRef();
-    const activePage = useStore(state => state.activePage);
+    const activePage = useStorePage(state => state.activePage);
     const [currentPosition, setCurrentPosition] = useState(null);
     const tlNoramal = gsap.timeline({
         ease: "expoScale(0.5,7,none)",
@@ -29,15 +29,15 @@ const Voxel = React.memo(({ index }) => {
         ]
         setCurrentPosition(null)
         tlNoramal.to(instance.position, {
-            x: (Math.random() - 0.5) * 5,
-            y: (Math.random() - 0.5) * 5,
-            z: (Math.random() - 0.5) * 5,
+            x: (Math.random() - 0.5) * 10,
+            y: (Math.random() - 0.5) * 10,
+            z: (Math.random() - 0.5) * 10,
             duration: 1,
         })
         tlNoramal.to(instance.scale, {
-            x: 0.1,
-            y: 0.1,
-            z: 0.1,
+            x: 0.01,
+            y: 0.01,
+            z: 0.01,
             duration: 1,
         }, "<");
         tlNoramal.to(instance.position, {

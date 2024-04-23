@@ -1,20 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import s from '../Industries.module.scss';
-import { changeActiveIndusry } from '../../../../store/reducers/stateIndustries';
-import { useEffect, useState } from 'react';
 
+import useStoreIndustries from '../../../../store/useStoreIndustries';
+
+import s from '../Industries.module.scss';
 export default function IndustriesItem({ industry, rowIndustry, setDetailText }) {
-    const currentIndexIndustry = useSelector((state) => state.stateIndustries.activeIndustry);
-    const currentRowIndustry = useSelector((state) => state.stateIndustries.activeRow);
-    const isDetailIndustry = useSelector((state) => state.stateIndustries.isDetail);
+
+    const currentIndexIndustry = useStoreIndustries((state) => state.activeIndustry);
+    const currentRowIndustry = useStoreIndustries((state) => state.activeRow);
+    const isDetailIndustry = useStoreIndustries((state) => state.isDetail);
+    const changeActiveIndusry = useStoreIndustries((state) => state.changeActiveIndusry);
     const [status, setStatus] = useState(null);
 
-    const dispatch = useDispatch(false);
-
     const handler = (numberIndustry) => {
-        dispatch(changeActiveIndusry({ numberIndustry, rowIndustry }));
+        changeActiveIndusry({ numberIndustry, rowIndustry })
     }
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export default function IndustriesItem({ industry, rowIndustry, setDetailText })
         } else {
             setStatus(false)
         }
-    }, [rowIndustry, industry, currentRowIndustry, currentIndexIndustry, isDetailIndustry]) 
+    }, [rowIndustry, industry, currentRowIndustry, currentIndexIndustry, isDetailIndustry])
 
     return (
         <li

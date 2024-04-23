@@ -9,7 +9,7 @@ export default function IndustriesPage() {
             <section>
                 <div className={s.content}>
                     <h2>Industries</h2>
-                    {/* <Industries /> */}
+                    <Industries />
                 </div>
             </section>
         </div>

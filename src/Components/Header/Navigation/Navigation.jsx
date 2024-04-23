@@ -2,11 +2,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import s from '../Header.module.scss';
-import useStore from "../../../store/store";
+import useStorePage from "../../../store/useStorePage";
 export default function Navigation() {
     const [isBurger, setIsBurger] = useState(false);
     const location = useLocation();
-    const changeActivePage = useStore((state) => state.changeActivePage)
+    const changeActivePage = useStorePage((state) => state.changeActivePage)
     const pageRoutes = useMemo(() => ({
         '/': 0,
         '/about': 1,

@@ -1,18 +1,15 @@
 import PropTypes from 'prop-types';
-
-import s from '../Industries.module.scss';
 import { useEffect, useState } from 'react';
-import IndustriesItem from '../IndustriesItem/IndustriesItem';
-import { useSelector } from 'react-redux';
 import { useCollapse } from 'react-collapsed';
 
+import IndustriesItem from '../IndustriesItem/IndustriesItem';
+import useStoreIndustries from '../../../../store/useStoreIndustries';
 
-
+import s from '../Industries.module.scss';
 export default function IndustriesRow({ industries, idx }) {
-    const currentRowIndustry = useSelector((state) => state.stateIndustries.activeRow);
+    const currentRowIndustry = useStoreIndustries((state) => state.activeRow);
     const [isExpanded, setExpanded] = useState(false);
     const [detailText, setDetailText] = useState(null);
-
     useEffect(() => {
         setExpanded(idx === currentRowIndustry)
     }, [currentRowIndustry, idx])
