@@ -28,13 +28,13 @@ function Voxel({ index }) {
     });
 
     useEffect(() => {
-        tlPasive.kill();
-        tlNoramal.kill();
+        tlPasive.kill()
+        const pageIndex = pageRoutes[location] ?? -1;
         const instance = instanceRef.current;
         const position = [
-            voxelsData[pageRoutes[location] ?? -1][index * 3],
-            voxelsData[pageRoutes[location] ?? -1][index * 3 + 1],
-            voxelsData[pageRoutes[location] ?? -1][index * 3 + 2]
+            voxelsData[pageIndex][index * 3],
+            voxelsData[pageIndex][index * 3 + 1],
+            voxelsData[pageIndex][index * 3 + 2]
         ]
         setCurrentPosition(null);
         tlNoramal.to(instance.position, {
@@ -56,33 +56,34 @@ function Voxel({ index }) {
             duration: 1,
         })
         tlNoramal.to(instance.scale, {
-            x: sizes[pageRoutes[location] ?? -1],
-            y: sizes[pageRoutes[location] ?? -1],
-            z: sizes[pageRoutes[location] ?? -1],
+            x: sizes[pageIndex],
+            y: sizes[pageIndex],
+            z: sizes[pageIndex],
             duration: 1,
             onComplete: () => setCurrentPosition(position)
         }, "<");
         return () => tlNoramal.kill()
-    }, [location])
+    }, [location, index, pageRoutes])
 
     useEffect(() => {
         const instance = instanceRef.current;
         if (currentPosition) {
+            const pageIndex = pageRoutes[location] ?? -1;
             const randomX = Math.random();
             const randomY = Math.random();
             const randomZ = Math.random();
             randomX < 0.3 && tlPasive.to(instance.position, {
-                x: currentPosition[0] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
+                x: currentPosition[0] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
             randomY < 0.3 && tlPasive.to(instance.position, {
-                y: currentPosition[1] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
+                y: currentPosition[1] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
             randomZ < 0.3 && tlPasive.to(instance.position, {
-                z: currentPosition[2] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
+                z: currentPosition[2] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
@@ -94,7 +95,7 @@ function Voxel({ index }) {
             });
         }
         return () => tlPasive.kill()
-    }, [currentPosition, location])
+    }, [currentPosition, pageRoutes, location])
     return (
         <Instance
             ref={instanceRef}
