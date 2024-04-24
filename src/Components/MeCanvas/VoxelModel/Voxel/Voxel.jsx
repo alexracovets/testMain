@@ -28,6 +28,8 @@ function Voxel({ index }) {
     });
 
     useEffect(() => {
+        tlPasive.kill();
+        tlNoramal.kill();
         const instance = instanceRef.current;
         const position = [
             voxelsData[pageRoutes[location] ?? -1][index * 3],
@@ -35,7 +37,6 @@ function Voxel({ index }) {
             voxelsData[pageRoutes[location] ?? -1][index * 3 + 2]
         ]
         setCurrentPosition(null);
-        tlPasive.kill()
         tlNoramal.to(instance.position, {
             x: (Math.random() - 0.5) * 10,
             y: (Math.random() - 0.5) * 10,
