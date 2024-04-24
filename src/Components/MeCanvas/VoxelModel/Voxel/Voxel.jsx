@@ -1,17 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Instance } from "@react-three/drei";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
-import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel.json';
+import { useLocation } from "react-router-dom";
 
 const sizes = [0.15, 0.2267, 0.28, 0.316];
 
-const Voxel = React.memo(({ index }) => {
+function Voxel({ index }) {
+    const location = useLocation().pathname;
     const instanceRef = useRef();
-    const activePage = useStorePage(state => state.activePage);
     const [currentPosition, setCurrentPosition] = useState(null);
+    const pageRoutes = useMemo(() => ({
+        '/': 0,
+        '/about': 1,
+        '/services': 2,
+        '/industries': 3,
+        '/contact': 0
+    }), []);
     const tlNoramal = gsap.timeline({
         ease: "expoScale(0.5,7,none)",
     })
@@ -23,11 +30,12 @@ const Voxel = React.memo(({ index }) => {
     useEffect(() => {
         const instance = instanceRef.current;
         const position = [
-            voxelsData[activePage][index * 3],
-            voxelsData[activePage][index * 3 + 1],
-            voxelsData[activePage][index * 3 + 2]
+            voxelsData[pageRoutes[location] ?? -1][index * 3],
+            voxelsData[pageRoutes[location] ?? -1][index * 3 + 1],
+            voxelsData[pageRoutes[location] ?? -1][index * 3 + 2]
         ]
-        setCurrentPosition(null)
+        setCurrentPosition(null);
+        tlPasive.kill()
         tlNoramal.to(instance.position, {
             x: (Math.random() - 0.5) * 10,
             y: (Math.random() - 0.5) * 10,
@@ -47,14 +55,14 @@ const Voxel = React.memo(({ index }) => {
             duration: 1,
         })
         tlNoramal.to(instance.scale, {
-            x: sizes[activePage],
-            y: sizes[activePage],
-            z: sizes[activePage],
+            x: sizes[pageRoutes[location] ?? -1],
+            y: sizes[pageRoutes[location] ?? -1],
+            z: sizes[pageRoutes[location] ?? -1],
             duration: 1,
             onComplete: () => setCurrentPosition(position)
         }, "<");
         return () => tlNoramal.kill()
-    }, [activePage, index])
+    }, [location])
 
     useEffect(() => {
         const instance = instanceRef.current;
@@ -63,17 +71,17 @@ const Voxel = React.memo(({ index }) => {
             const randomY = Math.random();
             const randomZ = Math.random();
             randomX < 0.3 && tlPasive.to(instance.position, {
-                x: currentPosition[0] + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+                x: currentPosition[0] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
             randomY < 0.3 && tlPasive.to(instance.position, {
-                y: currentPosition[1] + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+                y: currentPosition[1] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
             randomZ < 0.3 && tlPasive.to(instance.position, {
-                z: currentPosition[2] + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+                z: currentPosition[2] + (Math.random() < 0.5 ? sizes[pageRoutes[location] ?? -1] / 2 : -sizes[pageRoutes[location] ?? -1] / 2),
                 delay: Math.random(),
                 duration: 1 + Math.random(),
             });
@@ -85,15 +93,14 @@ const Voxel = React.memo(({ index }) => {
             });
         }
         return () => tlPasive.kill()
-    }, [currentPosition, activePage])
+    }, [currentPosition, location])
     return (
         <Instance
             ref={instanceRef}
             scale={[0, 0, 0]}
         />
     );
-});
-Voxel.displayName = 'Voxel';
+}
 Voxel.propTypes = {
     index: PropTypes.number,
     voxelsData: PropTypes.array

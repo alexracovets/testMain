@@ -6,7 +6,7 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 
 import Voxel from "./Voxel/Voxel";
 const matcap = '/3.png';
-const COUNT = 5000;
+const COUNT = 3000;
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.9, 0.9, 0.9, 2, .08), []);
