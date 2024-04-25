@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import s from '../Header.module.scss';
 import useStorePage from "../../../store/useStorePage";
-export default function Navigation() {
-    const [isBurger, setIsBurger] = useState(false);
+import Burger from "../Burger/Burger";
+export default function Navigation() { 
     const location = useLocation();
     const changeActivePage = useStorePage((state) => state.changeActivePage)
     const pageRoutes = useMemo(() => ({
@@ -14,6 +14,11 @@ export default function Navigation() {
         '/industries': 3,
         '/contact': 0
     }), []);
+    const links = [
+        { path: "/services", name: "Services" },
+        { path: "/industries", name: "Industries" },
+        { path: "/contact", name: "Contact us" },
+    ]
 
     const checkPage = useCallback(() => {
         const pageId = pageRoutes[location.pathname] ?? -1;
@@ -24,11 +29,6 @@ export default function Navigation() {
         checkPage();
     }, [location.pathname, checkPage]);
 
-    const links = [
-        { path: "/services", name: "Services" },
-        { path: "/industries", name: "Industries" },
-        { path: "/contact", name: "Contact us" },
-    ]
 
     return (
         <nav className={s.navigation}>
@@ -43,10 +43,7 @@ export default function Navigation() {
                     )
                 })}
             </ul>
-            <button className={isBurger ? s.burger + ' ' + s.active : s.burger} onClick={() => setIsBurger(!isBurger)}>
-                <span></span>
-                <span></span>
-            </button>
+            <Burger />
         </nav>
     )
 } 
