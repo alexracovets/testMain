@@ -7,7 +7,7 @@ import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel.json';
 import { useGSAP } from "@gsap/react";
 
-const sizes = [0.15, 0.2267, 0.28, 0.316];
+const sizes = [0.208, 0.2687, 0.3525, 0.38];
 
 const Voxel = React.memo(({ index }) => {
     const instanceRef = useRef();

@@ -1,8 +1,7 @@
 import * as THREE from 'three';
 
 const params = {
-    modelSize: 10,
-    gridSize: 0.2
+    modelSize: 10
 };
 
 const rayCaster = new THREE.Raycaster();

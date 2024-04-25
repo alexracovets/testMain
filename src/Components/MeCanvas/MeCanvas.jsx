@@ -7,6 +7,7 @@ import MilkyWay from "./MilkyWay/MilkyWay";
 import Lights from "./Lights/Lights";
 
 import s from './MeCanvas.module.scss';
+import { OrbitControls } from "@react-three/drei";
 export default function MeCanvas() {
     const [points, setPoints] = useState(null);
     const [colors, setColors] = useState(null);
@@ -27,6 +28,7 @@ export default function MeCanvas() {
             <Lights />
             <MilkyWay count={count} points={points} colors={colors} />
             <VoxelModel />
+            <OrbitControls />
         </Canvas>
     )
 }
