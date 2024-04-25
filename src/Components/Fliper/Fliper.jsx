@@ -15,14 +15,16 @@ export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 
     useEffect(() => {
-        setInterval(() => setActiveSentences((prev) => (prev + 1) % sentences.length), 10000);
+        setInterval(() => {
+            setActiveSentences((prev) => (prev + 1) % sentences.length)
+        }, 10000);
     }, []);
 
     return (
         <SplitFlapDisplay
             className="flip"
             characterSet={ALPHA}
-            step={150}
+            step={100}
             value={sentences[activeSentences]}
             withSound={false}
         />
