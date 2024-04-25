@@ -1,108 +1,96 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Instance } from "@react-three/drei";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
+import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel.json';
-import { useLocation } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
 
 const sizes = [0.15, 0.2267, 0.28, 0.316];
 
-function Voxel({ index }) {
-    const location = useLocation().pathname;
+const Voxel = React.memo(({ index }) => {
     const instanceRef = useRef();
-    const [currentPosition, setCurrentPosition] = useState(null);
-    const pageRoutes = useMemo(() => ({
-        '/': 0,
-        '/about': 1,
-        '/services': 2,
-        '/industries': 3,
-        '/contact': 0
-    }), []);
-    const tlNoramal = gsap.timeline({
-        ease: "expoScale(0.5,7,none)",
-    })
-    const tlPasive = gsap.timeline({
-        ease: "expoScale(0.5,7,none)",
-        repeat: -1,
-    });
+    const wrapperRef = useRef();
+    const activePage = useStorePage(state => state.activePage);
 
-    useEffect(() => {
-        tlPasive.kill()
-        const pageIndex = pageRoutes[location] ?? -1;
+    useGSAP(() => {
         const instance = instanceRef.current;
         const position = [
-            voxelsData[pageIndex][index * 3],
-            voxelsData[pageIndex][index * 3 + 1],
-            voxelsData[pageIndex][index * 3 + 2]
-        ]
-        setCurrentPosition(null);
-        tlNoramal.to(instance.position, {
+            voxelsData[activePage][index * 3],
+            voxelsData[activePage][index * 3 + 1],
+            voxelsData[activePage][index * 3 + 2]
+        ];
+
+        const tl = gsap.timeline({
+            ease: "expoScale(0.5,7,none)"
+        });
+
+        tl.to(instance.position, {
             x: (Math.random() - 0.5) * 10,
             y: (Math.random() - 0.5) * 10,
             z: (Math.random() - 0.5) * 10,
             duration: 1,
-        })
-        tlNoramal.to(instance.scale, {
+        }).to(instance.scale, {
             x: 0.01,
             y: 0.01,
             z: 0.01,
             duration: 1,
-        }, "<");
-        tlNoramal.to(instance.position, {
+        }, "<").to(instance.position, {
             x: position[0],
             y: position[1],
             z: position[2],
             duration: 1,
-        })
-        tlNoramal.to(instance.scale, {
-            x: sizes[pageIndex],
-            y: sizes[pageIndex],
-            z: sizes[pageIndex],
-            duration: 1,
-            onComplete: () => setCurrentPosition(position)
+        }).to(instance.scale, {
+            x: sizes[activePage],
+            y: sizes[activePage],
+            z: sizes[activePage],
+            duration: 1
         }, "<");
-        return () => tlNoramal.kill()
-    }, [location, index, pageRoutes])
 
-    useEffect(() => {
-        const instance = instanceRef.current;
-        if (currentPosition) {
-            const pageIndex = pageRoutes[location] ?? -1;
-            const randomX = Math.random();
-            const randomY = Math.random();
-            const randomZ = Math.random();
-            randomX < 0.3 && tlPasive.to(instance.position, {
-                x: currentPosition[0] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
-                delay: Math.random(),
-                duration: 1 + Math.random(),
-            });
-            randomY < 0.3 && tlPasive.to(instance.position, {
-                y: currentPosition[1] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
-                delay: Math.random(),
-                duration: 1 + Math.random(),
-            });
-            randomZ < 0.3 && tlPasive.to(instance.position, {
-                z: currentPosition[2] + (Math.random() < 0.5 ? sizes[pageIndex] / 2 : -sizes[pageIndex] / 2),
-                delay: Math.random(),
-                duration: 1 + Math.random(),
-            });
-            tlPasive.to(instance.position, {
-                x: currentPosition[0],
-                y: currentPosition[1],
-                z: currentPosition[2],
-                duration: 1.5,
-            });
-        }
-        return () => tlPasive.kill()
-    }, [currentPosition, pageRoutes, location])
+    }, [activePage]);
+    useGSAP(() => {
+        console.log('1')
+        const instance = wrapperRef.current;
+        const tlPasive = gsap.timeline({
+            ease: "expoScale(0.5,7,none)",
+            repeat: -1,
+        });
+        const randomX = Math.random();
+        const randomY = Math.random();
+        const randomZ = Math.random();
+        randomX < 0.3 && tlPasive.to(instance.position, {
+            x: 0 + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+            delay: Math.random(),
+            duration: 1 + Math.random(),
+        });
+        randomY < 0.3 && tlPasive.to(instance.position, {
+            y: 0 + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+            delay: Math.random(),
+            duration: 1 + Math.random(),
+        });
+        randomZ < 0.3 && tlPasive.to(instance.position, {
+            z: 0 + (Math.random() < 0.5 ? sizes[activePage] / 2 : -sizes[activePage] / 2),
+            delay: Math.random(),
+            duration: 1 + Math.random(),
+        });
+        tlPasive.to(instance.position, {
+            x: 0,
+            y: 0,
+            z: 0,
+            duration: 1.5,
+        });
+    }, [])
     return (
-        <Instance
-            ref={instanceRef}
-            scale={[0, 0, 0]}
-        />
+        <group ref={wrapperRef}>
+            <Instance
+                ref={instanceRef}
+                scale={[0, 0, 0]}
+            />
+        </group>
     );
-}
+});
+Voxel.displayName = 'Voxel';
 Voxel.propTypes = {
     index: PropTypes.number,
     voxelsData: PropTypes.array

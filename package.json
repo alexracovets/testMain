@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
-    "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
     "immer": "^10.0.4",
     "react": "^18.2.0",
