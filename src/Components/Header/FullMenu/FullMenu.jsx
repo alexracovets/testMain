@@ -12,7 +12,7 @@ export default function FullMenu() {
         { path: "/industries", name: "Industries" },
         { path: "/projects", name: "Projects" },
         { path: "/q&a", name: "Q&A" },
-        { path: "/contact", name: "Contact us" },
+        { path: "/contact", name: "Contact us" }
     ]
 
     return (
