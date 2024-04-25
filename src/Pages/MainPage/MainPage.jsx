@@ -1,11 +1,18 @@
 import UI_Button from '../../Components/UI_Button/UI_Button';
 import Fliper from '../../Components/Fliper/Fliper';
+import { motion } from "framer-motion";
 
 import s from './MainPage.module.scss';
 export default function MainPage() {
 
     return (
-        <div className={s.wrapper}>
+        
+        <motion.div className={s.wrapper}
+            initial={{ opacity: 0, x: '-100%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, x: '-100%' }}
+        >
             <section>
                 <div className={s.content}>
                     <h1>Reliable partner in</h1>
@@ -15,6 +22,6 @@ export default function MainPage() {
                     </div>
                 </div>
             </section>
-        </div>
+        </motion.div>
     )
 }

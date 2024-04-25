@@ -1,6 +1,7 @@
 import instagram from '/image/icons/social/instagram.svg';
 import facebook from '/image/icons/social/facebook.svg';
 import linkedin from '/image/icons/social/linkedin.svg';
+import { motion } from "framer-motion";
 
 import UI_Button from '../../Components/UI_Button/UI_Button';
 
@@ -9,7 +10,12 @@ import s from './ContactPage.module.scss';
 export default function ContactPage() {
 
     return (
-        <div className={s.wrapper}>
+        <motion.div className={s.wrapper}
+            initial={{ opacity: 0, x: '-100%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, x: '-100%' }}
+        >
             <section>
                 <div className={s.content}>
                     <div className={s.contact_wrapper}>
@@ -58,6 +64,6 @@ export default function ContactPage() {
 
                 </div>
             </section>
-        </div>
+        </motion.div>
     )
 }

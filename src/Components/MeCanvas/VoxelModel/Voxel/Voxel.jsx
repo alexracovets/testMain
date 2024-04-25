@@ -50,7 +50,6 @@ const Voxel = React.memo(({ index }) => {
 
     }, [activePage]);
     useGSAP(() => {
-        console.log('1')
         const instance = wrapperRef.current;
         const tlPasive = gsap.timeline({
             ease: "expoScale(0.5,7,none)",
