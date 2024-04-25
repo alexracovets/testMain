@@ -10,16 +10,12 @@ const COUNT = 3000;
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.9, 0.9, 0.9, 2, .06), []);
-    const rotation = useMemo(() => [0, 0.6, 0], []);
-    const position = useMemo(() => [5, -0.40, -4.20], []);
 
     return (
         <Instances
             limit={COUNT}
             range={COUNT}
             geometry={geometry}
-            rotation={rotation}
-            position={position}
         >
             <meshMatcapMaterial matcap={matcapTexture} />
             {Array(COUNT).fill().map((_, idx) =>
