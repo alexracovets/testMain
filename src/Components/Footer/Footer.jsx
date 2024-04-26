@@ -13,7 +13,7 @@ export default function Footer() {
 
     return (
         <footer>
-            <div className="wrapper">
+            <div className={s.wrapper}>
                 <div className={s.footer}>
                     <div className={s.lang_switcher}>
                         {langs.map((lang, i) => {

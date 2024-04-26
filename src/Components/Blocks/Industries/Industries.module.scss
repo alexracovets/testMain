@@ -13,7 +13,7 @@
         align-items: center;
         flex-flow: row wrap;
 
-        li {
+        .industry {
             color: $color-white;
             font-size: 1.5rem;
             font-family: $font-JB_Mono;
@@ -24,8 +24,10 @@
             align-items: center;
             pointer-events: all;
             padding: 0 1rem;
+            padding-bottom: 0.75rem;
             box-sizing: border-box;
             cursor: pointer;
+            transition: all ease-in-out 300ms;
 
             &:first-of-type {
                 padding-left: 0;

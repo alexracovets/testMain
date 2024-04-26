@@ -3,6 +3,7 @@ import Fliper from '../../Components/Fliper/Fliper';
 import { motion } from "framer-motion";
 
 import s from './MainPage.module.scss';
+import Developments from '../../Components/Blocks/Developments/Developments';
 export default function MainPage() {
 
     return (
@@ -20,6 +21,7 @@ export default function MainPage() {
                     <div className={s.btn}>
                         <UI_Button text={'DISCOVER US'} arrow />
                     </div>
+                    <Developments />
                 </div>
             </section>
         </motion.div>

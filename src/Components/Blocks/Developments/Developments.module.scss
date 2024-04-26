@@ -1,0 +1,40 @@
+@import '../../../global/variable.scss';
+
+.developments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1.25rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        img {
+            height: 1.5rem;
+            width: auto;
+            margin-right: 0.9375rem;
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+
+            span {
+                color: $color-neutral-10;
+                font-size: 0.75rem;
+                font-family: $font-DM_Sans;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 0.75rem;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body,
@@ -15,15 +16,6 @@ body,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-  max-width: 83.75rem;
-  margin: 0 auto;
-  transition: all ease-in-out 300ms;
-  transition-delay: 600ms;
 }
 
 ul,
@@ -64,8 +56,12 @@ main {
 }
 
 html {
-  font-size: 1.11112vw;
+  font-size: 0.833334vw;
   user-select: none;
+
+  @media (max-width: 1400px) {
+    font-size: 1.11112vw;
+  }
 }
 
 main {

@@ -11,15 +11,17 @@
         font-family: $font-JB_Mono;
         color: $color-neutral-100;
         font-weight: 700;
-        font-size: 1.125rem;
         display: flex;
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
 
+        @media (max-width:$width-shortDesktop) {
+            font-size: 1.125rem;
+        }
+
         img {
-            width: 0.78375rem;
-            margin-left: 0.5rem;
+            height: auto;
         }
     }
 }

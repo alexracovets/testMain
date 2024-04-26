@@ -8,19 +8,23 @@ $flip_bg: url('/image/icons/fliper/fliper_bg.svg');
     justify-content: flex-start;
     align-items: center;
     flex-flow: row wrap;
-    width: 34rem;
-    margin: 1.5rem 0;
+    width: 46rem;
+    margin-top: 1rem;
+    margin-bottom: 3.125rem;
 
+    @media (max-width:$width-shortDesktop) {
+        width: 34rem;
+    }
 
     &>div {
-        font-size: 3.5rem;
+        font-size: 5rem;
         font-family: "Bebas Neue", sans-serif;
         color: $color-white;
         font-weight: 400;
         letter-spacing: 0.045rem;
-        line-height: 4.5rem;
-        width: 2.875rem !important;
-        height: 4.125rem;
+        line-height: 6rem;
+        width: 4rem !important;
+        height: 5.75rem;
         margin: 0.3125rem 0.08rem;
         border-radius: 0.2rem;
         background: none;
@@ -28,5 +32,12 @@ $flip_bg: url('/image/icons/fliper/fliper_bg.svg');
         background-size: cover;
         padding: 0;
         border: none !important;
+
+        @media (max-width:$width-shortDesktop) {
+            width: 2.875rem !important;
+            height: 4.125rem;
+            font-size: 3.5rem;
+            line-height: 4.5rem;
+        }
     }
 }
