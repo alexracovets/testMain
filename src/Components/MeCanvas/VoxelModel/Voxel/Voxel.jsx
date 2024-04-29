@@ -6,8 +6,8 @@ import gsap from "gsap";
 import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel2.json';
 import { useGSAP } from "@gsap/react";
-const sizes2 = [0.208, 0.2687, 0.3525, 0.38];
-const sizes = [0.24, 0.38, 0.49, 0.54];
+const sizes = [0.208, 0.2687, 0.3525, 0.38];
+const sizes1 = [0.24, 0.38, 0.49, 0.54];
 const modelCoords = [
     {
         position: [6, -0.65, -5.5],
