@@ -5,7 +5,7 @@ import { Instances } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
 
 import Voxel from "./Voxel/Voxel";
-const matcap = '/3.png';
+const matcap = '/2.png';
 const COUNT = 3000;
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);

@@ -1,13 +1,7 @@
-import { useControls } from "leva";
-
-export default function Lights() {
-    const bgColor = '#292929';
-    const bgColorTest = useControls({
-        value: '#292929',
-    })
+export default function Lights() { 
     return (
         <>
-            <color attach={'background'} args={[bgColorTest.value]} />
+            <color attach={'background'} args={['#292929']} />
             <pointLight position={[-30, 0, -30]} power={10.1} />
             <ambientLight />
             <directionalLight />
