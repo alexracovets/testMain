@@ -9,7 +9,7 @@ const matcap = '/2.png';
 const COUNT = 3000;
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
-    const geometry = useMemo(() => new RoundedBoxGeometry(0.9, 0.9, 0.9, 2, .06), []);
+    const geometry = useMemo(() => new RoundedBoxGeometry(0.9, 0.9, 0.9, 2, .5), []);
 
     return (
         <Instances
