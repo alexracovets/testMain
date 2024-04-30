@@ -28,6 +28,9 @@ export default function FullMenu() {
                     )
                 })}
             </ul>
+            <div className={s.bottom}>
+                
+            </div>
         </div>
     )
 } 

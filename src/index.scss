@@ -52,13 +52,13 @@ img {
 }
 
 header,
-main,
-footer {
+main {
   width: 100%;
 }
 
 main {
   height: 100%;
+  overflow: hidden;
 }
 
 html {
@@ -68,9 +68,4 @@ html {
   @media (max-width: 1400px) {
     font-size: 1.11112vw;
   }
-}
-
-main {
-  overflow: hidden;
-  padding: 0.5rem 0;
 }

@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
+
 import { Instance } from "@react-three/drei";
+import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
-import useStorePage from "../../../../store/useStorePage";
 import voxelsData from '../voxel2.json';
-import { useGSAP } from "@gsap/react";
+import useActiveModel from "../../../../store/useActiveModel";
+import { useControls } from "leva";
+
 const sizes1 = [0.208, 0.2687, 0.3525, 0.38];
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const modelCoords = [
@@ -26,22 +29,50 @@ const modelCoords = [
         rotation: [0.08, 0.13, 0]
     }
 ]
+
+const mobileCoords = [
+    {
+        position: [0, 40, -80],
+        rotation: [0.05, 1.4, 0.1]
+    },
+    {
+        position: [0, 0, 0],
+        rotation: [0, 0, 0]
+    },
+    {
+        position: [0, 0, -70],
+        rotation: [0.09, 1.19, 0.32]
+    },
+    {
+        position: [0, 0, 0],
+        rotation: [0, 0, 0]
+    },
+]
 const Voxel = React.memo(({ index }) => {
     const instanceRef = useRef();
     const wrapperRef = useRef();
     const wrapperWRef = useRef();
-    const activePage = useStorePage(state => state.activePage);
+    const activeModel = useActiveModel(state => state.activeModel);
+
+    const test = useControls({
+        positionX: 0,
+        positionY: 40,
+        positionZ: -70,
+        rotationX: 0.09,
+        rotationY: 1.19,
+        rotationZ: 0.32
+    })
 
     useGSAP(() => {
         const instance = instanceRef.current;
         const instance2 = wrapperWRef.current;
-        if (activePage !== -1) {
+        if (activeModel !== -1) {
             const position = [
-                voxelsData[activePage][index * 3],
-                voxelsData[activePage][index * 3 + 1],
-                voxelsData[activePage][index * 3 + 2]
+                voxelsData[activeModel][index * 3],
+                voxelsData[activeModel][index * 3 + 1],
+                voxelsData[activeModel][index * 3 + 2]
             ];
-            const size = sizes[activePage];
+            const size = sizes[activeModel];
             const tl = gsap.timeline({
                 ease: "expoScale(0.5,7,none)"
             });
@@ -76,17 +107,31 @@ const Voxel = React.memo(({ index }) => {
                 }, "<")
 
             tl2
+                // .to(instance2.position, {
+                //     x: modelCoords[activeModel].position[0],
+                //     y: modelCoords[activeModel].position[1],
+                //     z: modelCoords[activeModel].position[2],
+                //     delay: .5,
+                //     duration: 1,
+                // })
+                // .to(instance2.rotation, {
+                //     x: modelCoords[activeModel].rotation[0],
+                //     y: modelCoords[activeModel].rotation[1],
+                //     z: modelCoords[activeModel].rotation[2],
+                //     duration: 1,
+                // }, "<")
                 .to(instance2.position, {
-                    x: modelCoords[activePage].position[0],
-                    y: modelCoords[activePage].position[1],
-                    z: modelCoords[activePage].position[2],
+                    x: mobileCoords[activeModel].position[0],
+                    y: mobileCoords[activeModel].position[1],
+                    z: mobileCoords[activeModel].position[2],
                     delay: .5,
                     duration: 1,
+                    onStart: () => instance2.rotation.reorder("YZX")
                 })
                 .to(instance2.rotation, {
-                    x: modelCoords[activePage].rotation[0],
-                    y: modelCoords[activePage].rotation[1],
-                    z: modelCoords[activePage].rotation[2],
+                    x: mobileCoords[activeModel].rotation[0],
+                    y: mobileCoords[activeModel].rotation[1],
+                    z: mobileCoords[activeModel].rotation[2],
                     duration: 1,
                 }, "<")
 
@@ -110,7 +155,7 @@ const Voxel = React.memo(({ index }) => {
                 }, "<")
         }
 
-    }, [activePage]);
+    }, [activeModel]);
 
     useGSAP(() => {
         const step = 0.5;
@@ -153,7 +198,7 @@ const Voxel = React.memo(({ index }) => {
     }, [])
 
     return (
-        <group ref={wrapperWRef}>
+        <group ref={wrapperWRef} order>
             <group ref={wrapperRef}  >
                 <Instance
                     ref={instanceRef}
