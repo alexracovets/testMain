@@ -1,3 +1,5 @@
+@import './global/variable.scss';
+
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +10,10 @@ body,
 #root {
   width: 100%;
   height: 100dvh;
+
+  @media (max-width:$width-table) {
+    height: 100%;
+  }
 }
 
 #root {

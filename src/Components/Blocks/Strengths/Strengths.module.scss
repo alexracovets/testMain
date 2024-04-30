@@ -15,6 +15,10 @@
         padding: 0.8125rem 0;
         border-bottom: 0.0625rem solid $color-neutral-50;
 
+        @media (max-width:$width-table) {
+            padding: 13px 0;
+        }
+
         &:nth-last-of-type(1),
         &:nth-last-of-type(2),
         &:nth-last-of-type(3) {
@@ -24,6 +28,12 @@
         img {
             width: 1.125rem;
             margin-right: 1rem;
+
+
+            @media (max-width:$width-table) {
+                width: 18px;
+                margin-right: 16px;
+            }
         }
 
         span {
@@ -34,6 +44,13 @@
             line-height: 1.3125rem;
             letter-spacing: -0.08rem;
             width: 100%;
+
+            @media (max-width:$width-table) {
+                font-size: 14px;
+                line-height: 21px;
+                letter-spacing: -1px;
+                padding-right: 10px;
+            }
         }
     }
 }

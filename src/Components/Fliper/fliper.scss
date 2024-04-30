@@ -16,6 +16,12 @@ $flip_bg: url('/image/icons/fliper/fliper_bg.svg');
         width: 34rem;
     }
 
+    @media (max-width:$width-table) {
+        width: 644px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+
     &>div {
         font-size: 5rem;
         font-family: "Bebas Neue", sans-serif;
@@ -38,6 +44,15 @@ $flip_bg: url('/image/icons/fliper/fliper_bg.svg');
             height: 4.125rem;
             font-size: 3.5rem;
             line-height: 4.5rem;
+            margin: 0.3125rem 0.08rem;
+        }
+
+        @media (max-width:$width-table) {
+            width: 43.87px !important;
+            height: 63.86px;
+            font-size: 65px;
+            line-height: 70px;
+            margin: 5.5px 5px;
         }
     }
 }

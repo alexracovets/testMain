@@ -1,8 +1,7 @@
-import { Scrollbar } from 'react-scrollbars-custom';
-import s from './Industries.module.scss';
-import IndustriesRow from './IndustriesRow/IndustriesRow';
 import { useState } from 'react';
-
+import PropTypes from 'prop-types';
+import { Scrollbar } from 'react-scrollbars-custom';
+import IndustriesRow from './IndustriesRow/IndustriesRow';
 
 const row1 = [
     {
@@ -53,16 +52,27 @@ const row3 = [
     }
 ]
 const rows = [row1, row2, row3];
-
-export default function Industries() {
+import s from './Industries.module.scss';
+export default function Industries({ mobile }) {
 
     const [activeRow, setActiveRow] = useState();
 
     return (
-        <Scrollbar className={'scroll'}>
-            <div className={s.industries_wrapper}>
-                {rows.map((row, i) => <IndustriesRow key={i} industries={row} idx={i} activeRow={activeRow} setActiveRow={setActiveRow} />)}
-            </div>
-        </Scrollbar >
+        <>
+            {!mobile ? <Scrollbar className={'scroll'}>
+                <div className={s.industries_wrapper}>
+                    {rows.map((row, i) => <IndustriesRow key={i} industries={row} idx={i} activeRow={activeRow} setActiveRow={setActiveRow} />)}
+                </div>
+            </Scrollbar > :
+                <div className={s.industries_wrapper}>
+                    {rows.map((row, i) => <IndustriesRow key={i} industries={row} idx={i} activeRow={activeRow} setActiveRow={setActiveRow} />)}
+                </div>
+            }
+        </>
+
     );
+}
+
+Industries.propTypes = {
+    mobile: PropTypes.bool
 }

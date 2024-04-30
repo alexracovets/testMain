@@ -1,11 +1,9 @@
-import instagram from '/image/icons/social/instagram.svg';
-import facebook from '/image/icons/social/facebook.svg';
-import linkedin from '/image/icons/social/linkedin.svg';
 import { motion } from "framer-motion";
 
 import UI_Button from '../../Components/UI_Button/UI_Button';
 
 import s from './ContactPage.module.scss';
+import Socials from '../../Components/Blocks/Socials/Socials';
 
 export default function ContactPage() {
 
@@ -29,30 +27,7 @@ export default function ContactPage() {
                             </button>
                         </div>
                     </div>
-                    <div className={s.work_days}>
-                        Mon - Fri: 10:00 AM - 5:00 PM. <br />
-                        Sat - 10:00 AM - 3:00 PM
-                    </div>
-                    <div className={s.socials}>
-                        <button className={s.socialsBtn}>
-                            <img src={instagram} alt='Instagram' />
-                            <span className={s.text}>
-                                Instagram
-                            </span>
-                        </button>
-                        <button className={s.socialsBtn}>
-                            <img src={facebook} alt="Facebook" />
-                            <span className={s.text}>
-                                Facebook
-                            </span>
-                        </button>
-                        <button className={s.socialsBtn}>
-                            <img src={linkedin} alt="LinkedIn" />
-                            <span className={s.text}>
-                                LinkedIn
-                            </span>
-                        </button>
-                    </div>
+                    <Socials />
                     <div className={s.sub_btns}>
                         <div className={s.discover}>
                             <UI_Button text={'DISCOVER US'} arrow />
@@ -61,7 +36,6 @@ export default function ContactPage() {
                             <UI_Button text={'office 3d tour'} arrow />
                         </div>
                     </div>
-
                 </div>
             </section>
         </motion.div>

@@ -75,45 +75,7 @@
                         align-items: center;
                     }
                 }
-            }
-
-            .work_days {
-                color: $color-white;
-                font-size: 1rem;
-                font-family: $font-JB_Mono;
-                font-weight: 300;
-                line-height: 1.32rem;
-                margin-bottom: 1.25rem;
-            }
-
-            .socials {
-                width: 100%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                margin-bottom: 2rem;
-
-                .socialsBtn {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin-right: 1.75rem;
-
-                    img {
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        margin-right: 0.75rem;
-                    }
-
-                    .text {
-                        color: $color-white;
-                        font-size: 1rem;
-                        font-family: $font-JB_Mono;
-                        font-weight: 600;
-                        line-height: 1.32rem;
-                    }
-                }
-            }
+            } 
 
             .sub_btns {
                 display: flex;

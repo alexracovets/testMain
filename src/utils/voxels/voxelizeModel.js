@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 const params = {
-    modelSize: 10
+    modelSize: 12
 };
 
 const rayCaster = new THREE.Raycaster();

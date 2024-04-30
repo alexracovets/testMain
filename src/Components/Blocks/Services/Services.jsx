@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import ServicesItem from './ServicesItem/ServicesItem';
+import PropTypes from 'prop-types';
 import { Scrollbar } from 'react-scrollbars-custom';
+import ServicesItem from './ServicesItem/ServicesItem';
+
 import s from './Services.module.scss';
 import './scroll.scss'
-export default function Services() {
+export default function Services({ mobile }) {
 
     const [currentService, setCurrentService] = useState(0);
 
@@ -31,21 +33,43 @@ export default function Services() {
     ]
 
     return (
-        <Scrollbar className={'scroll'}>
-            <ul className={s.services}>
-                {colapses.map((colapse) => {
-                    return (
-                        <ServicesItem
-                            key={colapse.idx}
-                            index={colapse.idx}
-                            title={colapse.title}
-                            colapse={colapse.colapse}
-                            currentService={currentService}
-                            setCurrentService={setCurrentService}
-                        />
-                    )
-                })}
-            </ul>
-        </Scrollbar>
+        <>
+            {!mobile ? <Scrollbar className={'scroll'}>
+                <ul className={s.services}>
+                    {colapses.map((colapse) => {
+                        return (
+                            <ServicesItem
+                                key={colapse.idx}
+                                index={colapse.idx}
+                                title={colapse.title}
+                                colapse={colapse.colapse}
+                                currentService={currentService}
+                                setCurrentService={setCurrentService}
+                            />
+                        )
+                    })}
+                </ul>
+            </Scrollbar> :
+                <ul className={s.services}>
+                    {colapses.map((colapse) => {
+                        return (
+                            <ServicesItem
+                                key={colapse.idx}
+                                index={colapse.idx}
+                                title={colapse.title}
+                                colapse={colapse.colapse}
+                                currentService={currentService}
+                                setCurrentService={setCurrentService}
+                            />
+                        )
+                    })}
+                </ul>
+            }
+        </>
+
     )
+}
+
+Services.propTypes = {
+    mobile: PropTypes.bool
 }

@@ -5,11 +5,20 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width:$width-table) {
+        margin: 0 auto;
+        margin-top: 68px;
+    }
+
     li {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: 1.25rem;
+
+        @media (max-width:$width-table) {
+            margin-top: 20px;
+        }
 
         &:last-of-type {
             margin-right: 0;
@@ -19,6 +28,11 @@
             height: 1.5rem;
             width: auto;
             margin-right: 0.9375rem;
+
+            @media (max-width:$width-table) {
+                height: 24px;
+                margin-right: 15px;
+            }
         }
 
         .text {
@@ -34,6 +48,11 @@
                 font-weight: 700;
                 text-transform: uppercase;
                 line-height: 0.75rem;
+
+                @media (max-width:$width-table) {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
             }
         }
     }

@@ -14,6 +14,8 @@ import IndustriesPage from './Pages/IndustriesPage/IndustriesPage';
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import MeCanvas from "./Components/MeCanvas/MeCanvas";
+import MobileMain from "./Pages/MobileMain/MobileMain";
+import Mobile from "./layout/Mobile";
 
 export default function App() {
     const location = useLocation();
@@ -34,6 +36,9 @@ export default function App() {
                         <Route path="contact" element={<ContactPage />} />
                         <Route path="projects" element={<ProjectsPage />} />
                         <Route path="q&a" element={<QAPage />} />
+                    </Route>
+                    <Route path="/mobile" element={<Mobile />}>
+                        <Route index element={<MobileMain />} />
                     </Route>
                 </Routes>
             </AnimatePresence>
