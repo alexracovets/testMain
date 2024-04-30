@@ -52,16 +52,7 @@ const Voxel = React.memo(({ index }) => {
     const instanceRef = useRef();
     const wrapperRef = useRef();
     const wrapperWRef = useRef();
-    const activeModel = useActiveModel(state => state.activeModel);
-
-    const test = useControls({
-        positionX: 0,
-        positionY: 40,
-        positionZ: -70,
-        rotationX: 0.09,
-        rotationY: 1.19,
-        rotationZ: 0.32
-    })
+    const activeModel = useActiveModel(state => state.activeModel); 
 
     useGSAP(() => {
         const instance = instanceRef.current;
