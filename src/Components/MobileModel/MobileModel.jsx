@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { TextureLoader } from "three";
-import { useMemo } from "react";
-import { useLoader } from "@react-three/fiber";
+import { TextureLoader, Vector3 } from "three";
+import { useEffect, useMemo, useRef } from "react";
+import { useLoader, useThree } from "@react-three/fiber";
 import { Instances } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
 
@@ -11,7 +11,8 @@ import VoxelMobile from "./VoxelMobile/VoxelMobile";
 export default function MobileModel({ model }) {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 2, .1), []);
-
+    const firstSection = useRef();
+    const { camera, size } = useThree();
 
     const modelsCoords = [
         {
@@ -31,11 +32,16 @@ export default function MobileModel({ model }) {
             rotation: [0.01, 1.54, 0.02]
         }
     ]
+    console.log(size)
+    useEffect(() => {
+        console.log(size)
+    }, [])
 
     return (
         <>
             {
                 <Instances
+                    ref={firstSection}
                     limit={COUNT}
                     range={COUNT}
                     geometry={geometry}
