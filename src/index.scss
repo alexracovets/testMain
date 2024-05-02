@@ -1,71 +1,75 @@
 @import './global/variable.scss';
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body,
 #root {
-  width: 100%;
-  height: 100dvh;
-
-  @media (max-width:$width-table) {
-    height: 100%;
-  }
+    width: 100%;
+    height: 100dvh;
 }
 
 #root {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: white;
-  pointer-events: auto;
-  cursor: pointer;
+    text-decoration: none;
+    color: white;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 button {
-  background-color: transparent;
-  text-decoration: none;
-  color: white;
-  border: none;
-  pointer-events: auto;
-  cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    border: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 header,
 main {
-  width: 100%;
+    width: 100%;
 }
 
 main {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 html {
-  font-size: 0.833334vw;
-  user-select: none;
+    font-size: 0.833334vw;
+    user-select: none;
 
-  @media (max-width: 1400px) {
-    font-size: 1.11112vw;
-  }
+    @media (max-width:$width-shortDesktop) {
+        font-size: 1.11113vw;
+    }
+
+    @media (max-width:$width-table) {
+        font-size: 2.1538vw;
+    }
+
+    @media (max-width:$width-mobile) {
+        font-size: 5vw;
+    }
 }

@@ -1,0 +1,15 @@
+.pager_wrapper {
+    width: 100vw;
+    min-height: 100dvh;
+    transform: none !important;
+    z-index: 1 !important;
+
+    .pager {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

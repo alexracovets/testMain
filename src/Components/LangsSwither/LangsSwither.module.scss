@@ -15,6 +15,10 @@
         padding: 0.5rem;
         margin-left: 0.375rem;
 
+        @media (max-width:$width-table) {
+            padding: 0.75rem;
+        }
+
         &:nth-of-type(1) {
             margin-left: 0;
         }
@@ -26,12 +30,20 @@
             line-height: 100%;
             color: $color-white;
             transition: all ease-in-out 300ms;
+
+            @media (max-width:$width-table) {
+                font-size: 1rem;
+            }
         }
 
         img {
             margin-left: 0.5rem;
             filter: grayscale(1);
             transition: all ease-in-out 300ms;
+
+            @media (max-width:$width-table) {
+                margin-left: 0.5rem;
+            }
         }
 
         &.active {

@@ -1,4 +1,4 @@
-import Strengths from '../../Components/Blocks/Strengths/Strengths';
+import Strengths from '../../Components/Strengths/Strengths';
 import { motion } from "framer-motion";
 
 import s from './AboutPage.module.scss';
@@ -8,7 +8,7 @@ export default function AboutPage() {
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '40%' }}
             animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.5, delay: .1 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0, x: '20%' }}
         >
             <section>

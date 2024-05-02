@@ -1,4 +1,4 @@
-import Services from '../../Components/Blocks/Services/Services';
+import Services from '../../Components/Services/Services';
 import { motion } from "framer-motion";
 
 import s from './ServicesPage.module.scss';
@@ -9,7 +9,7 @@ export default function ServicesPage() {
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
             animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.5, delay: .1 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0, x: '-20%' }}
         >
             <section>

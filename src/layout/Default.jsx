@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-
-import Main from "../Components/Main/Main";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import useActiveModel from "../store/useActiveModel";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
 
 export default function Default() {
     const changeActivePage = useActiveModel((state) => state.setActiveModel)
@@ -46,7 +46,11 @@ export default function Default() {
 
     return (
         <>
-            <Main />
+            <Header />
+            <main>
+                <Outlet />
+            </main>
+            <Footer />
         </>
     )
 }

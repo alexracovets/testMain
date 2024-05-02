@@ -1,0 +1,96 @@
+@import '../../global/variable.scss';
+
+.strengths {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    width: 100%;
+
+    @media (max-width:$width-mobile) {
+        flex-direction: column;
+    }
+
+    li {
+        width: calc(100% / 3);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.8125rem 0;
+        border-bottom: 1px solid $color-neutral-50;
+
+        @media (max-width:$width-shortDesktop) {
+            padding: 0.8125rem 0;
+        }
+
+        @media (max-width:$width-table) {
+            padding: 0.8125rem 0;
+        }
+
+        @media (max-width:$width-mobile) {
+            width: 100%;
+            padding: 1.25rem 0 0.75rem 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:nth-last-of-type(1),
+        &:nth-last-of-type(2),
+        &:nth-last-of-type(3) {
+            border-bottom: none;
+
+            @media (max-width:$width-mobile) {
+                border-bottom: 1px solid $color-neutral-50;
+            }
+        }
+
+        img {
+            width: 1.125rem;
+            margin-right: 1rem;
+
+            @media (max-width:$width-shortDesktop) {
+                width: 1.125rem;
+                margin-right: 1rem;
+            }
+
+            @media (max-width:$width-table) {
+                width: 1.125rem;
+                margin-right: 0.7rem;
+            }
+
+            @media (max-width:$width-mobile) {
+                width: 1.125rem;
+                margin-right: 1rem;
+            }
+        }
+
+        span {
+            font-family: $font-JB_Mono;
+            color: $color-white;
+            font-size: 0.875rem;
+            font-weight: 300;
+            line-height: 1.3125rem;
+            letter-spacing: -0.08rem;
+            width: 100%;
+
+            @media (max-width:$width-shortDesktop) {
+                font-size: 0.875rem;
+                line-height: 1.3125rem;
+            }
+
+            @media (max-width:$width-table) {
+                font-size: 0.875rem;
+                line-height: 1.3125rem;
+                letter-spacing: -0.0625rem;
+                padding-right: 0.625rem;
+            }
+
+            @media (max-width:$width-mobile) {
+                font-size: 0.875rem;
+                line-height: 1.3125rem;
+                padding: 0;
+                width: auto;
+            }
+        }
+    }
+}

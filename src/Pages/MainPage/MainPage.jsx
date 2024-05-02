@@ -1,9 +1,9 @@
 import UI_Button from '../../Components/UI_Button/UI_Button';
-import Fliper from '../../Components/Fliper/Fliper';
 import { motion } from "framer-motion";
 
 import s from './MainPage.module.scss';
-import Developments from '../../Components/Blocks/Developments/Developments';
+import Developments from '../../Components/Developments/Developments';
+import Fliper from '../../Components/Fliper/Fliper';
 export default function MainPage() {
 
     return (
@@ -11,7 +11,7 @@ export default function MainPage() {
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
             animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.5, delay: .1 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0, x: '-20%' }}
         >
             <section>

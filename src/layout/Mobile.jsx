@@ -1,35 +1,37 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
-import Main from "../Components/Main/Main";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
+import { Scrollbar } from "react-scrollbars-custom";
 
+import './scroll.scss';
 export default function Mobile() {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 744);
     const navigate = useNavigate();
 
     useEffect(() => {
         setIsDesktop(window.innerWidth > 744);
-        // Функція, яка оновлює стан ширини вікна
         function handleResize() {
             setIsDesktop(window.innerWidth > 744);
         }
-
-        // Додавання обробника події
         window.addEventListener('resize', handleResize);
-
-        // Прибирання обробника події при демонтажі компоненту
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     useEffect(() => {
         if (isDesktop) {
-            navigate('/'); // Навігація на мобільну версію сайту
+            navigate('/');
         }
     }, [isDesktop, navigate])
 
     return (
-        <>
-            <Main />
-        </>
+        <Scrollbar className={'mobile_scroll'}>
+            <Header />
+            <main>
+                <Outlet />
+            </main>
+            <Footer />
+        </Scrollbar>
     )
 }

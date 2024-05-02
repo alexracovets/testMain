@@ -1,0 +1,22 @@
+@import '../../global/variable.scss';
+
+.scroll {
+    &.trackYVisible {
+        .ScrollbarsCustom-Track {
+            opacity: 1;
+        }
+    }
+
+    .ScrollbarsCustom-Track {
+        width: 2px !important;
+        background-color: $color-neutral-50 !important;
+        opacity: 0;
+        transition: all ease-out 300ms;
+        transition-delay: 100ms;
+    }
+
+    .ScrollbarsCustom-Thumb {
+        background-color: $color-primary !important;
+        width: 2px !important;
+    }
+}

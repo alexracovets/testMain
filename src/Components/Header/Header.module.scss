@@ -7,6 +7,18 @@
     transition: all ease-in-out 300ms;
     transition-delay: 600ms;
 
+    @media (max-width:$width-shortDesktop) {
+        padding: 0 3.125rem;
+    }
+
+    @media (max-width:$width-table) {
+        padding: 0 3.125rem;
+    }
+
+    @media (max-width:$width-mobile) {
+        padding: 0 1.25rem;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;
@@ -16,8 +28,16 @@
         border-bottom: 0.0625rem solid $color-white;
         transition: all ease-in 300ms;
 
+        @media (max-width:$width-shortDesktop) {
+            height: 6.375rem;
+        }
+
         @media (max-width:$width-table) {
-            height: 100px;
+            height: 6.25rem;
+        }
+
+        @media (max-width:$width-mobile) {
+            height: 4.6875rem;
         }
 
         .logo {
@@ -27,9 +47,19 @@
             position: relative;
             z-index: 11;
 
+            @media (max-width:$width-shortDesktop) {
+                width: 9.485625rem;
+                max-height: 2.5625rem;
+            }
+
             @media (max-width:$width-table) {
-                width: 151.77px;
-                max-height: 41px;
+                width: 9.485625rem;
+                max-height: 2.5625rem;
+            }
+
+            @media (max-width:$width-mobile) {
+                width: 8.125rem;
+                max-height: 2.195rem;
             }
         }
 
@@ -50,8 +80,13 @@
                 li {
                     padding: 0 1.4375rem;
 
+                    @media (max-width:$width-shortDesktop) {
+                        padding: 0 1.4375rem;
+                    }
+
                     a {
                         color: $color-white;
+                        font-size: 1rem;
                         font-family: 'JetBrains Mono';
                         text-transform: uppercase;
                         padding-bottom: 0.625rem;
@@ -63,6 +98,10 @@
                         &.active {
                             text-shadow: 0 0 0.25rem $color-white;
                             border-bottom: 0.0625rem solid $color-primary;
+                        }
+
+                        @media (max-width:$width-shortDesktop) {
+                            font-size: 1rem;
                         }
                     }
 
@@ -77,30 +116,42 @@
 
             .burger {
                 position: relative;
-                width: 4.1875rem;
-                height: 1.5625rem;
-                padding-left: 1.4375rem;
+                width: 2.75rem;
+                height: 0.875rem;
+                margin-left: 1.4375rem;
                 z-index: 11;
-                display: none;
+                margin-top: -0.875rem;
+                // display: none;
+
+                @media (max-width:$width-shortDesktop) {
+                    width: 2.75rem;
+                    height: 0.875rem;
+                    margin-left: 1.4375rem;
+                    margin-top: -0.4375rem;
+                }
 
                 @media (max-width:$width-table) {
                     display: block;
-                    width: 44px;
-                    height: 14px;
-                    padding: 0;
+                    width: 2.75rem;
+                    height: 0.875rem;
+                    margin: 0;
+                }
+
+                @media (max-width:$width-mobile) {
+                    width: 2.75rem;
+                    height: 0.875rem;
                 }
 
                 span {
                     position: absolute;
-                    width: 2.75rem;
-                    height: 0.1875rem;
+                    width: 100%;
+                    height: 2px;
                     background-color: $color-white;
                     transition: all ease-in 300ms;
                     right: 0;
                     transform: rotate(0);
 
-                    @media (max-width:$width-table) {
-                        width: 100%;
+                    @media (max-width:$width-mobile) {
                         height: 3px;
                     }
 

@@ -6,8 +6,11 @@ export default function Navigation() {
     const location = useLocation();
 
     const links = [
+        { path: "/about", name: "About" },
         { path: "/services", name: "Services" },
         { path: "/industries", name: "Industries" },
+        // { path: "/projects", name: "Projects" },
+        // { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact us" },
     ]
 

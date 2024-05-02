@@ -1,5 +1,5 @@
 import s from './Footer.module.scss';
-import Socials from '../Blocks/Socials/Socials';
+import Socials from '../Socials/Socials';
 import LangsSwither from '../LangsSwither/LangsSwither';
 export default function Footer() {
 

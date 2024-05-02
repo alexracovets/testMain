@@ -1,6 +1,6 @@
 
 
-import Industries from '../../Components/Blocks/Industries/Industries';
+import Industries from '../../Components/Industries/Industries';
 import { motion } from "framer-motion";
 
 import s from './IndustriesPage.module.scss';
@@ -10,7 +10,7 @@ export default function IndustriesPage() {
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '40%' }}
             animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.5, delay: .1 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0, x: '20%' }}
         >
             <section>

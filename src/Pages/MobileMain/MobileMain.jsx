@@ -1,68 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 
 import Fliper from "../../Components/Fliper/Fliper";
+import Services from '../../Components/Services/Services';
+import Strengths from '../../Components/Strengths/Strengths';
 import UI_Button from "../../Components/UI_Button/UI_Button";
-import Services from '../../Components/Blocks/Services/Services';
-import Strengths from '../../Components/Blocks/Strengths/Strengths';
-import Industries from '../../Components/Blocks/Industries/Industries';
-import Developments from "../../Components/Blocks/Developments/Developments";
-
-import useActiveModel from '../../store/useActiveModel';
+import Industries from '../../Components/Industries/Industries';
+import MobileModel from '../../Components/MobileModel/MobileModel';
+import Developments from "../../Components/Developments/Developments";
 
 import s from './MobileMain.module.scss';
+
 export default function MobileMain() {
-    const firstSection = useRef();
-    const secondSection = useRef();
-    const thirdSection = useRef();
-
-    const [isVisibleFirst, setVisibleFirst] = useState(false);
-    const [isVisibleSecond, setVisibleSecond] = useState(false);
-    const [isVisibleThird, setVisibleThird] = useState(false);
-
-    const setActiveModel = useActiveModel((state) => state.setActiveModel);
-    const activeModel = useActiveModel((state) => state.activeModel);
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.target === firstSection.current) {
-                    setVisibleFirst(entry.isIntersecting);
-                } else if (entry.target === secondSection.current) {
-                    setVisibleSecond(entry.isIntersecting);
-                } else if (entry.target === thirdSection.current) {
-                    setVisibleThird(entry.isIntersecting);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        if (firstSection.current) observer.observe(firstSection.current);
-        if (secondSection.current) observer.observe(secondSection.current);
-        if (thirdSection.current) observer.observe(thirdSection.current);
-
-        return () => {
-            if (firstSection.current) observer.unobserve(firstSection.current);
-            if (secondSection.current) observer.unobserve(secondSection.current);
-            if (thirdSection.current) observer.unobserve(thirdSection.current);
-        };
-    }, []);
-    useEffect(() => {
-        if (isVisibleFirst && !isVisibleSecond && !isVisibleThird) {
-            setActiveModel(0)
-        } else if (isVisibleSecond && !isVisibleThird) {
-            setActiveModel(2)
-        } else if (isVisibleThird) {
-            setActiveModel(3)
-        }
-    }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel])
-
-    useEffect(() => {
-        console.log(activeModel)
-    }, [activeModel])
 
     return (
         <div className={s.wrapper}>
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space} ref={firstSection}></div>
+                    <div className={s.model_space}>
+                        <Canvas>
+                            <MobileModel model={0} />
+                        </Canvas>
+                    </div>
                     <h1>Reliable partner in</h1>
                     <Fliper />
                     <div className={s.btn}>
@@ -87,7 +45,11 @@ export default function MobileMain() {
             </section>
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space} ref={secondSection}></div>
+                    <div className={s.model_space}>
+                        <Canvas>
+                            <MobileModel model={2} />
+                        </Canvas>
+                    </div>
                     <h2> Services </h2>
                     <Services mobile />
                 </div>
@@ -95,7 +57,11 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
-                    <div className={s.model_space} ref={thirdSection}></div>
+                    <div className={s.model_space}>
+                        <Canvas>
+                            <MobileModel model={3} />
+                        </Canvas>
+                    </div>
                     <Industries mobile />
                 </div>
             </section>

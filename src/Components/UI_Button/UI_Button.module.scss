@@ -7,7 +7,6 @@
     background-color: $color-primary;
 
     .text {
-        padding: 0.75rem 1.3125rem;
         font-family: $font-JB_Mono;
         color: $color-neutral-100;
         font-weight: 700;
@@ -15,10 +14,6 @@
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
-
-        @media (max-width:$width-shortDesktop) {
-            font-size: 1.125rem;
-        }
 
         img {
             height: auto;

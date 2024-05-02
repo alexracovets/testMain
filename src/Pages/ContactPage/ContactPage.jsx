@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 import UI_Button from '../../Components/UI_Button/UI_Button';
 
 import s from './ContactPage.module.scss';
-import Socials from '../../Components/Blocks/Socials/Socials';
+import Socials from '../../Components/Socials/Socials';
 
 export default function ContactPage() {
 
     return (
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
-            animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.5, delay: .1 }}
+            animate={{ opacity: 1, x: '0%', duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0, x: '-20%' }}
         >
             <section>
