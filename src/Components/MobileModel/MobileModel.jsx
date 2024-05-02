@@ -32,10 +32,6 @@ export default function MobileModel({ model }) {
             rotation: [0.01, 1.54, 0.02]
         }
     ]
-    console.log(size)
-    useEffect(() => {
-        console.log(size)
-    }, [])
 
     return (
         <>

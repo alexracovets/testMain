@@ -5,6 +5,7 @@ import Pager from "./Components/Pager/Pager";
 import MilkyWay from "./Components/MilkyWay/MilkyWay";
 import VoxelModel from "./Components/VoxelModel/VoxelModel";
 import SceneAddition from "./Components/SceneAddition/SceneAddition";
+import { OrbitControls } from "@react-three/drei";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
@@ -28,6 +29,7 @@ function App() {
       <MilkyWay />
       {!isMobile ? <VoxelModel /> : null}
       <Pager />
+      {/* <OrbitControls /> */}
     </Canvas>
   )
 }
