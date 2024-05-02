@@ -46,9 +46,9 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space}>
-                        <Canvas>
+                        {/* <Canvas>
                             <MobileModel model={2} />
-                        </Canvas>
+                        </Canvas> */}
                     </div>
                     <h2> Services </h2>
                     <Services mobile />
@@ -58,9 +58,9 @@ export default function MobileMain() {
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
                     <div className={s.model_space}>
-                        <Canvas>
+                        {/* <Canvas>
                             <MobileModel model={3} />
-                        </Canvas>
+                        </Canvas> */}
                     </div>
                     <Industries mobile />
                 </div>

@@ -35,20 +35,20 @@ export default function MobileModel({ model }) {
     return (
         <>
             {
-                // <Instances
-                //     limit={COUNT}
-                //     range={COUNT}
-                //     geometry={geometry}
-                //     position={modelsCoords[model].position}
-                //     rotation={modelsCoords[model].rotation}
-                // >
-                //     <meshMatcapMaterial
-                //         matcap={matcapTexture}
-                //     />
-                //     {Array(COUNT).fill().map((_, idx) => 
-                //         <VoxelMobile key={idx} index={idx} model={model} />
-                //     )}
-                // </Instances >
+                <Instances
+                    limit={COUNT}
+                    range={COUNT}
+                    geometry={geometry}
+                    position={modelsCoords[model].position}
+                    rotation={modelsCoords[model].rotation}
+                >
+                    <meshMatcapMaterial
+                        matcap={matcapTexture}
+                    />
+                    {Array(COUNT).fill().map((_, idx) =>
+                        <VoxelMobile key={idx} index={idx} model={model} />
+                    )}
+                </Instances >
             }
 
         </>
