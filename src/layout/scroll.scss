@@ -1,24 +1,16 @@
 @import '../global/variable.scss';
 
 .mobile_scroll {
-    &.trackYVisible {
-        .ScrollbarsCustom-Track {
-            opacity: 1;
-        }
+    .ScrollbarsCustom-Wrapper {
+        inset: 0px 0px 0px 0px !important;
     }
 
     .ScrollbarsCustom-Track {
-        width: 5px !important;
-        background-color: $color-neutral-50 !important;
-        opacity: 0;
-        transition: all ease-out 300ms;
-        transition-delay: 100ms;
-        right: 0;
+        width: 4px !important;
     }
 
     .ScrollbarsCustom-Thumb {
         background-color: $color-primary !important;
-        width: 5px !important;
-        transition: all ease-in-out 300ms;
+        width: 3px !important;
     }
 }
