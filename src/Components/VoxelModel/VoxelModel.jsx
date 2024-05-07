@@ -27,20 +27,20 @@ export default function VoxelModel() {
 
     const modelCoords = [
         {
-            position: [6, -0.5, -8],
-            rotation: [0, 0.6, 0.1]
+            position: [6, -0.25, -8],
+            rotation: [0, 0.6, 0]
         },
         {
-            position: [-6, -0.4, -3.6],
-            rotation: [-0.04, 0, 0]
+            position: [-6, 0, -6],
+            rotation: [0, 0, 0]
         },
         {
-            position: [7, -0.4, -5.5],
-            rotation: [-0.02, 0.4, 0]
+            position: [7, -0.5, -8],
+            rotation: [0, 0.6, 0]
         },
         {
-            position: [-7.4, 0.5, -6.7],
-            rotation: [0.08, 0.13, 0]
+            position: [-7, 0, -10],
+            rotation: [0, 0, 0]
         }
     ]
 
@@ -56,13 +56,13 @@ export default function VoxelModel() {
             if (inst && voxelsData[activeModel]) {
                 const targetPosition = new Vector3(
                     voxelsData[activeModel][idx * 3]
-                    // + modelCoords[activeModel].position[0]
+                    + modelCoords[activeModel].position[0]
                     ,
                     voxelsData[activeModel][idx * 3 + 1]
-                    // + modelCoords[activeModel].position[1]
+                    + modelCoords[activeModel].position[1]
                     ,
                     voxelsData[activeModel][idx * 3 + 2]
-                    // + modelCoords[activeModel].position[2]
+                    + modelCoords[activeModel].position[2]
                 );
                 const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
                 const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
@@ -74,7 +74,7 @@ export default function VoxelModel() {
                 isBoom ?
                     easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
                     easing.damp3(inst.scale, targetScale, 0.5, delta)
-                // && easing.damp3(inst.rotation, targetRotation, 0.5, delta);
+                && easing.damp3(inst.rotation, targetRotation, 0.5, delta);
             }
         });
     });
@@ -109,23 +109,22 @@ export default function VoxelModel() {
             }
         });
     });
-
-    const test = useControls({
-        positionX: 6,
-        positionY: -0.65,
-        positionZ: -5.5,
-        rotationX: 0,
-        rotationY: 0.6,
-        rotationZ: 0.1,
-    })
+    // const test = useControls({
+    //     positionX: 7,
+    //     positionY: -0.5,
+    //     positionZ: -8,
+    //     rotationX: 0,
+    //     rotationY: 0.6,
+    //     rotationZ: 0,
+    // })
 
     return (
         <Instances
             limit={COUNT}
             range={COUNT}
             geometry={geometry}
-            position={[test.positionX, test.positionY, test.positionZ]}
-            rotation={[test.rotationX, test.rotationY, test.rotationZ]}
+            // position={[test.positionX, test.positionY, test.positionZ]}
+            // rotation={[test.rotationX, test.rotationY, test.rotationZ]}
         >
             <meshMatcapMaterial
                 matcap={matcapTexture}

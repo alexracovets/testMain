@@ -3,8 +3,8 @@ import randomGaussian from "./randomGaussian";
 const getMilkyWayPoints = (count) => {
     const points = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
-    const MIN_RADIUS = 10;
-    const MAX_RADIUS = 15;
+    const MIN_RADIUS = 15;
+    const MAX_RADIUS = 20;
     const DEPTH = 8;
 
     for (let i = 0; i < count; i++) {
