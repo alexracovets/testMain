@@ -1,11 +1,8 @@
-import { Canvas } from '@react-three/fiber';
-
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
 import Strengths from '../../Components/Strengths/Strengths';
 import UI_Button from "../../Components/UI_Button/UI_Button";
 import Industries from '../../Components/Industries/Industries';
-import MobileModel from '../../Components/MobileModel/MobileModel';
 import Developments from "../../Components/Developments/Developments";
 
 import s from './MobileMain.module.scss';
@@ -17,9 +14,6 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space}>
-                        <Canvas>
-                            <MobileModel model={0} />
-                        </Canvas>
                     </div>
                     <h1>Reliable partner in</h1>
                     <Fliper />
@@ -46,9 +40,6 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space}>
-                        {/* <Canvas>
-                            <MobileModel model={2} />
-                        </Canvas> */}
                     </div>
                     <h2> Services </h2>
                     <Services mobile />
@@ -58,9 +49,6 @@ export default function MobileMain() {
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
                     <div className={s.model_space}>
-                        {/* <Canvas>
-                            <MobileModel model={3} />
-                        </Canvas> */}
                     </div>
                     <Industries mobile />
                 </div>
