@@ -53,10 +53,13 @@ export default function VoxelModel() {
     }, [activeModel])
 
     useFrame((state, delta) => {
-        const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
-        const targetPosition = new Vector3(modelCoords[activeModel].position[0], modelCoords[activeModel].position[1], modelCoords[activeModel].position[2]);
-        mainInstances && easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
-        mainInstances && easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
+        if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
+            const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
+            const targetPosition = new Vector3(modelCoords[activeModel].position[0], modelCoords[activeModel].position[1], modelCoords[activeModel].position[2]);
+            easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
+            easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
+        }
+
         instances.current.children.forEach((inst, idx) => {
             if (inst && voxelsData[activeModel]) {
                 const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
