@@ -3,14 +3,17 @@ import { TextureLoader, Vector3 } from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
-import { easing } from 'maath'
+import { easing } from 'maath';
 // import Voxel from "./Voxel/Voxel";
-import voxelsData from './voxel2.json';
+
 const matcap = '/3.png';
 const COUNT = 1000;
-import useActiveModel from "../../store/useActiveModel";
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
+
+import voxelsData from './voxel2.json';
+import useActiveModel from "../../store/useActiveModel";
+import { useControls } from "leva";
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
@@ -21,6 +24,26 @@ export default function VoxelModel() {
     const [isBoom, setIsBoom] = useState(false);
     const [animationStart, setAnimationStart] = useState(false);
     const startTime = useRef(0);
+
+    const modelCoords = [
+        {
+            position: [6, -0.5, -8],
+            rotation: [0, 0.6, 0.1]
+        },
+        {
+            position: [-6, -0.4, -3.6],
+            rotation: [-0.04, 0, 0]
+        },
+        {
+            position: [7, -0.4, -5.5],
+            rotation: [-0.02, 0.4, 0]
+        },
+        {
+            position: [-7.4, 0.5, -6.7],
+            rotation: [0.08, 0.13, 0]
+        }
+    ]
+
     useEffect(() => {
         setIsBoom(true);
         setTimeout(() => {
@@ -32,27 +55,26 @@ export default function VoxelModel() {
         instances.current.children.forEach((inst, idx) => {
             if (inst && voxelsData[activeModel]) {
                 const targetPosition = new Vector3(
-                    voxelsData[activeModel][idx * 3],
-                    voxelsData[activeModel][idx * 3 + 1],
+                    voxelsData[activeModel][idx * 3]
+                    // + modelCoords[activeModel].position[0]
+                    ,
+                    voxelsData[activeModel][idx * 3 + 1]
+                    // + modelCoords[activeModel].position[1]
+                    ,
                     voxelsData[activeModel][idx * 3 + 2]
+                    // + modelCoords[activeModel].position[2]
                 );
-                const randomPosition = new Vector3(
-                    (Math.random() - 0.5) * 10,
-                    (Math.random() - 0.5) * 10,
-                    (Math.random() - 0.5) * 10,
-                );
+                const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
+                const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+                const targetScale = new Vector3(sizes[activeModel], sizes[activeModel], sizes[activeModel]);
 
-                const targetScale = new Vector3(
-                    sizes[activeModel],
-                    sizes[activeModel],
-                    sizes[activeModel]
-                );
                 isBoom ?
                     easing.damp3(inst.position, randomPosition, 0.3, delta) :
                     easing.damp3(inst.position, targetPosition, 0.5, delta);
                 isBoom ?
                     easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
-                    easing.damp3(inst.scale, targetScale, 0.5, delta);
+                    easing.damp3(inst.scale, targetScale, 0.5, delta)
+                // && easing.damp3(inst.rotation, targetRotation, 0.5, delta);
             }
         });
     });
@@ -66,11 +88,7 @@ export default function VoxelModel() {
         let elapsedTime = state.clock.elapsedTime - startTime.current;
         instancesItem.current.children.forEach((inst) => {
 
-            const initialPosition = new Vector3(
-                0,
-                0,
-                0
-            );
+            const initialPosition = new Vector3(0, 0, 0);
 
             if (elapsedTime < 1) {
                 let xMove = Math.random() < 0.3;
@@ -81,11 +99,7 @@ export default function VoxelModel() {
                 let moveY = yMove ? (Math.random() < 0.5 ? step : -step) : 0;
                 let moveZ = zMove ? (Math.random() < 0.5 ? step : -step) : 0;
 
-                const newPosition = new Vector3(
-                    initialPosition.x + moveX,
-                    initialPosition.y + moveY,
-                    initialPosition.z + moveZ
-                );
+                const newPosition = new Vector3(initialPosition.x + moveX, initialPosition.y + moveY, initialPosition.z + moveZ);
 
                 easing.damp3(inst.position, newPosition, 3, delta);
             } else if (elapsedTime >= 1 && elapsedTime < 1.1) {
@@ -96,11 +110,22 @@ export default function VoxelModel() {
         });
     });
 
+    const test = useControls({
+        positionX: 6,
+        positionY: -0.65,
+        positionZ: -5.5,
+        rotationX: 0,
+        rotationY: 0.6,
+        rotationZ: 0.1,
+    })
+
     return (
         <Instances
             limit={COUNT}
             range={COUNT}
             geometry={geometry}
+            position={[test.positionX, test.positionY, test.positionZ]}
+            rotation={[test.rotationX, test.rotationY, test.rotationZ]}
         >
             <meshMatcapMaterial
                 matcap={matcapTexture}
