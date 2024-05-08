@@ -6,6 +6,8 @@ import Industries from '../../Components/Industries/Industries';
 import Developments from "../../Components/Developments/Developments";
 
 import s from './MobileMain.module.scss';
+import { Canvas } from "@react-three/fiber";
+import VoxelModel from "../../Components/VoxelModel/VoxelModel";
 
 export default function MobileMain() {
 
@@ -14,6 +16,9 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space}>
+                        <Canvas>
+                            <VoxelModel />
+                        </Canvas>
                     </div>
                     <h1>Reliable partner in</h1>
                     <Fliper />
@@ -40,6 +45,9 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space}>
+                        <Canvas>
+                            <VoxelModel />
+                        </Canvas>
                     </div>
                     <h2> Services </h2>
                     <Services mobile />
@@ -49,11 +57,13 @@ export default function MobileMain() {
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
                     <div className={s.model_space}>
+                        <Canvas>
+                            <VoxelModel />
+                        </Canvas>
                     </div>
                     <Industries mobile />
                 </div>
             </section>
         </div>
-
     )
 }
