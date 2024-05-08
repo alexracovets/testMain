@@ -1,62 +1,126 @@
-import PropTypes from 'prop-types';
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TextureLoader, Vector3 } from "three";
-import { useEffect, useMemo, useRef } from "react";
-import { useLoader, useThree } from "@react-three/fiber";
-import { Instances } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
+
+import { easing } from 'maath'; 
 
 const matcap = '/3.png';
 const COUNT = 1000;
-import VoxelMobile from "./VoxelMobile/VoxelMobile";
-export default function MobileModel({ model }) {
-    const matcapTexture = useLoader(TextureLoader, matcap);
-    const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 2, .1), []);
-    const firstSection = useRef();
-    const { camera, size } = useThree();
+const sizes = [0.3, 0.38, 0.49, 0.54];
+const step = 5;
 
-    const modelsCoords = [
+import voxelsData from './voxel2.json';
+import useActiveModel from "../../store/useActiveModel";
+export default function MobileModel() {
+    const matcapTexture = useLoader(TextureLoader, matcap);
+    const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
+    const activeModel = useActiveModel(state => state.activeModel);
+
+    const mainInstances = useRef()
+    const instances = useRef({ children: [] });
+    const instancesItem = useRef({ children: [] });
+    const [isBoom, setIsBoom] = useState(false);
+    const [animationStart, setAnimationStart] = useState(false);
+    const startTime = useRef(0);
+
+    const modelCoords = [
         {
-            position: [0, 0, -3],
-            rotation: [0.19, -1.87, -0.02]
+            position: [6, -0.25, -8],
+            rotation: [0, 0.6, 0]
         },
         {
-            position: [0, 0, 0],
+            position: [-6, 0, -6],
             rotation: [0, 0, 0]
         },
         {
-            position: [0, 0.16, -3.5],
-            rotation: [0.01, 1.05, -0.03]
+            position: [7, -0.5, -8],
+            rotation: [0, 0.6, 0]
         },
         {
-            position: [0, 1, -5.5],
-            rotation: [0.01, 1.54, 0.02]
+            position: [-7, 0, -10],
+            rotation: [0, 0, 0]
         }
     ]
 
-    return (
-        <>
-            {
-                <Instances
-                    ref={firstSection}
-                    limit={COUNT}
-                    range={COUNT}
-                    geometry={geometry}
-                    position={modelsCoords[model].position}
-                    rotation={modelsCoords[model].rotation}
-                >
-                    <meshMatcapMaterial
-                        matcap={matcapTexture}
-                    />
-                    {Array(COUNT).fill().map((_, idx) =>
-                        <VoxelMobile key={idx} index={idx} model={model} />
-                    )}
-                </Instances >
+    useEffect(() => {
+        setIsBoom(true);
+        setTimeout(() => {
+            setIsBoom(false);
+        }, 300);
+    }, [activeModel])
+
+    useFrame((state, delta) => {
+        if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
+            const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
+            const targetPosition = new Vector3(modelCoords[activeModel].position[0], modelCoords[activeModel].position[1], modelCoords[activeModel].position[2]);
+            easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
+            easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
+        }
+
+        instances.current.children.forEach((inst, idx) => {
+            if (inst && voxelsData[activeModel]) {
+                const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
+                const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+                const targetScale = new Vector3(sizes[activeModel], sizes[activeModel], sizes[activeModel]);
+
+                isBoom ?
+                    easing.damp3(inst.position, randomPosition, 0.3, delta) :
+                    easing.damp3(inst.position, targetPosition, 0.5, delta);
+                isBoom ?
+                    easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
+                    easing.damp3(inst.scale, targetScale, 0.5, delta)
             }
+        });
+    });
 
-        </>
+    useFrame((state, delta) => {
+        if (!animationStart) {
+            setAnimationStart(true);
+            startTime.current = state.clock.elapsedTime;
+        }
+
+        let elapsedTime = state.clock.elapsedTime - startTime.current;
+        instancesItem.current.children.forEach((inst) => {
+
+            const initialPosition = new Vector3(0, 0, 0);
+
+            if (elapsedTime < 1) {
+                let xMove = Math.random() < 0.3;
+                let yMove = xMove && Math.random() < 0.3;
+                let zMove = yMove && Math.random() < 0.3;
+
+                let moveX = xMove ? (Math.random() < 0.5 ? step : -step) : 0;
+                let moveY = yMove ? (Math.random() < 0.5 ? step : -step) : 0;
+                let moveZ = zMove ? (Math.random() < 0.5 ? step : -step) : 0;
+
+                const newPosition = new Vector3(initialPosition.x + moveX, initialPosition.y + moveY, initialPosition.z + moveZ);
+
+                easing.damp3(inst.position, newPosition, 3, delta);
+            } else if (elapsedTime >= 1 && elapsedTime < 1.1) {
+                easing.damp3(inst.position, initialPosition, 3, delta);
+            } else {
+                setAnimationStart(false);
+            }
+        });
+    });
+
+    return (
+        <Instances
+            limit={COUNT}
+            range={COUNT}
+            geometry={geometry}
+            ref={mainInstances}
+        >
+            <meshMatcapMaterial
+                matcap={matcapTexture}
+            />
+            {Array(COUNT).fill().map((_, idx) =>
+                <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
+                    <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
+                </group>
+            )}
+        </Instances>
     )
-}
-
-MobileModel.propTypes = {
-    model: PropTypes.number
-}
+} 
