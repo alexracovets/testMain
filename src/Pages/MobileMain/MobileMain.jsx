@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
 import Strengths from '../../Components/Strengths/Strengths';
@@ -8,12 +10,17 @@ import Developments from "../../Components/Developments/Developments";
 import s from './MobileMain.module.scss';
 
 export default function MobileMain() {
-
+    const firstRef = useRef(null);
+    // useEffect(() => {
+    //     if (firstRef) {
+    //         console.log(firstRef.current.clientHeight)
+    //     }
+    // }, [firstRef])
     return (
-        <div className={s.wrapper}>
+        <div className={s.wrapper} ref={firstRef} >
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space}>
+                    <div className={s.model_space} >
                     </div>
                     <h1>Reliable partner in</h1>
                     <Fliper />

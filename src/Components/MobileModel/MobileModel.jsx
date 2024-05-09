@@ -1,45 +1,48 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TextureLoader, Vector3 } from "three";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
-
-import { easing } from 'maath'; 
+import { easing } from 'maath';
 
 const matcap = '/3.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
 
-import voxelsData from './voxel2.json';
-import useActiveModel from "../../store/useActiveModel";
+import voxelsData from './voxel.json';
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+
 export default function MobileModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
-    const activeModel = useActiveModel(state => state.activeModel);
-
-    const mainInstances = useRef()
-    const instances = useRef({ children: [] });
-    const instancesItem = useRef({ children: [] });
-    const [isBoom, setIsBoom] = useState(false);
+    const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
+    const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
     const [animationStart, setAnimationStart] = useState(false);
+    const instancesItem = useRef({ children: [] });
+    const instances = useRef({ children: [] });
+    const [isBoom, setIsBoom] = useState(false);
+    const { size, viewport } = useThree();
+    const mainInstances = useRef();
     const startTime = useRef(0);
-
+    const activeModel = 0;
+    const testWraperSize = 150;
+    console.log(scrollDistance)
     const modelCoords = [
         {
-            position: [6, -0.25, -8],
+            position: [0, (testWraperSize / size.height) * viewport.height + ((currentPercentage / 100) * scrollDistance / size.height) * viewport.height*2, -8],
             rotation: [0, 0.6, 0]
         },
         {
-            position: [-6, 0, -6],
+            position: [0, 0, -6],
             rotation: [0, 0, 0]
         },
         {
-            position: [7, -0.5, -8],
+            position: [0, -0.5, -8],
             rotation: [0, 0.6, 0]
         },
         {
-            position: [-7, 0, -10],
+            position: [0, 0, -10],
             rotation: [0, 0, 0]
         }
     ]
@@ -49,7 +52,7 @@ export default function MobileModel() {
         setTimeout(() => {
             setIsBoom(false);
         }, 300);
-    }, [activeModel])
+    }, [activeModel]);
 
     useFrame((state, delta) => {
         if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
@@ -112,6 +115,7 @@ export default function MobileModel() {
             range={COUNT}
             geometry={geometry}
             ref={mainInstances}
+            scale={size.width / 800}
         >
             <meshMatcapMaterial
                 matcap={matcapTexture}

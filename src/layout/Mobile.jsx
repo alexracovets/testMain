@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
-import { Scrollbar } from "react-scrollbars-custom";
+import RSC from "react-scrollbars-custom";
+import useStoreMobileScroll from '../store/useStoreMobileScroll';
 
 import './scroll.scss';
 export default function Mobile() {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 744);
     const navigate = useNavigate();
+    const scrollRef = useRef(null)
+    const getScroll = useStoreMobileScroll((state) => state.getScroll);
 
     useEffect(() => {
         setIsDesktop(window.innerWidth > 744);
@@ -23,15 +26,15 @@ export default function Mobile() {
         if (isDesktop) {
             navigate('/');
         }
-    }, [isDesktop, navigate])
+    }, [isDesktop, navigate]);
 
     return (
-        <Scrollbar className={'mobile_scroll'}>
+        <RSC className={'mobile_scroll'} ref={scrollRef} onScroll={(scrollRef) => getScroll(scrollRef)}>
             <Header />
             <main>
                 <Outlet />
             </main>
             <Footer />
-        </Scrollbar>
+        </RSC>
     )
 }

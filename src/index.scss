@@ -1,6 +1,8 @@
 @import './global/variable.scss';
 
 * {
+    width: auto;
+    height: auto;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -74,7 +76,6 @@ html {
     }
 }
 
-canvas{
-    width: 100%;
-    height: 100%;
+canvas {
+    width: 100%; 
 }
