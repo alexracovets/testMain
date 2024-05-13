@@ -11,16 +11,16 @@ import s from './MobileMain.module.scss';
 
 export default function MobileMain() {
     const firstRef = useRef(null);
-    // useEffect(() => {
-    //     if (firstRef) {
-    //         console.log(firstRef.current.clientHeight)
-    //     }
-    // }, [firstRef])
+    useEffect(() => {
+        if (firstRef) {
+            console.log(firstRef.current.offsetTop)
+        }
+    }, [firstRef])
     return (
-        <div className={s.wrapper} ref={firstRef} >
+        <div className={s.wrapper} >
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space} >
+                    <div className={s.model_space} ref={firstRef} >
                     </div>
                     <h1>Reliable partner in</h1>
                     <Fliper />
@@ -46,7 +46,7 @@ export default function MobileMain() {
             </section>
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space}>
+                    <div className={s.model_space}     >
                     </div>
                     <h2> Services </h2>
                     <Services mobile />
@@ -55,7 +55,7 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
-                    <div className={s.model_space}>
+                    <div className={s.model_space} >
                     </div>
                     <Industries mobile />
                 </div>

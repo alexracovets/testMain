@@ -1,17 +1,10 @@
 import s from './Footer.module.scss';
 import Socials from '../Socials/Socials';
 import LangsSwither from '../LangsSwither/LangsSwither';
-import { useEffect, useRef } from 'react';
 export default function Footer() {
-    const footerRef = useRef(null);
-    useEffect(() => {
-        if (footerRef) {
-            console.log(footerRef.current.clientHeight)
-        }
-    }, [footerRef])
 
     return (
-        <footer ref={footerRef}>
+        <footer>
             <div className={s.wrapper}>
                 <div className={s.footer}>
                     <LangsSwither />

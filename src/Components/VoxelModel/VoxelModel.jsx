@@ -6,7 +6,8 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 import { easing } from 'maath';
 // import Voxel from "./Voxel/Voxel";
 
-const matcap = '/3.png';
+const matcap = '/default.png';
+// const matcap = '/04.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
@@ -16,8 +17,29 @@ import useActiveModel from "../../store/useActiveModel";
 import { useControls } from "leva";
 export default function VoxelModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
+    const [currentTexture, setCurrentTexture] = useState(matcapTexture);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
     const activeModel = useActiveModel(state => state.activeModel);
+
+    const options = {
+        'default': 'default',
+        '353535_CFCFCF_828282_A4A4A4': '353535_CFCFCF_828282_A4A4A4',
+        '3B3B3B_C7C7C7_878787_A4A4A4': '3B3B3B_C7C7C7_878787_A4A4A4',
+        '464543_D1CFC1_8E8C83_A4AC9C': '464543_D1CFC1_8E8C83_A4AC9C',
+        '050505_747474_4C4C4C_333333': '050505_747474_4C4C4C_333333'
+    };
+
+    const selectMaterial = useControls({
+        material: {
+            options: options,
+        }
+    })
+    useEffect(() => {
+        const loader = new TextureLoader();
+        loader.load(`/${selectMaterial.material}.png`, (texture) => {
+            setCurrentTexture(texture);
+        });
+    }, [selectMaterial]);
 
     const mainInstances = useRef()
     const instances = useRef({ children: [] });
@@ -125,7 +147,7 @@ export default function VoxelModel() {
         // rotation={[test.rotationX, test.rotationY, test.rotationZ]}
         >
             <meshMatcapMaterial
-                matcap={matcapTexture}
+                matcap={currentTexture}
             />
             {/* {Array(COUNT).fill().map((_, idx) =>
                 <Voxel

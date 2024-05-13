@@ -8,7 +8,7 @@ import { easing } from 'maath';
 const matcap = '/3.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
-const step = 5;
+// const step = 5;
 
 import voxelsData from './voxel.json';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
@@ -18,34 +18,13 @@ export default function MobileModel() {
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
     const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
     const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
-    const [animationStart, setAnimationStart] = useState(false);
+    // const [animationStart, setAnimationStart] = useState(false);
     const instancesItem = useRef({ children: [] });
     const instances = useRef({ children: [] });
     const [isBoom, setIsBoom] = useState(false);
     const { size, viewport } = useThree();
     const mainInstances = useRef();
-    const startTime = useRef(0);
     const activeModel = 0;
-    const testWraperSize = 150;
-    console.log(scrollDistance)
-    const modelCoords = [
-        {
-            position: [0, (testWraperSize / size.height) * viewport.height + ((currentPercentage / 100) * scrollDistance / size.height) * viewport.height*2, -8],
-            rotation: [0, 0.6, 0]
-        },
-        {
-            position: [0, 0, -6],
-            rotation: [0, 0, 0]
-        },
-        {
-            position: [0, -0.5, -8],
-            rotation: [0, 0.6, 0]
-        },
-        {
-            position: [0, 0, -10],
-            rotation: [0, 0, 0]
-        }
-    ]
 
     useEffect(() => {
         setIsBoom(true);
@@ -53,14 +32,12 @@ export default function MobileModel() {
             setIsBoom(false);
         }, 300);
     }, [activeModel]);
-
+    const containerDistance = 1972;
     useFrame((state, delta) => {
-        if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
-            const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
-            const targetPosition = new Vector3(modelCoords[activeModel].position[0], modelCoords[activeModel].position[1], modelCoords[activeModel].position[2]);
-            easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
-            easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
-        }
+        const modelYPosition = -viewport.height / 2 + (((currentPercentage / 100) * scrollDistance - containerDistance) / size.height) * viewport.height * 2;
+
+        const targetPosition = new Vector3(0, modelYPosition, -8);
+        easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
 
         instances.current.children.forEach((inst, idx) => {
             if (inst && voxelsData[activeModel]) {
@@ -78,36 +55,36 @@ export default function MobileModel() {
         });
     });
 
-    useFrame((state, delta) => {
-        if (!animationStart) {
-            setAnimationStart(true);
-            startTime.current = state.clock.elapsedTime;
-        }
+    // useFrame((state, delta) => {
+    //     if (!animationStart) {
+    //         setAnimationStart(true);
+    //         startTime.current = state.clock.elapsedTime;
+    //     }
 
-        let elapsedTime = state.clock.elapsedTime - startTime.current;
-        instancesItem.current.children.forEach((inst) => {
+    //     let elapsedTime = state.clock.elapsedTime - startTime.current;
+    //     instancesItem.current.children.forEach((inst) => {
 
-            const initialPosition = new Vector3(0, 0, 0);
+    //         const initialPosition = new Vector3(0, 0, 0);
 
-            if (elapsedTime < 1) {
-                let xMove = Math.random() < 0.3;
-                let yMove = xMove && Math.random() < 0.3;
-                let zMove = yMove && Math.random() < 0.3;
+    //         if (elapsedTime < 1) {
+    //             let xMove = Math.random() < 0.3;
+    //             let yMove = xMove && Math.random() < 0.3;
+    //             let zMove = yMove && Math.random() < 0.3;
 
-                let moveX = xMove ? (Math.random() < 0.5 ? step : -step) : 0;
-                let moveY = yMove ? (Math.random() < 0.5 ? step : -step) : 0;
-                let moveZ = zMove ? (Math.random() < 0.5 ? step : -step) : 0;
+    //             let moveX = xMove ? (Math.random() < 0.5 ? step : -step) : 0;
+    //             let moveY = yMove ? (Math.random() < 0.5 ? step : -step) : 0;
+    //             let moveZ = zMove ? (Math.random() < 0.5 ? step : -step) : 0;
 
-                const newPosition = new Vector3(initialPosition.x + moveX, initialPosition.y + moveY, initialPosition.z + moveZ);
+    //             const newPosition = new Vector3(initialPosition.x + moveX, initialPosition.y + moveY, initialPosition.z + moveZ);
 
-                easing.damp3(inst.position, newPosition, 3, delta);
-            } else if (elapsedTime >= 1 && elapsedTime < 1.1) {
-                easing.damp3(inst.position, initialPosition, 3, delta);
-            } else {
-                setAnimationStart(false);
-            }
-        });
-    });
+    //             easing.damp3(inst.position, newPosition, 3, delta);
+    //         } else if (elapsedTime >= 1 && elapsedTime < 1.1) {
+    //             easing.damp3(inst.position, initialPosition, 3, delta);
+    //         } else {
+    //             setAnimationStart(false);
+    //         }
+    //     });
+    // });
 
     return (
         <Instances
