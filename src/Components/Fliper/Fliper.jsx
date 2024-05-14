@@ -5,24 +5,23 @@ import { ALPHA } from "react-split-flap-display/constants";
 const sentences = [
     'SOFTWARE   DEVELOPMENT',
     'AR VR XR   DEVELOPMENT',
-    'INTERACTIVE WEB DEV   ',
+    'INTERACTIVEWEB DEV   ',
     'DIGITAL    MARKETING  '
 ];
 
-import './fliper.scss';
-
+import s from './fliper.module.scss';
 export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 
     useEffect(() => {
         setInterval(() => {
             setActiveSentences((prev) => (prev + 1) % sentences.length)
-        }, 10000);
+        }, 1000000);
     }, []);
 
     return (
         <SplitFlapDisplay
-            className="flip"
+            className={s.flip}
             characterSet={ALPHA}
             step={100}
             value={sentences[activeSentences]}

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
@@ -7,21 +7,63 @@ import UI_Button from "../../Components/UI_Button/UI_Button";
 import Industries from '../../Components/Industries/Industries';
 import Developments from "../../Components/Developments/Developments";
 
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+
 import s from './MobileMain.module.scss';
 
 export default function MobileMain() {
-    const firstRef = useRef(null);
+    const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
+    const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
+    const firstSection = useRef(null);
+    const secondSection = useRef(null);
+    const thirdSection = useRef(null);
+
+    const [isVisibleFirst, setVisibleFirst] = useState(false);
+    const [isVisibleSecond, setVisibleSecond] = useState(false);
+    const [isVisibleThird, setVisibleThird] = useState(false);
+
     useEffect(() => {
-        if (firstRef) {
-            console.log(firstRef.current.offsetTop)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.target === firstSection.current) {
+                    setVisibleFirst(entry.isIntersecting);
+                } else if (entry.target === secondSection.current) {
+                    setVisibleSecond(entry.isIntersecting);
+                } else if (entry.target === thirdSection.current) {
+                    setVisibleThird(entry.isIntersecting);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (firstSection.current) observer.observe(firstSection.current);
+        if (secondSection.current) observer.observe(secondSection.current);
+        if (thirdSection.current) observer.observe(thirdSection.current);
+
+        return () => {
+            if (firstSection.current) observer.unobserve(firstSection.current);
+            if (secondSection.current) observer.unobserve(secondSection.current);
+            if (thirdSection.current) observer.unobserve(thirdSection.current);
+        };
+    }, []);
+    useEffect(() => {
+        if (isVisibleFirst) {
+            getPageHeight(firstSection.current.offsetTop);
+            setActiveModel(0);
+        } else if (isVisibleSecond) {
+            getPageHeight(secondSection.current.offsetTop);
+            setActiveModel(2);
+        } else if (isVisibleThird) {
+            getPageHeight(thirdSection.current.offsetTop);
+            setActiveModel(3);
         }
-    }, [firstRef])
+
+    }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight]);
+
     return (
-        <div className={s.wrapper} >
+        <div className={s.wrapper}  >
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space} ref={firstRef} >
-                    </div>
+                    <div className={s.model_space} ref={firstSection}></div>
                     <h1>Reliable partner in</h1>
                     <Fliper />
                     <div className={s.btn}>
@@ -46,8 +88,7 @@ export default function MobileMain() {
             </section>
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space}     >
-                    </div>
+                    <div className={s.model_space} ref={secondSection}></div>
                     <h2> Services </h2>
                     <Services mobile />
                 </div>
@@ -55,8 +96,7 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
-                    <div className={s.model_space} >
-                    </div>
+                    <div className={s.model_space} ref={thirdSection}></div>
                     <Industries mobile />
                 </div>
             </section>
