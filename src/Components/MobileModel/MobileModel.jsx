@@ -41,12 +41,12 @@ export default function MobileModel() {
             mainInstances.current.geometry.computeBoundingBox();
             const box = mainInstances.current.geometry.boundingBox;
             const height = box.max.y - box.min.y;
-            const modelYPosition = viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight)) * viewport.height) / size.height)
-            const targetPosition = new Vector3(0, modelYPosition, -1);
-            const targetRotation = new Vector3(0, 1.1, 0);
+            const modelYPosition = viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height)
+            const targetPosition = new Vector3(0, modelYPosition, 0);
+            const targetRotation = new Vector3(0, 1.1, 0); 
             easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
             easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
-
+        
             instances.current.children.forEach((inst, idx) => {
                 if (inst && voxelsData[activeModel]) {
                     const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
@@ -101,7 +101,7 @@ export default function MobileModel() {
             range={COUNT}
             geometry={geometry}
             ref={mainInstances}
-            scale={size.width / 2100}
+            scale={size.width / 2500}
         >
             {/* <Helper type={BoxHelper} visible={false} /> */}
             <meshMatcapMaterial matcap={matcapTexture} />
