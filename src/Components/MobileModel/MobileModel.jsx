@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Box3, BoxHelper, TextureLoader, Vector3 } from "three";
+import { TextureLoader, Vector3 } from "three";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Instances, Instance, Helper } from "@react-three/drei";
+import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
 import { easing } from 'maath';
 
@@ -12,6 +12,7 @@ const sizes = [0.3, 0.38, 0.49, 0.54];
 
 import voxelsData from './voxel.json';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+import IndustriesSlider from "../IndustriesSlider/IndustriesSlider";
 const step = 2;
 export default function MobileModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
@@ -28,7 +29,7 @@ export default function MobileModel() {
     const { size, viewport } = useThree();
     const mainInstances = useRef(null);
     const startTime = useRef(0);
-
+    const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
     useEffect(() => {
         setIsBoom(true);
         setTimeout(() => {
@@ -36,32 +37,38 @@ export default function MobileModel() {
         }, 300);
     }, [activeModel]);
 
-    useFrame((state, delta) => {
-        if (mainInstances && mainInstances.current) {
+    useEffect(() => {
+        if (mainInstances.current) {
             mainInstances.current.geometry.computeBoundingBox();
             const box = mainInstances.current.geometry.boundingBox;
             const height = box.max.y - box.min.y;
-            const modelYPosition = viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height)
-            const targetPosition = new Vector3(0, modelYPosition, 0);
-            const targetRotation = new Vector3(0, 1.1, 0); 
-            easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
-            easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
-        
-            instances.current.children.forEach((inst, idx) => {
-                if (inst && voxelsData[activeModel]) {
-                    const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
-                    const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
-                    const targetScale = new Vector3(sizes[activeModel], sizes[activeModel], sizes[activeModel]);
-
-                    isBoom ?
-                        easing.damp3(inst.position, randomPosition, 0.3, delta) :
-                        easing.damp3(inst.position, targetPosition, 0.5, delta);
-                    isBoom ?
-                        easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
-                        easing.damp3(inst.scale, targetScale, 0.5, delta)
-                }
-            });
+            setChangedPosition({
+                x: 0,
+                y: viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
+                z: 0
+            })
         }
+    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport, mainInstances]);
+
+    useFrame((state, delta) => {
+        const targetRotation = new Vector3(0, 1.1, 0);
+        easing.damp3(mainInstances.current.position, changedPosition, 0.5, delta);
+        easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
+
+        instances.current.children.forEach((inst, idx) => {
+            if (inst && voxelsData[activeModel]) {
+                const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
+                const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+                const targetScale = new Vector3(sizes[activeModel], sizes[activeModel], sizes[activeModel]);
+
+                isBoom ?
+                    easing.damp3(inst.position, randomPosition, 0.3, delta) :
+                    easing.damp3(inst.position, targetPosition, 0.5, delta);
+                isBoom ?
+                    easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
+                    easing.damp3(inst.scale, targetScale, 0.5, delta)
+            }
+        });
     });
 
     useFrame((state, delta) => {
@@ -94,22 +101,32 @@ export default function MobileModel() {
             }
         });
     });
-
     return (
-        <Instances
-            limit={COUNT}
-            range={COUNT}
-            geometry={geometry}
-            ref={mainInstances}
-            scale={size.width / 2500}
-        >
-            {/* <Helper type={BoxHelper} visible={false} /> */}
-            <meshMatcapMaterial matcap={matcapTexture} />
-            {Array(COUNT).fill().map((_, idx) =>
-                <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
-                    <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
-                </group>
-            )}
-        </Instances>
+        <>
+            <Instances
+                limit={COUNT}
+                range={COUNT}
+                geometry={geometry}
+                ref={mainInstances}
+                scale={size.width / 2500}
+            >
+                <meshMatcapMaterial matcap={matcapTexture} />
+                {Array(COUNT).fill().map((_, idx) =>
+                    <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
+                        <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
+                    </group>
+                )}
+            </Instances>
+            <IndustriesSlider
+                position={changedPosition}
+                activeModel={activeModel}
+                currentPercentage={currentPercentage}
+                headerHeight={headerHeight}
+                pageHeight={pageHeight}
+                scrollDistance={scrollDistance}
+                sizeH={size.height}
+                viewportH={viewport.height}
+            />
+        </>
     )
 } 

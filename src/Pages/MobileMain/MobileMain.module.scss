@@ -33,6 +33,7 @@
             .model_space {
                 height: 31.25rem;
                 width: 100%;
+                pointer-events: none;
 
                 @media (max-width:$width-mobile) {
                     height: 13.5rem;
