@@ -9,7 +9,7 @@ const sentences = [
     'DIGITAL    MARKETING  '
 ];
 
-import s from './fliper.module.scss';
+import s from './Fliper.module.scss';
 export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 
