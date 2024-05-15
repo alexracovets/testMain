@@ -54,7 +54,7 @@ export default function IndustriesSlider() {
         e.stopPropagation();
         if (!dragging) return;
         const x = e.clientX;
-        const intesity = deviceWidth < 720 ? 20 : 50;
+        const intesity = deviceWidth < 720 ? 5 : 50;
         const diff = (startX - x) / intesity;
         const newRotation = rotation - diff;
         setRotation(newRotation);
@@ -104,22 +104,22 @@ export default function IndustriesSlider() {
 
     useFrame((state, delta) => {
         easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
-        const newRotation = rotation + (targetRotation.current - rotation) * 0.05;
-        setRotation(newRotation);
         if (!dragging) {
+            const newRotation = rotation + (targetRotation.current - rotation) * 0.05;
+            setRotation(newRotation);
             updateActiveSlide(newRotation);
         }
     });
     return (
         <mesh ref={sliderRef} scale={0.35}>
             <Plane
-                args={[20, 20]}
+                args={[10, 10]}
                 position={[0, 0, 0]}
                 onPointerLeave={onPointerUp}
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={onPointerUp}
-                visible={false}
+                visible={true}
             />
             <mesh
                 rotation={[0, rotation, 0]}
