@@ -87,9 +87,7 @@ export default function IndustriesSlider() {
     const normalizeAngle = (angle) => {
         const normalizedRadians = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
         const degrees = parseFloat((normalizedRadians * (180 / Math.PI)).toFixed(2));
-
         const currentSlide = normalizeSlideIndex(-degrees);
-        console.log("Current Slide Index:", currentSlide);
         setCurrentSlideIndex(currentSlide);
         return degrees;
     }

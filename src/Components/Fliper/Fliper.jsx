@@ -5,7 +5,7 @@ import { ALPHA } from "react-split-flap-display/constants";
 const sentences = [
     'SOFTWARE   DEVELOPMENT',
     'AR VR XR   DEVELOPMENT',
-    'INTERACTIVEWEB DEV   ',
+    'INTERACTIVEWEB DEV    ',
     'DIGITAL    MARKETING  '
 ];
 import './Fliper.scss'
