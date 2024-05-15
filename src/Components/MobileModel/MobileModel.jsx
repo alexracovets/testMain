@@ -117,16 +117,7 @@ export default function MobileModel() {
                     </group>
                 )}
             </Instances>
-            <IndustriesSlider
-                position={changedPosition}
-                activeModel={activeModel}
-                currentPercentage={currentPercentage}
-                headerHeight={headerHeight}
-                pageHeight={pageHeight}
-                scrollDistance={scrollDistance}
-                sizeH={size.height}
-                viewportH={viewport.height}
-            />
+            <IndustriesSlider />
         </>
     )
 } 

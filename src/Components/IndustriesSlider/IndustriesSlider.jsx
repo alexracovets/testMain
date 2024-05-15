@@ -17,8 +17,7 @@ const slides = [
     { image: './image/slider/6.jpg' }
 ];
 const slidesCount = 6;
-const sizeSlide = Math.PI * 2 / slidesCount;
-
+const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './IndustriesSlider.module.scss';
 import { Vector3 } from "three";
@@ -37,7 +36,7 @@ export default function IndustriesSlider() {
     const isDown = useRef(false);
     const startX = useRef(0);
     const progress = useRef(0);
-    const speedDrag = -0.3;
+    const speedDrag = 0.1;
 
 
     const handleDown = (e) => {
@@ -68,10 +67,20 @@ export default function IndustriesSlider() {
         })
     }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
 
+    function normalizeAngle(angle) {
+        const nearestAngle = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
+        return nearestAngle;
+    }
+
     useFrame((state, delta) => {
-        const rotationVector = new Vector3(0, progress.current, 0)
-        easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
-        easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
+        if (slidesRef.current) {
+            const normalizedAngle = normalizeAngle(progress.current);
+            const rotationVector = new Vector3(0, normalizedAngle, 0);
+            easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
+        }
+        if (sliderRef.current) {
+            easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
+        }
     });
 
     return (
@@ -91,7 +100,7 @@ export default function IndustriesSlider() {
                 ref={slidesRef}
             >
                 {slides.map((item, index) => (
-                    <Slide key={index} index={index} image={item.image} size={sizeSlide} activeModel={activeModel} />
+                    <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} activeModel={activeModel} />
                 ))}
             </mesh>
             <Html
