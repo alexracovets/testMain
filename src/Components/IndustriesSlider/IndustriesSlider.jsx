@@ -125,7 +125,7 @@ export default function IndustriesSlider() {
             <Html
                 as='div'
                 wrapperClass={s.count_360}
-                position={[-5, -4, 0]}
+                position={[-1, -3, 4]}
             >
                 <div className={s.wrapper}>
                     <div className={s.number_current}>{animatedValue}°</div>
