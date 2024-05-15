@@ -1,128 +1,93 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Html, Plane } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { events, useFrame, useThree } from "@react-three/fiber";
+import { usePrevious } from 'react-use'
 import PropTypes from 'prop-types';
 import { easing } from 'maath';
 
 import Slide from "./Slide/Slide";
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
-import s from './IndustriesSlider.module.scss';
-export default function IndustriesSlider() {
+const slides = [
+    { image: './image/slider/1.jpg' },
+    { image: './image/slider/2.jpg' },
+    { image: './image/slider/3.jpg' },
+    { image: './image/slider/4.jpg' },
+    { image: './image/slider/5.jpg' },
+    { image: './image/slider/6.jpg' }
+];
+const slidesCount = 6;
+const sizeSlide = Math.PI * 2 / slidesCount;
 
-    const targetRotation = useRef(0);
-    const [startX, setStartX] = useState(0);
-    const [rotation, setRotation] = useState(0);
-    const [dragging, setDragging] = useState(false);
-    const [activeSlide, setActiveSlide] = useState(0);
-    const [animatedValue, setAnimatedValue] = useState(0);
-    const [deviceWidth, setDeviceWidth] = useState(0);
-    const sliderRef = useRef();
-    const slidesCount = 6;
-    const sizeSlide = Math.PI * 2 / slidesCount;
-    const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
-    const { size, viewport } = useThree();
+
+import s from './IndustriesSlider.module.scss';
+import { Vector3 } from "three";
+export default function IndustriesSlider() {
     const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
     const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
     const headerHeight = useStoreMobileScroll((state) => state.headerHeight);
-    const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
     const activeModel = useStoreMobileScroll((state) => state.activeModel);
+    const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
+    const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
+    const [animatedValue, setAnimatedValue] = useState(0);
+    const { size, viewport } = useThree();
     const slidesRef = useRef(null);
+    const sliderRef = useRef();
 
-    const slides = [
-        { image: './image/slider/1.jpg' },
-        { image: './image/slider/2.jpg' },
-        { image: './image/slider/3.jpg' },
-        { image: './image/slider/4.jpg' },
-        { image: './image/slider/5.jpg' },
-        { image: './image/slider/6.jpg' }
-    ];
+    const [activePlane, setActivePlane] = useState(null);
+    const isDown = useRef(false);
+    const startX = useRef(0);
+    const progress = useRef(0);
+    const speedDrag = -0.3;
 
-    const updateActiveSlide = (rotation) => {
-        const normalizedRotation = (rotation % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
-        const slideIndex = slidesCount - Math.round(normalizedRotation / sizeSlide);
-        setActiveSlide(slideIndex % slidesCount);
-    };
 
-    const onPointerDown = (e) => {
-        e.stopPropagation();
-        setDragging(true);
-        setStartX(e.clientX);
-    };
+    const handleDown = (e) => {
+        e.stopPropagation()
+        isDown.current = true
+        startX.current = e.clientX || (e.touches && e.touches[0].clientX) || 0
+    }
 
-    const onPointerMove = (e) => {
-        e.stopPropagation();
-        if (!dragging) return;
-        const x = e.clientX;
-        const intesity = deviceWidth < 720 ? 5 : 50;
-        const diff = (startX - x) / intesity;
-        const newRotation = rotation - diff;
-        setRotation(newRotation);
-        targetRotation.current = newRotation;
-        setStartX(x);
-    };
+    const handleUp = (e) => {
+        e.stopPropagation()
+        isDown.current = false;
+    }
 
-    const onPointerUp = (e) => {
-        e.stopPropagation();
-        setDragging(false);
-        const finalRotation = Math.round(targetRotation.current / sizeSlide) * sizeSlide;
-        targetRotation.current = finalRotation;
-        updateActiveSlide(finalRotation);
-    };
-
-    const animateValue = (start, end, duration) => {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            setAnimatedValue(Math.floor(progress * (end - start) + start));
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    };
+    const handleMove = (e) => {
+        e.stopPropagation()
+        if (!isDown.current) return
+        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0
+        const mouseProgress = (x - startX.current) * speedDrag
+        progress.current = progress.current + mouseProgress
+        startX.current = x
+    }
 
     useEffect(() => {
-        setDeviceWidth(window.innerWidth)
-    }, []);
-
-    useEffect(() => {
-        const newValue = 60 * (activeSlide + 1);
-        animateValue(animatedValue, newValue, 500); // Animate over 500ms
-    }, [activeSlide, animatedValue]);
-    useEffect(() => {
-        if (slidesRef && slidesRef.current) {
-            setChangedPosition({
-                x: 0,
-                y: viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
-                z: 0
-            })
-        }
-
-    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport, slidesRef]);
+        setChangedPosition({
+            x: 0,
+            y: viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
+            z: 0
+        })
+    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
 
     useFrame((state, delta) => {
+        const rotationVector = new Vector3(0, progress.current, 0)
+        easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
-        if (!dragging) {
-            const newRotation = rotation + (targetRotation.current - rotation) * 0.05;
-            setRotation(newRotation);
-            updateActiveSlide(newRotation);
-        }
     });
+
     return (
         <mesh ref={sliderRef} scale={0.35}>
             <Plane
-                args={[10, 10]}
+                args={[10, 15]}
                 position={[0, 0, 0]}
-                onPointerLeave={onPointerUp}
-                onPointerDown={onPointerDown}
-                onPointerMove={onPointerMove}
-                onPointerUp={onPointerUp}
-                visible={true}
+                visible={false}
+                onPointerDown={handleDown}
+                onPointerUp={handleUp}
+                onPointerMove={handleMove}
+                onPointerLeave={handleUp}
+                onPointerCancel={handleUp}
             />
             <mesh
-                rotation={[0, rotation, 0]}
                 position={[0, 0, 0]}
                 ref={slidesRef}
             >
