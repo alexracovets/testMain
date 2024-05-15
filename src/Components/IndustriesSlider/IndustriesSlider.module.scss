@@ -1,34 +1,40 @@
+@import '../../global/variable.scss';
+
 .count_360 {
     display: block;
+
+    &.active .wrapper {
+        opacity: 1;
+    }
 
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
-        color: white;
-        font-family: "Orbitron", sans-serif;
+        font-family: $font-JB_Mono;
+        opacity: 0;
+        transition: all ease-in-out 400ms;
 
         .dash_line {
-            height: 1px;
-            width: 30px;
-            margin: 0 8px;
-            background-color: gray;
+            height: 0.4rem;
+            width: 2rem;
+            margin: 0 0.5rem;
+            background-color: $color-white;
         }
 
         .number_current,
         .number_360 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: -0.2rem;
         }
 
         .number_current {
-            color: #f1bda5;
-
+            color: $color-primary;
         }
 
         .number_360 {
-            color: gray;
+            color: $color-white;
         }
     }
 }

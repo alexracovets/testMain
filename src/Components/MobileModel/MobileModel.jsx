@@ -117,7 +117,7 @@ export default function MobileModel() {
                     </group>
                 )}
             </Instances>
-            {activeModel === 3 && <IndustriesSlider />}
+            <IndustriesSlider />
         </>
     )
 } 

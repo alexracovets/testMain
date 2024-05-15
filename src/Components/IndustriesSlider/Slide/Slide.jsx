@@ -29,7 +29,7 @@ export default function Slide({ index, image, size }) {
                     height: slideHeight,
                     duration: 0.4,
                     ease: "power1.out",
-                    delay: .4,
+                    delay: 1,
                     onUpdate: () => setAnimation({ theta: test.theta, height: test.height })
                 }, "<")
                 .to(test, {

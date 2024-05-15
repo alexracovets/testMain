@@ -27,9 +27,10 @@ export default function IndustriesSlider() {
     const activeModel = useStoreMobileScroll((state) => state.activeModel);
     const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
     const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
+    const [isActive, setIsActive] = useState(false);
     const { size, viewport } = useThree();
     const slidesRef = useRef(null);
-    const sliderRef = useRef();
+    const sliderRef = useRef(null);
 
     const isDown = useRef(false);
     const startX = useRef(0);
@@ -58,14 +59,6 @@ export default function IndustriesSlider() {
         startX.current = x
     }
 
-    useEffect(() => {
-        setChangedPosition({
-            x: 0,
-            y: viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
-            z: 0
-        })
-    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
-
     const animateValue = (start, end, duration) => {
         let startTimestamp = null;
         const step = (timestamp) => {
@@ -79,7 +72,7 @@ export default function IndustriesSlider() {
         window.requestAnimationFrame(step);
     };
 
-    function normalizeAngle(angle) {
+    const normalizeAngle = (angle) => {
         const normalizedRadians = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
         const degrees = parseFloat((normalizedRadians * (180 / Math.PI)).toFixed(2));
         const currentSlide = Math.floor(-degrees / 60) % slidesCount;
@@ -88,52 +81,66 @@ export default function IndustriesSlider() {
     }
 
     useEffect(() => {
-        animateValue(animatedValue, 60 + currentSlideIndex * 60, 500);
-    }, [currentSlideIndex])
+        setChangedPosition({
+            x: 0,
+            y: viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
+            z: 0
+        })
+    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
+
+
+    useEffect(() => setIsActive(activeModel === 3), [activeModel])
+    useEffect(() => animateValue(animatedValue, 60 + currentSlideIndex * 60, 500), [currentSlideIndex])
 
     useFrame((state, delta) => {
-        if (slidesRef.current) {
+        if (slidesRef.current && isActive) {
             const normalizedAngle = normalizeAngle(progress.current);
             const rotationVector = new Vector3(0, (-30 + normalizedAngle) * Math.PI / 180, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
-        if (sliderRef.current) {
+        if (sliderRef.current && isActive) {
             easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
         }
     });
-
     return (
-        <mesh ref={sliderRef} scale={0.4}>
-            <Plane
-                args={[10, 15]}
-                position={[0, 0, 0]}
-                visible={false}
-                onPointerDown={handleDown}
-                onPointerUp={handleUp}
-                onPointerMove={handleMove}
-                onPointerLeave={handleUp}
-                onPointerCancel={handleUp}
-            />
-            <mesh
-                position={[0, 0, 0]}
-                ref={slidesRef}
+        <mesh
+            ref={sliderRef}
+            scale={size.width / 2500}
+        >
+            <mesh scale={1.4}
             >
-                {slides.map((item, index) => (
-                    <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} activeModel={activeModel} />
-                ))}
+                <Plane
+                    args={[10, 15]}
+                    position={[0, 0, 0]}
+                    visible={false}
+                    onPointerDown={handleDown}
+                    onPointerUp={handleUp}
+                    onPointerMove={handleMove}
+                    onPointerLeave={handleUp}
+                    onPointerCancel={handleUp}
+                />
+                <mesh
+                    position={[0, 0, 0]}
+                    ref={slidesRef}
+                >
+                    {slides.map((item, index) => (
+                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} activeModel={activeModel} />
+                    ))}
+                </mesh>
+                <Html
+                    as='div'
+                    wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
+                    position={[-1.4, -3, 4]}
+                >
+                    <div className={s.wrapper}>
+                        <div className={s.number_current}>{animatedValue}°</div>
+                        <div className={s.dash_line}></div>
+                        <div className={s.number_360}>360°</div>
+                    </div>
+                </Html>
             </mesh>
-            <Html
-                as='div'
-                wrapperClass={s.count_360}
-                position={[-1, -3, 4]}
-            >
-                <div className={s.wrapper}>
-                    <div className={s.number_current}>{animatedValue}°</div>
-                    <div className={s.dash_line}></div>
-                    <div className={s.number_360}>360°</div>
-                </div>
-            </Html>
         </mesh>
+
     )
 }
 
