@@ -125,9 +125,9 @@ export default function IndustriesSlider() {
             <mesh scale={1.4}
             >
                 <Plane
-                    args={[10, 15]}
+                    args={[20, 30]}
                     position={[0, 0, 0]}
-                    visible={false}
+                    visible={true}
                     onPointerDown={handleDown}
                     onPointerUp={handleUp}
                     onPointerMove={handleMove}
