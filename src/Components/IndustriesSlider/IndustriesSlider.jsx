@@ -34,7 +34,6 @@ export default function IndustriesSlider() {
     const slidesRef = useRef(null);
     const sliderRef = useRef();
 
-    const [activePlane, setActivePlane] = useState(null);
     const isDown = useRef(false);
     const startX = useRef(0);
     const progress = useRef(0);
