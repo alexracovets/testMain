@@ -14,19 +14,20 @@
         font-family: $font-JB_Mono;
         opacity: 0;
         transition: all ease-in-out 400ms;
+        transform: translateY(150px);
 
         .dash_line {
-            height: 0.4rem;
-            width: 2rem;
-            margin: 0 0.5rem;
+            height: 0.2rem;
+            width: 1rem;
+            margin: 0 0.2rem;
             background-color: $color-white;
         }
 
         .number_current,
         .number_360 {
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            letter-spacing: -0.2rem;
+            letter-spacing: -0.1rem;
         }
 
         .number_current {

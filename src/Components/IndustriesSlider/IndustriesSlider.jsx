@@ -72,10 +72,24 @@ export default function IndustriesSlider() {
         window.requestAnimationFrame(step);
     };
 
+    const normalizeSlideIndex = (angle) => {
+        const fullRotation = 360; // повний оберт
+        const slideAngle = fullRotation / slidesCount; // кут одного слайду
+
+        // перетворення кута до нормалізованого в діапазоні від 0 до 359
+        const normalizedAngle = ((angle % fullRotation) + fullRotation) % fullRotation;
+
+        // обчислення індексу слайду
+        const slideIndex = Math.floor(normalizedAngle / slideAngle) % slidesCount;
+        return slideIndex;
+    }
+
     const normalizeAngle = (angle) => {
         const normalizedRadians = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
         const degrees = parseFloat((normalizedRadians * (180 / Math.PI)).toFixed(2));
-        const currentSlide = Math.floor(-degrees / 60) % slidesCount;
+
+        const currentSlide = normalizeSlideIndex(-degrees);
+        console.log("Current Slide Index:", currentSlide);
         setCurrentSlideIndex(currentSlide);
         return degrees;
     }
@@ -106,6 +120,7 @@ export default function IndustriesSlider() {
         <mesh
             ref={sliderRef}
             scale={size.width / 2500}
+            visible={isActive ? true : false}
         >
             <mesh scale={1.4}
             >
@@ -130,9 +145,11 @@ export default function IndustriesSlider() {
                 <Html
                     as='div'
                     wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                    position={[-1.4, -3, 4]}
+                    position={[0, 0, 4]}
+                    transform
+                    center
                 >
-                    <div className={s.wrapper}>
+                    <div className={s.wrapper} >
                         <div className={s.number_current}>{animatedValue}°</div>
                         <div className={s.dash_line}></div>
                         <div className={s.number_360}>360°</div>
