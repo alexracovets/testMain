@@ -124,7 +124,7 @@ export default function IndustriesSlider() {
                     ref={slidesRef}
                 >
                     {slides.map((item, index) => (
-                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} activeModel={activeModel} />
+                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} />
                     ))}
                 </mesh>
                 <Html
