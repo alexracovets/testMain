@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Html, Plane } from "@react-three/drei";
-import { events, useFrame, useThree } from "@react-three/fiber";
-import { usePrevious } from 'react-use'
+import { useFrame, useThree } from "@react-three/fiber";
 import PropTypes from 'prop-types';
 import { easing } from 'maath';
+import { Vector3 } from "three";
 
 import Slide from "./Slide/Slide";
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
@@ -20,7 +20,6 @@ const slidesCount = 6;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './IndustriesSlider.module.scss';
-import { Vector3 } from "three";
 export default function IndustriesSlider() {
     const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
     const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
@@ -28,7 +27,6 @@ export default function IndustriesSlider() {
     const activeModel = useStoreMobileScroll((state) => state.activeModel);
     const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
     const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
-    const [animatedValue, setAnimatedValue] = useState(0);
     const { size, viewport } = useThree();
     const slidesRef = useRef(null);
     const sliderRef = useRef();
@@ -36,8 +34,9 @@ export default function IndustriesSlider() {
     const isDown = useRef(false);
     const startX = useRef(0);
     const progress = useRef(0);
-    const speedDrag = 0.1;
-
+    const speedDrag = -0.1;
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [animatedValue, setAnimatedValue] = useState(0);
 
     const handleDown = (e) => {
         e.stopPropagation()
@@ -67,15 +66,35 @@ export default function IndustriesSlider() {
         })
     }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
 
+    const animateValue = (start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            setAnimatedValue(Math.floor(progress * (end - start) + start));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+
     function normalizeAngle(angle) {
-        const nearestAngle = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
-        return nearestAngle;
+        const normalizedRadians = Math.round(angle / nearestAngleMultiplier) * nearestAngleMultiplier;
+        const degrees = parseFloat((normalizedRadians * (180 / Math.PI)).toFixed(2));
+        const currentSlide = Math.floor(-degrees / 60) % slidesCount;
+        setCurrentSlideIndex(currentSlide);
+        return degrees;
     }
+
+    useEffect(() => {
+        animateValue(animatedValue, 60 + currentSlideIndex * 60, 500);
+    }, [currentSlideIndex])
 
     useFrame((state, delta) => {
         if (slidesRef.current) {
             const normalizedAngle = normalizeAngle(progress.current);
-            const rotationVector = new Vector3(0, normalizedAngle, 0);
+            const rotationVector = new Vector3(0, (-30 + normalizedAngle) * Math.PI / 180, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
         if (sliderRef.current) {
@@ -84,7 +103,7 @@ export default function IndustriesSlider() {
     });
 
     return (
-        <mesh ref={sliderRef} scale={0.35}>
+        <mesh ref={sliderRef} scale={0.4}>
             <Plane
                 args={[10, 15]}
                 position={[0, 0, 0]}
