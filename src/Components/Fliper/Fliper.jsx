@@ -8,8 +8,8 @@ const sentences = [
     'INTERACTIVEWEB DEV   ',
     'DIGITAL    MARKETING  '
 ];
-
-import s from './Fliper.scss';
+import './Fliper.scss'
+// import s from './Fliper.scss';
 export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 
