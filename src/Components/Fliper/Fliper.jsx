@@ -9,7 +9,7 @@ const sentences = [
     'DIGITAL    MARKETING  '
 ];
 
-import s from './Fliper.module.scss';
+import s from './Fliper.scss';
 export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 
@@ -21,7 +21,7 @@ export default function Fliper() {
 
     return (
         <SplitFlapDisplay
-            // className={s.flip}
+            className={'flip'}
             characterSet={ALPHA}
             step={100}
             value={sentences[activeSentences]}
