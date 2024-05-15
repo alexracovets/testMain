@@ -127,7 +127,7 @@ export default function IndustriesSlider() {
                 <Plane
                     args={[20, 30]}
                     position={[0, 0, 0]}
-                    visible={true}
+                    visible={false}
                     onPointerDown={handleDown}
                     onPointerUp={handleUp}
                     onPointerMove={handleMove}
