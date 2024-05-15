@@ -21,7 +21,7 @@ export default function Fliper() {
 
     return (
         <SplitFlapDisplay
-            className={s.flip}
+            // className={s.flip}
             characterSet={ALPHA}
             step={100}
             value={sentences[activeSentences]}
