@@ -119,7 +119,7 @@ export default function IndustriesSlider() {
     return (
         <mesh
             ref={sliderRef}
-            scale={size.width / 2500}
+            scale={size.width / 2100}
             visible={isActive ? true : false}
         >
             <mesh scale={1.4}
