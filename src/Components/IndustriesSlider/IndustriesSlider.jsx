@@ -7,7 +7,7 @@ import { Vector3 } from "three";
 
 import Slide from "./Slide/Slide";
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
-
+import useStoreIndustries from '../../store/useStoreIndustries';
 const slides = [
     { image: './image/slider/1.jpg' },
     { image: './image/slider/2.jpg' },
@@ -21,6 +21,8 @@ const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './IndustriesSlider.module.scss';
 export default function IndustriesSlider() {
+    const currentIndexIndustry = useStoreIndustries((state) => state.activeIndustry);
+    const getSliderIndustry = useStoreIndustries((state) => state.getSliderIndustry);
     const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
     const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
     const headerHeight = useStoreMobileScroll((state) => state.headerHeight);
@@ -35,7 +37,7 @@ export default function IndustriesSlider() {
     const isDown = useRef(false);
     const startX = useRef(0);
     const progress = useRef(0);
-    const speedDrag = -0.1;
+    const speedDrag = -0.09;
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [animatedValue, setAnimatedValue] = useState(0);
 
@@ -54,9 +56,9 @@ export default function IndustriesSlider() {
         e.stopPropagation()
         if (!isDown.current) return
         const x = e.clientX || (e.touches && e.touches[0].clientX) || 0
-        const mouseProgress = (x - startX.current) * speedDrag
-        progress.current = progress.current + mouseProgress
-        startX.current = x
+        const mouseProgress = (x - startX.current) * speedDrag;
+        progress.current = progress.current + mouseProgress;
+        startX.current = x;
     }
 
     const animateValue = (start, end, duration) => {
@@ -73,13 +75,9 @@ export default function IndustriesSlider() {
     };
 
     const normalizeSlideIndex = (angle) => {
-        const fullRotation = 360; // повний оберт
-        const slideAngle = fullRotation / slidesCount; // кут одного слайду
-
-        // перетворення кута до нормалізованого в діапазоні від 0 до 359
+        const fullRotation = 360;
+        const slideAngle = fullRotation / slidesCount;
         const normalizedAngle = ((angle % fullRotation) + fullRotation) % fullRotation;
-
-        // обчислення індексу слайду
         const slideIndex = Math.floor(normalizedAngle / slideAngle) % slidesCount;
         return slideIndex;
     }
@@ -95,14 +93,29 @@ export default function IndustriesSlider() {
     useEffect(() => {
         setChangedPosition({
             x: 0,
-            y: viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
+            y: 0.4 + viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
             z: 0
         })
     }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
 
 
-    useEffect(() => setIsActive(activeModel === 3), [activeModel])
-    useEffect(() => animateValue(animatedValue, 60 + currentSlideIndex * 60, 500), [currentSlideIndex])
+    useEffect(() => setIsActive(activeModel === 3), [activeModel]);
+    useEffect(() => {
+        animateValue(animatedValue, 60 + currentSlideIndex * 60, 500);
+        if (currentIndexIndustry !== -1) {
+            getSliderIndustry(currentSlideIndex);
+        }
+    }, [currentSlideIndex, currentIndexIndustry]);
+    useEffect(() => {
+        if (currentIndexIndustry !== -1) {
+            const targetAngle = 2 * Math.PI - (2 * Math.PI / slidesCount) * currentIndexIndustry;
+            const currentAngle = progress.current % (2 * Math.PI);
+            let deltaAngle = targetAngle - currentAngle;
+            deltaAngle > Math.PI ? deltaAngle -= 2 * Math.PI : deltaAngle += 2 * Math.PI;
+            const newProgress = progress.current + deltaAngle;
+            progress.current = newProgress;
+        }
+    }, [currentIndexIndustry, getSliderIndustry]);
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
@@ -114,13 +127,14 @@ export default function IndustriesSlider() {
             easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
         }
     });
+
     return (
         <mesh
             ref={sliderRef}
             scale={size.width / 2100}
             visible={isActive ? true : false}
         >
-            <mesh scale={1.4}
+            <mesh scale={1.2}
             >
                 <Plane
                     args={[20, 30]}

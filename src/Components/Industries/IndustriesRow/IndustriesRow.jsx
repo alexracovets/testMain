@@ -15,7 +15,7 @@ export default function IndustriesRow({ industries, idx }) {
     }, [currentRowIndustry, idx])
 
     const { getCollapseProps } = useCollapse({ isExpanded })
-
+    console.log(isExpanded)
     return (
         <>
             <ul className={s.industries} >

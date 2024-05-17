@@ -44,7 +44,7 @@ export default function MobileModel() {
             const height = box.max.y - box.min.y;
             setChangedPosition({
                 x: 0,
-                y: viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
+                y: 0.4 + viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
                 z: 0
             })
         }

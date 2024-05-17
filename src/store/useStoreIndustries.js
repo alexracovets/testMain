@@ -5,9 +5,9 @@ const useStoreIndustries = create(immer((set) => ({
     isDetail: false,
     activeIndustry: -1,
     activeRow: -1,
-    changeActiveIndusry: (data) => set((state) => {
-        const numberIndustry = data.numberIndustry;
-        const rowIndustry = data.rowIndustry;
+    activeItem: -1,
+    sliderIndusrty: -1,
+    changeActiveIndusry: (numberIndustry, rowIndustry) => set((state) => { 
         if (numberIndustry === state.activeIndustry) {
             state.activeIndustry = -1;
             state.activeRow = -1;
@@ -17,7 +17,13 @@ const useStoreIndustries = create(immer((set) => ({
             state.activeRow = rowIndustry;
             state.isDetail = true;
         }
-    })
+    }),
+    getSliderIndustry: (index) => set((state) => {
+        state.sliderIndusrty = index;
+    }),
+    getActiveRow: (index) => set((state) => {
+        state.activeRow = index;
+    }),
 })));
 
 export default useStoreIndustries;

@@ -6,16 +6,12 @@ import useStoreIndustries from '../../../store/useStoreIndustries';
 
 import s from '../Industries.module.scss';
 export default function IndustriesItem({ industry, rowIndustry, setDetailText }) {
-
-    const currentIndexIndustry = useStoreIndustries((state) => state.activeIndustry);
-    const currentRowIndustry = useStoreIndustries((state) => state.activeRow);
-    const isDetailIndustry = useStoreIndustries((state) => state.isDetail);
     const changeActiveIndusry = useStoreIndustries((state) => state.changeActiveIndusry);
-    const [status, setStatus] = useState(null);
-
-    const handler = (numberIndustry) => {
-        changeActiveIndusry({ numberIndustry, rowIndustry })
-    }
+    const currentIndexIndustry = useStoreIndustries((state) => state.activeIndustry);
+    const sliderIndusrty = useStoreIndustries((state) => state.sliderIndusrty);
+    const getActiveRow = useStoreIndustries((state) => state.getActiveRow);
+    const isDetailIndustry = useStoreIndustries((state) => state.isDetail);
+    const [status, setStatus] = useState('normal');
 
     useEffect(() => {
         if (industry.idx === currentIndexIndustry) {
@@ -24,29 +20,25 @@ export default function IndustriesItem({ industry, rowIndustry, setDetailText })
     }, [currentIndexIndustry, industry, setDetailText])
 
     useEffect(() => {
-        if (rowIndustry === currentRowIndustry && industry.idx === currentIndexIndustry && isDetailIndustry) {
+        if (sliderIndusrty === industry.idx && isDetailIndustry) {
+            getActiveRow(industry.row)
+            setDetailText(industry.text)
             setStatus('active')
         } else if (isDetailIndustry) {
             setStatus('hide')
         } else {
-            setStatus(false)
+            setStatus('normal')
         }
-    }, [rowIndustry, industry, currentRowIndustry, currentIndexIndustry, isDetailIndustry])
+    }, [sliderIndusrty, industry, isDetailIndustry, getActiveRow, setDetailText])
 
     return (
         <li
-            className={
-                status === 'active'
-                    ? s.industry + ' ' + s.active
-                    : status === 'hide'
-                        ? s.industry + ' ' + s.hide
-                        : s.industry
-            }
-            onClick={() => handler(industry.idx)}
+            className={`${s.industry} ${status === 'active' ? s.active : ''} ${status === 'hide' ? s.hide : ''} `}
+            onClick={() => changeActiveIndusry(industry.idx, rowIndustry)}
         >
             <div className={s.plus}></div>
             <span>{industry.name}</span>
-        </li>
+        </li >
     );
 }
 

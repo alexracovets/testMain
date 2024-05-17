@@ -39,7 +39,7 @@ const row2 = [
     },
     {
         name: 'Real Estate',
-        row: 2,
+        row: 1,
         text: "Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality, Travel & Hospitality",
         idx: 5
     }
