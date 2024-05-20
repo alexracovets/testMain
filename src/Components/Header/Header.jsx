@@ -7,7 +7,7 @@ import FullMenu from "./FullMenu/FullMenu";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import s from './Header.module.scss';
-export default function Header() {
+export default function Header({ isDesktop }) {
     const headerRef = useRef();
     const getHeaderHeight = useStoreMobileScroll((state) => state.getHeaderHeight);
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Header() {
                     <Navigation />
                 </div>
             </div>
-            <FullMenu />
+            <FullMenu isDesktop={isDesktop} />
         </header>
     )
 } 

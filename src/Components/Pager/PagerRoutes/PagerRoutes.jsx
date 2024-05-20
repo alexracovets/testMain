@@ -32,6 +32,8 @@ export default function PagerRoutes() {
                 </Route>
                 <Route path="/mobile" element={<Mobile />}>
                     <Route index element={<MobileMain />} />
+                    <Route path="projects" element={<div>projects</div>} />
+                    <Route path="q&a" element={<div>Q&A</div>} />
                 </Route>
             </Routes>
         </AnimatePresence>

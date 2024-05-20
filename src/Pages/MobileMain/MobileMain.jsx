@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Element, scroller, animateScroll } from 'react-scroll';
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
@@ -14,27 +13,24 @@ import useAnchorScroll from '../../store/useAnchorScroll';
 import s from './MobileMain.module.scss';
 
 export default function MobileMain() {
-    const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
+    const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollSection = useAnchorScroll((state) => state.section);
+
     const firstSection = useRef(null);
     const secondSection = useRef(null);
     const thirdSection = useRef(null);
+
+    const scrollAbout = useRef(null);
+    const scrollServices = useRef(null);
+    const scrollIndustries = useRef(null);
 
     const [isVisibleFirst, setVisibleFirst] = useState(false);
     const [isVisibleSecond, setVisibleSecond] = useState(false);
     const [isVisibleThird, setVisibleThird] = useState(false);
 
-    useEffect(() => {
-        scroller.scrollTo("about", {
-            duration: 800,
-            delay: 0,
-            smooth: "easeInOutQuart"
-        });
-
-        console.log(scroller)
-    }, [scrollSection])
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -70,15 +66,23 @@ export default function MobileMain() {
             getPageHeight(thirdSection.current.offsetTop + thirdSection.current.clientHeight / 2);
             setActiveModel(3);
         }
-
+        console.log(scrollHeight)
     }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
-    const test = useRef();
-    scroller.scrollTo(100)
-    // console.log(test.current.childBindings.domNode.offsetTop)
 
     useEffect(() => {
-        animateScroll.scrollTo(1000)
-    }, [])
+        if (scrollSection === 'about' && scrollAbout.current) {
+            const target = scrollAbout.current.offsetTop;
+            getScrollTo(target)
+        } else if (scrollSection === 'services' && scrollServices.current) {
+            const target = scrollServices.current.offsetTop;
+            getScrollTo(target)
+        } else if (scrollSection === 'industries' && scrollIndustries.current) {
+            const target = scrollIndustries.current.offsetTop;
+            getScrollTo(target)
+        } else if (scrollSection === 'contacts') {
+            getScrollTo(scrollHeight)
+        }
+    }, [scrollSection, getScrollTo, scrollHeight])
     return (
         <div className={s.wrapper}  >
             <section>
@@ -92,30 +96,28 @@ export default function MobileMain() {
                     <Developments />
                 </div>
             </section>
-            <section>
-                <Element name="about" ref={test} >
-                    <div className={s.content}>
-                        <h2> About Us </h2>
-                        <div className={s.lies_info}>
-                            <h3>
-                                Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
-                            </h3>
-                            <p>
-                                We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
-                            </p>
-                        </div>
-                        <Strengths />
+            <section ref={scrollAbout}>
+                <div className={s.content}  >
+                    <h2> About Us </h2>
+                    <div className={s.lies_info}>
+                        <h3>
+                            Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
+                        </h3>
+                        <p>
+                            We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
+                        </p>
                     </div>
-                </Element>
+                    <Strengths />
+                </div>
             </section>
-            <section>
+            <section ref={scrollServices}>
                 <div className={s.content}>
                     <div className={s.model_space} ref={secondSection}></div>
                     <h2> Services </h2>
                     <Services mobile />
                 </div>
             </section>
-            <section>
+            <section ref={scrollIndustries}>
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
                     <div className={s.model_space} ref={thirdSection}></div>

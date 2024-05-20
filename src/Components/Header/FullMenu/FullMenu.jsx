@@ -1,16 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { Link } from 'react-scroll';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
 import useAnchorScroll from '../../../store/useAnchorScroll';
 
 import s from './FullMenu.module.scss';
 import { useState } from "react";
-export default function FullMenu() {
+export default function FullMenu({ isDesktop }) {
     const isActive = useStoreNavigation((state) => state.isBurger);
     const setBurger = useStoreNavigation((state) => state.setBurger);
     const getSection = useAnchorScroll((state) => state.getSection);
-    const [isMobile, setIsMobile] = useState(false);
     const links = [
         { path: "/about", name: "About" },
         { path: "/services", name: "Services" },
@@ -28,7 +26,7 @@ export default function FullMenu() {
     return (
         <div className={isActive ? s.full_menu + ' ' + s.active : s.full_menu}>
             <ul>
-                {links.map((link, i) => {
+                {isDesktop ? links.map((link, i) => {
                     return (
                         <li key={i} onClick={() => setBurger(false)}>
                             <NavLink to={link.path} className={location.pathname === link.path && s.active}>
@@ -36,14 +34,17 @@ export default function FullMenu() {
                             </NavLink>
                         </li>
                     )
-                })}
-                {/* {isMobile && <> */}
-                <li>
-                    <NavLink onClick={() => anchorLink('about')} >
-                        Test 1
-                    </NavLink>
-                </li>
-                {/* </>} */}
+                }) :
+                    <>
+                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About </NavLink></li>
+                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
+                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('industries')} > Industries </NavLink></li>
+                        <li><NavLink to={'/mobile/projects'} onClick={() => setBurger(false)}> Projects </NavLink></li>
+                        <li><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
+                        <li><NavLink onClick={() => anchorLink('contacts')} > Contacts </NavLink></li>
+                    </>
+                }
+
             </ul>
             <div className={s.bottom}>
 

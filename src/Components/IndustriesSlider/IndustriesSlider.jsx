@@ -9,12 +9,12 @@ import Slide from "./Slide/Slide";
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import useStoreIndustries from '../../store/useStoreIndustries';
 const slides = [
-    { image: './image/slider/1.jpg' },
-    { image: './image/slider/2.jpg' },
-    { image: './image/slider/3.jpg' },
-    { image: './image/slider/4.jpg' },
-    { image: './image/slider/5.jpg' },
-    { image: './image/slider/6.jpg' }
+    { image: '/image/slider/1.jpg' },
+    { image: '/image/slider/2.jpg' },
+    { image: '/image/slider/3.jpg' },
+    { image: '/image/slider/4.jpg' },
+    { image: '/image/slider/5.jpg' },
+    { image: '/image/slider/6.jpg' }
 ];
 const slidesCount = 6;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;

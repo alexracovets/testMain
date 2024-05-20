@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/Footer";
 
 export default function Default() {
     const changeActivePage = useActiveModel((state) => state.setActiveModel)
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 744);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -30,23 +30,23 @@ export default function Default() {
     }, [location.pathname, checkPage]);
 
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 744);
+        setIsDesktop(window.innerWidth > 744);
         function handleResize() {
-            setIsMobile(window.innerWidth <= 744);
+            setIsDesktop(window.innerWidth > 744);
         }
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     useEffect(() => {
-        if (isMobile) {
+        if (!isDesktop) {
             navigate('/mobile');
         }
-    }, [isMobile, navigate])
+    }, [isDesktop, navigate])
 
     return (
         <>
-            <Header />
+            <Header isDesktop={isDesktop} />
             <main>
                 <Outlet />
             </main>
