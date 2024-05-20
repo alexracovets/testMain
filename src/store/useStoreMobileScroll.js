@@ -9,6 +9,7 @@ const useStoreMobileScroll = create(immer((set) => ({
     headerHeight: 0,
     pageHeight: 0,
     activeModel: -1,
+    isTrigerScroll: false,
     getScroll: (data) => set((state) => {
         const scrollHeight = data.scrollHeight;
         const scrollTop = data.scrollTop;
@@ -27,7 +28,10 @@ const useStoreMobileScroll = create(immer((set) => ({
     }),
     setActiveModel: (data) => set((state) => {
         state.activeModel = data;
-    })
+    }),
+    trigeredScroll: (data) => set((state) => {
+        state.isTrigerScroll = data;
+    }),
 })));
 
 export default useStoreMobileScroll;

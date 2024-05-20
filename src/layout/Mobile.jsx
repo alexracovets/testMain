@@ -12,6 +12,7 @@ export default function Mobile() {
     const navigate = useNavigate();
     const scrollRef = useRef(null)
     const getScroll = useStoreMobileScroll((state) => state.getScroll);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
 
     useEffect(() => {
         setIsDesktop(window.innerWidth > 744);
@@ -27,7 +28,31 @@ export default function Mobile() {
             navigate('/');
         }
     }, [isDesktop, navigate]);
+    useEffect(() => {
+        const handleResize = () => {
+            if (scrollRef.current && scrollRef.current.contentElement) {
+                getScroll(scrollRef.current);
+                setTimeout(() => {
+                    getScroll(scrollRef.current);
+                }, 500)
+            }
+        };
 
+        const observer = new ResizeObserver(handleResize);
+
+        if (scrollRef.current && scrollRef.current.contentElement) {
+            observer.observe(scrollRef.current.contentElement);
+        }
+
+        return () => {
+            if (scrollRef.current && scrollRef.current.contentElement) {
+                observer.unobserve(scrollRef.current.contentElement);
+            }
+        };
+    }, [getScroll]);
+    useEffect(() => {
+        getScroll(scrollRef.current);
+    }, [scrollHeight, getScroll])
     return (
         <RSC className={'mobile_scroll'} ref={scrollRef} onScroll={(scrollRef) => getScroll(scrollRef)}>
             <Header />

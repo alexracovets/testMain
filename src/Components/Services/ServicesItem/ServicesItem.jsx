@@ -23,7 +23,6 @@ export default function ServicesItem({ index, title, colapse, currentService, se
     useEffect(() => {
         currentService !== index && setExpanded(false);
     }, [currentService, index])
-
     return (
         <li
             {...getToggleProps({

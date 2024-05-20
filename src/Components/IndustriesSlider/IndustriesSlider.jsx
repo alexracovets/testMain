@@ -23,17 +23,15 @@ import s from './IndustriesSlider.module.scss';
 export default function IndustriesSlider() {
     const currentIndexIndustry = useStoreIndustries((state) => state.activeIndustry);
     const getSliderIndustry = useStoreIndustries((state) => state.getSliderIndustry);
-    const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
-    const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const headerHeight = useStoreMobileScroll((state) => state.headerHeight);
     const activeModel = useStoreMobileScroll((state) => state.activeModel);
     const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
-    const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
+    const scrollTop = useStoreMobileScroll((state) => state.scrollTop);
     const [isActive, setIsActive] = useState(false);
     const { size, viewport } = useThree();
     const slidesRef = useRef(null);
     const sliderRef = useRef(null);
-
     const isDown = useRef(false);
     const startX = useRef(0);
     const progress = useRef(0);
@@ -90,14 +88,6 @@ export default function IndustriesSlider() {
         return degrees;
     }
 
-    useEffect(() => {
-        setChangedPosition({
-            x: 0,
-            y: 0.4 + viewport.height / 2 - 0.5 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
-            z: 0
-        })
-    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport]);
-
 
     useEffect(() => setIsActive(activeModel === 3), [activeModel]);
     useEffect(() => {
@@ -106,6 +96,7 @@ export default function IndustriesSlider() {
             getSliderIndustry(currentSlideIndex);
         }
     }, [currentSlideIndex, currentIndexIndustry]);
+
     useEffect(() => {
         if (currentIndexIndustry !== -1) {
             const targetAngle = 2 * Math.PI - (2 * Math.PI / slidesCount) * currentIndexIndustry;
@@ -124,14 +115,19 @@ export default function IndustriesSlider() {
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
         if (sliderRef.current && isActive) {
-            easing.damp3(sliderRef.current.position, changedPosition, 0.5, delta);
+            const targetPosition = new Vector3(
+                0,
+                viewport.height / 2 - 1 / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+                0
+            )
+            easing.damp3(sliderRef.current.position, targetPosition, 0.5, delta);
         }
     });
 
     return (
         <mesh
             ref={sliderRef}
-            scale={size.width / 2100}
+            scale={size.width / 2600}
             visible={isActive ? true : false}
         >
             <mesh scale={1.2}

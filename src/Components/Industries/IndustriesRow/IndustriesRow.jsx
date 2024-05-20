@@ -4,10 +4,12 @@ import { useCollapse } from 'react-collapsed';
 
 import IndustriesItem from '../IndustriesItem/IndustriesItem';
 import useStoreIndustries from '../../../store/useStoreIndustries';
+import useStoreMobileScroll from '../../../store/useStoreMobileScroll';
 
 import s from '../Industries.module.scss';
 export default function IndustriesRow({ industries, idx }) {
     const currentRowIndustry = useStoreIndustries((state) => state.activeRow);
+    const trigeredScroll = useStoreMobileScroll((state) => state.trigeredScroll);
     const [isExpanded, setExpanded] = useState(false);
     const [detailText, setDetailText] = useState(null);
     useEffect(() => {
@@ -15,7 +17,9 @@ export default function IndustriesRow({ industries, idx }) {
     }, [currentRowIndustry, idx])
 
     const { getCollapseProps } = useCollapse({ isExpanded })
-    console.log(isExpanded)
+    useEffect(() => {
+        trigeredScroll(true);
+    }, [getCollapseProps, trigeredScroll])
     return (
         <>
             <ul className={s.industries} >

@@ -17,11 +17,11 @@ const step = 2;
 export default function MobileModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
-    const currentPercentage = useStoreMobileScroll((state) => state.currentPercentage);
-    const scrollDistance = useStoreMobileScroll((state) => state.scrollHeight);
     const headerHeight = useStoreMobileScroll((state) => state.headerHeight);
     const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
     const activeModel = useStoreMobileScroll((state) => state.activeModel);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const scrollTop = useStoreMobileScroll((state) => state.scrollTop);
     const [animationStart, setAnimationStart] = useState(false);
     const instancesItem = useRef({ children: [] });
     const instances = useRef({ children: [] });
@@ -29,7 +29,7 @@ export default function MobileModel() {
     const { size, viewport } = useThree();
     const mainInstances = useRef(null);
     const startTime = useRef(0);
-    const [changedPosition, setChangedPosition] = useState({ x: 0, y: 0, z: 0 });
+    const [modelHeight, setModelHeight] = useState(0);
     useEffect(() => {
         setIsBoom(true);
         setTimeout(() => {
@@ -38,23 +38,23 @@ export default function MobileModel() {
     }, [activeModel]);
 
     useEffect(() => {
-        if (mainInstances.current) {
-            mainInstances.current.geometry.computeBoundingBox();
-            const box = mainInstances.current.geometry.boundingBox;
-            const height = box.max.y - box.min.y;
-            setChangedPosition({
-                x: 0,
-                y: 0.4 + viewport.height / 2 - height / 2 - currentPercentage / 100 * viewport.height + ((((currentPercentage * scrollDistance / 100) - (pageHeight + headerHeight)) * viewport.height) / size.height),
-                z: 0
-            })
+        mainInstances.current.geometry.computeBoundingBox();
+        const box = mainInstances.current.geometry.boundingBox;
+        if (box) {
+            setModelHeight(box.max.y - box.min.y);
         }
-    }, [currentPercentage, headerHeight, pageHeight, scrollDistance, size, viewport, mainInstances]);
+    }, [mainInstances, activeModel])
 
     useFrame((state, delta) => {
         const targetRotation = new Vector3(0, 1.1, 0);
-        easing.damp3(mainInstances.current.position, changedPosition, 0.5, delta);
+        const targetPosition = new Vector3(
+            0,
+            viewport.height / 2 - modelHeight / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+            0
+        )
+        easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
         easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
-
+        mainInstances.current.matrixWorldNeedsUpdate = true;
         instances.current.children.forEach((inst, idx) => {
             if (inst && voxelsData[activeModel]) {
                 const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
@@ -108,11 +108,10 @@ export default function MobileModel() {
                 range={COUNT}
                 geometry={geometry}
                 ref={mainInstances}
-                scale={size.width / 2500}
             >
                 <meshMatcapMaterial matcap={matcapTexture} />
                 {Array(COUNT).fill().map((_, idx) =>
-                    <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
+                    <group key={idx} ref={el => instancesItem.current.children[idx] = el} scale={size.width / 2500} >
                         <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
                     </group>
                 )}
