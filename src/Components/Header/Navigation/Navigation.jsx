@@ -20,7 +20,7 @@ export default function Navigation({ isDesktop }) {
     return (
         <nav className={s.navigation}>
             {isDesktop ? <>
-                <ul>
+                {/* <ul>
                     {links.map((link, i) => {
                         return (
                             <li key={i}>
@@ -30,7 +30,7 @@ export default function Navigation({ isDesktop }) {
                             </li>
                         )
                     })}
-                </ul>
+                </ul> */}
                 <Burger />
             </>
                 :
