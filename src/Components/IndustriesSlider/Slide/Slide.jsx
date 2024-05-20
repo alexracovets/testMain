@@ -1,8 +1,8 @@
-import { Cylinder } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
 import { BackSide, DoubleSide, FrontSide, TextureLoader } from "three";
-import PropTypes from 'prop-types';
+import { useLoader } from "@react-three/fiber";
+import { Cylinder } from "@react-three/drei";
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import gsap from "gsap";
 
 export default function Slide({ index, image, size, isActive }) {

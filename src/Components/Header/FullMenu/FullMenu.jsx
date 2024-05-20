@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
 import useAnchorScroll from '../../../store/useAnchorScroll';
 
 import s from './FullMenu.module.scss';
-import { useState } from "react";
+
 export default function FullMenu({ isDesktop }) {
     const isActive = useStoreNavigation((state) => state.isBurger);
     const setBurger = useStoreNavigation((state) => state.setBurger);
@@ -51,4 +52,8 @@ export default function FullMenu({ isDesktop }) {
             </div>
         </div>
     )
-} 
+}
+
+FullMenu.propTypes = {
+    isDesktop: PropTypes.bool
+};

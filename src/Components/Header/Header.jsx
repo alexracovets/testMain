@@ -1,11 +1,12 @@
-import Navigation from "./Navigation/Navigation";
-import Logo from "./Logo/Logo";
 import { useEffect, useRef } from "react";
+import PropTypes from 'prop-types';
 
+import Navigation from "./Navigation/Navigation";
 import FullMenu from "./FullMenu/FullMenu";
-
+import Logo from "./Logo/Logo";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+
 import s from './Header.module.scss';
 export default function Header({ isDesktop }) {
     const headerRef = useRef();
@@ -18,11 +19,15 @@ export default function Header({ isDesktop }) {
         <header ref={headerRef}>
             <div className={s.wrapper}>
                 <div className={s.header}>
-                    <Logo />
+                    <Logo isDesktop={isDesktop} />
                     <Navigation />
                 </div>
             </div>
             <FullMenu isDesktop={isDesktop} />
         </header>
     )
-} 
+}
+
+Header.propTypes = {
+    isDesktop: PropTypes.bool
+};
