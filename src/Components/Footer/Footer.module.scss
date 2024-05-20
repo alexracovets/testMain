@@ -83,8 +83,20 @@ footer {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    background: linear-gradient(0.25turn, #FEC532 20%, #98761E00);
+                    background: linear-gradient(0.25turn, #FEC532 50%, #98761E00);
+                    background-color: transparent;
                     box-sizing: border-box;
+                    transition: all ease-in-out 1s;
+
+                    &.focus,
+                    &:hover {
+                        background-color: #FEC532;
+                        transform: scale(1.1);
+
+                        .copy {
+                            color: $color-neutral-100;
+                        }
+                    }
 
                     @media (max-width:$width-mobile) {
                         width: 100%;

@@ -4,9 +4,14 @@ import UI_Button from '../../Components/UI_Button/UI_Button';
 
 import s from './ContactPage.module.scss';
 import Socials from '../../Components/Socials/Socials';
+import { useEffect, useState } from "react";
 
 export default function ContactPage() {
+    const [isBtnFocus, setIsBtnFocus] = useState(false);
 
+    useEffect(() => {
+        isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 2000)
+    }, [isBtnFocus])
     return (
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
@@ -18,7 +23,7 @@ export default function ContactPage() {
                 <div className={s.content}>
                     <div className={s.contact_wrapper}>
                         <h2>Contacts</h2>
-                        <div className={s.contactBtn}>
+                        <div className={isBtnFocus ? s.contactBtn + ' ' + s.focus : s.contactBtn} onFocus={() => setIsBtnFocus(true)}>
                             <button className={s.text}>
                                 info@spotium360.com
                             </button>

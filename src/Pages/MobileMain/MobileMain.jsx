@@ -66,7 +66,6 @@ export default function MobileMain() {
             getPageHeight(thirdSection.current.offsetTop + thirdSection.current.clientHeight / 2);
             setActiveModel(3);
         }
-        console.log(scrollHeight)
     }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
 
     useEffect(() => {

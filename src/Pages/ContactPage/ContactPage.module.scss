@@ -54,12 +54,24 @@
                 .contactBtn {
                     width: 34.938rem;
                     height: 3.5625rem;
+                    align-items: center;
                     border: 1px solid $color-primary;
+                    justify-content: space-between;
                     border-radius: 3.125rem;
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
                     background: linear-gradient(0.25turn, #FEC532 50%, #98761E00);
+                    background-color: transparent;
+                    transition: all ease-in-out 1s;
+
+                    &.focus,
+                    &:hover {
+                        background-color: #FEC532;
+                        transform: scale(1.08);
+
+                        .copy {
+                            color: $color-neutral-100;
+                        }
+                    }
 
                     @media (max-width:$width-shortDesktop) {
                         width: 25.25rem;
@@ -80,6 +92,7 @@
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
+                        transition: all ease-in-out 1s;
 
                         @media (max-width:$width-shortDesktop) {
                             font-size: 0.875rem;
@@ -99,6 +112,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        transition: all ease-in-out 1s;
 
                         @media (max-width:$width-shortDesktop) {
                             font-size: 1rem;
