@@ -116,7 +116,7 @@ footer {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
-                        transition: all ease-in-out 500ms;
+                        transition: all ease-in-out 300ms;
 
                         @media (max-width:$width-mobile) {
                             font-size: 0.875rem;
@@ -132,7 +132,7 @@ footer {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        transition: all ease-in-out 500ms;
+                        transition: all ease-in-out 300ms;
 
                         @media (max-width:$width-mobile) {
                             font-size: 1rem;
