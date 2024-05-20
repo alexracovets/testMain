@@ -23,7 +23,7 @@ export default function ContactPage() {
                 <div className={s.content}>
                     <div className={s.contact_wrapper}>
                         <h2>Contacts</h2>
-                        <div className={isBtnFocus ? s.contactBtn + ' ' + s.focus : s.contactBtn} onFocus={() => setIsBtnFocus(true)}>
+                        <div className={isBtnFocus ? s.contactBtn + ' ' + s.focus : s.contactBtn} onClick={() => setIsBtnFocus(true)}>
                             <button className={s.text}>
                                 info@spotium360.com
                             </button>
