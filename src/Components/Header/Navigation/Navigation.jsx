@@ -1,22 +1,25 @@
 import { NavLink, useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+import Burger from "../Burger/Burger";
 
 import s from '../Header.module.scss';
-import Burger from "../Burger/Burger";
-export default function Navigation() {
+
+export default function Navigation({ isDesktop }) {
     const location = useLocation();
 
     const links = [
         { path: "/about", name: "About" },
         { path: "/services", name: "Services" },
         { path: "/industries", name: "Industries" },
-        // { path: "/projects", name: "Projects" },
-        // { path: "/q&a", name: "Q&A" },
+        { path: "/projects", name: "Projects" },
+        { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact us" },
     ]
 
     return (
         <nav className={s.navigation}>
-            {/* <ul>
+            {isDesktop ? <ul>
                 {links.map((link, i) => {
                     return (
                         <li key={i}>
@@ -26,8 +29,14 @@ export default function Navigation() {
                         </li>
                     )
                 })}
-            </ul> */}
-            <Burger />
+            </ul> :
+                <Burger />
+            }
+
         </nav>
     )
-} 
+}
+
+Navigation.propTypes = {
+    isDesktop: PropTypes.bool
+};

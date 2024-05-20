@@ -20,10 +20,10 @@ export default function Header({ isDesktop }) {
             <div className={s.wrapper}>
                 <div className={s.header}>
                     <Logo isDesktop={isDesktop} />
-                    <Navigation />
+                   <Navigation isDesktop={isDesktop} />
                 </div>
             </div>
-            <FullMenu isDesktop={isDesktop} />
+            {!isDesktop && <FullMenu isDesktop={isDesktop} />}
         </header>
     )
 }
