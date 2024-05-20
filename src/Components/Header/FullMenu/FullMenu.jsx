@@ -39,7 +39,7 @@ export default function FullMenu() {
                 })}
                 {/* {isMobile && <> */}
                 <li>
-                    <NavLink to="/mobile" onClick={() => anchorLink('about')} >
+                    <NavLink onClick={() => anchorLink('about')} >
                         Test 1
                     </NavLink>
                 </li>

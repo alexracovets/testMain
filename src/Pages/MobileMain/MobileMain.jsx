@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Element, scroller } from 'react-scroll';
+import { Element, scroller, animateScroll } from 'react-scroll';
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
@@ -72,7 +72,13 @@ export default function MobileMain() {
         }
 
     }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
+    const test = useRef();
+    scroller.scrollTo(100)
+    // console.log(test.current.childBindings.domNode.offsetTop)
 
+    useEffect(() => {
+        animateScroll.scrollTo(1000)
+    }, [])
     return (
         <div className={s.wrapper}  >
             <section>
@@ -87,7 +93,7 @@ export default function MobileMain() {
                 </div>
             </section>
             <section>
-                <Element name="about" >
+                <Element name="about" ref={test} >
                     <div className={s.content}>
                         <h2> About Us </h2>
                         <div className={s.lies_info}>
