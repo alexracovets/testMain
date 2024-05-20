@@ -6,7 +6,7 @@ export default function Footer() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
 
     useEffect(() => {
-        isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 1000)
+        isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 500)
     }, [isBtnFocus])
     
     return (

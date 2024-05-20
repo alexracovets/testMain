@@ -86,7 +86,7 @@ footer {
                     background: linear-gradient(0.25turn, #FEC532 50%, #98761E00);
                     background-color: transparent;
                     box-sizing: border-box;
-                    transition: all ease-in-out 1s;
+                    transition: all ease-in-out 500ms;
 
                     &.focus {
                         background-color: #FEC532;
@@ -116,7 +116,7 @@ footer {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
-                        transition: all ease-in-out 1s;
+                        transition: all ease-in-out 500ms;
 
                         @media (max-width:$width-mobile) {
                             font-size: 0.875rem;
@@ -132,7 +132,7 @@ footer {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        transition: all ease-in-out 1s;
+                        transition: all ease-in-out 500ms;
 
                         @media (max-width:$width-mobile) {
                             font-size: 1rem;
