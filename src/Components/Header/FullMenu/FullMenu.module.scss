@@ -36,6 +36,8 @@
 
     ul {
         li {
+            pointer-events: all;
+
             a {
                 font-size: 2.375rem;
                 font-family: $font-JB_Mono;

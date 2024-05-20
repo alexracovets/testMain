@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Element, scroller } from 'react-scroll';
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
@@ -8,6 +9,7 @@ import Industries from '../../Components/Industries/Industries';
 import Developments from "../../Components/Developments/Developments";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+import useAnchorScroll from '../../store/useAnchorScroll';
 
 import s from './MobileMain.module.scss';
 
@@ -15,6 +17,7 @@ export default function MobileMain() {
     const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const scrollSection = useAnchorScroll((state) => state.section);
     const firstSection = useRef(null);
     const secondSection = useRef(null);
     const thirdSection = useRef(null);
@@ -22,6 +25,16 @@ export default function MobileMain() {
     const [isVisibleFirst, setVisibleFirst] = useState(false);
     const [isVisibleSecond, setVisibleSecond] = useState(false);
     const [isVisibleThird, setVisibleThird] = useState(false);
+
+    useEffect(() => {
+        scroller.scrollTo("about", {
+            duration: 800,
+            delay: 0,
+            smooth: "easeInOutQuart"
+        });
+
+        console.log(scroller)
+    }, [scrollSection])
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -59,7 +72,7 @@ export default function MobileMain() {
         }
 
     }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
-    
+
     return (
         <div className={s.wrapper}  >
             <section>
@@ -74,18 +87,20 @@ export default function MobileMain() {
                 </div>
             </section>
             <section>
-                <div className={s.content}>
-                    <h2> About Us </h2>
-                    <div className={s.lies_info}>
-                        <h3>
-                            Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
-                        </h3>
-                        <p>
-                            We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
-                        </p>
+                <Element name="about" >
+                    <div className={s.content}>
+                        <h2> About Us </h2>
+                        <div className={s.lies_info}>
+                            <h3>
+                                Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
+                            </h3>
+                            <p>
+                                We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
+                            </p>
+                        </div>
+                        <Strengths />
                     </div>
-                    <Strengths />
-                </div>
+                </Element>
             </section>
             <section>
                 <div className={s.content}>

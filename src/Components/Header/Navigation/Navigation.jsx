@@ -16,7 +16,7 @@ export default function Navigation() {
 
     return (
         <nav className={s.navigation}>
-            <ul>
+            {/* <ul>
                 {links.map((link, i) => {
                     return (
                         <li key={i}>
@@ -26,7 +26,7 @@ export default function Navigation() {
                         </li>
                     )
                 })}
-            </ul>
+            </ul> */}
             <Burger />
         </nav>
     )
