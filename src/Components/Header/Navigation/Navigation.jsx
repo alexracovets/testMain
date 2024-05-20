@@ -19,17 +19,21 @@ export default function Navigation({ isDesktop }) {
 
     return (
         <nav className={s.navigation}>
-            {isDesktop ? <ul>
-                {links.map((link, i) => {
-                    return (
-                        <li key={i}>
-                            <NavLink to={link.path} className={location.pathname === link.path && s.active}>
-                                {link.name}
-                            </NavLink>
-                        </li>
-                    )
-                })}
-            </ul> :
+            {isDesktop ? <>
+                <ul>
+                    {links.map((link, i) => {
+                        return (
+                            <li key={i}>
+                                <NavLink to={link.path} className={location.pathname === link.path && s.active}>
+                                    {link.name}
+                                </NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+                <Burger />
+            </>
+                :
                 <Burger />
             }
 
