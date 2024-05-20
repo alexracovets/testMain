@@ -88,8 +88,7 @@ footer {
                     box-sizing: border-box;
                     transition: all ease-in-out 1s;
 
-                    &.focus,
-                    &:hover {
+                    &.focus {
                         background-color: #FEC532;
                         transform: scale(1.1);
 
