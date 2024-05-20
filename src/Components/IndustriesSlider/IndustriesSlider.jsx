@@ -117,7 +117,7 @@ export default function IndustriesSlider() {
         if (sliderRef.current && isActive) {
             const targetPosition = new Vector3(
                 0,
-                viewport.height / 2 - 1 / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+                viewport.height / 20 + viewport.height / 2 + 1 / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
                 0
             )
             easing.damp3(sliderRef.current.position, targetPosition, 0.5, delta);

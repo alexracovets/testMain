@@ -14,6 +14,7 @@ import s from './MobileMain.module.scss';
 export default function MobileMain() {
     const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const firstSection = useRef(null);
     const secondSection = useRef(null);
     const thirdSection = useRef(null);
@@ -47,18 +48,18 @@ export default function MobileMain() {
     }, []);
     useEffect(() => {
         if (isVisibleFirst) {
-            getPageHeight(firstSection.current.offsetTop);
+            getPageHeight(firstSection.current.offsetTop + firstSection.current.clientHeight / 2);
             setActiveModel(0);
         } else if (isVisibleSecond) {
-            getPageHeight(secondSection.current.offsetTop);
+            getPageHeight(secondSection.current.offsetTop + secondSection.current.clientHeight / 2);
             setActiveModel(2);
         } else if (isVisibleThird) {
-            getPageHeight(thirdSection.current.offsetTop);
+            getPageHeight(thirdSection.current.offsetTop + thirdSection.current.clientHeight / 2);
             setActiveModel(3);
         }
 
-    }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight]);
-
+    }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
+    
     return (
         <div className={s.wrapper}  >
             <section>
