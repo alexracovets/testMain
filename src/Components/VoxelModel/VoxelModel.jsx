@@ -132,7 +132,7 @@ export default function VoxelModel() {
             range={COUNT}
             geometry={geometry}
             ref={mainInstances}
-            scale={0.3}
+            scale={0.35}
         >
             <meshMatcapMaterial
                 matcap={currentTexture}
