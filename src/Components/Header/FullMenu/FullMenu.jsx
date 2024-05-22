@@ -11,12 +11,12 @@ export default function FullMenu({ isDesktop }) {
     const setBurger = useStoreNavigation((state) => state.setBurger);
     const getSection = useAnchorScroll((state) => state.getSection);
     const links = [
-        { path: "/about", name: "About" },
         { path: "/services", name: "Services" },
-        { path: "/industries", name: "Industries" },
         { path: "/projects", name: "Projects" },
+        { path: "/about", name: "About Us" }, 
+        // { path: "/industries", name: "Industries" }, 
         { path: "/q&a", name: "Q&A" },
-        { path: "/contact", name: "Contact us" }
+        { path: "/contact", name: "Contact Us" }
     ]
 
     const anchorLink = (name) => {
@@ -37,12 +37,12 @@ export default function FullMenu({ isDesktop }) {
                     )
                 }) :
                     <>
-                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About </NavLink></li>
                         <li><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
-                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('industries')} > Industries </NavLink></li>
                         <li><NavLink to={'/mobile/projects'} onClick={() => setBurger(false)}> Projects </NavLink></li>
+                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About Us</NavLink></li>
                         <li><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
-                        <li><NavLink onClick={() => anchorLink('contacts')} > Contacts </NavLink></li>
+                        {/* <li><NavLink to={'/mobile'} onClick={() => anchorLink('industries')} > Industries </NavLink></li>   */}
+                        <li><NavLink onClick={() => anchorLink('contacts')} > Contacts Us</NavLink></li>
                     </>
                 }
 
