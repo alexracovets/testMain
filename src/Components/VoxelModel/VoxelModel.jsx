@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { TextureLoader, Vector3 } from "three";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { Box3, TextureLoader, Vector3 } from "three";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
 import { easing } from 'maath';
@@ -14,45 +14,45 @@ const step = 5;
 
 import voxelsData from './voxel2.json';
 import useActiveModel from "../../store/useActiveModel";
+
+const modelCoords = [
+    {
+        rotation: [0, Math.PI / 3, 0],
+        target: 1
+    },
+    {
+        rotation: [0, 0, 0],
+        target: -1
+    },
+    {
+        rotation: [0, 0.6, 0],
+        target: 1
+    },
+    {
+        rotation: [0, 0, 0],
+        target: -1
+    }
+]
+
 export default function VoxelModel() {
-    const matcapTexture = useLoader(TextureLoader, matcap);
-    const [currentTexture, setCurrentTexture] = useState(matcapTexture);
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
     const activeModel = useActiveModel(state => state.activeModel);
+    const matcapTexture = useLoader(TextureLoader, matcap);
+    const { size, viewport } = useThree();
 
+    const [currentTexture, setCurrentTexture] = useState(matcapTexture);
+    const [animationStart, setAnimationStart] = useState(false);
+    const [isBoom, setIsBoom] = useState(false);
+
+    const instancesItem = useRef({ children: [] });
+    const instances = useRef({ children: [] });
+    const mainInstances = useRef()
+    const startTime = useRef(0);
 
     useEffect(() => {
         const loader = new TextureLoader();
-        loader.load(`/default.png`, (texture) => {
-            setCurrentTexture(texture);
-        });
+        loader.load(`/default.png`, (texture) => setCurrentTexture(texture));
     }, []);
-
-    const mainInstances = useRef()
-    const instances = useRef({ children: [] });
-    const instancesItem = useRef({ children: [] });
-    const [isBoom, setIsBoom] = useState(false);
-    const [animationStart, setAnimationStart] = useState(false);
-    const startTime = useRef(0);
-
-    const modelCoords = [
-        {
-            position: [6, -0.25, -8],
-            rotation: [0, 0.6, 0]
-        },
-        {
-            position: [-6, 0, -6],
-            rotation: [0, 0, 0]
-        },
-        {
-            position: [7, -0.5, -8],
-            rotation: [0, 0.6, 0]
-        },
-        {
-            position: [-7, 0, -10],
-            rotation: [0, 0, 0]
-        }
-    ]
 
     useEffect(() => {
         setIsBoom(true);
@@ -62,9 +62,19 @@ export default function VoxelModel() {
     }, [activeModel])
 
     useFrame((state, delta) => {
+
         if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
-            const targetRotation = new Vector3(modelCoords[activeModel].rotation[0], modelCoords[activeModel].rotation[1], modelCoords[activeModel].rotation[2]);
-            const targetPosition = new Vector3(modelCoords[activeModel].position[0], modelCoords[activeModel].position[1], modelCoords[activeModel].position[2]);
+
+            const targetRotation = new Vector3(
+                0,
+                modelCoords[activeModel].rotation[1],
+                0
+            );
+            const targetPosition = new Vector3(
+                (viewport.width / 2 - viewport.width / 4) * modelCoords[activeModel].target,
+                0,
+                0
+            );
             easing.damp3(mainInstances.current.rotation, targetRotation, 0.5, delta);
             easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
         }
@@ -122,6 +132,7 @@ export default function VoxelModel() {
             range={COUNT}
             geometry={geometry}
             ref={mainInstances}
+            scale={0.3}
         >
             <meshMatcapMaterial
                 matcap={currentTexture}

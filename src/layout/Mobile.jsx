@@ -39,7 +39,7 @@ export default function Mobile() {
             if (scrollRef.current && scrollRef.current.contentElement) {
                 getScroll(scrollRef.current);
                 setTimeout(() => {
-                    getScroll(scrollRef.current);
+                    scrollRef && scrollRef.current && getScroll(scrollRef.current);
                 }, 500)
             }
         };
