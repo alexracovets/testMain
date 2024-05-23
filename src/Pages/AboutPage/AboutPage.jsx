@@ -15,10 +15,14 @@ export default function AboutPage() {
                 <div className={s.content}>
                     <div className={s.lies_info}>
                         <h2>
-                            Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
+                            In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
+                            Our partners know that we can move fast and focus on a result.
                         </h2>
                         <h3>
-                            We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
+                            We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
+                        </h3>
+                        <h3>
+                            We know how to operate with a high demand traffic and marketing budgets over 30K$
                         </h3>
                     </div>
                     <Strengths />

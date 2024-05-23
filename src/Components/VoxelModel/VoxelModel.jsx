@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Box3, TextureLoader, Vector3 } from "three";
+import { TextureLoader, Vector3 } from "three";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
@@ -38,7 +38,7 @@ export default function VoxelModel() {
     const geometry = useMemo(() => new RoundedBoxGeometry(0.95, 0.95, 0.95, 1, .1), []);
     const activeModel = useActiveModel(state => state.activeModel);
     const matcapTexture = useLoader(TextureLoader, matcap);
-    const { size, viewport } = useThree();
+    const { viewport } = useThree();
 
     const [currentTexture, setCurrentTexture] = useState(matcapTexture);
     const [animationStart, setAnimationStart] = useState(false);

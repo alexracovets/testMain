@@ -66,6 +66,10 @@
                     font-size: 1.25rem;
                     line-height: 1.875rem;
 
+                    &:first-of-type {
+                        margin-bottom: 2rem;
+                    }
+
                     @media (max-width:$width-shortDesktop) {
                         font-size: 1.25rem;
                         line-height: 1.875rem;
