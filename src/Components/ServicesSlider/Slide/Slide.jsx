@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import gsap from "gsap";
 
 export default function Slide({ index, image, size, isActive, video }) {
-    const [isImage, setIsImage] = useState(false);
-    const [isVideo, setIsVideo] = useState(false);
     const [texture, setTexture] = useState(null)
 
     useEffect(() => {
@@ -26,18 +24,7 @@ export default function Slide({ index, image, size, isActive, video }) {
             setTexture(videoTexture);
         }
     }, [image, video]);
-    
-    // useEffect(() => {
-    //     if (image) {
-    //         const texture = useLoader(TextureLoader, image);
-    //         setSlideTexture(texture)
-    //     } else if (video) {
-    //         const textureVideo = useVideoTexture(video)
-    //         setSlideTexture(textureVideo)
-    //     }
-    // }, [image, video])
-    // const textureVideo = useVideoTexture(video)
-    // const texture = useLoader(TextureLoader, image);
+
     const borderHeight = 0.02;
     const borderColor = '#FEC532';
     const slideWidth = 4;
@@ -75,7 +62,7 @@ export default function Slide({ index, image, size, isActive, video }) {
                 <meshBasicMaterial attach="material" side={BackSide} color={'#292929'} transparent opacity={.5} />
             </Cylinder>
             <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
-                <meshBasicMaterial attach="material" side={FrontSide} map={texture} />
+                <meshBasicMaterial attach="material" side={FrontSide} map={texture} needsUpdate={true} />
                 {/* <meshBasicMaterial map={textureVideo} toneMapped={false} /> */}
             </Cylinder>
         </>
