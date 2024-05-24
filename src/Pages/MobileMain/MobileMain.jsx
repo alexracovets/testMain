@@ -116,13 +116,13 @@ export default function MobileMain() {
                     <Services mobile />
                 </div>
             </section>
-            <section ref={scrollIndustries}>
+            {/* <section ref={scrollIndustries}>
                 <div className={s.content}>
                     <h2> INDUSTRIES </h2>
                     <div className={s.model_space} ref={thirdSection}></div>
                     <Industries mobile />
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }
