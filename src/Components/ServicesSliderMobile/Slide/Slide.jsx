@@ -47,7 +47,7 @@ export default function Slide({ index, image, size, isActive, video }) {
             </Cylinder>
             <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
                 <meshBasicMaterial attach="material" side={FrontSide} map={texture} />
-                <meshBasicMaterial map={textureVideo} toneMapped={false} />
+                <meshBasicMaterial map={textureVideo} toneMapped={false} needsUpdate={true} />
             </Cylinder>
         </>
     );
