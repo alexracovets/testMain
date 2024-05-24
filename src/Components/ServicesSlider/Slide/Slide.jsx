@@ -71,7 +71,6 @@ export default function Slide({ index, image, size, isActive, video }) {
 
 Slide.propTypes = {
     index: PropTypes.number,
-    image: PropTypes.string,
     size: PropTypes.number,
     isActive: PropTypes.bool
 };
