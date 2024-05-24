@@ -46,25 +46,29 @@ export default function Slide({ index, image, size, isActive, video }) {
 
     return (
         <>
-            <Cylinder args={[slideWidth, slideWidth, borderHeight, 60, 1, true, size * index + 2 * borderHeight, animation.theta + borderHeight]} position={[0, (slideHeight + borderHeight) / 2, 0]}>
-                <meshBasicMaterial side={DoubleSide} color={borderColor} />
-            </Cylinder>
-            <Cylinder args={[slideWidth, slideWidth, borderHeight, 60, 1, true, size * index + 2 * borderHeight, animation.theta + borderHeight]} position={[0, -(slideHeight + borderHeight) / 2, 0]}>
-                <meshBasicMaterial side={DoubleSide} color={borderColor} />
-            </Cylinder>
-            <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2 * borderHeight, borderHeight / 2]} position={[0, 0, 0]}>
-                <meshBasicMaterial side={DoubleSide} color={borderColor} />
-            </Cylinder>
-            <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + size - 0.5 * borderHeight, borderHeight / 2]}>
-                <meshBasicMaterial side={DoubleSide} color={borderColor} />
-            </Cylinder>
-            <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]}>
-                <meshBasicMaterial attach="material" side={BackSide} color={'#292929'} transparent opacity={.5} />
-            </Cylinder>
-            <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
-                <meshBasicMaterial attach="material" side={FrontSide} map={texture} needsUpdate={true} />
-                {/* <meshBasicMaterial map={textureVideo} toneMapped={false} /> */}
-            </Cylinder>
+            {texture &&
+                <>
+                    <Cylinder args={[slideWidth, slideWidth, borderHeight, 60, 1, true, size * index + 2 * borderHeight, animation.theta + borderHeight]} position={[0, (slideHeight + borderHeight) / 2, 0]}>
+                        <meshBasicMaterial side={DoubleSide} color={borderColor} />
+                    </Cylinder>
+                    <Cylinder args={[slideWidth, slideWidth, borderHeight, 60, 1, true, size * index + 2 * borderHeight, animation.theta + borderHeight]} position={[0, -(slideHeight + borderHeight) / 2, 0]}>
+                        <meshBasicMaterial side={DoubleSide} color={borderColor} />
+                    </Cylinder>
+                    <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2 * borderHeight, borderHeight / 2]} position={[0, 0, 0]}>
+                        <meshBasicMaterial side={DoubleSide} color={borderColor} />
+                    </Cylinder>
+                    <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + size - 0.5 * borderHeight, borderHeight / 2]}>
+                        <meshBasicMaterial side={DoubleSide} color={borderColor} />
+                    </Cylinder>
+                    <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]}>
+                        <meshBasicMaterial attach="material" side={BackSide} color={'#292929'} transparent opacity={.5} />
+                    </Cylinder>
+                    <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
+                        <meshBasicMaterial attach="material" side={FrontSide} map={texture} needsUpdate={true} />
+                        {/* <meshBasicMaterial map={textureVideo} toneMapped={false} /> */}
+                    </Cylinder>
+                </>
+            }
         </>
     );
 }
