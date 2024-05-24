@@ -14,6 +14,12 @@ const slides = [
     { image: '/image/slider/3.jpg' },
     { image: '/image/slider/4.jpg' }
 ];
+const videos = [
+    { video: '/video.mp4' },
+    { video: '/video.mp4' },
+    { video: '/video.mp4' },
+    { video: '/video.mp4' },
+]
 const slidesCount = 4;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
@@ -31,7 +37,7 @@ export default function ServicesSliderMobile() {
     const slidesRef = useRef(null);
     const sliderRef = useRef(null);
     const isDown = useRef(false);
-    const startX = useRef(0); 
+    const startX = useRef(0);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [animatedValue, setAnimatedValue] = useState(0);
     const [isNewSlide, setIsNewSlide] = useState(false);
@@ -142,7 +148,7 @@ export default function ServicesSliderMobile() {
                     ref={slidesRef}
                 >
                     {slides.map((item, index) => (
-                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} />
+                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} video={videos[index].video} />
                     ))}
                 </mesh>
                 <Html
@@ -151,6 +157,7 @@ export default function ServicesSliderMobile() {
                     position={[0, 0, 4]}
                     transform
                     center
+                    zIndexRange={[1, 0]}
                 >
                     <div className={s.wrapper} >
                         <div className={s.number_current}>{animatedValue}°</div>

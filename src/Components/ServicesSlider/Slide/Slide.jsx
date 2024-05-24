@@ -1,11 +1,12 @@
 import { BackSide, DoubleSide, FrontSide, TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
-import { Cylinder } from "@react-three/drei";
+import { Cylinder, useVideoTexture } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
-export default function Slide({ index, image, size, isActive }) {
+export default function Slide({ index, image, size, isActive, video }) {
+    const textureVideo = useVideoTexture(video)
     const texture = useLoader(TextureLoader, image);
     const borderHeight = 0.02;
     const borderColor = '#FEC532';
@@ -44,7 +45,8 @@ export default function Slide({ index, image, size, isActive }) {
                 <meshBasicMaterial attach="material" side={BackSide} color={'#292929'} transparent opacity={.5} />
             </Cylinder>
             <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
-                <meshBasicMaterial attach="material" side={FrontSide} map={texture} />
+                {/* <meshBasicMaterial attach="material" side={FrontSide} map={texture} /> */}
+                <meshBasicMaterial map={textureVideo} toneMapped={false} />
             </Cylinder>
         </>
     );
