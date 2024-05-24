@@ -9,10 +9,22 @@ import Slide from "./Slide/Slide";
 import useActiveModel from '../../store/useActiveModel';
 import useStoreServices from '../../store/useStoreServices';
 const slides = [
-    { image: '/image/slider/1.jpg' },
-    { image: '/image/slider/2.jpg' },
-    { image: '/image/slider/3.jpg' },
-    { image: '/image/slider/4.jpg' }
+    {
+        image: '/test/test.png',
+        video: false
+    },
+    {
+        image: false,
+        video: '/test/ar.mp4'
+    },
+    {
+        image: '/test/test.png',
+        video: false
+    },
+    {
+        image: false,
+        video: '/test/production.mp4'
+    }
 ];
 const videos = [
     { video: '/video.mp4' },
@@ -136,7 +148,7 @@ export default function ServicesSlider() {
                     ref={slidesRef}
                 >
                     {slides.map((item, index) => (
-                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} video={videos[index].video} />
+                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} video={item.video} />
                     ))}
                 </mesh>
                 <Html

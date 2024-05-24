@@ -1,13 +1,43 @@
-import { BackSide, DoubleSide, FrontSide, TextureLoader } from "three";
-import { useLoader } from "@react-three/fiber";
-import { Cylinder, useVideoTexture } from "@react-three/drei";
+import { BackSide, DoubleSide, FrontSide, TextureLoader, VideoTexture } from "three";
+import { Cylinder } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import gsap from "gsap";
 
 export default function Slide({ index, image, size, isActive, video }) {
-    const textureVideo = useVideoTexture(video)
-    const texture = useLoader(TextureLoader, image);
+    const [isImage, setIsImage] = useState(false);
+    const [isVideo, setIsVideo] = useState(false);
+    const [texture, setTexture] = useState(null)
+
+    useEffect(() => {
+        if (image) {
+            const textureLoader = new TextureLoader();
+            textureLoader.load(image, (loadedTexture) => {
+                setTexture(loadedTexture);
+            });
+        } else if (video) {
+            const videoElement = document.createElement('video');
+            videoElement.src = video;
+            videoElement.crossOrigin = 'anonymous';
+            videoElement.loop = true;
+            videoElement.muted = true;
+            videoElement.play();
+            const videoTexture = new VideoTexture(videoElement);
+            setTexture(videoTexture);
+        }
+    }, [image, video]);
+    
+    // useEffect(() => {
+    //     if (image) {
+    //         const texture = useLoader(TextureLoader, image);
+    //         setSlideTexture(texture)
+    //     } else if (video) {
+    //         const textureVideo = useVideoTexture(video)
+    //         setSlideTexture(textureVideo)
+    //     }
+    // }, [image, video])
+    // const textureVideo = useVideoTexture(video)
+    // const texture = useLoader(TextureLoader, image);
     const borderHeight = 0.02;
     const borderColor = '#FEC532';
     const slideWidth = 4;
@@ -45,8 +75,8 @@ export default function Slide({ index, image, size, isActive, video }) {
                 <meshBasicMaterial attach="material" side={BackSide} color={'#292929'} transparent opacity={.5} />
             </Cylinder>
             <Cylinder args={[slideWidth, slideWidth, animation.height, 60, 1, true, size * index + 2.5 * borderHeight, animation.theta]} >
-                {/* <meshBasicMaterial attach="material" side={FrontSide} map={texture} /> */}
-                <meshBasicMaterial map={textureVideo} toneMapped={false} />
+                <meshBasicMaterial attach="material" side={FrontSide} map={texture} />
+                {/* <meshBasicMaterial map={textureVideo} toneMapped={false} /> */}
             </Cylinder>
         </>
     );
