@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Scrollbar } from 'react-scrollbars-custom';
 import ServicesItem from './ServicesItem/ServicesItem';
 
+import useStoreServices from '../../store/useStoreServices';
+
 import s from './Services.module.scss';
 import './scroll.scss'
-export default function Services({ mobile }) {
-
-    const [currentService, setCurrentService] = useState(0);
-
+export default function Services({ mobile }) { 
+    const changeActiveServices = useStoreServices((state) => state.changeActiveServices);
+    const sliderServices = useStoreServices((state) => state.sliderServices);
+    const [currentService, setCurrentService] = useState(sliderServices);
     const colapses = [
         {
             title: 'Artificial Intelligence (AI)',
@@ -31,6 +33,13 @@ export default function Services({ mobile }) {
             idx: 3
         }
     ]
+    useEffect(() => {
+        setCurrentService(sliderServices);
+    }, [sliderServices]);
+
+    useEffect(() => {
+        changeActiveServices(currentService);
+    }, [currentService, changeActiveServices]);
 
     return (
         <>

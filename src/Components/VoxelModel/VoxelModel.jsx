@@ -14,6 +14,7 @@ const step = 5;
 
 import voxelsData from './voxel2.json';
 import useActiveModel from "../../store/useActiveModel";
+import ServicesSlider from "../ServicesSlider/ServicesSlider";
 
 const modelCoords = [
     {
@@ -127,21 +128,25 @@ export default function VoxelModel() {
     });
 
     return (
-        <Instances
-            limit={COUNT}
-            range={COUNT}
-            geometry={geometry}
-            ref={mainInstances}
-            scale={0.35}
-        >
-            <meshMatcapMaterial
-                matcap={currentTexture}
-            />
-            {Array(COUNT).fill().map((_, idx) =>
-                <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
-                    <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
-                </group>
-            )}
-        </Instances>
+        <>
+            <Instances
+                limit={COUNT}
+                range={COUNT}
+                geometry={geometry}
+                ref={mainInstances}
+                scale={0.3}
+            >
+                <meshMatcapMaterial
+                    matcap={currentTexture}
+                />
+                {Array(COUNT).fill().map((_, idx) =>
+                    <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
+                        <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
+                    </group>
+                )}
+                <ServicesSlider />
+            </Instances>
+
+        </>
     )
 } 

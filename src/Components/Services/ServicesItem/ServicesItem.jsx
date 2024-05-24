@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import s from '../Services.module.scss';
 
 export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
-
-    const [isExpanded, setExpanded] = useState(currentService === index)
-    const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded })
+    const [isExpanded, setExpanded] = useState(currentService === index);
+    const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
     const handler = () => {
         if (currentService !== index) {
@@ -21,8 +20,13 @@ export default function ServicesItem({ index, title, colapse, currentService, se
     }
 
     useEffect(() => {
-        currentService !== index && setExpanded(false);
-    }, [currentService, index])
+        if (currentService !== index) {
+            setExpanded(false);
+        } else {
+            setExpanded(true);
+        }
+    }, [currentService, index]);
+
     return (
         <li
             {...getToggleProps({
@@ -40,11 +44,10 @@ export default function ServicesItem({ index, title, colapse, currentService, se
     )
 }
 
-
 ServicesItem.propTypes = {
     index: PropTypes.number,
     title: PropTypes.string,
     colapse: PropTypes.string,
     currentService: PropTypes.number,
     setCurrentService: PropTypes.func
-}
+};

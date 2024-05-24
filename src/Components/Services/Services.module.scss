@@ -19,6 +19,10 @@
             border-bottom-color: $color-primary;
             padding-bottom: 1.3125rem;
 
+            .title {
+                color: $color-primary;
+            }
+
             @media (max-width:$width-shortDesktop) {
                 padding-bottom: 1.25rem;
             }
@@ -41,6 +45,7 @@
             line-height: 2.275rem;
             font-weight: 500;
             padding: 0.5rem 0;
+            transition: all ease-in-out 300ms;
 
             @media (max-width:$width-shortDesktop) {
                 font-size: 1.625rem;

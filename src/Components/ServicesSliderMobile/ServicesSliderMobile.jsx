@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Html, Plane } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import PropTypes from 'prop-types';
 import { easing } from 'maath';
 import { Vector3 } from "three";
 
 import Slide from "./Slide/Slide";
-import useActiveModel from '../../store/useActiveModel';
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import useStoreServices from '../../store/useStoreServices';
 const slides = [
     { image: '/image/slider/1.jpg' },
@@ -17,16 +17,21 @@ const slides = [
 const slidesCount = 4;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
-import s from './ServicesSlider.module.scss';
-export default function ServicesSlider() {
+import s from './ServicesSliderMobile.module.scss';
+export default function ServicesSliderMobile() {
     const currentIndexServices = useStoreServices((state) => state.activeServices);
     const getSliderServices = useStoreServices((state) => state.getSliderServices);
-    const activeModel = useActiveModel((state) => state.activeModel);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const headerHeight = useStoreMobileScroll((state) => state.headerHeight);
+    const activeModel = useStoreMobileScroll((state) => state.activeModel);
+    const pageHeight = useStoreMobileScroll((state) => state.pageHeight);
+    const scrollTop = useStoreMobileScroll((state) => state.scrollTop);
     const [isActive, setIsActive] = useState(false);
+    const { size, viewport } = useThree();
     const slidesRef = useRef(null);
     const sliderRef = useRef(null);
     const isDown = useRef(false);
-    const startX = useRef(0);
+    const startX = useRef(0); 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [animatedValue, setAnimatedValue] = useState(0);
     const [isNewSlide, setIsNewSlide] = useState(false);
@@ -100,20 +105,28 @@ export default function ServicesSlider() {
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
-            const rotateTo = - (-40 + currentSlideIndex * 90) * Math.PI / 180;
+            const rotateTo = - (-50 + currentSlideIndex * 90) * Math.PI / 180;
             const rotationVector = new Vector3(0, rotateTo, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
+        }
+        if (sliderRef.current && isActive) {
+            const targetPosition = new Vector3(
+                0,
+                viewport.height / 20 + viewport.height / 2 + 1 / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+                0
+            )
+            easing.damp3(sliderRef.current.position, targetPosition, 0.5, delta);
         }
     });
 
     return (
         <mesh
             ref={sliderRef}
+            scale={size.width / 2600}
             visible={isActive ? true : false}
-            rotation={[0, -1.2, 0]}
-            scale={1.2}
         >
-            <mesh >
+            <mesh scale={1.3}
+            >
                 <Plane
                     args={[20, 30]}
                     position={[0, 0, 0]}
@@ -151,6 +164,7 @@ export default function ServicesSlider() {
     )
 }
 
-ServicesSlider.propTypes = {
+
+ServicesSliderMobile.propTypes = {
     position: PropTypes.object
 };
