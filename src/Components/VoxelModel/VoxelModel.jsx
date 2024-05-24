@@ -63,7 +63,6 @@ export default function VoxelModel() {
     }, [activeModel])
 
     useFrame((state, delta) => {
-
         if (modelCoords[activeModel] && mainInstances && mainInstances.current) {
 
             const targetRotation = new Vector3(
@@ -81,8 +80,12 @@ export default function VoxelModel() {
         }
 
         instances.current.children.forEach((inst, idx) => {
-            if (inst && voxelsData[activeModel]) {
-                const targetPosition = new Vector3(voxelsData[activeModel][idx * 3], voxelsData[activeModel][idx * 3 + 1], voxelsData[activeModel][idx * 3 + 2]);
+            if (inst) {
+                const targetPosition = new Vector3(
+                    voxelsData[activeModel] ? voxelsData[activeModel][idx * 3] : 0,
+                    voxelsData[activeModel] ? voxelsData[activeModel][idx * 3 + 1] : 0,
+                    voxelsData[activeModel] ? voxelsData[activeModel][idx * 3 + 2] : 0
+                );
                 const randomPosition = new Vector3((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
                 const targetScale = new Vector3(sizes[activeModel], sizes[activeModel], sizes[activeModel]);
 
