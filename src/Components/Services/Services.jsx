@@ -40,10 +40,10 @@ export default function Services({ mobile }) {
                 'Tired of the same old content? Get noticed with our turnkey video production:',
             ],
             list: [
-                '🎬 From Idea to Impact:** Full-service production, 100% hassle-free.',
-                '🚀 Boost Engagement:** Videos that increase brand interaction by up to 80%.',
-                '💡 Expert Team:** Creative vision meets precision execution.',
-                '🎥 Cutting-Edge Tech:** Stunning visuals using the latest equipment.',
+                '🎬 From Idea to Impact: Full-service production, 100% hassle-free.',
+                '🚀 Boost Engagement: Videos that increase brand interaction by up to 80%.',
+                '💡 Expert Team: Creative vision meets precision execution.',
+                '🎥 Cutting-Edge Tech: Stunning visuals using the latest equipment.',
                 "Ready to see the difference? Let's make magic. Contact us now!"
             ],
             idx: 3
