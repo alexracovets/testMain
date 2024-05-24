@@ -10,7 +10,7 @@ import useActiveModel from '../../store/useActiveModel';
 import useStoreServices from '../../store/useStoreServices';
 const slides = [
     {
-        image: '/test/test.jpg',
+        image: '/test/test.png',
         video: false
     },
     {
@@ -18,7 +18,7 @@ const slides = [
         video: '/test/ar.mp4'
     },
     {
-        image: '/test/test.jpg',
+        image: '/test/test.png',
         video: false
     },
     {
