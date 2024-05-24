@@ -1,6 +1,12 @@
 @import '../../global/variable.scss';
 
 .scroll {
+    .ScrollbarsCustom-Content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .ScrollbarsCustom-Wrapper {
         inset: 0px 0px 0px 0px !important;
     }

@@ -14,7 +14,6 @@ export default function ServicesPage() {
         >
             <section>
                 <div className={s.content}>
-                    <h2>Services</h2>
                     <Services />
                 </div>
             </section>
