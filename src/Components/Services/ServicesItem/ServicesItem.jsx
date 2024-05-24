@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import s from '../Services.module.scss';
 
-export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
+export default function ServicesItem({ index, title, colapse, currentService, setCurrentService, list }) {
     const [isExpanded, setExpanded] = useState(currentService === index);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
@@ -38,7 +38,23 @@ export default function ServicesItem({ index, title, colapse, currentService, se
                 {title}
             </div>
             <div {...getCollapseProps()} className={s.colapse}>
-                {colapse}
+                {colapse.map((text, key) => {
+                    return (
+                        <text key={key}>
+                            {text}
+                        </text>
+                    )
+                })}
+                <ul>
+                    {list && list.map((li, key) => {
+                        return (
+                            <li key={key}>
+                                {li}
+                            </li>
+                        )
+                    })}
+                </ul>
+
             </div>
         </li>
     )
@@ -47,7 +63,6 @@ export default function ServicesItem({ index, title, colapse, currentService, se
 ServicesItem.propTypes = {
     index: PropTypes.number,
     title: PropTypes.string,
-    colapse: PropTypes.string,
     currentService: PropTypes.number,
     setCurrentService: PropTypes.func
 };
