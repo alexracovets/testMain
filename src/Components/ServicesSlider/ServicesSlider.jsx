@@ -10,7 +10,7 @@ import useActiveModel from '../../store/useActiveModel';
 import useStoreServices from '../../store/useStoreServices';
 const slides = [
     {
-        image: '/test/test.png',
+        image: '/test/test.jpg',
         video: false
     },
     {
@@ -18,7 +18,7 @@ const slides = [
         video: '/test/ar.mp4'
     },
     {
-        image: '/test/test.png',
+        image: '/test/test.jpg',
         video: false
     },
     {
@@ -26,12 +26,6 @@ const slides = [
         video: '/test/production.mp4'
     }
 ];
-const videos = [
-    { video: '/video.mp4' },
-    { video: '/video.mp4' },
-    { video: '/video.mp4' },
-    { video: '/video.mp4' },
-]
 
 const slidesCount = 4;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
