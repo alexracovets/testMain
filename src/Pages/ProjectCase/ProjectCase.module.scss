@@ -105,10 +105,13 @@
                 flex-direction: row;
 
                 .points {
+                    width: 100%;
                     display: flex;
                     justify-content: flex-start;
                     align-items: flex-start;
                     flex-direction: column;
+                    padding-right: 52px;
+                    border-right: 1px solid $color-primary;
 
                     li {
                         display: flex;
