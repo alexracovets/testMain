@@ -1,10 +1,12 @@
 import { Scrollbar } from "react-scrollbars-custom";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import projectsData from "../../data/projectsData";
 
 import s from './ProjectsPage.module.scss';
+
 export default function ProjectsPage() {
     const [projects, setProjects] = useState([]);
 
@@ -27,10 +29,10 @@ export default function ProjectsPage() {
                     <div className={s.projects}>
                         {projects.map((item, idx) => {
                             return (
-                                <button key={idx} className={s.item}>
+                                <NavLink to={`/projects/${item.pageName}`} key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{item.title}</h3>
-                                        <p>{item.text}</p>
+                                        <p>{item.description}</p>
                                         <div className={s.tags}>
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                         </div>
@@ -39,7 +41,7 @@ export default function ProjectsPage() {
                                         <img src={`/image/projects/logo/${item.logo}`} />
                                         <h4>{item.logoName}</h4>
                                     </div>
-                                </button>
+                                </NavLink>
                             )
                         })}
                     </div>

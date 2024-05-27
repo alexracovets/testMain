@@ -8,10 +8,10 @@ import MainPage from "../../../Pages/MainPage/MainPage";
 import AboutPage from "../../../Pages/AboutPage/AboutPage";
 import MobileMain from "../../../Pages/MobileMain/MobileMain";
 import ContactPage from "../../../Pages/ContactPage/ContactPage";
+import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
 import ProjectsPage from "../../../Pages/ProjectsPage/ProjectsPage";
 import ServicesPage from "../../../Pages/ServicesPage/ServicesPage";
 import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
-import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
 
 export default function PagerRoutes() {
     const location = useLocation();
@@ -28,9 +28,8 @@ export default function PagerRoutes() {
                     <Route path="services" element={<ServicesPage />} />
                     <Route path="industries" element={<IndustriesPage />} />
                     <Route path="contact" element={<ContactPage />} />
-                    <Route path="projects" element={<ProjectsPage />}>
-                        <Route path=":id" element={<ProjectCase />} />
-                    </Route>
+                    <Route path="projects" element={<ProjectsPage />} />
+                    <Route path="projects/:id" element={<ProjectCase />} />
                     <Route path="q&a" element={<QAPage />} />
                 </Route>
                 <Route path="/mobile" element={<Mobile />}>

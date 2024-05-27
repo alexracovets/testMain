@@ -2,7 +2,7 @@ const projectsData = [
     {
         pageName: `project1`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
@@ -19,7 +19,7 @@ const projectsData = [
     {
         pageName: `project2`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
@@ -36,7 +36,7 @@ const projectsData = [
     {
         pageName: `project3`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
@@ -53,7 +53,7 @@ const projectsData = [
     {
         pageName: `project4`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
@@ -70,7 +70,7 @@ const projectsData = [
     {
         pageName: `project5`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
@@ -87,7 +87,7 @@ const projectsData = [
     {
         pageName: `project6`,
         title: `Last-mile delivery platform redesign and maintenance`,
-        text: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
             `Logistics`,
             `Germany`,
