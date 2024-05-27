@@ -11,6 +11,7 @@ import ContactPage from "../../../Pages/ContactPage/ContactPage";
 import ProjectsPage from "../../../Pages/ProjectsPage/ProjectsPage";
 import ServicesPage from "../../../Pages/ServicesPage/ServicesPage";
 import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
+import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
 
 export default function PagerRoutes() {
     const location = useLocation();
@@ -27,7 +28,9 @@ export default function PagerRoutes() {
                     <Route path="services" element={<ServicesPage />} />
                     <Route path="industries" element={<IndustriesPage />} />
                     <Route path="contact" element={<ContactPage />} />
-                    <Route path="projects" element={<ProjectsPage />} />
+                    <Route path="projects" element={<ProjectsPage />}>
+                        <Route path=":id" element={<ProjectCase />} />
+                    </Route>
                     <Route path="q&a" element={<QAPage />} />
                 </Route>
                 <Route path="/mobile" element={<Mobile />}>

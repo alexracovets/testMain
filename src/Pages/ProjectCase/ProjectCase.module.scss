@@ -1,0 +1,19 @@
+@import '../../global/variable.scss';
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2.9375rem;
+
+    section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 52px;
+ 
+    }
+}
