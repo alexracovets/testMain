@@ -73,7 +73,21 @@ export default function ProjectCase() {
                                     </li>
                                 </ul>
                                 <div className={s.message}>
-
+                                    <div className={s.avatar}>
+                                        <img src={`/image/projects/avatar/avatar.jpg`} />
+                                    </div>
+                                    <div className={s.text}>
+                                        Spotium 360 HAS SIGNIFICANTLY CONTRIBUTED TO THE SUCCESS OF OUR COMPANY GROWTH THROUGH OUTSTANDING COLLABORATION AND A PROFESSIONAL APPROACH. THANKS A LOT TO THE WHOLE TEAM.
+                                    </div>
+                                    <div className={s.name}>
+                                        John Johnson
+                                    </div>
+                                    <div className={s.position}>
+                                        CEO
+                                    </div>
+                                    <div className={s.company}>
+                                        Company name
+                                    </div>
                                 </div>
                             </section>
                         </div>
