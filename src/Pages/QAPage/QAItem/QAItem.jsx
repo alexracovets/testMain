@@ -19,7 +19,7 @@ export default function QAItem({ title, content }) {
                     if (item.type === 'text') {
                         return <p key={idx}>{item.value}</p>
                     } else if (item.type === 'html') {
-                        return <>{item.value}</>
+                        return <div key={idx}>{item.value}</div>
                     }
                 })}
             </div>

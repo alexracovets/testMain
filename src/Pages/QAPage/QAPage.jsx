@@ -91,7 +91,7 @@ export default function QAPage() {
             <Scrollbar className={'scroll'}>
                 <section>
                     <h2>
-                        Projects
+                        Q&A
                     </h2>
                     <div className={s.question}>
                         {colapses.map((colapse) => {

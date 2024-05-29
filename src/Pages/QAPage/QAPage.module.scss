@@ -75,6 +75,11 @@
                         font-weight: 400;
                         color: $color-white;
                         font-family: $font-JB_Mono;
+
+                        a {
+                            color: $color-primary;
+                            font-weight: 600;
+                        }
                     }
                 }
             }
