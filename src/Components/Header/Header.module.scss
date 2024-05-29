@@ -114,6 +114,28 @@
                 }
             }
 
+            .desktop_menu {
+                font-size: 3rem;
+                letter-spacing: 0.1rem;
+                color: $color-white;
+                text-transform: uppercase;
+                font-family: $font-Bebas;
+                position: relative;
+                cursor: pointer;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+
+                }
+            }
+
             .burger {
                 position: relative;
                 width: 2.75rem;
@@ -188,4 +210,10 @@
     font-size: 4.5rem;
     letter-spacing: 0rem;
     transform: scale(1.7, 1);
+}
+
+@keyframes bgRotate {
+    100% {
+        transform: rotate(1turn);
+    }
 }

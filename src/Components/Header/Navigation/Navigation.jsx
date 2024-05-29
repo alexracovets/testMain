@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 import Burger from "../Burger/Burger";
 
 import s from '../Header.module.scss';
+import { useEffect, useRef } from "react";
+
+import useStoreNavigation from '../../../store/useStoreNavigation';
 
 export default function Navigation({ isDesktop }) {
     const location = useLocation();
-
+    const setBurger = useStoreNavigation((state) => state.setBurger);
+    const isActive = useStoreNavigation((state) => state.isBurger);
     const links = [
         { path: "/about", name: "About" },
         { path: "/services", name: "Services" },
@@ -16,7 +20,7 @@ export default function Navigation({ isDesktop }) {
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact us" },
     ]
-
+    console.log(setBurger)
     return (
         <nav className={s.navigation}>
             {isDesktop ? <>
@@ -31,6 +35,9 @@ export default function Navigation({ isDesktop }) {
                         )
                     })}
                 </ul> */}
+                <div className={s.desktop_menu} onClick={() => setBurger(true)}>
+                    Menu
+                </div>
                 <Burger />
             </>
                 :
