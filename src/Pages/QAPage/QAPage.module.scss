@@ -3,15 +3,81 @@
 .wrapper {
     width: 100%;
     height: 100%;
-    max-width: 83.75rem;
     margin: 0 auto;
+    padding: 0 2.9375rem;
 
     section {
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 52px;
 
+        h2 {
+            font-family: $font-DM_Sans;
+            color: $color-primary;
+            font-weight: 800;
+            font-size: 58px;
+            line-height: 66.7px;
+            margin-bottom: 56px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .question {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100%;
+
+            .item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 26px;
+
+                .title {
+                    width: 100%;
+                    font-size: 24px;
+                    line-height: 33.6px;
+                    font-weight: 400;
+                    color: $color-white;
+                    font-family: $font-JB_Mono;
+                    padding-bottom: 12px;
+                    border-width: 1px;
+                    border-bottom-style: solid;
+                    border-bottom-color: $color-white;
+                    margin-bottom: 12px;
+                    transition: all ease-in-out 400ms;
+                    cursor: pointer;
+
+                    &.active {
+                        color: $color-primary;
+                        border-bottom-color: $color-primary;
+                    }
+                }
+
+                .content {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    p {
+                        font-size: 20px;
+                        line-height: 30px;
+                        font-weight: 400;
+                        color: $color-white;
+                        font-family: $font-JB_Mono;
+                    }
+                }
+            }
+        }
     }
 }

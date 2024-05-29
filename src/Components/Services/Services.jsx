@@ -61,8 +61,7 @@ export default function Services({ mobile }) {
         <>
             {!mobile ? <Scrollbar className={'scroll'}>
                 <ul className={s.services}>
-                    {colapses.map((colapse) => {
-                        console.log(colapse)
+                    {colapses.map((colapse) => { 
                         return (
                             <ServicesItem
                                 key={colapse.idx}

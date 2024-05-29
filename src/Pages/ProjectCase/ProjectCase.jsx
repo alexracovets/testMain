@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import s from './ProjectCase.module.scss';
 
 import projectsData from "../../data/projectsData";
+import Keys from "../../Components/Keys/Keys";
 
 export default function ProjectCase() {
     const { id } = useParams();
@@ -15,10 +16,6 @@ export default function ProjectCase() {
         const project = projectsData.find(project => project.pageName === id);
         setContent(project)
     }, [id, setContent])
-
-    useEffect(() => {
-        console.log(content)
-    }, [content])
 
     return (
         <>
@@ -89,6 +86,9 @@ export default function ProjectCase() {
                                         Company name
                                     </div>
                                 </div>
+                            </section>
+                            <section className={s.keys_info}>
+                                <Keys content={content.keys_block} />
                             </section>
                         </div>
                     </Scrollbar>

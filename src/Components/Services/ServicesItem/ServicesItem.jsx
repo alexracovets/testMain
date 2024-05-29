@@ -7,7 +7,7 @@ import s from '../Services.module.scss';
 export default function ServicesItem({ index, title, colapse, currentService, setCurrentService, list }) {
     const [isExpanded, setExpanded] = useState(currentService === index);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-
+    
     const handler = () => {
         if (currentService !== index) {
             setExpanded(true);
@@ -40,9 +40,9 @@ export default function ServicesItem({ index, title, colapse, currentService, se
             <div {...getCollapseProps()} className={s.colapse}>
                 {colapse.map((text, key) => {
                     return (
-                        <text key={key}>
+                        <p key={key}>
                             {text}
-                        </text>
+                        </p>
                     )
                 })}
                 <ul>
@@ -62,6 +62,8 @@ export default function ServicesItem({ index, title, colapse, currentService, se
 
 ServicesItem.propTypes = {
     index: PropTypes.number,
+    colapse: PropTypes.array,
+    list: PropTypes.array,
     title: PropTypes.string,
     currentService: PropTypes.number,
     setCurrentService: PropTypes.func
