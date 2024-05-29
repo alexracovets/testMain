@@ -19,8 +19,7 @@ export default function Navigation({ isDesktop }) {
         { path: "/projects", name: "Projects" },
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact us" },
-    ]
-    console.log(setBurger)
+    ] 
     return (
         <nav className={s.navigation}>
             {isDesktop ? <>
