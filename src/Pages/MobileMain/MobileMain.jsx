@@ -4,7 +4,6 @@ import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
 import Strengths from '../../Components/Strengths/Strengths';
 import UI_Button from "../../Components/UI_Button/UI_Button";
-import Industries from '../../Components/Industries/Industries';
 import Developments from "../../Components/Developments/Developments";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
@@ -46,13 +45,13 @@ export default function MobileMain() {
         }, { threshold: 0.5 });
 
         if (firstSection.current) observer.observe(firstSection.current);
-        if (secondSection.current) observer.observe(secondSection.current);
-        if (thirdSection.current) observer.observe(thirdSection.current);
+        // if (secondSection.current) observer.observe(secondSection.current);
+        // if (thirdSection.current) observer.observe(thirdSection.current);
 
         return () => {
             if (firstSection.current) observer.unobserve(firstSection.current);
-            if (secondSection.current) observer.unobserve(secondSection.current);
-            if (thirdSection.current) observer.unobserve(thirdSection.current);
+            // if (secondSection.current) observer.unobserve(secondSection.current);
+            // if (thirdSection.current) observer.unobserve(thirdSection.current);
         };
     }, []);
     useEffect(() => {
@@ -87,7 +86,20 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space} ref={firstSection}></div>
-                    <h1>Reliable partner in</h1>
+                    {/* <h1>Reliable partner in</h1> */}
+                    <div className={s.we_wrapper}>
+                        <div className={s.we}>
+                            <p>
+                                We&#39;re Innovative
+                            </p>
+                            <p>
+                                We&#39;re Creative
+                            </p>
+                            <p>
+                                We&#39;re SPOTIUM 360
+                            </p>
+                        </div>
+                    </div>
                     <Fliper />
                     <div className={s.btn}>
                         <UI_Button text={'DISCOVER US'} arrow />
@@ -111,7 +123,7 @@ export default function MobileMain() {
             </section>
             <section ref={scrollServices}>
                 <div className={s.content}>
-                    <div className={s.model_space} ref={secondSection}></div>
+                    {/* <div className={s.model_space} ref={secondSection}></div> */}
                     <h2> Services </h2>
                     <Services mobile />
                 </div>

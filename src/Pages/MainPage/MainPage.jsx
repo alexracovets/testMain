@@ -16,7 +16,18 @@ export default function MainPage() {
         >
             <section>
                 <div className={s.content}>
-                    <h1>Reliable partner in</h1>
+                    {/* <h1>Reliable partner in</h1> */}
+                    <div className={s.we}>
+                        <p>
+                            We&#39;re Innovative
+                        </p>
+                        <p>
+                            We&#39;re Creative
+                        </p>
+                        <p>
+                            We&#39;re SPOTIUM 360
+                        </p>
+                    </div>
                     <Fliper />
                     <div className={s.btn}>
                         <UI_Button text={'DISCOVER US'} arrow />

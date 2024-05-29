@@ -40,6 +40,41 @@
                 }
             }
 
+            .we_wrapper {
+                position: relative;
+                width: 100%;
+
+                .we {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+
+                    p {
+                        color: $color-neutral-10;
+                        font-family: $font-Bebas;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        line-height: 1;
+                        margin: 0;
+
+                        &:first-of-type {
+                            font-size: 1.4rem;
+                        }
+
+                        &:nth-of-type(2) {
+                            font-size: 2rem;
+                        }
+
+                        &:nth-of-type(3) {
+                            font-size: 3rem;
+                        }
+                    }
+                }
+            }
+
+
+
             h1 {
                 display: block;
                 margin: 0 auto;

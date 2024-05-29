@@ -116,7 +116,7 @@ export default function MobileModel() {
                     </group>
                 )}
             </Instances>
-            <ServicesSliderMobile />
+            {/* <ServicesSliderMobile /> */}
         </>
     )
 } 

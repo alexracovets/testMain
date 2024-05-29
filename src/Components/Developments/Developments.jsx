@@ -25,7 +25,7 @@ export default function Developments() {
             <li>
                 <img src={dev} alt='Artificial Intelligence' />
                 <span className={s.text}>
-                    <span>Software</span>
+                    <span>Web</span>
                     <span>Development</span>
                 </span>
             </li>

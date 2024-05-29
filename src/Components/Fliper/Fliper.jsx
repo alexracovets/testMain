@@ -3,9 +3,8 @@ import SplitFlapDisplay from "react-split-flap-display";
 import { ALPHA } from "react-split-flap-display/constants";
 
 const sentences = [
-    'SOFTWARE   DEVELOPMENT',
+    'INTERACTIVEWEBSITE DEV',
     'AR VR XR   DEVELOPMENT',
-    'INTERACTIVEWEB DEV    ',
     'DIGITAL    MARKETING  '
 ];
 import './Fliper.scss'
