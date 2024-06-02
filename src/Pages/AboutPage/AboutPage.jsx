@@ -25,7 +25,7 @@ export default function AboutPage() {
                             We know how to operate with a high demand traffic and marketing budgets over 30K$
                         </h3>
                     </div>
-                    <Strengths />
+                    {/* <Strengths /> */}
                 </div>
             </section>
         </motion.div>

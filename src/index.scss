@@ -67,6 +67,10 @@ html {
         font-size: 1.11113vw;
     }
 
+    @media (max-width:$width-tableBig) {
+        font-size: 1.269841vw;
+    }
+
     @media (max-width:$width-table) {
         font-size: 2.1538vw;
     }
@@ -77,5 +81,5 @@ html {
 }
 
 canvas {
-    width: 100%; 
+    width: 100%;
 }
