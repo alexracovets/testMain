@@ -119,6 +119,7 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: row;
+                flex-direction: column;
 
                 .points {
                     width: 100%;
@@ -128,8 +129,9 @@
                     align-items: flex-start;
                     flex-direction: column;
                     padding: 1.875rem 0;
-                    padding-right: 3.25rem;
-                    border-right: 1px solid $color-primary;
+                    padding-bottom: 3.5rem;
+                    margin-bottom: 3.5rem;
+                    border-bottom: 1px solid $color-primary;
 
                     li {
                         display: flex;
@@ -154,8 +156,8 @@
                         }
 
                         p {
-                            font-size: 1.625rem;
-                            line-height: 2.4375rem;
+                            font-size: 1.25rem;
+                            line-height: 1.875rem;
                             font-weight: 400;
                             color: $color-white;
                             font-family: $font-JB_Mono;
@@ -165,13 +167,11 @@
 
                 .message {
                     width: 100%;
-                    max-width: 38.125rem;
+                    max-width: 30.3125rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    padding-left: 3.25rem;
-                    padding-right: 4.5625rem;
 
                     .avatar {
                         width: 7.875rem;
