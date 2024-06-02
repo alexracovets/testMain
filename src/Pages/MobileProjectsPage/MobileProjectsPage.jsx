@@ -27,7 +27,7 @@ export default function MobileProjectsPage() {
                 <div className={s.projects}>
                     {projects.map((item, idx) => {
                         return (
-                            <NavLink to={`/projects/${item.pageName}`} key={idx} className={s.item}>
+                            <NavLink to={`/mobile/projects/${item.pageName}`} key={idx} className={s.item}>
                                 <div className={s.info}>
                                     <h3 className={s.title}>{item.title}</h3>
                                     <p>{item.description}</p>

@@ -6,13 +6,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // margin-top: 7.5rem;
-    padding: 7.5rem 0;
 
     .titles {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding-bottom: 0.75rem;
         border-bottom: 1px solid $color-primary;
@@ -24,21 +22,28 @@
             line-height: 2.8rem;
             color: $color-neutral-50;
             font-family: $font-JB_Mono;
-            width: calc(100% / 3);
             cursor: pointer;
             text-align: center;
+            margin-right: 20.71875rem;
+            text-wrap: nowrap;
+            letter-spacing: -0.0625rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
 
             &.active {
                 color: $color-primary;
             }
 
-            &:first-of-type {
-                text-align: left;
+            @media (max-width:$width-shortDesktop) {
+                margin-right: 6.75rem;
             }
 
-            &:last-of-type {
-                text-align: right;
+            @media (max-width:$width-tableBig) {
+                font-size: 1.7rem;
             }
+
         }
     }
 
@@ -48,6 +53,19 @@
         align-items: flex-start;
         position: relative;
         width: 100%;
+
+        &.mask {
+            opacity: 0;
+
+            .item {
+                position: relative;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
 
         .item {
             width: 100%;
@@ -64,6 +82,11 @@
 
             &.active {
                 opacity: 1;
+            }
+
+            @media (max-width:$width-shortDesktop) {
+                font-size: 1.25rem;
+                line-height: 1.875rem;
             }
 
             ul {

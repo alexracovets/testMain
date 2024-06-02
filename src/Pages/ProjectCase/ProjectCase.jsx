@@ -47,7 +47,8 @@ export default function ProjectCase() {
                                     </div>
                                 </div>
                                 <div className={s.photo}>
-                                    <img src={`/image/projects/main/main.jpg`} />
+                                    <div className={s.image_wrapper} style={{ backgroundImage: 'url(/image/projects/main/main.jpg)' }}>
+                                    </div>
                                 </div>
                             </section>
                             <section className={s.about_info}>

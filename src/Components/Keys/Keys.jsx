@@ -8,7 +8,7 @@ export default function Keys({ content }) {
     const handleToggle = (index) => {
         setExpandedIndex(expandedIndex === index ? -1 : index);
     };
-    console.log(content)
+
     return (
         <div className={s.keys}>
             <div className={s.titles}>
@@ -25,6 +25,36 @@ export default function Keys({ content }) {
                 })}
             </div>
             <div className={s.info}>
+                {content.map((list) => {
+                    return (
+                        <div
+                            key={list.id}
+                            className={expandedIndex === list.id ? s.item + ' ' + s.active : s.item}
+                        >
+                            {list.content.map((item, idx) => {
+                                if (item.type === 'text') {
+                                    return (
+                                        <p key={idx}>
+                                            {item.value}
+                                        </p>
+                                    )
+                                } else if (item.type === 'list') {
+                                    return (
+                                        <ul key={idx}>
+                                            {item.li.map((li, idx) => {
+                                                return <li key={idx}>
+                                                    {li}
+                                                </li>
+                                            })}
+                                        </ul>
+                                    )
+                                }
+                            })}
+                        </div>
+                    )
+                })}
+            </div>
+            <div className={s.info + ' ' + s.mask}>
                 {content.map((list) => {
                     return (
                         <div

@@ -4,11 +4,7 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 0 2.9375rem;
-
-    @media (max-width:$width-shortDesktop) {
-        padding: 0 3.125rem;
-    }
+    padding: 0 3.1875rem;
 
     .case {
         width: 100%;
@@ -19,20 +15,11 @@
 
         section {
             width: 100%;
-            min-height: 80dvh;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
-            padding: 3.25rem 0;
-
-            @media (max-width:$width-shortDesktop) {
-                min-height: 76.4dvh;
-            }
-
-            @media (max-width: $width-tableBig) {
-                padding: 3.125rem 0;
-            }
+            padding: 3rem 0;
 
             h2 {
                 font-size: 3.625rem;
@@ -46,22 +33,13 @@
             }
 
             .description {
-                font-size: 2rem;
-                line-height: 2.8rem;
+                font-size: 1.25rem;
+                line-height: 1.875rem;
                 letter-spacing: -0.125rem;
                 font-weight: 400;
                 color: $color-white;
                 font-family: $font-JB_Mono;
-                margin-bottom: 2rem;
-
-                @media (max-width:$width-shortDesktop) {
-                    font-size: 1.25rem;
-                    line-height: 1.875rem;
-                }
-
-                @media (max-width: $width-tableBig) {
-                    margin-bottom: 1.3rem;
-                }
+                margin-bottom: 1rem;
             }
 
             &.main_info {
@@ -70,32 +48,23 @@
                 align-items: flex-start;
                 flex-direction: row;
                 align-self: stretch;
+                flex-direction: column;
 
                 .content {
                     width: auto;
+                    margin-bottom: 3.5rem;
                 }
 
                 .photo {
                     height: 100%;
-                    width: 64.625rem;
-                    min-width: 64.625rem;
+                    width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    @media (max-width:$width-shortDesktop) {
-                        width: 42.5rem;
-                        min-width: 42.5rem;
-                    }
-
-                    @media (max-width:$width-tableBig) {
-                        width: 31.125rem;
-                        min-width: 31.125rem;
-                    }
-
                     .image_wrapper {
-                        width: 50.875rem;
-                        min-height: 68dvh;
+                        width: 100%;
+                        min-height: 28.8rem;
                         height: 100%;
                         display: flex;
                         justify-content: center;
@@ -105,16 +74,6 @@
                         border-radius: 1.5rem;
                         background-size: cover;
                         background-position: center;
-
-                        @media (max-width:$width-shortDesktop) {
-                            width: 30.3125rem;
-                            min-height: 66dvh;
-                        }
-
-                        @media (max-width:$width-tableBig) {
-                            width: 19.9375rem;
-                            min-height: 68dvh;
-                        }
                     }
                 }
 
@@ -200,11 +159,6 @@
                             font-weight: 400;
                             color: $color-white;
                             font-family: $font-JB_Mono;
-
-                            @media (max-width:$width-shortDesktop) {
-                                font-size: 1.25rem;
-                                line-height: 1.875rem;
-                            }
                         }
                     }
                 }
