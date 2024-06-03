@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
-import Burger from "../Burger/Burger";
-
-import useStoreNavigation from '../../../store/useStoreNavigation';
+import Burger from "../Burger/Burger"; 
 
 import s from '../Header.module.scss';
+import MenuBtn from '../MenuBtn/MenuBtn';
 export default function Navigation({ isDesktop }) {
-    const setBurger = useStoreNavigation((state) => state.setBurger);
+ 
     return (
         <nav className={s.navigation}>
-            {isDesktop ? <>
-                <div className={s.desktop_menu} onClick={() => setBurger(true)}>
-                    Menu
-                </div>
-                <Burger />
+            {isDesktop ? <> 
+                <MenuBtn /> 
             </>
                 :
                 <Burger />

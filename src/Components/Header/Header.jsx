@@ -20,9 +20,6 @@ export default function Header({ isDesktop }) {
             <div className={s.wrapper}>
                 <div className={s.header}>
                     <Logo isDesktop={isDesktop} />
-                    {/* <div className={s.test}>
-                        Digital production studio
-                    </div> */}
                     <Navigation isDesktop={isDesktop} />
                 </div>
             </div>

@@ -114,27 +114,7 @@
                 }
             }
 
-            .desktop_menu {
-                font-size: 3rem;
-                letter-spacing: 0.1rem;
-                color: $color-white;
-                text-transform: uppercase;
-                font-family: $font-Bebas;
-                position: relative;
-                cursor: pointer;
-
-                &:before {
-                    content: "";
-                    position: absolute;
-
-                }
-
-                &:after {
-                    content: "";
-                    position: absolute;
-
-                }
-            }
+           
 
             .burger {
                 position: relative;

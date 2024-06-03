@@ -1,0 +1,170 @@
+@import '../../../global/variable.scss';
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .desktop_menu {
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        color: $color-white;
+        text-transform: uppercase;
+        font-family: $font-Bebas;
+        position: relative;
+        cursor: pointer; 
+    }
+
+    .btn__wrapper {
+        width: 3.975rem;
+        height: 3.975rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        cursor: pointer;
+
+        .menu {
+            width: 3.975rem;
+            height: 2.675rem;
+            background-color: $color-white;
+            border-radius: 3rem;
+            position: relative;
+            z-index: 11;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: calc(50% - 0.625rem/2 - 20%);
+                top: calc(50% - 0.625rem/2);
+                width: 0.625rem;
+                height: 0.625rem;
+                background-color: $color-neutral-100;
+                border-radius: 50%;
+                z-index: 2;
+            }
+
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: calc(50% - 0.625rem/2 + 20%);
+                top: calc(50% - 0.625rem/2);
+                width: 0.625rem;
+                height: 0.625rem;
+                background-color: $color-neutral-100;
+                border-radius: 50%;
+            }
+
+            &.hover {
+                animation: changeBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+
+                &::before {
+                    animation: changeDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+
+                &::after {
+                    animation: changeDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+            }
+
+            &.unhover {
+                animation: revertBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+
+                &::before {
+                    animation: revertDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+
+                &::after {
+                    animation: revertDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+            }
+        }
+    }
+
+}
+
+
+@keyframes changeBox {
+    from {
+        width: 3.975rem;
+        height: 2.675rem;
+    }
+
+    to {
+        width: 2.675rem;
+        height: 3.975rem;
+    }
+}
+
+@keyframes revertBox {
+    from {
+        width: 2.675rem;
+        height: 3.975rem;
+    }
+
+    to {
+        width: 3.975rem;
+        height: 2.675rem;
+    }
+}
+
+@keyframes changeDotBig {
+    from {
+        left: calc(50% - 0.625rem/2 - 20%);
+        top: calc(50% - 0.625rem/2);
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+
+    to {
+        left: calc(50% - 1.7rem/2);
+        top: calc(10%);
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+}
+
+@keyframes revertDotBig {
+    from {
+        left: calc(50% - 1.7rem/2);
+        top: calc(10%);
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    to {
+        left: calc(50% - 0.625rem/2 - 20%);
+        top: calc(50% - 0.625rem/2);
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}
+
+@keyframes changeDotSmall {
+    from {
+        left: calc(50% - 0.625rem/2 + 20%);
+        top: calc(50% - 0.625rem/2);
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+
+    to {
+        left: calc(50% - 0.625rem/2);
+        top: calc(70%);
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}
+
+@keyframes revertDotSmall {
+    from {
+        left: calc(50% - 0.625rem/2);
+        top: calc(70%);
+    }
+
+    to {
+        left: calc(50% - 0.625rem/2 + 20%);
+        top: calc(50% - 0.625rem/2);
+    }
+}
