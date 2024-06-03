@@ -3,7 +3,7 @@
 .menu {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 
     .desktop_menu {
         font-size: 3rem;
@@ -12,7 +12,16 @@
         text-transform: uppercase;
         font-family: $font-Bebas;
         position: relative;
-        cursor: pointer; 
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.975rem;
+        padding-right: 1rem;
+
+        @media (max-width:$width-tableBig) {
+            font-size: 3.3rem;
+        }
     }
 
     .btn__wrapper {
@@ -21,7 +30,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 1rem;
         cursor: pointer;
 
         .menu {
