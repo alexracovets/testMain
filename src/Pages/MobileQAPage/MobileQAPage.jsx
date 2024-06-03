@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 import QAItem from "./QAItem/QAItem";
@@ -23,7 +24,7 @@ const colapses = [
         colapse: [
             {
                 type: `html`,
-                value: <p>It’s easy! Let’s schedule our first meeting with <a href="https://calendly.com/spotium360/discovery-spotium360"> Calendy</a>!</p>
+                value: <p>It’s easy! Let’s schedule our first meeting with <Link target="_blank" to={"https://calendly.com/spotium360/discovery-spotium360"}>Calendy</Link>!</p>
             }
         ],
         idx: 1
