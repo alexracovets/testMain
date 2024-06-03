@@ -52,7 +52,6 @@ export default function ServicesItem({ index, title, colapse, currentService, se
                             return (
                                 <ul key={idx}>
                                     {item.value.map((li, index) => {
-                                        console.log(li)
                                         return (
                                             <li key={index}>
                                                 <p> {li.map((text, id) => {
