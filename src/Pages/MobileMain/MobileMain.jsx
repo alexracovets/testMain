@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Services from '../../Components/Services/Services';
@@ -10,6 +11,7 @@ import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import useAnchorScroll from '../../store/useAnchorScroll';
 
 import s from './MobileMain.module.scss';
+import Footer from "../../Components/Footer/Footer";
 
 export default function MobileMain() {
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
@@ -82,7 +84,13 @@ export default function MobileMain() {
         }
     }, [scrollSection, getScrollTo, scrollHeight])
     return (
-        <div className={s.wrapper}  >
+
+        <motion.div className={s.wrapper}
+            initial={{ opacity: 0, x: '-40%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={{ duration: 0.5, delay: .1 }}
+            exit={{ opacity: 0, x: '-20%' }}
+        >
             <section>
                 <div className={s.content}>
                     <div className={s.model_space} ref={firstSection}></div>
@@ -128,13 +136,7 @@ export default function MobileMain() {
                     <Services mobile />
                 </div>
             </section>
-            {/* <section ref={scrollIndustries}>
-                <div className={s.content}>
-                    <h2> INDUSTRIES </h2>
-                    <div className={s.model_space} ref={thirdSection}></div>
-                    <Industries mobile />
-                </div>
-            </section> */}
-        </div>
+            <Footer />
+        </motion.div>
     )
 }

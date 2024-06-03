@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import s from './MobileProjectCase.module.scss';
 
 import projectsData from "../../data/projectsData";
-import Keys from "../../Components/Keys/Keys";
+import KeysMobile from "../../Components/KeysMobile/KeysMobile";
 
 export default function MobileProjectCase() {
     const { id } = useParams();
@@ -87,7 +87,7 @@ export default function MobileProjectCase() {
                             </div>
                         </section>
                         <section className={s.keys_info}>
-                            <Keys content={content.keys_block} />
+                            <KeysMobile content={content.keys_block} />
                         </section>
                     </div>
                 </motion.div>

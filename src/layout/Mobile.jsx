@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 
-import Header from "../Components/Header/Header";
-import Footer from "../Components/Footer/Footer";
+import Header from "../Components/Header/Header"; 
 import RSC from "react-scrollbars-custom";
 import useStoreMobileScroll from '../store/useStoreMobileScroll';
 import useAnchorScroll from '../store/useAnchorScroll';
@@ -80,7 +79,6 @@ export default function Mobile() {
             <main>
                 <Outlet />
             </main>
-            <Footer />
         </RSC>
     )
 }

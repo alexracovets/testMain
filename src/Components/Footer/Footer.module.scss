@@ -38,14 +38,14 @@ footer {
 
         &.mobile {
             display: none;
-            padding: 3.125rem;
+            padding: 3.125rem 0;
 
             @media (max-width:$width-table) {
                 display: block;
             }
 
             @media (max-width:$width-mobile) {
-                padding: 1.25rem;
+                padding: 1.25rem 0;
             }
 
             .contacts {
