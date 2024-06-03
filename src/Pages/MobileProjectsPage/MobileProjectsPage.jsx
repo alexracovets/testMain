@@ -2,17 +2,27 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import Footer from "../../Components/Footer/Footer";
 import projectsData from "../../data/projectsData";
+import useAnchorScroll from '../../store/useAnchorScroll';
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
 import s from './MobileProjectsPage.module.scss';
-import Footer from "../../Components/Footer/Footer";
-
 export default function MobileProjectsPage() {
     const [projects, setProjects] = useState([]);
+    const scrollSection = useAnchorScroll((state) => state.section);
+    const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
 
     useEffect(() => {
         setProjects(projectsData);
     }, []);
+
+    useEffect(() => {
+        if (scrollSection === 'contacts') {
+            getScrollTo(scrollHeight)
+        }
+    }, [scrollSection, getScrollTo, scrollHeight])
 
     return (
         <motion.div className={s.wrapper}

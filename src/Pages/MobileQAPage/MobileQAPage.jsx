@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 import QAItem from "./QAItem/QAItem";
-
+import Footer from "../../Components/Footer/Footer";
 const colapses = [
     {
         title: 'What is our field of expertise?',
@@ -77,9 +78,20 @@ const colapses = [
     }
 ]
 
+import useAnchorScroll from '../../store/useAnchorScroll';
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
+
 import s from './MobileQAPage.module.scss';
-import Footer from "../../Components/Footer/Footer";
 export default function MobileQAPage() {
+    const scrollSection = useAnchorScroll((state) => state.section);
+    const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+
+    useEffect(() => {
+        if (scrollSection === 'contacts') {
+            getScrollTo(scrollHeight)
+        }
+    }, [scrollSection, getScrollTo, scrollHeight])
 
     return (
         <motion.div className={s.wrapper}

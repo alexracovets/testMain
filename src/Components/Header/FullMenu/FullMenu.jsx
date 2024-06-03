@@ -13,7 +13,7 @@ export default function FullMenu({ isDesktop }) {
     const links = [
         { path: "/services", name: "Services" },
         { path: "/projects", name: "Projects" },
-        { path: "/about", name: "About Us" }, 
+        { path: "/about", name: "About Us" },
         // { path: "/industries", name: "Industries" }, 
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact Us" }
@@ -22,6 +22,10 @@ export default function FullMenu({ isDesktop }) {
     const anchorLink = (name) => {
         getSection(name);
         setBurger(false);
+    }
+
+    const scrollToBot = () => {
+
     }
 
     return (

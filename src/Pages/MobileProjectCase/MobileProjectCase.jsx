@@ -2,20 +2,31 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import s from './MobileProjectCase.module.scss';
 
+import useAnchorScroll from '../../store/useAnchorScroll';
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import projectsData from "../../data/projectsData";
 import KeysMobile from "../../Components/KeysMobile/KeysMobile";
 import Footer from "../../Components/Footer/Footer";
 
+import s from './MobileProjectCase.module.scss';
 export default function MobileProjectCase() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
+    const scrollSection = useAnchorScroll((state) => state.section);
+    const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
+    const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
 
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);
         setContent(project)
     }, [id, setContent])
+
+    useEffect(() => {
+        if (scrollSection === 'contacts') {
+            getScrollTo(scrollHeight)
+        }
+    }, [scrollSection, getScrollTo, scrollHeight])
 
     return (
         <>
