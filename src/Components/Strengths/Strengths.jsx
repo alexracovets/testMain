@@ -9,57 +9,89 @@ import bots from '/image/icons/strengths/bots_icon.svg';
 import analytics from '/image/icons/strengths/analytics_icon.svg';
 
 import s from './Strengths.module.scss';
+import { useEffect, useState } from 'react';
+import { useCollapse } from 'react-collapsed';
 export default function Strengths() {
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 430);
+    const [isExpanded, setExpanded] = useState(false);
+    const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
     const strengths = [
         {
-            name: 'Artificial Intelligence',
+            name: 'AI Bots Integrations',
             img: ai
         },
         {
-            name: 'Mobile Applications',
+            name: 'UX/UI',
             img: mob
         },
         {
-            name: 'CRM/BPM',
+            name: 'Website development',
             img: srmBpm
         },
         {
-            name: 'Extended Reality',
+            name: 'AR-VR-XR',
             img: xr
         },
         {
-            name: 'Web Applications',
+            name: 'Digital Marketing',
             img: web
         },
         {
-            name: 'E-Commerce',
+            name: 'Video Production',
             img: eCom
         },
         {
-            name: 'Digital Marketing',
+            name: 'Web applications',
             img: dm
         },
         {
-            name: 'Social Apps & Bots',
+            name: 'E-Commerce',
             img: bots
         },
         {
-            name: 'Tech Analytics',
+            name: 'MVP Launch',
             img: analytics
         },
     ]
 
+    useEffect(() => {
+        setIsDesktop(window.innerWidth > 430);
+        function handleResize() {
+            setIsDesktop(window.innerWidth > 430);
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
-        <ul className={s.strengths}>
-            {strengths.map((strength, i) => {
-                return (
-                    <li key={i}>
-                        <img src={strength.img} alt={strength.name} />
-                        <span>{strength.name}</span>
-                    </li>
-                )
-            })}
-        </ul>
+        <>
+            {isDesktop ?
+                <ul className={s.strengths}>
+                    {strengths.map((strength, i) => {
+                        return (
+                            <li key={i}>
+                                <img src={strength.img} alt={strength.name} />
+                                <span>{strength.name}</span>
+                            </li>
+                        )
+                    })}
+                </ul> :
+                <>
+                    <button {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.expertiseBtn}>{`Our Expertise${isExpanded ? ':' : '...'}`}</button>
+                    <ul {...getCollapseProps()} className={s.strengths}>
+                        {strengths.map((strength, i) => {
+                            return (
+                                <li key={i}>
+                                    <img src={strength.img} alt={strength.name} />
+                                    <span>{strength.name}</span>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </>
+            }
+
+        </>
     )
 }

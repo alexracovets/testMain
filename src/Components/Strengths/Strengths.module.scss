@@ -30,7 +30,7 @@
         @media (max-width:$width-mobile) {
             width: 100%;
             padding: 1.25rem 0 0.75rem 0;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
         }
 
@@ -86,11 +86,19 @@
             }
 
             @media (max-width:$width-mobile) {
-                font-size: 0.875rem;
+                font-size: 1rem;
                 line-height: 1.3125rem;
                 padding: 0;
                 width: auto;
             }
         }
     }
+}
+
+.expertiseBtn {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-white;
+    padding: 1rem 0;
+    font-family: $font-JB_Mono;
 }
