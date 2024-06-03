@@ -356,7 +356,6 @@ export default function Services({ mobile }) {
                                 colapse={colapse.colapse}
                                 currentService={currentService}
                                 setCurrentService={setCurrentService}
-                                list={colapse.list ? colapse.list : null}
                             />
                         )
                     })}
