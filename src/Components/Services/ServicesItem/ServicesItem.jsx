@@ -38,41 +38,43 @@ export default function ServicesItem({ index, title, colapse, currentService, se
                 {title}
             </div>
             <div {...getCollapseProps()} className={s.colapse}>
-                {colapse.map((item, idx) => {
-                    if (item.type === 'bold') {
-                        return (
-                            <b key={idx}>{item.value}</b>
-                        )
-                    } else if (item.type === 'text') {
-                        return (
-                            <p key={idx}>{item.value}</p>
-                        )
-                    } else if (item.type === 'list') {
-                        return (
-                            <ul key={idx}>
-                                {item.value.map((li, index) => {
-                                    console.log(li)
-                                    return (
-                                        <li key={index}>
-                                            <p> {li.map((text, id) => {
-                                                if (text.type === 'bold') {
-                                                    return (
-                                                        <b key={id}>{text.value}</b>
-                                                    )
-                                                } else if (text.type === 'text') {
-                                                    return (
-                                                        <span key={id}>{text.value}</span>
-                                                    )
-                                                }
-                                            })}
-                                            </p>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        )
-                    }
-                })}
+                <div className={s.colapse__wrapper}>
+                    {colapse.map((item, idx) => {
+                        if (item.type === 'bold') {
+                            return (
+                                <b key={idx}>{item.value}</b>
+                            )
+                        } else if (item.type === 'text') {
+                            return (
+                                <p key={idx}>{item.value}</p>
+                            )
+                        } else if (item.type === 'list') {
+                            return (
+                                <ul key={idx}>
+                                    {item.value.map((li, index) => {
+                                        console.log(li)
+                                        return (
+                                            <li key={index}>
+                                                <p> {li.map((text, id) => {
+                                                    if (text.type === 'bold') {
+                                                        return (
+                                                            <b key={id}>{text.value}</b>
+                                                        )
+                                                    } else if (text.type === 'text') {
+                                                        return (
+                                                            <span key={id}>{text.value}</span>
+                                                        )
+                                                    }
+                                                })}
+                                                </p>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            )
+                        }
+                    })}
+                </div>
             </div>
         </li>
     )

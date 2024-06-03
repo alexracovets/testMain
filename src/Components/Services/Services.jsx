@@ -10,10 +10,6 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Transform Your Website with Interactive Development'
-            },
-            {
-                type: 'text',
                 value: 'Is your website failing to engage visitors? Our interactive website development services provide the solution:'
             },
             {
@@ -73,10 +69,6 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Empower Your Business with Tailored AI Bot Solutions'
-            },
-            {
-                type: 'text',
                 value: 'Feeling overwhelmed by repetitive tasks and missed opportunities? Our custom AI bot development service is here to streamline your processes and unlock new possibilities:'
             },
             {
@@ -136,10 +128,6 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Immerse Your Audience with Cutting-Edge AR VR XR Solutions'
-            },
-            {
-                type: 'text',
                 value: 'Tired of traditional marketing methods falling flat? Our AR VR XR development service offers a new dimension of engagement for your audience:'
             },
             {
@@ -199,10 +187,6 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Amplify Your Brand with Digital Marketing Excellence'
-            },
-            {
-                type: 'text',
                 value: 'Struggling to stand out online? Our digital marketing services are designed to solve your visibility problems and drive real results:'
             },
             {
@@ -271,7 +255,7 @@ const colapses = [
         title: 'Video Production',
         colapse: [
             {
-                type: 'text',
+                type: 'bold',
                 value: 'Struggling to make an impact in a crowded digital landscape? Our bespoke video production service offers tailored solutions to help your brand shine:'
             },
             {

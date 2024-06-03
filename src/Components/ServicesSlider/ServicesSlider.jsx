@@ -24,10 +24,14 @@ const slides = [
     {
         image: false,
         video: '/test/production.mp4'
+    },
+    {
+        image: '/test/test.png',
+        video: false
     }
 ];
 
-const slidesCount = 4;
+const slidesCount = 5;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './ServicesSlider.module.scss';
@@ -113,7 +117,7 @@ export default function ServicesSlider() {
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
-            const rotateTo = - (-40 + currentSlideIndex * 90) * Math.PI / 180;
+            const rotateTo = - (-40 + currentSlideIndex * 72) * Math.PI / 180;
             const rotationVector = new Vector3(0, rotateTo, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
