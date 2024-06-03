@@ -1,174 +1,216 @@
 @import '../../global/variable.scss';
 
-.services {
+.services__wrapper {
     width: 100%;
-    height: 100%;
-    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     flex-direction: column;
-    padding-right: 2rem;
 
-    @media (max-width:$width-table) {
-        padding-right: 0;
-    }
-
-    li {
+    .services {
         width: 100%;
-        padding-bottom: 0;
-        transition: all ease-in-out 300ms;
-        pointer-events: all;
-        margin-bottom: 1rem;
-        cursor: pointer;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-right: 2rem;
 
-        &.active {
-            padding-bottom: 1.3125rem;
-
-            .title {
-                color: $color-primary;
-            }
-
-            @media (max-width:$width-shortDesktop) {
-                padding-bottom: 1.25rem;
-            }
-
-            @media (max-width:$width-table) {
-                padding-bottom: 1.625rem;
-            }
-
-            @media (max-width:$width-mobile) {
-                padding-bottom: 1.625rem;
-            }
-
-            .title {
-                background-color: transparent;
-                border-color: transparent;
-            }
+        @media (max-width:$width-table) {
+            padding-right: 0;
         }
 
-        .title {
+        li {
             width: 100%;
-            color: $color-white;
-            font-family: $font-JB_Mono;
-            letter-spacing: -0.0625rem;
-            font-size: 1.625rem;
-            line-height: 2.275rem;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            transition: all ease-in-out 0ms;
-            border: 1px solid $color-primary;
-            border-radius: 4rem;
-            padding: 0.5rem 1rem;
-            background-color: $color-servicesOpacity;
+            padding-bottom: 0;
+            transition: all ease-in-out 300ms;
+            pointer-events: all;
+            margin-bottom: 1rem;
+            cursor: pointer;
 
-            @media (max-width:$width-shortDesktop) {
+            &.active {
+                padding-bottom: 1.3125rem;
+
+                .title {
+                    color: $color-primary;
+                }
+
+                @media (max-width:$width-shortDesktop) {
+                    padding-bottom: 1.25rem;
+                }
+
+                @media (max-width:$width-table) {
+                    padding-bottom: 1.625rem;
+                }
+
+                @media (max-width:$width-mobile) {
+                    padding-bottom: 1.625rem;
+                }
+
+                .title {
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+
+            .title {
+                width: 100%;
+                color: $color-white;
+                font-family: $font-JB_Mono;
+                letter-spacing: -0.0625rem;
                 font-size: 1.625rem;
                 line-height: 2.275rem;
-                letter-spacing: -0.0625rem;
-            }
-
-            @media (max-width:$width-table) {
-                font-size: 1.625rem;
-                line-height: 2.275rem;
-                letter-spacing: -0.0625rem;
-            }
-
-            @media (max-width:$width-mobile) {
-                font-size: 1rem;
-                line-height: 1.38rem;
-            }
-        }
-
-        .colapse {
-            width: 100%;
-            color: $color-white;
-            font-family: $font-JB_Mono;
-            font-weight: 300;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            .colapse__wrapper {
-                padding: 1rem;
-                border-radius: 1.5rem;
+                font-weight: 500;
+                padding: 0.5rem 0;
+                transition: all ease-in-out 0ms;
                 border: 1px solid $color-primary;
+                border-radius: 4rem;
+                padding: 0.5rem 1rem;
                 background-color: $color-servicesOpacity;
 
-                b {
-                    display: block;
-                    font-size: 1rem;
-                    width: 100%;
-
-                    @media (max-width:$width-mobile) {
-                        font-size: 0.75rem;
-                        line-height: 1rem;
-                    }
+                @media (max-width:$width-shortDesktop) {
+                    font-size: 1.625rem;
+                    line-height: 2.275rem;
+                    letter-spacing: -0.0625rem;
                 }
 
-                p {
-                    display: block;
-                    font-size: 1rem;
-                    line-height: 1.1;
-                    margin-bottom: 0 !important;
-                    width: 100%;
-
-                    @media (max-width:$width-mobile) {
-                        font-size: 0.75rem;
-                        line-height: 1rem;
-                    }
+                @media (max-width:$width-table) {
+                    font-size: 1.625rem;
+                    line-height: 2.275rem;
+                    letter-spacing: -0.0625rem;
                 }
 
-                ul {
-                    padding: 0.2rem 0;
+                @media (max-width:$width-mobile) {
+                    font-size: 1rem;
+                    line-height: 1.38rem;
+                }
+            }
 
-                    li {
-                        border: none;
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: flex-start;
-                        padding-left: 1rem;
-                        position: relative;
-                        margin: 0 auto;
-                        padding-bottom: 0.5rem;
+            .colapse {
+                width: 100%;
+                color: $color-white;
+                font-family: $font-JB_Mono;
+                font-weight: 300;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
 
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            left: -0.25rem;
-                            top: 0.5rem;
-                            width: 0.5rem;
-                            height: 0.5rem;
-                            background-color: $color-white;
-                            border-radius: 50%;
-                            transition: all ease-in-out 300ms;
+                .colapse__wrapper {
+                    padding: 1rem;
+                    border-radius: 1.5rem;
+                    border: 1px solid $color-primary;
+                    background-color: $color-servicesOpacity;
 
-                            @media (max-width:$width-mobile) {
-                                top: calc(50% - 0.25rem);
-                            }
+                    b {
+                        display: block;
+                        font-size: 1rem;
+                        width: 100%;
+
+                        @media (max-width:$width-mobile) {
+                            font-size: 0.75rem;
+                            line-height: 1rem;
                         }
+                    }
 
-                        &:hover {
+                    p {
+                        display: block;
+                        font-size: 1rem;
+                        line-height: 1.1;
+                        margin-bottom: 0 !important;
+                        width: 100%;
+
+                        @media (max-width:$width-mobile) {
+                            font-size: 0.75rem;
+                            line-height: 1rem;
+                        }
+                    }
+
+                    ul {
+                        padding: 0.2rem 0;
+
+                        li {
+                            border: none;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            padding-left: 1rem;
+                            position: relative;
+                            margin: 0 auto;
+                            padding-bottom: 0.5rem;
+
                             &::before {
-                                background-color: $color-primary;
+                                content: '';
+                                position: absolute;
+                                left: -0.25rem;
+                                top: 0.5rem;
+                                width: 0.5rem;
+                                height: 0.5rem;
+                                background-color: $color-white;
+                                border-radius: 50%;
+                                transition: all ease-in-out 300ms;
+
+                                @media (max-width:$width-mobile) {
+                                    top: calc(50% - 0.25rem);
+                                }
                             }
-                        }
 
-                        b {
-                            color: $color-white;
-                            font-size: 1rem;
-                            padding-right: 0.5rem;
-                            width: auto;
-                            display: inline;
-                            line-height: 1.1;
+                            &:hover {
+                                &::before {
+                                    background-color: $color-primary;
+                                }
+                            }
 
-                            @media (max-width:$width-mobile) {
-                                font-size: 0.75rem;
-                                line-height: 1rem;
+                            b {
+                                color: $color-white;
+                                font-size: 1rem;
+                                padding-right: 0.5rem;
+                                width: auto;
+                                display: inline;
+                                line-height: 1.1;
+
+                                @media (max-width:$width-mobile) {
+                                    font-size: 0.75rem;
+                                    line-height: 1rem;
+                                }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .btn {
+        width: 14rem;
+        height: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-right: 3rem;
+
+
+        @media (max-width:$width-shortDesktop) {
+            width: 11.34625rem;
+            height: 3rem;
+        }
+
+        button {
+            font-size: 1.625rem;
+
+            @media (max-width:$width-shortDesktop) {
+                font-size: 1.125rem;
+                line-height: 1.485rem;
+            }
+
+            img {
+                width: 1.099rem;
+                height: auto;
+                margin-left: 0.7rem;
+
+                @media (max-width:$width-shortDesktop) {
+                    width: 0.78375rem;
+                    margin-left: 0.5rem;
                 }
             }
         }

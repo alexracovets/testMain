@@ -314,6 +314,7 @@ const colapses = [
 
 import s from './Services.module.scss';
 import './scroll.scss'
+import UI_Button from '../UI_Button/UI_Button';
 export default function Services({ mobile }) {
     const changeActiveServices = useStoreServices((state) => state.changeActiveServices);
     const sliderServices = useStoreServices((state) => state.sliderServices);
@@ -330,36 +331,49 @@ export default function Services({ mobile }) {
     return (
         <>
             {!mobile ? <Scrollbar className={'scroll'}>
-                <ul className={s.services}>
-                    {colapses.map((colapse) => {
-                        return (
-                            <ServicesItem
-                                key={colapse.idx}
-                                index={colapse.idx}
-                                title={colapse.title}
-                                colapse={colapse.colapse}
-                                currentService={currentService}
-                                setCurrentService={setCurrentService}
-                            />
-                        )
-                    })}
-                </ul>
+                <div className={s.services__wrapper}>
+                    <ul className={s.services}>
+                        {colapses.map((colapse) => {
+                            return (
+                                <ServicesItem
+                                    key={colapse.idx}
+                                    index={colapse.idx}
+                                    title={colapse.title}
+                                    colapse={colapse.colapse}
+                                    currentService={currentService}
+                                    setCurrentService={setCurrentService}
+                                />
+                            )
+                        })}
+                    </ul>
+                    <div className={s.btn}>
+                        <UI_Button text={`LET'S TALK`} />
+                    </div>
+                </div>
             </Scrollbar> :
-                <ul className={s.services}>
-                    {colapses.map((colapse) => {
-                        return (
-                            <ServicesItem
-                                key={colapse.idx}
-                                index={colapse.idx}
-                                title={colapse.title}
-                                colapse={colapse.colapse}
-                                currentService={currentService}
-                                setCurrentService={setCurrentService}
-                            />
-                        )
-                    })}
-                </ul>
+                <>
+                    <div className={s.services__wrapper}>
+                        <ul className={s.services}>
+                            {colapses.map((colapse) => {
+                                return (
+                                    <ServicesItem
+                                        key={colapse.idx}
+                                        index={colapse.idx}
+                                        title={colapse.title}
+                                        colapse={colapse.colapse}
+                                        currentService={currentService}
+                                        setCurrentService={setCurrentService}
+                                    />
+                                )
+                            })}
+                        </ul>
+                        <div className={s.btn}>
+                            <UI_Button text={`LET'S TALK`} />
+                        </div>
+                    </div>
+                </>
             }
+
         </>
     )
 }
