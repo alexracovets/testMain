@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import s from '../Services.module.scss';
 
-export default function ServicesItem({ index, title, colapse, currentService, setCurrentService, list }) {
+export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
     const [isExpanded, setExpanded] = useState(currentService === index);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-    
+
     const handler = () => {
         if (currentService !== index) {
             setExpanded(true);
@@ -38,23 +38,41 @@ export default function ServicesItem({ index, title, colapse, currentService, se
                 {title}
             </div>
             <div {...getCollapseProps()} className={s.colapse}>
-                {colapse.map((text, key) => {
-                    return (
-                        <p key={key}>
-                            {text}
-                        </p>
-                    )
-                })}
-                <ul>
-                    {list && list.map((li, key) => {
+                {colapse.map((item, idx) => {
+                    if (item.type === 'bold') {
                         return (
-                            <li key={key}>
-                                {li}
-                            </li>
+                            <b key={idx}>{item.value}</b>
                         )
-                    })}
-                </ul>
-
+                    } else if (item.type === 'text') {
+                        return (
+                            <p key={idx}>{item.value}</p>
+                        )
+                    } else if (item.type === 'list') {
+                        return (
+                            <ul key={idx}>
+                                {item.value.map((li, index) => {
+                                    console.log(li)
+                                    return (
+                                        <li key={index}>
+                                            <p> {li.map((text, id) => {
+                                                if (text.type === 'bold') {
+                                                    return (
+                                                        <b key={id}>{text.value}</b>
+                                                    )
+                                                } else if (text.type === 'text') {
+                                                    return (
+                                                        <span key={id}>{text.value}</span>
+                                                    )
+                                                }
+                                            })}
+                                            </p>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        )
+                    }
+                })}
             </div>
         </li>
     )
