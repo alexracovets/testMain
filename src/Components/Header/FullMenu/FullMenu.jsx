@@ -14,7 +14,6 @@ export default function FullMenu({ isDesktop }) {
         { path: "/services", name: "Services" },
         { path: "/projects", name: "Projects" },
         { path: "/about", name: "About Us" },
-        // { path: "/industries", name: "Industries" }, 
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact Us" }
     ]
@@ -24,35 +23,31 @@ export default function FullMenu({ isDesktop }) {
         setBurger(false);
     }
 
-    const scrollToBot = () => {
-
-    }
-
     return (
-        <div className={isActive ? s.full_menu + ' ' + s.active : s.full_menu}>
-            <ul>
-                {isDesktop ? links.map((link, i) => {
-                    return (
-                        <li key={i} onClick={() => setBurger(false)}>
-                            <NavLink to={link.path} className={location.pathname === link.path && s.active}>
-                                {link.name}
-                            </NavLink>
-                        </li>
-                    )
-                }) :
-                    <>
-                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
-                        <li><NavLink to={'/mobile/projects'} onClick={() => setBurger(false)}> Projects </NavLink></li>
-                        <li><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About Us</NavLink></li>
-                        <li><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
-                        {/* <li><NavLink to={'/mobile'} onClick={() => anchorLink('industries')} > Industries </NavLink></li>   */}
-                        <li><NavLink onClick={() => anchorLink('contacts')} > Contacts Us</NavLink></li>
-                    </>
-                }
+        <div className={isActive ? s.full_menu__wrapper + ' ' + s.active : s.full_menu__wrapper} onClick={() => setBurger(false)}>
+            <div className={s.full_menu} onClick={(e) => e.stopPropagation()}>
+                <ul>
+                    {isDesktop ? links.map((link, i) => {
+                        return (
+                            <li key={i} onClick={() => setBurger(false)}>
+                                <NavLink to={link.path} className={location.pathname === link.path && s.active}>
+                                    {link.name}
+                                </NavLink>
+                            </li>
+                        )
+                    }) :
+                        <>
+                            <li><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
+                            <li><NavLink to={'/mobile/projects'} onClick={() => setBurger(false)}> Projects </NavLink></li>
+                            <li><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About Us</NavLink></li>
+                            <li><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
+                            <li><NavLink onClick={() => anchorLink('contacts')} > Contacts Us</NavLink></li>
+                        </>
+                    }
+                </ul>
+                <div className={s.bottom}>
 
-            </ul>
-            <div className={s.bottom}>
-
+                </div>
             </div>
         </div>
     )

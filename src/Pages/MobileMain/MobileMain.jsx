@@ -94,7 +94,6 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <div className={s.model_space} ref={firstSection}></div>
-                    {/* <h1>Reliable partner in</h1> */}
                     <div className={s.we_wrapper}>
                         <div className={s.we}>
                             <p>
@@ -109,9 +108,7 @@ export default function MobileMain() {
                         </div>
                     </div>
                     <Fliper />
-                    <div className={s.btn}>
-                        <UI_Button text={'DISCOVER US'} arrow />
-                    </div>
+                    <div className={s.btn}><UI_Button text={'DISCOVER US'} arrow /></div>
                     <Developments />
                 </div>
             </section>
@@ -131,7 +128,6 @@ export default function MobileMain() {
             </section>
             <section ref={scrollServices}>
                 <div className={s.content}>
-                    {/* <div className={s.model_space} ref={secondSection}></div> */}
                     <h2> Services </h2>
                     <Services mobile />
                 </div>
