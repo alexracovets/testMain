@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 0 2.9375rem;
+    padding: 0 1.25rem;
 
     section {
         width: 100%;
@@ -13,14 +13,10 @@
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        padding-top: 3.25rem;
+        padding-top: 3.8125rem;
 
-        @media (max-width:$width-shortDesktop) {
-            padding-top: 3.4375rem;
-        }
-
-        @media (max-width:$width-tableBig) {
-            padding-top: 2.6875rem;
+        @media (max-width:$width-mobile) {
+            padding-top: 3.0625rem;
         }
 
         h2 {
@@ -31,7 +27,12 @@
             line-height: 4.16875rem;
             margin-bottom: 3.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.125rem;
+
+            @media (max-width:$width-mobile) {
+                font-size: 2rem;
+                line-height: 2.3rem;
+                margin-bottom: 2.125rem;
+            }
         }
 
         .question {
@@ -40,7 +41,6 @@
             align-items: flex-start;
             flex-direction: column;
             width: 100%;
-            padding-right: 1rem;
 
             .item {
                 display: flex;
@@ -57,13 +57,18 @@
                     font-weight: 400;
                     color: $color-white;
                     font-family: $font-JB_Mono;
-                    padding-bottom: 0.75rem;
                     padding-top: 0.75rem;
+                    padding-bottom: 0.75rem;
                     border-width: 1px;
                     border-bottom-style: solid;
                     border-bottom-color: $color-white;
                     transition: all ease-in-out 400ms;
                     cursor: pointer;
+
+                    @media (max-width:$width-mobile) {
+                        font-size: 1.25rem;
+                        line-height: 1.3125rem;
+                    }
 
                     &.active {
                         color: $color-primary;
@@ -87,16 +92,11 @@
                         padding-top: 0.75rem;
 
                         p {
-                            font-size: 1.25rem;
-                            line-height: 1.875rem;
+                            font-size: 0.875rem;
+                            line-height: 1.3125rem;
                             font-weight: 400;
                             color: $color-white;
                             font-family: $font-JB_Mono;
-
-                            @media (max-width:$width-shortDesktop) {
-                                font-size: 0.875rem;
-                                line-height: 1.3125rem;
-                            }
 
                             a {
                                 color: $color-primary;

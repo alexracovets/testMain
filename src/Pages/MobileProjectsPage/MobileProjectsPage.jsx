@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import projectsData from "../../data/projectsData";
 
 import s from './MobileProjectsPage.module.scss';
+import Footer from "../../Components/Footer/Footer";
 
 export default function MobileProjectsPage() {
     const [projects, setProjects] = useState([]);
@@ -40,6 +41,7 @@ export default function MobileProjectsPage() {
                     })}
                 </div>
             </section>
+            <Footer />
         </motion.div>
     )
 }

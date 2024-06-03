@@ -6,6 +6,7 @@ import s from './MobileProjectCase.module.scss';
 
 import projectsData from "../../data/projectsData";
 import KeysMobile from "../../Components/KeysMobile/KeysMobile";
+import Footer from "../../Components/Footer/Footer";
 
 export default function MobileProjectCase() {
     const { id } = useParams();
@@ -90,6 +91,7 @@ export default function MobileProjectCase() {
                             <KeysMobile content={content.keys_block} />
                         </section>
                     </div>
+                    <Footer />
                 </motion.div>
                 : null}
         </>

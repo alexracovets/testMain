@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 
-import s from '../QAPage.module.scss';
+import s from '../MobileQAPage.module.scss';
 
 export default function QAItem({ title, content }) {
     const [isExpanded, setExpanded] = useState(false);
