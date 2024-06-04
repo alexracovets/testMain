@@ -14,7 +14,7 @@ export default function UI_Button({ text, arrow }) {
         <button className={s.button}>
             <span className={s.text}>
                 {text}
-                {isBtn ? <img src={arrowImage} alt="arrow" /> : null}
+                {isBtn ? <div className={s.arrow__wrapper}><img src={arrowImage} alt="arrow" /></div> : null}
             </span>
         </button>
     )

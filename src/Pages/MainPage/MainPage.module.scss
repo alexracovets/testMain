@@ -87,17 +87,6 @@
                         font-size: 1.125rem;
                         line-height: 1.485rem;
                     }
-
-                    img {
-                        width: 1.099rem;
-                        height: auto;
-                        margin-left: 0.7rem;
-
-                        @media (max-width:$width-shortDesktop) {
-                            width: 0.78375rem;
-                            margin-left: 0.5rem;
-                        }
-                    }
                 }
             }
         }

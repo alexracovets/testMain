@@ -5,6 +5,29 @@
     height: 100%;
     border-radius: 10rem;
     background-color: $color-primary;
+    transition: all ease-in-out 400ms;
+
+    &:hover {
+        transform: scale(1.05);
+
+        .text {
+            .arrow__wrapper {
+                width: 1.099rem;
+                margin-left: 0.7rem;
+
+                @media (max-width:$width-shortDesktop) {
+                    width: 0.78375rem;
+                    margin-left: 0.5rem;
+                }
+
+                img {
+                    transform: rotate(0deg) translateX(0px) translateY(0px);
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
 
     .text {
         font-family: $font-JB_Mono;
@@ -15,8 +38,20 @@
         align-items: center;
         text-transform: uppercase;
 
-        img {
-            height: auto;
+        .arrow__wrapper {
+            overflow: hidden;
+            margin-left: 0rem;
+            width: 0rem;
+            transition: all ease-in-out 400ms;
+
+            img {
+                transform: rotate(45deg) translateX(-1.5625rem) translateY(1.5625rem);
+                opacity: 0;
+                width: 100%;
+                height: auto;
+                transition: all ease-out 400ms;
+            }
         }
+
     }
 }
