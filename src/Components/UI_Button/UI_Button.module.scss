@@ -6,12 +6,12 @@
     border-radius: 10rem;
     background-color: $color-primary;
     transition: all ease-in-out 400ms;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 
     &:hover {
         // transform: scale(1.05);
         background-color: $color-neutral-100;
-        border: 1px solid $color-primary;
+        border: 2px solid $color-primary;
 
         .text {
             color: $color-primary;
