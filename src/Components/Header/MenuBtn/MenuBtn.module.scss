@@ -22,6 +22,11 @@
         @media (max-width:$width-tableBig) {
             font-size: 3.3rem;
         }
+
+        @media (max-width:$width-mobile) {
+            font-size: 2rem;
+            display: none;
+        }
     }
 
     .btn__wrapper {
@@ -40,6 +45,11 @@
             position: relative;
             z-index: 11;
 
+            @media (max-width:$width-mobile) {
+                width: 2.7825rem;
+                height: 1.8725rem;
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -50,6 +60,11 @@
                 background-color: $color-neutral-100;
                 border-radius: 50%;
                 z-index: 2;
+
+                @media (max-width:$width-mobile) {
+                    width: 0.4375rem;
+                    height: 0.4375rem;
+                }
             }
 
 

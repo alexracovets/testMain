@@ -11,7 +11,8 @@ export default function Navigation({ isDesktop }) {
                 <MenuBtn /> 
             </>
                 :
-                <Burger />
+                // <Burger />
+                <MenuBtn /> 
             }
 
         </nav>

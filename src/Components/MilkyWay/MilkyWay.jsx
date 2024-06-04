@@ -26,7 +26,7 @@ export default function MilkyWay() {
         <>
             {
                 points && colors && <points ref={milkyWayRef} rotation={[Math.PI / 2, Math.PI / 8, 0]}>
-                    <bufferGeometry attach="geometry">
+                    <bufferGeometry attach="geometry" >
                         <bufferAttribute
                             attach="attributes-position"
                             count={count}
