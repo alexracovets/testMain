@@ -12,12 +12,22 @@ export default function MenuBtn() {
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        if (isHovered) {
-            setIsActive(true)
-        } else if (!isHovered && !isBurger) {
-            setIsActive(false)
+        if (window.innerWidth > 744) {
+            if (isHovered) {
+                setIsActive(true)
+            } else if (!isHovered) {
+                setIsActive(false)
+            }
         }
-    }, [isHovered, isBurger])
+
+    }, [isHovered])
+
+    useEffect(() => {
+        if (!isHovered) {
+            setIsActive(isBurger)
+        }
+
+    }, [isBurger, isHovered])
     return (
         <div className={s.menu}
             onMouseEnter={() => {
