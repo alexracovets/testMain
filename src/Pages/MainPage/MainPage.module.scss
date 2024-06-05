@@ -78,16 +78,7 @@
                     width: 11.34625rem;
                     height: 3rem;
                     margin-bottom: 4.25rem;
-                }
-
-                button {
-                    font-size: 1.625rem;
-
-                    @media (max-width:$width-shortDesktop) {
-                        font-size: 1.125rem;
-                        line-height: 1.485rem;
-                    }
-                }
+                } 
             }
         }
     }

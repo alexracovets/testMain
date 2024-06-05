@@ -37,12 +37,18 @@
     .text {
         font-family: $font-JB_Mono;
         color: $color-neutral-100;
+        font-size: 1.625rem;
         font-weight: 700;
         display: flex;
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
         transition: all ease-in-out 400ms;
+
+        @media (max-width:$width-shortDesktop) {
+            font-size: 1.125rem;
+            line-height: 1.485rem;
+        }
 
         .arrow__wrapper {
             overflow: hidden;
@@ -62,25 +68,32 @@
     }
 
     &.small {
+        .text {
+            font-size: 18px;
+            line-height: 23.76px;
+        }
+
         &:hover {
-            .text { 
+            .text {
+
                 .arrow__wrapper {
                     width: 12.54px;
                     margin-left: 8px;
-    
+
                     @media (max-width:$width-shortDesktop) {
                         // width: 0.78375rem;
                         // margin-left: 0.5rem;
                     }
-    
+
                     img {
                         transform: rotate(0deg) translateX(0px) translateY(0px);
                         opacity: 1;
                     }
                 }
             }
-    
+
         }
+
         img {
             transform: rotate(45deg) translateX(-1rem) translateY(1rem);
         }

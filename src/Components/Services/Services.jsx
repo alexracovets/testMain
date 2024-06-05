@@ -347,7 +347,7 @@ export default function Services({ mobile }) {
                         })}
                     </ul>
                     <div className={s.btn}>
-                        <UI_Button text={`LET'S TALK`} />
+                        <UI_Button text={`LET'S TALK`} arrow/>
                     </div>
                 </div>
             </Scrollbar> :
