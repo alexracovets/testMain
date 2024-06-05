@@ -1,9 +1,11 @@
+import { Scrollbar } from 'react-scrollbars-custom';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Scrollbar } from 'react-scrollbars-custom';
-import ServicesItem from './ServicesItem/ServicesItem';
 
+import ServicesItem from './ServicesItem/ServicesItem';
+import UI_Button from '../UI_Button/UI_Button';
 import useStoreServices from '../../store/useStoreServices';
+import useModalForm from '../../store/useModalForm';
 const colapses = [
     {
         title: 'Interactive Website Dev',
@@ -312,13 +314,14 @@ const colapses = [
     }
 ]
 
+
+import './scroll.scss';
 import s from './Services.module.scss';
-import './scroll.scss'
-import UI_Button from '../UI_Button/UI_Button';
 export default function Services({ mobile }) {
     const changeActiveServices = useStoreServices((state) => state.changeActiveServices);
     const sliderServices = useStoreServices((state) => state.sliderServices);
     const [currentService, setCurrentService] = useState(sliderServices);
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     useEffect(() => {
         setCurrentService(sliderServices);
@@ -346,8 +349,8 @@ export default function Services({ mobile }) {
                             )
                         })}
                     </ul>
-                    <div className={s.btn}>
-                        <UI_Button text={`LET'S TALK`} arrow/>
+                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                        <UI_Button text={`LET'S TALK`} arrow />
                     </div>
                 </div>
             </Scrollbar> :
@@ -367,7 +370,7 @@ export default function Services({ mobile }) {
                                 )
                             })}
                         </ul>
-                        <div className={s.btn}>
+                        <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                             <UI_Button text={`LET'S TALK`} />
                         </div>
                     </div>
