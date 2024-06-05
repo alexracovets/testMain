@@ -1,10 +1,13 @@
 import UI_Button from '../../Components/UI_Button/UI_Button';
 import { motion } from "framer-motion";
 
-import s from './MainPage.module.scss';
 import Developments from '../../Components/Developments/Developments';
 import Fliper from '../../Components/Fliper/Fliper';
+import useModalForm from '../../store/useModalForm';
+
+import s from './MainPage.module.scss';
 export default function MainPage() {
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     return (
 
@@ -29,7 +32,7 @@ export default function MainPage() {
                         </p>
                     </div>
                     <Fliper />
-                    <div className={s.btn}>
+                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={'DISCOVER US'} arrow />
                     </div>
                     <Developments />

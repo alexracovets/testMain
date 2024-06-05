@@ -1,0 +1,163 @@
+@import '../../../global/variable.scss';
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+
+    .form__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 584px;
+        padding: 30px 50px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid $color-neutral-20;
+        background: #393939d6;
+        position: relative;
+        filter: blur(0px);
+        box-shadow: 0px 0px 123px inset #22141475;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(67 67 67 / 69%);
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+        
+
+        .title {
+            color: $color-white;
+            font-family: $font-JB_Mono;
+            font-size: 28px;
+            line-height: 36.96px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .input__wraper {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 16px;
+
+                label {
+                    width: 100%;
+                    color: $color-white;
+                    font-family: $font-JB_Mono;
+                    font-size: 14px;
+                    line-height: 18.48px;
+                    margin-bottom: 12px;
+                }
+
+                input {
+                    width: 100%;
+                    border: 1px solid $color-white;
+                    background-color: transparent;
+                    padding: 12px 20px;
+                    height: 45px;
+                    border-radius: 45px;
+                    color: $color-white;
+                    font-family: $font-JB_Mono;
+                    font-size: 16px;
+                    line-height: 21.12px;
+                    font-weight: 300;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $color-neutral-20;
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                    height: 111px;
+                    border: 1px solid $color-white;
+                    background-color: transparent;
+                    padding: 12px 20px;
+                    border-radius: 24px;
+                    color: $color-white;
+                    font-family: $font-JB_Mono;
+                    font-size: 16px;
+                    line-height: 21.12px;
+                    font-weight: 300;
+                    overflow: hidden;
+                    resize: none;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $color-neutral-20;
+                    }
+                }
+            }
+
+            .btn {
+                height: 48px;
+                width: 170.54px;
+
+                button {
+                    font-size: 18px;
+
+                    &:hover {
+                        border: 2px solid $color-primary;
+
+                        .text {
+                            display: none;
+
+                            .arrow__wrapper {
+                                width: 12.54px;
+                                margin-left: 8px;
+
+                                @media (max-width:$width-shortDesktop) {
+                                    width: 0.78375rem;
+                                    margin-left: 0.5rem;
+                                }
+
+                                img {
+                                    transform: rotate(0deg) translateX(0px) translateY(0px);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .text {
+                        .arrow__wrapper {
+
+                            img {
+                                transform: rotate(45deg) translateX(-1.5625rem) translateY(1.5625rem);
+                                opacity: 0;
+                                width: 100%;
+                                height: auto;
+                                transition: all ease-out 400ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

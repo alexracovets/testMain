@@ -15,6 +15,7 @@ import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
 import MobileProjectsPage from "../../../Pages/MobileProjectsPage/MobileProjectsPage";
 import MobileProjectCase from "../../../Pages/MobileProjectCase/MobileProjectCase";
 import MobileQAPage from "../../../Pages/MobileQAPage/MobileQAPage";
+import ContactsForm from "../../modal/ContactsForm/ContactsForm";
 
 export default function PagerRoutes() {
     const location = useLocation();
@@ -42,6 +43,7 @@ export default function PagerRoutes() {
                     <Route path="q&a" element={<MobileQAPage />} />
                 </Route>
             </Routes>
+            <ContactsForm />
         </AnimatePresence>
     )
 } 
