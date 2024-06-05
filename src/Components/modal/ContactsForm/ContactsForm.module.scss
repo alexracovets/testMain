@@ -16,15 +16,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 584px;
-        padding: 30px 50px;
-        border-radius: 24px;
+        width: 36.5rem;
+        padding: 1.875rem 3.125rem;
+        border-radius: 1.5rem;
         overflow: hidden;
         border: 2px solid $color-neutral-20;
         background: #393939d6;
         position: relative;
-        filter: blur(0px);
-        box-shadow: 0px 0px 123px inset #22141475;
+        box-shadow: 0 0 4rem inset rgb(85 85 85 / 46%);
 
         &::before {
             content: '';
@@ -35,13 +34,13 @@
             height: 100%;
             background: rgb(67 67 67 / 69%);
             z-index: -1;
-            filter: blur(10px);
+            filter: blur(0.625rem);
         }
 
         .cross {
             position: absolute;
-            right: 34px;
-            top: 25.5px;
+            right: 2.125rem;
+            top: 1.59375rem;
             padding: 0.5rem;
             cursor: pointer;
         }
@@ -49,9 +48,9 @@
         .title {
             color: $color-white;
             font-family: $font-JB_Mono;
-            font-size: 28px;
-            line-height: 36.96px;
-            margin-bottom: 20px;
+            font-size: 1.75rem;
+            line-height: 2.31rem;
+            margin-bottom: 1.25rem;
         }
 
         form {
@@ -67,15 +66,15 @@
                 justify-content: flex-start;
                 align-items: flex-start;
                 flex-direction: column;
-                margin-bottom: 16px;
+                margin-bottom: 1rem;
 
                 label {
                     width: 100%;
                     color: $color-white;
                     font-family: $font-JB_Mono;
-                    font-size: 14px;
-                    line-height: 18.48px;
-                    margin-bottom: 12px;
+                    font-size: 0.875rem;
+                    line-height: 1.155rem;
+                    margin-bottom: 0.75rem;
                     cursor: pointer;
                 }
 
@@ -83,13 +82,13 @@
                     width: 100%;
                     border: 1px solid $color-white;
                     background-color: transparent;
-                    padding: 12px 20px;
-                    height: 45px;
-                    border-radius: 45px;
+                    padding: 0.75rem 1.25rem;
+                    height: 2.8125rem;
+                    border-radius: 2.8125rem;
                     color: $color-white;
                     font-family: $font-JB_Mono;
-                    font-size: 16px;
-                    line-height: 21.12px;
+                    font-size: 1rem;
+                    line-height: 1.32rem;
                     font-weight: 300;
                     outline: none;
 
@@ -100,15 +99,15 @@
 
                 textarea {
                     width: 100%;
-                    height: 111px;
+                    height: 6.9375rem;
                     border: 1px solid $color-white;
                     background-color: transparent;
-                    padding: 12px 20px;
-                    border-radius: 24px;
+                    padding: 0.75rem 1.25rem;
+                    border-radius: 1.5rem;
                     color: $color-white;
                     font-family: $font-JB_Mono;
-                    font-size: 16px;
-                    line-height: 21.12px;
+                    font-size: 1rem;
+                    line-height: 1.32rem;
                     font-weight: 300;
                     overflow: hidden;
                     resize: none;
@@ -121,11 +120,11 @@
             }
 
             .btn {
-                height: 48px;
-                width: 170.54px;
+                height: 3rem;
+                width: 10.65875rem;
 
                 button {
-                    font-size: 18px;
+                    font-size: 1.125rem;
 
                     &:hover {
                         border: 2px solid $color-primary;
@@ -134,8 +133,8 @@
                             display: none;
 
                             .arrow__wrapper {
-                                width: 12.54px;
-                                margin-left: 8px;
+                                width: 0.78375rem;
+                                margin-left: 0.5rem;
 
                                 @media (max-width:$width-shortDesktop) {
                                     width: 0.78375rem;
@@ -143,7 +142,7 @@
                                 }
 
                                 img {
-                                    transform: rotate(0deg) translateX(0px) translateY(0px);
+                                    transform: rotate(0deg) translateX(0rem) translateY(0rem);
                                     opacity: 1;
                                 }
                             }
