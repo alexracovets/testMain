@@ -23,9 +23,7 @@ export default function MenuBtn() {
     }, [isHovered])
 
     useEffect(() => {
-        if (!isHovered) {
-            setIsActive(isBurger)
-        }
+        setIsActive(isBurger)
 
     }, [isBurger, isHovered])
     return (
