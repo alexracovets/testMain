@@ -38,7 +38,13 @@
             filter: blur(10px);
         }
 
-        
+        .cross {
+            position: absolute;
+            right: 34px;
+            top: 25.5px;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
 
         .title {
             color: $color-white;

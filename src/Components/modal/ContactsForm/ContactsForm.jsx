@@ -24,7 +24,7 @@ export default function ContactsForm() {
                     exit={{ opacity: 0 }}
                 >
                     <div className={s.form__wrapper}>
-                        <div className={s.cross}>
+                        <div className={s.cross} onClick={() => setIsActiveForm(false)}>
                             <img src={close_icon} alt="close" />
                         </div>
                         <div className={s.title}>
