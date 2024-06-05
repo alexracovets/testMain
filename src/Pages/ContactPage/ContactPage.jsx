@@ -35,10 +35,10 @@ export default function ContactPage() {
                     <Socials />
                     <div className={s.sub_btns}>
                         <div className={s.discover}>
-                            <UI_Button text={'DISCOVER US'} arrow />
+                            <UI_Button text={'DISCOVER US'} arrow small />
                         </div>
                         <div className={s.office}>
-                            <UI_Button text={'office 3d tour'} arrow />
+                            <UI_Button text={'office 3d tour'} arrow small />
                         </div>
                     </div>
                 </div>

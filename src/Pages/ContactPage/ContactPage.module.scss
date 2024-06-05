@@ -137,25 +137,6 @@
                         height: 3rem;
                         margin-right: 2rem;
                     }
-
-                    button {
-                        font-size: 1.125rem;
-
-                        @media (max-width:$width-shortDesktop) {
-                            font-size: 1.125rem;
-                        }
-
-                        img {
-                            width: 0.77rem;
-                            height: auto;
-                            margin-left: 0.5rem;
-
-                            @media (max-width:$width-shortDesktop) {
-                                width: 0.78375rem;
-                                margin-left: 0.5rem;
-                            }
-                        }
-                    }
                 }
 
                 .office {
@@ -165,25 +146,6 @@
                     @media (max-width:$width-shortDesktop) {
                         width: 13.40875rem;
                         height: 3rem;
-                    }
-
-                    button {
-                        font-size: 1.125rem;
-
-                        @media (max-width:$width-shortDesktop) {
-                            font-size: 1.125rem;
-                        }
-
-                        img {
-                            width: 0.77rem;
-                            height: auto;
-                            margin-left: 0.5rem;
-
-                            @media (max-width:$width-shortDesktop) {
-                                width: 0.78375rem;
-                                margin-left: 0.5rem;
-                            }
-                        }
                     }
                 }
             }
