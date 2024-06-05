@@ -1,5 +1,3 @@
-
-import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import close_icon from '/image/icons/form/close.svg';
 

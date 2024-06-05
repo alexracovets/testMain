@@ -12,7 +12,7 @@ const sizes = [0.3, 0.38, 0.49, 0.54];
 
 import voxelsData from './voxel.json';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
-import ServicesSliderMobile from "../ServicesSliderMobile/ServicesSliderMobile";
+// import ServicesSliderMobile from "../ServicesSliderMobile/ServicesSliderMobile";
 const step = 2;
 export default function MobileModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);

@@ -22,5 +22,7 @@ export default function UI_Button({ text, arrow, submit, small }) {
 
 UI_Button.propTypes = {
     text: PropTypes.string,
-    arrow: PropTypes.bool
+    arrow: PropTypes.bool,
+    submit: PropTypes.bool,
+    small: PropTypes.bool
 }
