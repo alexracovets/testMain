@@ -2,23 +2,24 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Fliper from "../../Components/Fliper/Fliper";
+import Footer from "../../Components/Footer/Footer";
 import Services from '../../Components/Services/Services';
-import Strengths from '../../Components/Strengths/Strengths';
 import UI_Button from "../../Components/UI_Button/UI_Button";
+import Strengths from '../../Components/Strengths/Strengths';
 import Developments from "../../Components/Developments/Developments";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import useAnchorScroll from '../../store/useAnchorScroll';
+import useModalForm from '../../store/useModalForm';
 
 import s from './MobileMain.module.scss';
-import Footer from "../../Components/Footer/Footer";
-
 export default function MobileMain() {
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
     const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollSection = useAnchorScroll((state) => state.section);
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     const firstSection = useRef(null);
     const secondSection = useRef(null);
@@ -108,7 +109,9 @@ export default function MobileMain() {
                         </div>
                     </div>
                     <Fliper />
-                    <div className={s.btn}><UI_Button text={'DISCOVER US'} arrow /></div>
+                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                        <UI_Button text={'DISCOVER US'} arrow />
+                    </div>
                     <Developments />
                 </div>
             </section>
