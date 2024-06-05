@@ -26,7 +26,7 @@
                 }
 
                 img {
-                    transform: rotate(0deg) translateX(0px) translateY(0px);
+                    transform: rotate(0deg) translateX(0rem) translateY(0rem);
                     opacity: 1;
                 }
             }
@@ -69,24 +69,19 @@
 
     &.small {
         .text {
-            font-size: 18px;
-            line-height: 23.76px;
+            font-size: 1.125rem;
+            line-height: 1.485rem;
         }
 
         &:hover {
             .text {
 
                 .arrow__wrapper {
-                    width: 12.54px;
-                    margin-left: 8px;
-
-                    @media (max-width:$width-shortDesktop) {
-                        // width: 0.78375rem;
-                        // margin-left: 0.5rem;
-                    }
+                    width: 0.78375rem;
+                    margin-left: 0.5rem;
 
                     img {
-                        transform: rotate(0deg) translateX(0px) translateY(0px);
+                        transform: rotate(0deg) translateX(0rem) translateY(0rem);
                         opacity: 1;
                     }
                 }
