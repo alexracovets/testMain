@@ -49,7 +49,7 @@ export default function MobileModel() {
         const targetRotation = new Vector3(0, 1.1, 0);
         const targetPosition = new Vector3(
             0,
-            viewport.height / 20 + viewport.height / 2 + modelHeight / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+         viewport.height / 2 + modelHeight / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
             0
         )
         easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);
