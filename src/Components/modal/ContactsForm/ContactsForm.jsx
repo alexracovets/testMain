@@ -22,8 +22,9 @@ export default function ContactsForm() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                     exit={{ opacity: 0 }}
+                    onClick={() => setIsActiveForm(false)}
                 >
-                    <div className={s.form__wrapper}>
+                    <div className={s.form__wrapper} onClick={(e) => e.stopPropagation()}>
                         <div className={s.cross} onClick={() => setIsActiveForm(false)}>
                             <img src={close_icon} alt="close" />
                         </div>
@@ -56,6 +57,6 @@ export default function ContactsForm() {
                 </motion.div> :
                 null
             }
-        </AnimatePresence>
+        </AnimatePresence >
     );
 }  
