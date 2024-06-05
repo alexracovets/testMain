@@ -49,6 +49,7 @@
                 flex-direction: column;
                 width: 100%;
                 margin-bottom: 0.875rem;
+                cursor: pointer;
 
                 .title {
                     width: 100%;
@@ -63,9 +64,9 @@
                     border-bottom-style: solid;
                     border-bottom-color: $color-white;
                     transition: all ease-in-out 400ms;
-                    cursor: pointer;
 
-                    &.active {
+                    &.active,
+                    &:hover {
                         color: $color-primary;
                         border-bottom-color: $color-primary;
                     }

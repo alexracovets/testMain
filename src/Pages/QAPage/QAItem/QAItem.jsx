@@ -10,10 +10,10 @@ export default function QAItem({ title, content }) {
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
     return (
-        <div className={s.item} >
-            <div className={isExpanded ? s.title + " " + s.active : s.title} {...getToggleProps({ onClick: () => setExpanded((prevExpanded) => !prevExpanded) })}>
+        <div className={s.item} {...getToggleProps({ onClick: () => setExpanded((prevExpanded) => !prevExpanded) })}>
+            <h3 className={isExpanded ? s.title + " " + s.active : s.title}>
                 {title}
-            </div>
+            </h3>
             <div className={s.content}  {...getCollapseProps()}>
                 <div className={s.content__wrapper}>
                     {content.map((item, idx) => {
