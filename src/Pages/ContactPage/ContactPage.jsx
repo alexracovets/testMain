@@ -1,18 +1,13 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import UI_Button from '../../Components/UI_Button/UI_Button';
 import Socials from '../../Components/Socials/Socials';
 import useModalForm from '../../store/useModalForm';
 
 import s from './ContactPage.module.scss';
+import CopyButton from "../../Components/CopyButton/CopyButton";
 export default function ContactPage() {
-    const [isBtnFocus, setIsBtnFocus] = useState(false);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
-
-    useEffect(() => {
-        isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 300)
-    }, [isBtnFocus])
     return (
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
@@ -24,14 +19,7 @@ export default function ContactPage() {
                 <div className={s.content}>
                     <div className={s.contact_wrapper}>
                         <h2>Contacts</h2>
-                        <div className={isBtnFocus ? s.contactBtn + ' ' + s.focus : s.contactBtn} onClick={() => setIsBtnFocus(true)}>
-                            <button className={s.text}>
-                                info@spotium360.com
-                            </button>
-                            <button className={s.copy}>
-                                copy
-                            </button>
-                        </div>
+                        <CopyButton />
                     </div>
                     <Socials />
                     <div className={s.sub_btns}>
