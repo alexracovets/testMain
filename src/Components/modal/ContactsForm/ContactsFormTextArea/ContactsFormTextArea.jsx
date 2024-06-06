@@ -33,20 +33,21 @@ export default function ContactsFormTextArea({ name, label, placeholder, type, s
     }, [valueData, name, setUserForm, isValid]);
 
     return (
-        <div className={s.input__wraper}>
-            <div className={s.label_wrapper}>
+        <div className={s.item__wraper}>
+            <div className={s.label__wrapper}>
                 <label htmlFor={name}>{label}</label>
                 {!isValid && <div className={s.required}>This field is required</div>}
             </div>
-
-            <textarea
-                name={name}
-                id={name}
-                placeholder={placeholder}
-                value={valueData}
-                onChange={(e) => changeHandler(e)}
-                className={!isValid ? s.invalid : ''}
-            ></textarea>
+            <div className={s.input__wrapper}>
+                <textarea
+                    name={name}
+                    id={name}
+                    placeholder={placeholder}
+                    value={valueData}
+                    onChange={(e) => changeHandler(e)}
+                    className={!isValid ? s.invalid_input : ''}
+                ></textarea>
+            </div>
         </div>
     );
 }

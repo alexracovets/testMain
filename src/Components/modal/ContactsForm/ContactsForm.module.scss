@@ -105,7 +105,7 @@
             align-items: center;
             flex-direction: column;
 
-            .input__wraper {
+            .item__wraper {
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;
@@ -113,7 +113,7 @@
                 flex-direction: column;
                 margin-bottom: 1rem;
 
-                .label_wrapper {
+                .label__wrapper {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
@@ -144,6 +144,13 @@
                         font-family: $font-JB_Mono;
                         font-size: 0.875rem;
                         line-height: 1.155rem;
+                        opacity: 0;
+                        transition: all ease-in-out 400ms;
+                        transition-delay: 200ms;
+
+                        &.active {
+                            opacity: 1;
+                        }
 
                         @media (max-width:$width-tableBig) {
                             font-size: 1.5rem;
@@ -161,38 +168,62 @@
                     }
                 }
 
-                input {
+                .input__wrapper {
                     width: 100%;
-                    border: 1px solid $color-white;
-                    background-color: transparent;
-                    padding: 0.75rem 1.25rem;
-                    height: 2.8125rem;
-                    border-radius: 2.8125rem;
-                    color: $color-white;
-                    font-family: $font-JB_Mono;
-                    font-size: 1rem;
-                    line-height: 1.32rem;
-                    font-weight: 300;
-                    outline: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
 
-                    &::placeholder {
-                        color: $color-neutral-20;
+                    .invalid {
+                        position: absolute;
+                        right: 1.25rem;
+                        top: calc(50% - 0.5rem);
+                        width: 1rem;
+                        height: 1rem;
+                        background-size: cover;
+                        pointer-events: none;
+                        opacity: 0;
+                        transition: all ease-in-out 400ms;
+
+                        &.active {
+                            opacity: 1;
+                        }
                     }
 
-                    &.invalid {
-                        border: 1px solid $color-primary;
-                    }
-
-                    @media (max-width:$width-tableBig) {
-                        font-size: 1.5rem;
-                        line-height: 2rem;
-                        height: 3.2rem;
-                    }
-
-                    @media (max-width:$width-table) {
-                        font-size: 1rem;
-                        line-height: 1.3rem;
+                    input {
+                        width: 100%;
+                        border: 1px solid $color-white;
+                        background-color: transparent;
+                        padding: 0.75rem 1.25rem;
                         height: 2.8125rem;
+                        border-radius: 2.8125rem;
+                        color: $color-white;
+                        font-family: $font-JB_Mono;
+                        font-size: 1rem;
+                        line-height: 1.32rem;
+                        font-weight: 300;
+                        outline: none;
+
+                        &::placeholder {
+                            color: $color-neutral-20;
+                        }
+
+                        &.invalid_input {
+                            border: 1px solid $color-primary;
+                        }
+
+                        @media (max-width:$width-tableBig) {
+                            font-size: 1.5rem;
+                            line-height: 2rem;
+                            height: 3.2rem;
+                        }
+
+                        @media (max-width:$width-table) {
+                            font-size: 1rem;
+                            line-height: 1.3rem;
+                            height: 2.8125rem;
+                        }
                     }
                 }
 
@@ -216,7 +247,7 @@
                         color: $color-neutral-20;
                     }
 
-                    &.invalid {
+                    &.invalid_input {
                         border: 1px solid $color-primary;
                     }
 
