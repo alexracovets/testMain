@@ -165,6 +165,10 @@
                         color: $color-neutral-20;
                     }
 
+                    &.invalid {
+                        border: 1px solid $color-primary;
+                    }
+
                     @media (max-width:$width-tableBig) {
                         font-size: 1.5rem;
                         line-height: 2rem;
@@ -196,6 +200,10 @@
 
                     &::placeholder {
                         color: $color-neutral-20;
+                    }
+
+                    &.invalid {
+                        border: 1px solid $color-primary;
                     }
 
                     @media (max-width:$width-tableBig) {

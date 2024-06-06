@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import arrowImage from '/image/icons/ui/arrow.svg'
 import s from './UI_Button.module.scss';
-export default function UI_Button({ text, arrow, submit, small }) {
+export default function UI_Button({ text, arrow, submit, small, disabled }) {
     const [isBtn, setIsBtn] = useState(false);
 
     useEffect(() => {
@@ -11,7 +11,14 @@ export default function UI_Button({ text, arrow, submit, small }) {
     }, [arrow])
 
     return (
-        <button className={small ? s.button + ' ' + s.small : s.button} type={submit ? 'submit' : 'button'}>
+        <button
+            className={
+                small ? 
+                (disabled ? s.button + ' ' + s.disabled : s.button) + ' ' + s.small : 
+                (disabled ? s.button + ' ' + s.disabled : s.button)}
+            type={submit ? 'submit' : 'button'}
+            disabled={disabled}
+        >
             <span className={s.text}>
                 {text}
                 {isBtn ? <div className={s.arrow__wrapper}><img src={arrowImage} alt="arrow" /></div> : null}
@@ -24,5 +31,6 @@ UI_Button.propTypes = {
     text: PropTypes.string,
     arrow: PropTypes.bool,
     submit: PropTypes.bool,
-    small: PropTypes.bool
+    small: PropTypes.bool,
+    disabled: PropTypes.bool
 }

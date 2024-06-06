@@ -12,15 +12,25 @@ import { useEffect, useState } from "react";
 export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const [isBtnActive, setIsBtnActive] = useState(false);
     const [userForm, setUserForm] = useState({
-        full_name: '',
-        email: '',
-        textarea: ''
+        full_name: {
+            value: '',
+            isValid: false
+        },
+        email: {
+            value: '',
+            isValid: false
+        },
+        textarea: {
+            value: '',
+            isValid: false
+        },
     })
-
     useEffect(() => {
-        console.log(userForm)
-    }, [userForm])
+        const allValid = Object.values(userForm).every(field => field.isValid && field.value !== '');
+        setIsBtnActive(allValid);
+    }, [userForm]);
 
     return (
         <AnimatePresence>
@@ -60,11 +70,12 @@ export default function ContactsForm() {
                                 name={`textarea`}
                                 label={`Comment`}
                                 placeholder={`Add some text`}
+                                type={`textarea`}
                                 setUserForm={setUserForm}
                                 userForm={userForm}
                             />
                             <div className={s.btn}>
-                                <UI_Button text={'Contact me'} arrow submit small />
+                                <UI_Button text={'Contact me'} arrow submit small disabled={!isBtnActive} />
                             </div>
                         </form>
                     </div>

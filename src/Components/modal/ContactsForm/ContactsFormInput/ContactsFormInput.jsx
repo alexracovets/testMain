@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import s from '../ContactsForm.module.scss';
+import PropTypes from 'prop-types';
 
+import s from '../ContactsForm.module.scss';
 export default function ContactsFormInput({ name, label, placeholder, type, setUserForm, userForm }) {
     const [isValid, setIsValid] = useState(true);
-    const [valueData, setValueData] = useState(userForm[name]);
+    const [valueData, setValueData] = useState(userForm[name].value);
 
     const validateInput = (value) => {
         if (name === 'email') {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(value);
-        } else if (name === 'full_name') { 
+        } else if (name === 'full_name') {
             return value.length > 3;
         }
         return true;
@@ -27,9 +28,13 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
     useEffect(() => {
         setUserForm(prevForm => ({
             ...prevForm,
-            [name]: valueData
+            [name]: {
+                value: valueData,
+                isValid: isValid
+            }
         }));
-    }, [valueData, name, setUserForm]);
+    }, [valueData, name, setUserForm, isValid]);
+
 
     return (
         <div className={s.input__wraper}>
@@ -49,3 +54,12 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
         </div>
     );
 }
+
+ContactsFormInput.propTypes = {
+    name: PropTypes.string,
+    label: PropTypes.string,
+    placeholder: PropTypes.string,
+    type: PropTypes.string,
+    setUserForm: PropTypes.func,
+    userForm: PropTypes.object
+};
