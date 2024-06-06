@@ -23,33 +23,29 @@ export default function MilkyWay() {
     })
 
     return (
-        <>
-            {
-                points && colors && <points ref={milkyWayRef} rotation={[Math.PI / 2, Math.PI / 8, 0]}>
-                    <bufferGeometry attach="geometry" >
-                        <bufferAttribute
-                            attach="attributes-position"
-                            count={count}
-                            array={points}
-                            itemSize={3}
-                        />
-                        <bufferAttribute
-                            attach="attributes-color"
-                            count={count}
-                            array={colors}
-                            itemSize={3}
-                        />
-                    </bufferGeometry>
-                    <pointsMaterial
-                        attach="material"
-                        size={0.09}
-                        map={texture}
-                        depthWrite={false}
-                        blending={AdditiveBlending}
-                        vertexColors={true}
-                    />
-                </points>
-            }
-        </>
+        <points ref={milkyWayRef} rotation={[Math.PI / 2, Math.PI / 8, 0]}>
+            <bufferGeometry attach="geometry" >
+                <bufferAttribute
+                    attach="attributes-position"
+                    count={count}
+                    array={points}
+                    itemSize={3}
+                />
+                <bufferAttribute
+                    attach="attributes-color"
+                    count={count}
+                    array={colors}
+                    itemSize={3}
+                />
+            </bufferGeometry>
+            <pointsMaterial
+                attach="material"
+                size={0.09}
+                map={texture}
+                depthWrite={false}
+                blending={AdditiveBlending}
+                vertexColors={true}
+            />
+        </points>
     )
 }

@@ -165,7 +165,6 @@ export default function ServicesSlider() {
                 </Html>
             </mesh>
         </mesh>
-
     )
 }
 
