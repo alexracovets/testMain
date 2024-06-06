@@ -3,6 +3,12 @@
     min-height: 100dvh;
     transform: none !important;
     z-index: 1 !important;
+    opacity: 0;
+    transition: all ease-in-out 400ms;
+
+    &.active {
+        opacity: 1;
+    }
 
     .pager {
         width: 100%;

@@ -8,11 +8,15 @@ import CountUp from 'react-countup';
 
 import 'css-doodle';
 import s from './Loader.module.scss';
+
+import useLoader from '../../store/useLoader';
+
 export default function Loader() {
-    const [showLoader, setShowLoader] = useState(true);
     const { loaded, total } = useProgress();
     const [progress, setProgress] = useState(0);
     const [activeBtn, setActiveBtn] = useState(false);
+    const isLoaded = useLoader((state) => state.isLoaded);
+    const setIsLoaded = useLoader((state) => state.setIsLoaded);
 
     useEffect(() => {
         if (progress === '100') {
@@ -31,7 +35,7 @@ export default function Loader() {
 
     return (
         <AnimatePresence>
-            {showLoader ? <motion.div className={s.loader__wrapper}
+            {!isLoaded ? <motion.div className={s.loader__wrapper}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -41,7 +45,7 @@ export default function Loader() {
                 <div className={s.loader__progress}>
                     <CountUp end={progress} />%
                 </div>
-                <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setShowLoader(false)}>
+                <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
                     <UI_Button text={'To Explore'} arrow />
                 </div>
                 <css-doodle
@@ -56,7 +60,7 @@ export default function Loader() {
                 >
                     {`
                     :doodle {
-                        @grid: 10x1 / 100vw 100vh / #292929;
+                        @grid: 10x1 / 100vw 100vh / transparent;
                         --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A, #E4E4E7, #FEC532, #E4E4E7;
                         --color2:#E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
                     }

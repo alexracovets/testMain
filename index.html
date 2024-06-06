@@ -11,7 +11,24 @@
     rel="stylesheet">
   <style>
     body {
-      background-color: #292929;
+      background: rgb(41, 41, 41);
+      background: linear-gradient(45deg, #020210, #292929, #020210);
+      background-size: 400% 100%;
+      animation: gradient 20s ease-out infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: -100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
   </style>
 </head>

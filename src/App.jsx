@@ -10,8 +10,11 @@ import UI_Toast from "./Components/UI_Toast/UI_Toast";
 import Loader from "./Components/Loader/Loader";
 import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
+import useLoader from './store/useLoader';
+
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
+  const isLoaded = useLoader((state) => state.isLoaded);
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
@@ -29,6 +32,7 @@ function App() {
         dpr={Math.min(window.devicePixelRatio, 2)}
         gl={{ preserveDrawingBuffer: true }}
         camera={{ fov: 60 }}
+        className={isLoaded ? 'experience active' : 'experience'}
       >
         <SceneAddition />
         <Suspense fallback={null}>
