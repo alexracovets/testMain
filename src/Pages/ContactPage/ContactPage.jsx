@@ -36,7 +36,7 @@ export default function ContactPage() {
                     <Socials />
                     <div className={s.sub_btns}>
                         <div className={s.discover} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={'DISCOVER US'} arrow small />
+                            <UI_Button text={'Let’s Talk'} arrow small />
                         </div>
                         <div className={s.office}>
                             <UI_Button text={'office 3d tour'} arrow small />

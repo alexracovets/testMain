@@ -2,8 +2,8 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ServicesItem from './ServicesItem/ServicesItem';
 import UI_Button from '../UI_Button/UI_Button';
+import ServicesItem from './ServicesItem/ServicesItem';
 import useStoreServices from '../../store/useStoreServices';
 import useModalForm from '../../store/useModalForm';
 const colapses = [

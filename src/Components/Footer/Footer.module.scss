@@ -140,6 +140,18 @@ footer {
                     }
                 }
             }
+
+            .btn {
+                width: 11.34625rem;
+                height: 3rem;
+                margin-left: 0;
+
+                @media (max-width:$width-mobile) {
+                    margin: 0 auto;
+                    margin-top: 1rem;
+                    margin-bottom: 3.5rem;
+                }
+            }
         }
     }
 }
