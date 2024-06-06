@@ -9,6 +9,15 @@ export default function Loader({ onLoaded }) {
     const { loaded, total } = useProgress();
     const [isLoaded, setIsLoaded] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [activeBtn, setActiveBtn] = useState(false);
+    useEffect(() => {
+        if (progress === '100') {
+            setTimeout(() => {
+                setActiveBtn(true);
+            }, 2000);
+        }
+
+    }, [progress])
 
     useEffect(() => {
         if (total > 0) {
@@ -20,15 +29,14 @@ export default function Loader({ onLoaded }) {
             setIsLoaded(true);
         }
     }, [loaded, total]);
-
     return (
         <div className={s.loader__wrapper}>
             <div className={s.circle}></div>
             <div className={s.loader__progress}>
                 <CountUp end={progress} />%
             </div>
-            <div className={s.btn} onClick={onLoaded}>
-                <UI_Button text={'Start'} arrow />
+            <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={onLoaded}>
+                <UI_Button text={'To Explore'} arrow />
             </div>
             <css-doodle
                 style={{
