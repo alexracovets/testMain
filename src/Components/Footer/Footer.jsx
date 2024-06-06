@@ -32,6 +32,11 @@ export default function Footer() {
                 </div>
             </div>
             <div className={s.wrapper + ' ' + s.mobile}>
+                <div className={s.together}>
+                    <span>
+                        Let’s Work Together!
+                    </span>
+                </div>
                 <div className={s.contacts}>
                     <h2>
                         Contacts

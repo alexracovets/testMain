@@ -48,6 +48,24 @@ footer {
                 padding: 1.25rem 0;
             }
 
+            .together {
+                width: 100%;
+                color: $color-white;
+                font-family: $font-JB_Mono;
+                font-size: 2rem;
+                line-height: 2rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: flex-start;
+
+                transition: all ease-in-out 400ms;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
             .contacts {
                 display: flex;
                 justify-content: space-between;
