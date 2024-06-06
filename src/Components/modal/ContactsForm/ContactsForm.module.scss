@@ -113,23 +113,37 @@
                 flex-direction: column;
                 margin-bottom: 1rem;
 
-                label {
+                .label_wrapper {
                     width: 100%;
-                    color: $color-white;
-                    font-family: $font-JB_Mono;
-                    font-size: 0.875rem;
-                    line-height: 1.155rem;
-                    margin-bottom: 0.75rem;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 0.75rem;
 
-                    @media (max-width:$width-tableBig) {
-                        font-size: 1.5rem;
-                        line-height: 2rem;
+                    label {
+                        color: $color-white;
+                        font-family: $font-JB_Mono;
+                        font-size: 0.875rem;
+                        line-height: 1.155rem;
+                        padding-right: 1rem;
+                        cursor: pointer;
+
+                        @media (max-width:$width-tableBig) {
+                            font-size: 1.5rem;
+                            line-height: 2rem;
+                        }
+
+                        @media (max-width:$width-table) {
+                            font-size: 1rem;
+                            line-height: 1.3rem;
+                        }
                     }
 
-                    @media (max-width:$width-table) {
-                        font-size: 1rem;
-                        line-height: 1.3rem;
+                    .required {
+                        color: $color-primary;
+                        font-family: $font-JB_Mono;
+                        font-size: 0.875rem;
+                        line-height: 1.155rem;
                     }
                 }
 

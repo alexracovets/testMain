@@ -8,9 +8,19 @@ import ContactsFormTextArea from './ContactsFormTextArea/ContactsFormTextArea';
 import useModalForm from '../../../store/useModalForm';
 
 import s from './ContactsForm.module.scss';
+import { useEffect, useState } from "react";
 export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const [userForm, setUserForm] = useState({
+        full_name: '',
+        email: '',
+        textarea: ''
+    })
+
+    useEffect(() => {
+        console.log(userForm)
+    }, [userForm])
 
     return (
         <AnimatePresence>
@@ -35,17 +45,23 @@ export default function ContactsForm() {
                                 label={`Full name`}
                                 placeholder={`John Doe`}
                                 type={`text`}
+                                setUserForm={setUserForm}
+                                userForm={userForm}
                             />
                             <ContactsFormInput
                                 name={`email`}
                                 label={`Email address`}
                                 placeholder={`Enter your email`}
                                 type={`email`}
+                                setUserForm={setUserForm}
+                                userForm={userForm}
                             />
                             <ContactsFormTextArea
                                 name={`textarea`}
                                 label={`Comment`}
                                 placeholder={`Add some text`}
+                                setUserForm={setUserForm}
+                                userForm={userForm}
                             />
                             <div className={s.btn}>
                                 <UI_Button text={'Contact me'} arrow submit small />
