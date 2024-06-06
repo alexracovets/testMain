@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
 
-import 'react-toastify/dist/ReactToastify.css';
-import s from './CopyButton.module.scss';
+import useToast from "../../store/useToast";
 
+import s from './CopyButton.module.scss';
 export default function CopyButton() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
+    const toastPlay = useToast(state => state.setIsPlay);
 
     const handleCopyEmail = () => {
         setIsBtnFocus(true);
         const email = 'info@spotium360.com';
         navigator.clipboard.writeText(email).then(() => {
-      
+            toastPlay(true, "The text has been copied!")
         }).catch(() => {
-            
+            toastPlay(false, "Something went wrong!")
         });
     };
 
