@@ -17,6 +17,11 @@ export default function ContactPage() {
         >
             <section>
                 <div className={s.content}>
+                    <div className={s.together}>
+                        <span>
+                            Let’s Work Together!
+                        </span>
+                    </div>
                     <div className={s.contact_wrapper}>
                         <h2>Contacts</h2>
                         <CopyButton />
