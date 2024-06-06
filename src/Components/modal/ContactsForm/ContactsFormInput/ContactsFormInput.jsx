@@ -40,7 +40,7 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
         <div className={s.input__wraper}>
             <div className={s.label_wrapper}>
                 <label htmlFor={name}>{label}</label>
-                {!isValid && <div className={s.required}>Invalid {label.toLowerCase()}</div>}
+                {!isValid && <div className={s.required}>This field is required</div>}
             </div>
             <input
                 id={name}

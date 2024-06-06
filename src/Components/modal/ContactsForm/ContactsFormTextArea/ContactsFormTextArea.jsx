@@ -36,7 +36,7 @@ export default function ContactsFormTextArea({ name, label, placeholder, type, s
         <div className={s.input__wraper}>
             <div className={s.label_wrapper}>
                 <label htmlFor={name}>{label}</label>
-                {!isValid && <div className={s.required}>Invalid {label.toLowerCase()}</div>}
+                {!isValid && <div className={s.required}>This field is required</div>}
             </div>
 
             <textarea

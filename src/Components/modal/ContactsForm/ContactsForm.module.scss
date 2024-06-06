@@ -144,6 +144,16 @@
                         font-family: $font-JB_Mono;
                         font-size: 0.875rem;
                         line-height: 1.155rem;
+
+                        @media (max-width:$width-tableBig) {
+                            font-size: 1.5rem;
+                            line-height: 2rem;
+                        }
+
+                        @media (max-width:$width-table) {
+                            font-size: 1rem;
+                            line-height: 1.3rem;
+                        }
                     }
                 }
 
