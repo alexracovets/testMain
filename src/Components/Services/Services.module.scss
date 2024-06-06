@@ -29,7 +29,8 @@
             margin-bottom: 1rem;
             cursor: pointer;
 
-            &.active {
+            &.active,
+            &:hover {
                 padding-bottom: 1.3125rem;
 
                 .title {
