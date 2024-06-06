@@ -7,6 +7,10 @@
     font-weight: 300;
     line-height: 1.32rem;
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 
     @media (max-width:$width-shortDesktop) {
         font-size: 1rem;
@@ -26,6 +30,17 @@
         margin-bottom: 1.25rem;
         letter-spacing: -0.0625rem;
         text-align: center;
+    }
+
+    li {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .day {
+            width: 6.5rem;
+        }
     }
 }
 

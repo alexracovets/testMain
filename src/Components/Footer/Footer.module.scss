@@ -52,7 +52,7 @@ footer {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
 
                 @media (max-width:$width-mobile) {
                     flex-direction: column;
