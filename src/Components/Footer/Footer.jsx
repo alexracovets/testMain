@@ -11,15 +11,6 @@ export default function Footer() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
-    const handleCopyEmail = () => {
-        const email = 'info@spotium360.com';
-        navigator.clipboard.writeText(email).then(() => {
-            console.log('Email copied to clipboard');
-        }).catch(err => {
-            console.error('Could not copy text: ', err);
-        });
-    };
-
     useEffect(() => {
         isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 300)
     }, [isBtnFocus])
