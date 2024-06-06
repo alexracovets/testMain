@@ -24,8 +24,7 @@ export default function MenuBtn() {
 
     useEffect(() => {
         setIsActive(isBurger)
-
-    }, [isBurger, isHovered])
+    }, [isBurger])
     return (
         <div className={s.menu}
             onMouseEnter={() => {
