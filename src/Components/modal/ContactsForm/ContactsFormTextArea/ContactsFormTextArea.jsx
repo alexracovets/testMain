@@ -8,7 +8,7 @@ export default function ContactsFormTextArea({ name, label, placeholder, type, s
 
     const validateInput = (value) => {
         if (name === 'textarea') {
-            return value.length > 2;
+            return value.length > 3;
         }
         return true;
     }
