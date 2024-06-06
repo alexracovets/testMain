@@ -110,7 +110,7 @@ export default function MobileMain() {
                     </div>
                     <Fliper />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                        <UI_Button text={'DISCOVER US'} arrow />
+                        <UI_Button text={'DISCOVER US'} arrow small />
                     </div>
                     <Developments />
                 </div>

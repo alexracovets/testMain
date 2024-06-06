@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-
-import UI_Button from '../../Components/UI_Button/UI_Button';
-
-import s from './ContactPage.module.scss';
-import Socials from '../../Components/Socials/Socials';
 import { useEffect, useState } from "react";
 
+import UI_Button from '../../Components/UI_Button/UI_Button';
+import Socials from '../../Components/Socials/Socials';
+import useModalForm from '../../store/useModalForm';
+
+import s from './ContactPage.module.scss';
 export default function ContactPage() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     useEffect(() => {
         isBtnFocus === true && setTimeout(() => setIsBtnFocus(false), 300)
@@ -34,7 +35,7 @@ export default function ContactPage() {
                     </div>
                     <Socials />
                     <div className={s.sub_btns}>
-                        <div className={s.discover}>
+                        <div className={s.discover} onClick={() => setIsActiveForm(true)}>
                             <UI_Button text={'DISCOVER US'} arrow small />
                         </div>
                         <div className={s.office}>

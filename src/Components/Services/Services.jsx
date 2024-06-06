@@ -371,7 +371,7 @@ export default function Services({ mobile }) {
                             })}
                         </ul>
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={`LET'S TALK`} />
+                            <UI_Button text={`LET'S TALK`}  small arrow/>
                         </div>
                     </div>
                 </>
