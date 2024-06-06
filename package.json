@@ -13,6 +13,7 @@
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.105.5",
     "@react-three/fiber": "^8.16.3",
+    "css-doodle": "^0.39.1",
     "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
     "immer": "^10.1.1",

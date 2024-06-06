@@ -39,7 +39,7 @@ $random100: random(100);
         margin-top: 3rem;
     }
 
-    .points {
+    .test {
         position: absolute;
         left: 0%;
         top: 0%;
@@ -47,41 +47,5 @@ $random100: random(100);
         height: 100%;
         perspective: 100rem;
         z-index: -1;
-    }
-
-    .point {
-        position: relative;
-        // left: $random100 + %;
-        width: 2rem;
-        height: 2rem;
-        background-color: $color-white;
-        border-radius: 50%;
-        animation: flicker;
-        animation-duration: $randomNumber + s;
-        opacity: 0;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-duration: $randomNumber + s;
-    }
-}
-
-
-@keyframes flicker {
-    0% {
-        transform: translateZ(-360rem);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateZ(60rem);
-    }
-}
+    } 
+} 

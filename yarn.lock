@@ -1291,6 +1291,11 @@ cross-spawn@^7.0.1, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+css-doodle@^0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/css-doodle/-/css-doodle-0.39.1.tgz#174ad1d6c8e0f3dabf264b5c13d11c96461682b3"
+  integrity sha512-DSbgPUR5fKTn31nH7cNyeZR3tNPaYs6aVJHlm9HEQX7UezU4S9wM2X9qblQddnK3mg1Wuqgc65eB5I0esVz+ug==
+
 css-in-js-utils@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/css-in-js-utils/-/css-in-js-utils-3.1.0.tgz#640ae6a33646d401fc720c54fc61c42cd76ae2bb"
