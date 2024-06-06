@@ -154,6 +154,10 @@
                             font-size: 1rem;
                             line-height: 1.3rem;
                         }
+
+                        @media (max-width: $width-mobile) {
+                            display: none;
+                        }
                     }
                 }
 
@@ -224,6 +228,27 @@
                     @media (max-width:$width-table) {
                         font-size: 1rem;
                         line-height: 1.3rem;
+                    }
+                }
+
+                .required_mobile {
+                    display: none;
+                    color: $color-primary;
+                    font-family: $font-JB_Mono;
+                    font-size: 0.875rem;
+                    line-height: 1.155rem;
+                    opacity: 0;
+                    max-height: 0;
+                    padding-top: 0.625rem;
+                    transition: all ease-in 400ms;
+
+                    &.active {
+                        opacity: 1;
+                        max-height: 2.155rem;
+                    }
+
+                    @media (max-width: $width-mobile) {
+                        display: block;
                     }
                 }
             }

@@ -40,7 +40,7 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
         <div className={s.input__wraper}>
             <div className={s.label_wrapper}>
                 <label htmlFor={name}>{label}</label>
-                {!isValid && <div className={s.required}>This field is required</div>}
+                <div className={!isValid ? s.required + ' ' + s.active : s.required}>This field is required</div>
             </div>
             <input
                 id={name}
@@ -51,6 +51,7 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
                 onChange={(e) => changeHandler(e)}
                 className={!isValid ? s.invalid : ''}
             />
+            <div className={!isValid ? s.required_mobile + ' ' + s.active : s.required_mobile}>This field is required</div>
         </div>
     );
 }
