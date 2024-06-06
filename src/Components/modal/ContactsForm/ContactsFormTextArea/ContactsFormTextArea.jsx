@@ -5,7 +5,7 @@ export default function ContactsFormTextArea({ name, label, placeholder }) {
     return (
         <div className={s.input__wraper}>
             <label htmlFor={name}>{label}</label>
-            <textarea name={name} id={name} placeholder={placeholder} d></textarea>
+            <textarea name={name} id={name} placeholder={placeholder}></textarea>
         </div>
     );
 }  

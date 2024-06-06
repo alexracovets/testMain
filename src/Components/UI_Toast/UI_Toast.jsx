@@ -13,7 +13,6 @@ export default function UI_Toast() {
         if (isPlay) {
             isSuccess ? toast.success(textToast) : toast.error(textToast);
         }
-        console.log(isPlay)
     }, [isPlay, isSuccess, textToast])
     return (
         <ToastContainer
