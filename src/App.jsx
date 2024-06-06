@@ -6,6 +6,7 @@ import MilkyWay from "./Components/MilkyWay/MilkyWay";
 import VoxelModel from "./Components/VoxelModel/VoxelModel";
 import SceneAddition from "./Components/SceneAddition/SceneAddition";
 import MobileModel from "./Components/MobileModel/MobileModel";
+import UI_Toast from "./Components/UI_Toast/UI_Toast";
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
 
@@ -19,17 +20,21 @@ function App() {
   }, []);
 
   return (
-    <Canvas
-      dpr={Math.min(window.devicePixelRatio, 2)}
-      gl={{ preserveDrawingBuffer: true }}
-      camera={{ fov: 60 }}
-    >
-      <SceneAddition />
-      <MilkyWay />
-      {!isMobile ? <VoxelModel /> : null}
-      {isMobile ? <MobileModel /> : null}
-      <Pager /> 
-    </Canvas>
+    <>
+      <Canvas
+        dpr={Math.min(window.devicePixelRatio, 2)}
+        gl={{ preserveDrawingBuffer: true }}
+        camera={{ fov: 60 }}
+      >
+        <SceneAddition />
+        <MilkyWay />
+        {!isMobile ? <VoxelModel /> : null}
+        {isMobile ? <MobileModel /> : null}
+        <Pager />
+      </Canvas>
+      <UI_Toast />
+    </>
+
   )
 }
 
