@@ -10,6 +10,8 @@
     justify-content: center;
     align-items: center;
     z-index: 12;
+    background-color: #00000054;
+    box-shadow: 0 0 80rem inset rgb(0 0 0);
 
     .form__wrapper {
         display: flex;
@@ -24,6 +26,16 @@
         background: #393939d6;
         position: relative;
         box-shadow: 0 0 4rem inset rgb(85 85 85 / 46%);
+
+        @media (max-width:$width-table) {
+            width: 26rem;
+
+        }
+
+        @media (max-width:$width-mobile) {
+            width: 17.25rem;
+            padding: 1.25rem;
+        }
 
         &::before {
             content: '';
@@ -43,6 +55,19 @@
             top: 1.59375rem;
             padding: 0.5rem;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width:$width-table) {
+                right: 0.5rem;
+                top: 0.5rem;
+            }
+
+            img {
+                width: 1.5rem;
+                height: auto;
+            }
         }
 
         .title {
@@ -51,6 +76,11 @@
             font-size: 1.75rem;
             line-height: 2.31rem;
             margin-bottom: 1.25rem;
+
+            @media (max-width:$width-table) {
+                font-size: 1.25rem;
+                line-height: 1.725rem;
+            }
         }
 
         form {
