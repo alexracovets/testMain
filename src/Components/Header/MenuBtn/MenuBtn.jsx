@@ -34,11 +34,11 @@ export default function MenuBtn() {
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => setBurger(!isBurger)}
         >
-            <div className={s.desktop_menu}>
+            <div className={s.menu_text}>
                 Menu
             </div>
-            <div className={s.btn__wrapper}>
-                <div className={`${s.menu} ${hasInteracted ? (isActive ? s.hover : s.unhover) : ''}`}></div>
+            <div className={s.menu_btn}>
+                <div className={`${s.figure} ${hasInteracted ? (isActive ? s.hover : s.unhover) : ''}`}></div>
             </div>
         </div>
 

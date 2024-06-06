@@ -8,10 +8,11 @@ import SceneAddition from "./Components/SceneAddition/SceneAddition";
 import MobileModel from "./Components/MobileModel/MobileModel";
 import UI_Toast from "./Components/UI_Toast/UI_Toast";
 import Loader from "./Components/Loader/Loader";
+import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
-  const [showLoader, setShowLoader] = useState(true);
+
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
     function handleResize() {
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <>
-      {showLoader ? <Loader onLoaded={() => setShowLoader(false)} /> : null}
+      <Loader />
       <Canvas
         dpr={Math.min(window.devicePixelRatio, 2)}
         gl={{ preserveDrawingBuffer: true }}
@@ -42,6 +43,7 @@ function App() {
         <Suspense fallback={null}>
           <Pager />
         </Suspense>
+        <MainDoodle />
       </Canvas>
       <UI_Toast />
     </>
