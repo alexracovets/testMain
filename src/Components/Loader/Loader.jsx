@@ -82,17 +82,14 @@ export default function Loader() {
                         no-repeat
                     );
 
-                    will-change: transform, opacity;
-                    animation: move-around @r(600s, 1200s) linear infinite; 
+                    animation: move-around @r(100s, 200s) linear infinite; 
 
                     @keyframes move-around {
                         0%, 100% {
                             transform: translate(0, 0);
-                            opacity: 0.8;
                         }
-                        10%, 90% {
-                            transform: translate(@r(-50%, 50%), @r(-50%, 50%)); 
-                             opacity: 0.8;
+                        50% {
+                            transform: translate(@r(-100%, 100%), @r(-100%, 100%)); 
                         }
                     }
                 `}
