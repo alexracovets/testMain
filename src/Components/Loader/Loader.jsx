@@ -41,7 +41,9 @@ export default function Loader() {
                 transition={{ duration: 1 }}
                 exit={{ opacity: 0, scale: 2 }}
             >
-                <div className={s.circle}></div>
+                <div className={s.circle}>
+                    <div className={s.mask}></div>
+                </div>
                 <div className={s.loader__progress}>
                     <CountUp end={progress} />%
                 </div>

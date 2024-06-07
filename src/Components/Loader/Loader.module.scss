@@ -15,15 +15,20 @@ $random100: random(100);
     overflow: hidden;
 
     .circle {
-        width: 20rem;
-        height: 20rem;
+        box-shadow: 0 0 5rem white;
         border-radius: 50%;
-        border-radius: 50%;
-        background: linear-gradient(0.25turn, #ffffff, #5f5f5f, #444444);
-        -webkit-mask: radial-gradient(transparent 5.7rem, #000 6rem);
-        mask: radial-gradient(transparent 5.7rem, #000 6rem);
-        filter: blur(0.2rem);
         margin-bottom: 1rem;
+        filter: blur(1px);
+        .mask {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            background: linear-gradient(0.25turn, #ffffff, #5f5f5f, #444444);
+            -webkit-mask: radial-gradient(transparent 5.7rem, #000 5.7rem);
+            mask: radial-gradient(transparent 5.7rem, #000 5.7rem);
+            
+            position: relative;
+        }
     }
 
     .loader__progress {
