@@ -15,7 +15,9 @@ $random100: random(100);
     overflow: hidden;
 
     .circle {
-        box-shadow: 0 0 5rem white, 0 0 7rem white inset;
+        box-shadow: 0 0 5rem white
+        // , 0 0 7rem white inset
+        ;
         border-radius: 50%;
         margin-bottom: 1rem;
         filter: blur(1px);
