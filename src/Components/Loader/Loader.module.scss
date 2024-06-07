@@ -15,18 +15,19 @@ $random100: random(100);
     overflow: hidden;
 
     .circle {
-        box-shadow: 0 0 5rem white;
+        box-shadow: 0 0 5rem white, 0 0 7rem white inset;
         border-radius: 50%;
         margin-bottom: 1rem;
         filter: blur(1px);
+
         .mask {
             width: 20rem;
             height: 20rem;
             border-radius: 50%;
             background: linear-gradient(0.25turn, #ffffff, #5f5f5f, #444444);
-            -webkit-mask: radial-gradient(transparent 5.7rem, #000 5.7rem);
-            mask: radial-gradient(transparent 5.7rem, #000 5.7rem);
-            
+            -webkit-mask: radial-gradient(transparent 5.7rem, #000 5.8rem);
+            mask: radial-gradient(transparent 5.7rem, #000 5.8rem);
+
             position: relative;
         }
     }
