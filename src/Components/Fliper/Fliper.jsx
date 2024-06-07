@@ -22,9 +22,8 @@ export default function Fliper() {
         <SplitFlapDisplay
             className={'flip'}
             characterSet={ALPHA}
-            step={100}
-            value={sentences[activeSentences]}
-            withSound={false}
+            step={200}
+            value={sentences[activeSentences]} 
         />
     )
 } 

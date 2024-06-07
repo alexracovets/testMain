@@ -83,8 +83,7 @@ export default function Loader() {
                     );
 
                     will-change: transform, opacity;
-                    animation: move-around @r(600s, 1200s) linear infinite;
-                    animation-delay: calc(-12s / @I * @i);
+                    animation: move-around @r(600s, 1200s) linear infinite; 
 
                     @keyframes move-around {
                         0%, 100% {
