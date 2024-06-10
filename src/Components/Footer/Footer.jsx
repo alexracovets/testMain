@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
                 <Socials />
                 <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                    <UI_Button text={'Let’s Talk'} arrow small />
+                    <UI_Button text={'Talk to Team'} arrow small />
                 </div>
             </div>
         </footer>
