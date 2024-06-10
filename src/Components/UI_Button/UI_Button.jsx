@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import arrowImage from '/image/icons/ui/arrow.svg';
-import clickBtn from '/sounds/clickBtn.mp3';
-import hoverBtn from '/sounds/hoverBtn.mp3';
+import clickBtn from '/sounds/clickBtn.wav';
+import hoverBtn from '/sounds/hoverBtn.wav';
 
 import s from './UI_Button.module.scss';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
