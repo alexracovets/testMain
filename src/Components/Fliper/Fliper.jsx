@@ -23,7 +23,9 @@ export default function Fliper() {
             className={'flip'}
             characterSet={ALPHA}
             step={200}
-            value={sentences[activeSentences]} 
+            value={sentences[activeSentences]}
+            background={'#2a2b2f'}
+            borderWidth={'2px'}
         />
     )
 } 
