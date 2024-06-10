@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import arrowImage from '/image/icons/ui/arrow.svg'
+import arrowImage from '/image/icons/ui/arrow.svg';
+import clickBtn from '/sounds/clickBtn.mp3';
+import hoverBtn from '/sounds/hoverBtn.mp3';
+
 import s from './UI_Button.module.scss';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
     const [isBtn, setIsBtn] = useState(false);
+    const clickSound = new Audio(clickBtn);
+    const hoverSound = new Audio(hoverBtn);
+
+    const playSound = (music) => {
+        music.play()
+    }
 
     useEffect(() => {
         arrow ? setIsBtn(true) : setIsBtn(false);
@@ -13,11 +22,13 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
     return (
         <button
             className={
-                small ? 
-                (disabled ? s.button + ' ' + s.disabled : s.button) + ' ' + s.small : 
-                (disabled ? s.button + ' ' + s.disabled : s.button)}
+                small ?
+                    (disabled ? s.button + ' ' + s.disabled : s.button) + ' ' + s.small :
+                    (disabled ? s.button + ' ' + s.disabled : s.button)}
             type={submit ? 'submit' : 'button'}
             disabled={disabled}
+            onClick={() => playSound(clickSound)}
+            onPointerEnter={() => playSound(hoverSound)}
         >
             <span className={s.text}>
                 {text}
