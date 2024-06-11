@@ -149,7 +149,7 @@ export default function ServicesSlider() {
         >
             <mesh>
                 <Plane
-                    args={[10, 8]}
+                    args={[15, 9]}
                     position={[-1, 0, 6]}
                     rotation={[0, Math.PI / 8, 0]}
                     visible={false}
