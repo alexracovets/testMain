@@ -2,6 +2,7 @@
 
 .count_360 {
     display: block;
+    pointer-events: none;
 
     &.active .wrapper {
         opacity: 1;

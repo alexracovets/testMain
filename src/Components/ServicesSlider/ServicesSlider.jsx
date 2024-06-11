@@ -39,57 +39,50 @@ export default function ServicesSlider() {
     const currentIndexServices = useStoreServices((state) => state.activeServices);
     const getSliderServices = useStoreServices((state) => state.getSliderServices);
     const activeModel = useActiveModel((state) => state.activeModel);
-    const [isActive, setIsActive] = useState(false);
     const slidesRef = useRef(null);
     const sliderRef = useRef(null);
-    const isDown = useRef(false);
     const startX = useRef(0);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-    const [animatedValue, setAnimatedValue] = useState(0);
-    const [isNewSlide, setIsNewSlide] = useState(false);
-    const [rotateCount, setRotateCount] = useState(0);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(currentIndexServices);
+    const [fakeSlideIndex, setFakeSlideIndex] = useState(currentIndexServices);
+    const [animatedValue, setAnimatedValue] = useState(currentIndexServices);
+    const [isActive, setIsActive] = useState(activeModel === 2);
+    const [isSliderFocused, setSliderFocused] = useState(false);
+    const [isSwap, setIsSwap] = useState(false);
 
-    const handleDown = (e) => {
-        e.stopPropagation()
-        isDown.current = true
-        startX.current = e.clientX || (e.touches && e.touches[0].clientX) || 0
-    }
-
-    const handleUp = (e) => {
-        e.stopPropagation()
-        isDown.current = false;
-    }
-
-    const handleMove = (e) => {
+    const handlePointerDown = (e) => {
         e.stopPropagation();
-        if (!isDown.current || isNewSlide) return;
+        setSliderFocused(true);
+        startX.current = e.clientX;
+    };
 
-        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-        const mouseProgress = (x - startX.current);
+    const delaySlideAnimation = (isStart) => {
+        isStart ? setTimeout(() => setIsSwap(false), 400) : null
+    }
 
-        if (mouseProgress < 0) {
-            setIsNewSlide(true);
-            if (currentSlideIndex + 1 === slidesCount) {
-                setRotateCount((prevRotate) => prevRotate + 1);
+    const handlePointerMove = (e) => {
+        e.stopPropagation();
+        if (isSliderFocused && !isSwap) {
+            const diff = e.clientX - startX.current;
+            if (Math.abs(diff) > 20) {
+                setIsSwap(true);
+                if (diff > 0) {
+                    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slidesCount);
+                    setFakeSlideIndex((prevIndex) => (prevIndex + 1));
+                } else {
+                    setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + slidesCount) % slidesCount);
+                    setFakeSlideIndex((prevIndex) => (prevIndex - 1));
+                }
+                startX.current = e.clientX;
             }
-
-            setCurrentSlideIndex((prevIndex) => (prevIndex + 1 === slidesCount ? 0 : prevIndex + 1));
-        } else if (mouseProgress > 0) {
-            setIsNewSlide(true);
-            if (currentSlideIndex - 1 === -1) {
-                setRotateCount((prevRotate) => prevRotate - 1);
-            }
-            setRotateCount((prevRotate) => prevRotate - 1);
-            setCurrentSlideIndex((prevIndex) => (prevIndex - 1 === -1 ? slidesCount - 1 : prevIndex - 1));
         }
     };
 
-    const animateValue = (start, end, duration) => {
+    const animateValue = (end, duration) => {
         let startTimestamp = null;
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            setAnimatedValue(Math.floor(progress * (end - start) + start));
+            setAnimatedValue(Math.floor(progress * (end - animatedValue) + animatedValue));
             if (progress < 1) {
                 window.requestAnimationFrame(step);
             }
@@ -97,27 +90,46 @@ export default function ServicesSlider() {
         window.requestAnimationFrame(step);
     };
 
-    useEffect(() => {
-        if (isNewSlide) {
-            setTimeout(() => {
-                setIsNewSlide(false)
-            }, 500)
-        }
-    }, [isNewSlide])
-
     useEffect(() => setIsActive(activeModel === 2), [activeModel]);
-    useEffect(() => {
-        animateValue(animatedValue, 360 / slidesCount + currentSlideIndex * 360 / slidesCount, 500);
-        currentIndexServices !== -1 && getSliderServices(currentSlideIndex);
-    }, [currentSlideIndex, currentIndexServices, getSliderServices]);
+    useEffect(() => getSliderServices(currentSlideIndex), [currentSlideIndex, getSliderServices]);
+    useEffect(() => animateValue(360 / slidesCount + currentIndexServices * 360 / slidesCount, 500), [currentIndexServices]);
+    useEffect(() => delaySlideAnimation(isSwap), [isSwap]);
+
+
 
     useEffect(() => {
-        setCurrentSlideIndex(currentIndexServices)
-    }, [currentIndexServices])
+        let checkFake = (slidesCount + fakeSlideIndex) % slidesCount;
+        if (checkFake < 0) {
+            checkFake = Math.abs(slidesCount - Math.abs(checkFake))
+        } else if (checkFake > 0) {
+            checkFake
+        } else {
+            checkFake = Math.abs(checkFake)
+        }
+        const currentFake = slidesCount - slidesCount + checkFake > -1 ? Math.abs(checkFake) : checkFake;
+        const currentIndex = currentIndexServices;
+
+        if (currentIndex !== currentFake && !isSwap) {
+            setIsSwap(true);
+            let subtraction = currentFake - currentIndex;
+
+            setFakeSlideIndex((prevIndex) => {
+                let result;
+                if (prevIndex < 0) {
+                    return result = prevIndex - subtraction
+                } else if (prevIndex > 0) {
+                    return result = prevIndex + subtraction;
+                } else if (prevIndex % slidesCount === 0) {
+                    return result = prevIndex + subtraction;
+                }
+                return result
+            });
+        }
+    }, [currentIndexServices, currentSlideIndex, fakeSlideIndex, isSwap]);
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
-            const rotateTo = - (-40 + currentSlideIndex * 72) * Math.PI / 180;
+            const rotateTo = 0.6 - fakeSlideIndex * nearestAngleMultiplier;
             const rotationVector = new Vector3(0, rotateTo, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
@@ -127,19 +139,20 @@ export default function ServicesSlider() {
         <mesh
             ref={sliderRef}
             visible={isActive ? true : false}
-            rotation={[0, -1.2, 0]}
+            rotation={[0, -1, 0]}
             scale={1.2}
+            onPointerDown={handlePointerDown}
+            onPointerUp={() => setSliderFocused(false)}
+            onPointerMove={handlePointerMove}
+            onPointerLeave={() => setSliderFocused(false)}
+            onPointerCancel={() => setSliderFocused(false)}
         >
-            <mesh >
+            <mesh>
                 <Plane
-                    args={[20, 30]}
-                    position={[0, 0, 0]}
+                    args={[10, 8]}
+                    position={[-1, 0, 6]}
+                    rotation={[0, Math.PI / 8, 0]}
                     visible={false}
-                    onPointerDown={handleDown}
-                    onPointerUp={handleUp}
-                    onPointerMove={handleMove}
-                    onPointerLeave={handleUp}
-                    onPointerCancel={handleUp}
                 />
                 <mesh
                     position={[0, 0, 0]}
@@ -155,7 +168,7 @@ export default function ServicesSlider() {
                     position={[0, 0, 4]}
                     transform
                     center
-                    zIndexRange={[1, 0]}
+                    zIndexRange={[0, 0]}
                 >
                     <div className={s.wrapper} >
                         <div className={s.number_current}>{animatedValue}°</div>
