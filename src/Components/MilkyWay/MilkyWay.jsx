@@ -5,8 +5,10 @@ import { AdditiveBlending, TextureLoader } from "three";
 
 const count = 3000;
 import getMilkyWayPoints from "../../utils/milky/getMilkyWayPoints";
+import ball from '/texture/ball/ball.png';
+
 export default function MilkyWay() {
-    const texture = useLoader(TextureLoader, '/texture/ball/ball.png');
+    const texture = useLoader(TextureLoader, ball);
     const [points, setPoints] = useState(null);
     const [colors, setColors] = useState(null);
     const milkyWayRef = useRef();

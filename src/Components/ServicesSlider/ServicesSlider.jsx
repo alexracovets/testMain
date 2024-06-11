@@ -8,25 +8,27 @@ import { Vector3 } from "three";
 import Slide from "./Slide/Slide";
 import useActiveModel from '../../store/useActiveModel';
 import useStoreServices from '../../store/useStoreServices';
+
+
 const slides = [
     {
-        image: '/test/test.png',
+        image: './test/test.png',
         video: false
     },
     {
         image: false,
-        video: '/test/ar.mp4'
+        video: './test/ar.mp4'
     },
     {
-        image: '/test/test.png',
+        image: './test/test.png',
         video: false
     },
     {
         image: false,
-        video: '/test/production.mp4'
+        video: './test/production.mp4'
     },
     {
-        image: '/test/test.png',
+        image: './test/test.png',
         video: false
     }
 ];

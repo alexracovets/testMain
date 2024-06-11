@@ -3,15 +3,13 @@ import { TextureLoader, Vector3 } from "three";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
-import { easing } from 'maath';
-// import Voxel from "./Voxel/Voxel";
+import { easing } from 'maath'; 
 
-const matcap = '/default.png';
-// const matcap = '/04.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
 
+import matcap from '/default.png'; 
 import voxelsData from './voxel2.json';
 import useActiveModel from "../../store/useActiveModel";
 import ServicesSlider from "../ServicesSlider/ServicesSlider";
@@ -52,7 +50,7 @@ export default function VoxelModel() {
 
     useEffect(() => {
         const loader = new TextureLoader();
-        loader.load(`/default.png`, (texture) => setCurrentTexture(texture));
+        loader.load(matcap, (texture) => setCurrentTexture(texture));
     }, []);
 
     useEffect(() => {

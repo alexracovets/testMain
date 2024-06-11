@@ -26,7 +26,33 @@ export default function ContactsForm() {
             value: '',
             isValid: false
         },
-    })
+    });
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const response = await fetch('http://localhost:5000/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: userForm.full_name.value,
+                email: userForm.email.value,
+                comment: userForm.textarea.value,
+            }),
+        });
+
+        if (response.ok) {
+            alert('Email sent successfully!');
+            setIsActiveForm(false);
+        } else {
+            alert('Failed to send email.');
+        }
+    };
+
+
+
     useEffect(() => {
         const allValid = Object.values(userForm).every(field => field.isValid && field.value !== '');
         setIsBtnActive(allValid);
@@ -49,7 +75,7 @@ export default function ContactsForm() {
                         <div className={s.title}>
                             Contact Us
                         </div>
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <ContactsFormInput
                                 name={`full_name`}
                                 label={`Full name`}
@@ -74,7 +100,7 @@ export default function ContactsForm() {
                                 setUserForm={setUserForm}
                                 userForm={userForm}
                             />
-                            <div className={s.btn}>
+                            <div className={s.btn} type="submit">
                                 <UI_Button text={'Contact me'} arrow submit small disabled={!isBtnActive} />
                             </div>
                         </form>
