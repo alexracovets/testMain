@@ -7,17 +7,36 @@ import hoverBtn from '/sounds/hoverBtn.wav';
 
 import s from './UI_Button.module.scss';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
+    const [userInteracted, setUserInteracted] = useState(false);
     const [isBtn, setIsBtn] = useState(false);
     const clickSound = new Audio(clickBtn);
     const hoverSound = new Audio(hoverBtn);
 
     const playSound = (music) => {
-        music.play()
+        if (userInteracted) {
+            music.play();
+        }
     }
 
     useEffect(() => {
         arrow ? setIsBtn(true) : setIsBtn(false);
     }, [arrow])
+
+    useEffect(() => {
+        const handleUserInteraction = () => {
+            setUserInteracted(true);
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('keydown', handleUserInteraction);
+        };
+
+        document.addEventListener('click', handleUserInteraction);
+        document.addEventListener('keydown', handleUserInteraction);
+
+        return () => {
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('keydown', handleUserInteraction);
+        };
+    }, []);
 
     return (
         <button
