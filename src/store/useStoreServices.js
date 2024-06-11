@@ -2,7 +2,6 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
 const useStoreServices = create(immer((set) => ({
-    isDetail: false,
     activeServices: 0,
     sliderServices: 0,
     changeActiveServices: (index) => set((state) => {

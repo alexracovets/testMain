@@ -92,7 +92,13 @@ export default function ServicesSlider() {
         window.requestAnimationFrame(step);
     };
 
-    useEffect(() => setIsActive(activeModel === 2), [activeModel]);
+    useEffect(() => {
+        activeModel === 2 ? setTimeout(() => setIsActive(true), 1000) : setIsActive(false)
+        if (activeModel === 2) {
+            setTimeout(() => setIsActive(true), 1000);
+        } else setIsActive(false)
+
+    }, [activeModel]);
     useEffect(() => getSliderServices(currentSlideIndex), [currentSlideIndex, getSliderServices]);
     useEffect(() => animateValue(360 / slidesCount + currentIndexServices * 360 / slidesCount, 500), [currentIndexServices]);
     useEffect(() => delaySlideAnimation(isSwap), [isSwap]);
@@ -131,7 +137,7 @@ export default function ServicesSlider() {
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
-            const rotateTo = 0.6 - fakeSlideIndex * nearestAngleMultiplier;
+            const rotateTo = 0.3 - fakeSlideIndex * nearestAngleMultiplier;
             const rotationVector = new Vector3(0, rotateTo, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }
@@ -142,7 +148,7 @@ export default function ServicesSlider() {
             ref={sliderRef}
             visible={isActive ? true : false}
             rotation={[0, -1, 0]}
-            scale={1.2}
+            scale={1.4}
             onPointerDown={handlePointerDown}
             onPointerUp={() => setSliderFocused(false)}
             onPointerMove={handlePointerMove}
@@ -157,7 +163,7 @@ export default function ServicesSlider() {
                     visible={false}
                 />
                 <mesh
-                    position={[0, 0, 0]}
+                    position={[1, 0, 0]}
                     ref={slidesRef}
                 >
                     {slides.map((item, index) => (
@@ -167,7 +173,8 @@ export default function ServicesSlider() {
                 <Html
                     as='div'
                     wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                    position={[0, 0, 4]}
+                    position={[-1, -2.5, 6]}
+                    rotation={[0.1, 0.3, 0]}
                     transform
                     center
                     zIndexRange={[0, 0]}
