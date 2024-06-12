@@ -32,7 +32,7 @@ export default function Default() {
         setIsScrollAllowed(true)
         const pageId = pageRoutes[location.pathname] ?? -1;
         changeActivePage(pageId);
-    }, [location.pathname, pageRoutes, changeActivePage, setIsScrollAllowed]);
+    }, [location.pathname, pageRoutes, changeActivePage,setIsScrollAllowed]);
 
     const routeTo = (to) => {
         const currentPath = location.pathname;

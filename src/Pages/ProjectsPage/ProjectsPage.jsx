@@ -30,7 +30,9 @@ export default function ProjectsPage() {
                     </h2>
                     <div className={s.projects}
                         onMouseEnter={() => setIsScrollAllowed(false)}
+                        onMouseOver={() => setIsScrollAllowed(false)}
                         onMouseLeave={() => setIsScrollAllowed(true)}
+                        onMouseOut={() => setIsScrollAllowed(true)}
                     >
                         {projects.map((item, idx) => {
                             return (

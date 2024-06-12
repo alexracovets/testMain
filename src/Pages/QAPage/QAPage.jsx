@@ -99,8 +99,10 @@ export default function QAPage() {
                         Q&A
                     </h2>
                     <div className={s.question}
-                        onMouseEnter={() => setIsScrollAllowed(false)}
-                        onMouseLeave={() => setIsScrollAllowed(true)}
+                         onMouseEnter={() => setIsScrollAllowed(false)}
+                         onMouseOver={() => setIsScrollAllowed(false)}
+                         onMouseLeave={() => setIsScrollAllowed(true)}
+                         onMouseOut={() => setIsScrollAllowed(true)}
                     >
                         {colapses.map((colapse) => {
                             return (
