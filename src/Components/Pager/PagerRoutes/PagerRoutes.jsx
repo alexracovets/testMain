@@ -7,19 +7,20 @@ import QAPage from "../../../Pages/QAPage/QAPage";
 import MainPage from "../../../Pages/MainPage/MainPage";
 import AboutPage from "../../../Pages/AboutPage/AboutPage";
 import MobileMain from "../../../Pages/MobileMain/MobileMain";
-import ContactPage from "../../../Pages/ContactPage/ContactPage";
+import ContactsForm from "../../modal/ContactsForm/ContactsForm";
 import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
+import ContactPage from "../../../Pages/ContactPage/ContactPage";
+import MobileQAPage from "../../../Pages/MobileQAPage/MobileQAPage";
 import ProjectsPage from "../../../Pages/ProjectsPage/ProjectsPage";
 import ServicesPage from "../../../Pages/ServicesPage/ServicesPage";
 import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
-import MobileProjectsPage from "../../../Pages/MobileProjectsPage/MobileProjectsPage";
 import MobileProjectCase from "../../../Pages/MobileProjectCase/MobileProjectCase";
-import MobileQAPage from "../../../Pages/MobileQAPage/MobileQAPage";
-import ContactsForm from "../../modal/ContactsForm/ContactsForm";
+import MobileProjectsPage from "../../../Pages/MobileProjectsPage/MobileProjectsPage";
+ 
 
 export default function PagerRoutes() {
     const location = useLocation();
-    console.log(location)
+ 
     return (
         <>
             <AnimatePresence mode="wait">

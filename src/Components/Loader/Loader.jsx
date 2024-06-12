@@ -17,7 +17,7 @@ export default function Loader() {
     const isLoaded = useLoader((state) => state.isLoaded);
     const setIsLoaded = useLoader((state) => state.setIsLoaded);
 
-    useEffect(() => {
+    useEffect(() => { 
         if (progress === '100') {
             setTimeout(() => {
                 setActiveBtn(true);

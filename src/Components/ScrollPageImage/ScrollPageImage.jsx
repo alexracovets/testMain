@@ -1,31 +1,28 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
-import useLoader from '../../store/useLoader';
+import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 import s from './ScrollPageImage.module.scss';
 export default function ScrollPageImage() {
-    const [isShow, setIsShow] = useState(false);
-    const isLoadedProject = useLoader((state) => state.isLoaded);
+    const isScrollImageShown = useScrollPageNavigation((state) => state.isScrollImageShown);
+    const setIsScrollImageShown = useScrollPageNavigation((state) => state.setIsScrollImageShown);
 
-    useEffect(() => {
-        if (isLoadedProject) {
-            setTimeout(() => {
-                setIsShow(true)
-            }, 300);
-        }
-    }, [isLoadedProject])
+    const closeScrollImage = () => {
+        setTimeout(() => {
+            setIsScrollImageShown(false)
+        }, 500);
+    }
+
     return (
-        <AnimatePresence>
-            {isShow ?
+        <>
+            {isScrollImageShown ?
                 <motion.div
                     className={s.scroll__wrapper}
-                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: .3 }}
                     exit={{ opacity: 0 }}
-                    onPointerMove={() => setIsShow(false)}
-                    onClick={() => setIsShow(false)}
+                    onPointerMove={closeScrollImage}
+                    onClick={closeScrollImage}
                 >
                     <div className={s.svg_image}>
                         <svg viewBox="254.581 149.474 36 66.938" width="36" height="100" xmlns="http://www.w3.org/2000/svg">
@@ -38,6 +35,6 @@ export default function ScrollPageImage() {
                 </motion.div> :
                 null
             }
-        </AnimatePresence>
+        </>
     )
 } 

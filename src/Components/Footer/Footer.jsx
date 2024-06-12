@@ -19,7 +19,7 @@ export default function Footer() {
         <footer>
             <div className={s.wrapper}>
                 <div className={s.footer}>
-                    <LangsSwither />
+                    {/* <LangsSwither /> */}
                 </div>
             </div>
             <div className={s.wrapper + ' ' + s.mobile}>

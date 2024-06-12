@@ -11,7 +11,6 @@ import Loader from "./Components/Loader/Loader";
 import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 import useLoader from './store/useLoader';
-import ScrollPageImage from "./Components/ScrollPageImage/ScrollPageImage";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
@@ -50,7 +49,6 @@ function App() {
         </Suspense>
         <MainDoodle />
       </Canvas>
-      <ScrollPageImage />
       <UI_Toast />
     </>
   )

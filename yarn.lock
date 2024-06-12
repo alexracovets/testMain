@@ -2803,6 +2803,11 @@ react-router@6.23.0:
   dependencies:
     "@remix-run/router" "1.16.0"
 
+react-scroll-wheel-handler@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-wheel-handler/-/react-scroll-wheel-handler-2.2.0.tgz#8119f6befe374d70764511212fd91672cd5cfd7f"
+  integrity sha512-x1OqSyF5qzCEvX2C3Rgfm6BoOMwuV4JJezBZEkRkaMe0cnb9xrnsoYtwrKIJ+J1zRy3dZESoHdoAtepzW+xtKA==
+
 react-scrollbars-custom@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/react-scrollbars-custom/-/react-scrollbars-custom-4.1.1.tgz#1c8a11149119e3bf5e202a00d335ee9f077edde4"
