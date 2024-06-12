@@ -32,7 +32,7 @@ export default function Default() {
         const pageId = pageRoutes[location.pathname] ?? -1;
         changeActivePage(pageId);
     }, [location.pathname, pageRoutes, changeActivePage]);
- 
+
     const routeTo = (to) => {
         const currentPath = location.pathname;
         const currentPathItem = pathsScrollDesktop.find(path => path.pathname === currentPath);
@@ -47,9 +47,6 @@ export default function Default() {
                 setIsScrollAllowed(true);
                 setNavigateStart(false)
             }
-        } else {
-            setIsScrollAllowed(true);
-            setNavigateStart(false)
         }
     };
 
