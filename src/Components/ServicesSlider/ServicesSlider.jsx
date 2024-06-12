@@ -153,7 +153,7 @@ export default function ServicesSlider() {
                 scale={1.4}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.5 }}
                 exit={{ opacity: 0 }}
                 onPointerDown={handlePointerDown}
                 onPointerUp={() => setSliderFocused(false)}
@@ -179,8 +179,8 @@ export default function ServicesSlider() {
                     <Html
                         as='div'
                         wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                        position={[-1, -2.5, 6]}
-                        rotation={[0.1, 0.3, 0]}
+                        position={[0, -2.5, 6]}
+                        rotation={[0, 0.4, 0]}
                         transform
                         center
                         zIndexRange={[0, 0]}
