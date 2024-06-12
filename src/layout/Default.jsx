@@ -7,40 +7,8 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import ScrollPageImage from "../Components/ScrollPageImage/ScrollPageImage";
 
-const paths = [
-    {
-        pathname: '/',
-        toUp: null,
-        toDown: '/services'
-    },
-    {
-        pathname: '/services',
-        toUp: '/',
-        toDown: '/projects'
-    },
-    {
-        pathname: '/projects',
-        toUp: '/services',
-        toDown: '/about'
-    },
-    {
-        pathname: '/about',
-        toUp: '/projects',
-        toDown: '/q&a'
-    },
-    {
-        pathname: '/q&a',
-        toUp: '/about',
-        toDown: '/contact'
-    },
-    {
-        pathname: '/contact',
-        toUp: '/q&a',
-        toDown: null
-    }
-];
-
 import useScrollPageNavigation from '../store/useScrollPageNavigation';
+import pathsScrollDesktop from "../data/pathsScrollDesktop";
 
 export default function Default() {
     const changeActivePage = useActiveModel((state) => state.setActiveModel)
@@ -64,28 +32,28 @@ export default function Default() {
         const pageId = pageRoutes[location.pathname] ?? -1;
         changeActivePage(pageId);
     }, [location.pathname, pageRoutes, changeActivePage]);
-
+ 
     const routeTo = (to) => {
         const currentPath = location.pathname;
-        const currentPathItem = paths.find(path => path.pathname === currentPath);
+        const currentPathItem = pathsScrollDesktop.find(path => path.pathname === currentPath);
         if (!isNavigateStart && isScrollAllowed) {
             setNavigateStart(true);
+            setIsScrollAllowed(false);
             if (currentPathItem && currentPathItem[to]) {
+                setTimeout(() => setNavigateStart(false), 2000);
                 navigate(currentPathItem[to]);
-                setTimeout(() => {
-                    setIsScrollAllowed(true);
-                }, 100);
-
+                setIsScrollAllowed(true);
+            } else {
+                setIsScrollAllowed(true);
+                setNavigateStart(false)
             }
-            setTimeout(() => {
-                setNavigateStart(false);
-            }, 1000);
+        } else {
+            setIsScrollAllowed(true);
+            setNavigateStart(false)
         }
     };
 
-    useEffect(() => {
-        checkPage();
-    }, [location.pathname, checkPage]);
+    useEffect(() => checkPage(), [location.pathname, checkPage]);
 
     useEffect(() => {
         setIsDesktop(window.innerWidth > 744);
@@ -97,9 +65,7 @@ export default function Default() {
     }, []);
 
     useEffect(() => {
-        if (!isDesktop) {
-            navigate('/mobile');
-        }
+        !isDesktop && navigate('/mobile');
     }, [isDesktop, navigate]);
     return (
         <ReactScrollWheelHandler

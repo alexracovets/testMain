@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import PropTypes from 'prop-types';
 import { easing } from 'maath';
 import { Vector3 } from "three";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Slide from "./Slide/Slide";
 import useActiveModel from '../../store/useActiveModel';
@@ -144,49 +145,55 @@ export default function ServicesSlider() {
     });
 
     return (
-        <mesh
-            ref={sliderRef}
-            visible={isActive ? true : false}
-            rotation={[0, -1, 0]}
-            scale={1.4}
-            onPointerDown={handlePointerDown}
-            onPointerUp={() => setSliderFocused(false)}
-            onPointerMove={handlePointerMove}
-            onPointerLeave={() => setSliderFocused(false)}
-            onPointerCancel={() => setSliderFocused(false)}
-        >
-            <mesh>
-                <Plane
-                    args={[15, 9]}
-                    position={[-1, 0, 6]}
-                    rotation={[0, Math.PI / 8, 0]}
-                    visible={false}
-                />
-                <mesh
-                    position={[1, 0, 0]}
-                    ref={slidesRef}
-                >
-                    {slides.map((item, index) => (
-                        <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} video={item.video} />
-                    ))}
+        <AnimatePresence>
+            <motion.mesh
+                ref={sliderRef}
+                visible={isActive ? true : false}
+                rotation={[0, -1, 0]}
+                scale={1.4}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0 }}
+                onPointerDown={handlePointerDown}
+                onPointerUp={() => setSliderFocused(false)}
+                onPointerMove={handlePointerMove}
+                onPointerLeave={() => setSliderFocused(false)}
+                onPointerCancel={() => setSliderFocused(false)}
+            >
+                <mesh>
+                    <Plane
+                        args={[15, 9]}
+                        position={[-1, 0, 6]}
+                        rotation={[0, Math.PI / 8, 0]}
+                        visible={false}
+                    />
+                    <mesh
+                        position={[1, 0, 0]}
+                        ref={slidesRef}
+                    >
+                        {slides.map((item, index) => (
+                            <Slide key={index} index={index} image={item.image} size={nearestAngleMultiplier} isActive={isActive} video={item.video} />
+                        ))}
+                    </mesh>
+                    <Html
+                        as='div'
+                        wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
+                        position={[-1, -2.5, 6]}
+                        rotation={[0.1, 0.3, 0]}
+                        transform
+                        center
+                        zIndexRange={[0, 0]}
+                    >
+                        <div className={s.wrapper} >
+                            <div className={s.number_current}>{animatedValue}°</div>
+                            <div className={s.dash_line}></div>
+                            <div className={s.number_360}>360°</div>
+                        </div>
+                    </Html>
                 </mesh>
-                <Html
-                    as='div'
-                    wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                    position={[-1, -2.5, 6]}
-                    rotation={[0.1, 0.3, 0]}
-                    transform
-                    center
-                    zIndexRange={[0, 0]}
-                >
-                    <div className={s.wrapper} >
-                        <div className={s.number_current}>{animatedValue}°</div>
-                        <div className={s.dash_line}></div>
-                        <div className={s.number_360}>360°</div>
-                    </div>
-                </Html>
-            </mesh>
-        </mesh>
+            </motion.mesh>
+        </AnimatePresence>
     )
 }
 

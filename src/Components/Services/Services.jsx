@@ -340,6 +340,7 @@ export default function Services({ mobile }) {
                 <div className={s.services__wrapper}
                     onPointerEnter={() => setIsScrollAllowed(false)}
                     onPointerLeave={() => setIsScrollAllowed(true)}
+                    onMouseUp={setIsScrollAllowed(false)}
                 >
                     <ul className={s.services}>
                         {colapses.map((colapse) => {
