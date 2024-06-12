@@ -31,8 +31,7 @@
         li {
             width: 100%;
             padding-bottom: 0;
-            pointer-events: all;
-            margin-bottom: 1rem;
+            pointer-events: all; 
             cursor: pointer;
             border-bottom: 1px solid white;
             transition: all ease-in-out 300ms;
@@ -62,7 +61,7 @@
                 line-height: 2.275rem;
                 font-weight: 500;
                 padding: 0.5rem 0;
-                padding-top: 0;
+                padding-top: 1rem;
                 transition: all ease-in-out 300ms;
 
                 @media (max-width:$width-shortDesktop) {

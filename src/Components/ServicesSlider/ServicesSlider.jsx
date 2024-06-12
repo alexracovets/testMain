@@ -4,7 +4,6 @@ import { useFrame } from "@react-three/fiber";
 import PropTypes from 'prop-types';
 import { easing } from 'maath';
 import { Vector3 } from "three";
-import { motion, AnimatePresence } from "framer-motion";
 
 import Slide from "./Slide/Slide";
 import useActiveModel from '../../store/useActiveModel';
@@ -38,7 +37,6 @@ const slidesCount = 5;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './ServicesSlider.module.scss';
-import { useControls } from "leva";
 export default function ServicesSlider() {
     const currentIndexServices = useStoreServices((state) => state.activeServices);
     const getSliderServices = useStoreServices((state) => state.getSliderServices);
@@ -52,6 +50,7 @@ export default function ServicesSlider() {
     const [isActive, setIsActive] = useState(activeModel === 2);
     const [isSliderFocused, setSliderFocused] = useState(false);
     const [isSwap, setIsSwap] = useState(false);
+    const [isCursorPointer, setIsCursorPointer] = useState(false);
 
     const handlePointerDown = (e) => {
         e.stopPropagation();
@@ -65,6 +64,7 @@ export default function ServicesSlider() {
 
     const handlePointerMove = (e) => {
         e.stopPropagation();
+        setIsCursorPointer(true)
         if (isSliderFocused && !isSwap) {
             const diff = e.clientX - startX.current;
             if (Math.abs(diff) > 20) {
@@ -81,6 +81,11 @@ export default function ServicesSlider() {
         }
     };
 
+    const handlePointerLeave = (e) => {
+        e.stopPropagation();
+        setIsCursorPointer(false);
+        setSliderFocused(false);
+    };
     const animateValue = (end, duration) => {
         let startTimestamp = null;
         const step = (timestamp) => {
@@ -95,10 +100,11 @@ export default function ServicesSlider() {
     };
 
     useEffect(() => {
-        activeModel === 2 ? setTimeout(() => setIsActive(true), 1000) : setIsActive(false)
         if (activeModel === 2) {
             setTimeout(() => setIsActive(true), 1000);
-        } else setIsActive(false)
+        } else {
+            setIsActive(false)
+        }
 
     }, [activeModel]);
     useEffect(() => getSliderServices(currentSlideIndex), [currentSlideIndex, getSliderServices]);
@@ -145,27 +151,20 @@ export default function ServicesSlider() {
         }
     });
 
-    const test = useControls({
-        x: 0,
-        y: 0,
-        z: 0
-    })
+    useEffect(() => {
+        !isActive ? document.body.style.cursor = 'auto' : document.body.style.cursor = isCursorPointer ? 'pointer' : 'auto';
+    }, [isCursorPointer, isActive]);
 
     return (
-        <AnimatePresence>
-            <motion.mesh
+        <>
+            {isActive ? <mesh
                 ref={sliderRef}
-                visible={isActive ? true : false}
                 rotation={[0, -1, 0]}
                 scale={1.4}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                exit={{ opacity: 0 }}
                 onPointerDown={handlePointerDown}
                 onPointerUp={() => setSliderFocused(false)}
                 onPointerMove={handlePointerMove}
-                onPointerLeave={() => setSliderFocused(false)}
+                onPointerLeave={handlePointerLeave}
                 onPointerCancel={() => setSliderFocused(false)}
             >
                 <mesh>
@@ -176,7 +175,7 @@ export default function ServicesSlider() {
                         visible={false}
                     />
                     <mesh
-                        position={[test.x, test.y, test.z]}
+                        position={[-1.2, 0, 0]}
                         ref={slidesRef}
                     >
                         {slides.map((item, index) => (
@@ -186,10 +185,8 @@ export default function ServicesSlider() {
                     <Html
                         as='div'
                         wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                        position={[-1.2, -2.9, 6]}
-                        rotation={[0, 0.4, 0]}
-                        transform
-                        center
+                        position={[-4, -4.8, 0]}
+                        rotation={[0, 0.4, 0]} 
                         zIndexRange={[0, 0]}
                     >
                         <div className={s.wrapper} >
@@ -199,8 +196,9 @@ export default function ServicesSlider() {
                         </div>
                     </Html>
                 </mesh>
-            </motion.mesh>
-        </AnimatePresence>
+            </mesh> : null}
+        </>
+
     )
 }
 

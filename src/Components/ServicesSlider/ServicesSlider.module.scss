@@ -10,26 +10,28 @@
 
     .wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        font-family: $font-JB_Mono;
+        font-family:$font-Bebas;
         opacity: 0;
-        transition: all ease-in-out 400ms;
- 
+        transition: all ease-in-out 400ms; 
         border-radius: 0.2rem;
         padding: 0 0.4rem;
+        width: 23rem;
+
 
         .dash_line {
-            height: 0.2rem;
-            width: 1rem;
-            margin: 0 0.2rem;
+            height: 0.5rem;
+            width:2rem;
+            margin: 0 0.5rem;
+            margin-left: -0.2rem;
             background-color: $color-white;
         }
 
         .number_current,
         .number_360 {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 4.5rem;
+            // font-weight: bold;
             letter-spacing: -0.1rem;
         }
 
