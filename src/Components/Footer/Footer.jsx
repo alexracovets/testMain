@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import UI_Button from '../UI_Button/UI_Button';
 import Socials from '../Socials/Socials';
-import LangsSwither from '../LangsSwither/LangsSwither';
+// import LangsSwither from '../LangsSwither/LangsSwither';
 import useModalForm from '../../store/useModalForm';
 
 import s from './Footer.module.scss';

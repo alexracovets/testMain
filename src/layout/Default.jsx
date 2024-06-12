@@ -46,9 +46,11 @@ export default function Default() {
     const changeActivePage = useActiveModel((state) => state.setActiveModel)
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 744);
     const navigate = useNavigate();
-    const location = useLocation(); 
-    const isNavigateStart = useScrollPageNavigation((state) => state.isScrollImageShown);
+    const location = useLocation();
+    const isNavigateStart = useScrollPageNavigation((state) => state.isNavigateStart);
     const setNavigateStart = useScrollPageNavigation((state) => state.setNavigateStart);
+    const isScrollAllowed = useScrollPageNavigation((state) => state.isScrollAllowed);
+    const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
 
     const pageRoutes = useMemo(() => ({
         '/': 0,
@@ -66,14 +68,18 @@ export default function Default() {
     const routeTo = (to) => {
         const currentPath = location.pathname;
         const currentPathItem = paths.find(path => path.pathname === currentPath);
-        if (!isNavigateStart) { 
+        if (!isNavigateStart && isScrollAllowed) {
             setNavigateStart(true);
             if (currentPathItem && currentPathItem[to]) {
                 navigate(currentPathItem[to]);
+                setTimeout(() => {
+                    setIsScrollAllowed(true);
+                }, 100);
+
             }
             setTimeout(() => {
                 setNavigateStart(false);
-            }, 500);
+            }, 1000);
         }
     };
 
@@ -95,7 +101,6 @@ export default function Default() {
             navigate('/mobile');
         }
     }, [isDesktop, navigate]);
-
     return (
         <ReactScrollWheelHandler
             upHandler={() => routeTo('toUp')}

@@ -80,8 +80,11 @@ const colapses = [
     }
 ]
 
+import useScrollPageNavigation from '../../store/useScrollPageNavigation';
+
 import s from './QAPage.module.scss';
 export default function QAPage() {
+    const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
 
     return (
         <motion.div className={s.wrapper}
@@ -95,7 +98,10 @@ export default function QAPage() {
                     <h2>
                         Q&A
                     </h2>
-                    <div className={s.question}>
+                    <div className={s.question}
+                        onPointerEnter={() => setIsScrollAllowed(false)}
+                        onPointerLeave={() => setIsScrollAllowed(true)}
+                    >
                         {colapses.map((colapse) => {
                             return (
                                 <QAItem key={colapse.idx} title={colapse.title} content={colapse.colapse} />

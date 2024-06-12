@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import s from './ProjectCase.module.scss';
-
-import projectsData from "../../data/projectsData";
 import Keys from "../../Components/Keys/Keys";
 
+import projectsData from "../../data/projectsData";
+
+import s from './ProjectCase.module.scss';
 export default function ProjectCase() {
     const { id } = useParams();
     const [content, setContent] = useState(null);

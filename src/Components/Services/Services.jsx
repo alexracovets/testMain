@@ -6,6 +6,8 @@ import UI_Button from '../UI_Button/UI_Button';
 import ServicesItem from './ServicesItem/ServicesItem';
 import useStoreServices from '../../store/useStoreServices';
 import useModalForm from '../../store/useModalForm';
+import useScrollPageNavigation from '../../store/useScrollPageNavigation';
+
 const colapses = [
     {
         title: 'Interactive Website Dev',
@@ -322,6 +324,7 @@ export default function Services({ mobile }) {
     const sliderServices = useStoreServices((state) => state.sliderServices);
     const [currentService, setCurrentService] = useState(sliderServices);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
 
     useEffect(() => {
         setCurrentService(sliderServices);
@@ -334,7 +337,10 @@ export default function Services({ mobile }) {
     return (
         <>
             {!mobile ? <Scrollbar className={'scroll'}>
-                <div className={s.services__wrapper}>
+                <div className={s.services__wrapper}
+                    onPointerEnter={() => setIsScrollAllowed(false)}
+                    onPointerLeave={() => setIsScrollAllowed(true)}
+                >
                     <ul className={s.services}>
                         {colapses.map((colapse) => {
                             return (
@@ -371,7 +377,7 @@ export default function Services({ mobile }) {
                             })}
                         </ul>
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={`LET'S TALK`}  small arrow/>
+                            <UI_Button text={`LET'S TALK`} small arrow />
                         </div>
                     </div>
                 </>
