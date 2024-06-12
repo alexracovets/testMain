@@ -32,7 +32,7 @@ export default function Default() {
         setIsScrollAllowed(true)
         const pageId = pageRoutes[location.pathname] ?? -1;
         changeActivePage(pageId);
-    }, [location.pathname, pageRoutes, changeActivePage,setIsScrollAllowed]);
+    }, [location.pathname, pageRoutes, changeActivePage, setIsScrollAllowed]);
 
     const routeTo = (to) => {
         const currentPath = location.pathname;
@@ -65,6 +65,10 @@ export default function Default() {
     useEffect(() => {
         !isDesktop && navigate('/mobile');
     }, [isDesktop, navigate]);
+    useEffect(() => {
+        console.log(isScrollAllowed)
+        console.log(isNavigateStart)
+    }, [isScrollAllowed, isNavigateStart])
     return (
         <ReactScrollWheelHandler
             upHandler={() => routeTo('toUp')}
