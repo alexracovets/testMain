@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
@@ -10,11 +10,11 @@ export default function ScrollPageImage() {
     const closeScrollImage = () => {
         setTimeout(() => {
             setIsScrollImageShown(false)
-        }, 500);
+        }, 600);
     }
 
     return (
-        <>
+        <AnimatePresence>
             {isScrollImageShown ?
                 <motion.div
                     className={s.scroll__wrapper}
@@ -35,6 +35,6 @@ export default function ScrollPageImage() {
                 </motion.div> :
                 null
             }
-        </>
+        </AnimatePresence>
     )
 } 
