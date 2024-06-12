@@ -65,10 +65,7 @@ export default function Default() {
     useEffect(() => {
         !isDesktop && navigate('/mobile');
     }, [isDesktop, navigate]);
-    useEffect(() => {
-        console.log(isScrollAllowed)
-        console.log(isNavigateStart)
-    }, [isScrollAllowed, isNavigateStart])
+    
     return (
         <ReactScrollWheelHandler
             upHandler={() => routeTo('toUp')}

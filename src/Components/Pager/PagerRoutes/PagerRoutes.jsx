@@ -7,7 +7,7 @@ import QAPage from "../../../Pages/QAPage/QAPage";
 import MainPage from "../../../Pages/MainPage/MainPage";
 import AboutPage from "../../../Pages/AboutPage/AboutPage";
 import MobileMain from "../../../Pages/MobileMain/MobileMain";
-import ContactsForm from "../../modal/ContactsForm/ContactsForm";
+import ContactsForm from "../../Msodal/ContactsForm/ContactsForm";
 import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
 import ContactPage from "../../../Pages/ContactPage/ContactPage";
 import MobileQAPage from "../../../Pages/MobileQAPage/MobileQAPage";
