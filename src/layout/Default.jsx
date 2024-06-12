@@ -41,7 +41,7 @@ export default function Default() {
             setNavigateStart(true);
             setIsScrollAllowed(false);
             if (currentPathItem && currentPathItem[to]) {
-                setTimeout(() => setNavigateStart(false), 2000);
+                setTimeout(() => setNavigateStart(false), 1000);
                 navigate(currentPathItem[to]);
                 setIsScrollAllowed(true);
             } else {
