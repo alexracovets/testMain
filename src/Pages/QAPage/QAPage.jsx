@@ -93,16 +93,17 @@ export default function QAPage() {
             transition={{ duration: 0.5, delay: .1 }}
             exit={{ opacity: 0, x: '-20%' }}
         >
-            <Scrollbar className={'scroll'} >
-                <section>
-                    <h2>
-                        Q&A
-                    </h2>
+            <section>
+                <h2>
+                    Q&A
+                </h2>
+                <Scrollbar className={'scroll'} >
+
                     <div className={s.question}
-                         onMouseEnter={() => setIsScrollAllowed(false)}
-                         onMouseOver={() => setIsScrollAllowed(false)}
-                         onMouseLeave={() => setIsScrollAllowed(true)}
-                         onMouseOut={() => setIsScrollAllowed(true)}
+                        onMouseEnter={() => setIsScrollAllowed(false)}
+                        onMouseOver={() => setIsScrollAllowed(false)}
+                        onMouseLeave={() => setIsScrollAllowed(true)}
+                        onMouseOut={() => setIsScrollAllowed(true)}
                     >
                         {colapses.map((colapse) => {
                             return (
@@ -110,8 +111,8 @@ export default function QAPage() {
                             )
                         })}
                     </div>
-                </section>
-            </Scrollbar>
+                </Scrollbar>
+            </section>
         </motion.div>
     )
 }

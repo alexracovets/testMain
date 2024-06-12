@@ -23,11 +23,11 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5, delay: .1 }}
             exit={{ opacity: 0, x: '-20%' }}
         >
-            <Scrollbar className={'scroll'} >
-                <section>
-                    <h2>
-                        Projects
-                    </h2>
+            <section>
+                <h2>
+                    Projects
+                </h2>
+                <Scrollbar className={'scroll'} >
                     <div className={s.projects}
                         onMouseEnter={() => setIsScrollAllowed(false)}
                         onMouseOver={() => setIsScrollAllowed(false)}
@@ -52,8 +52,8 @@ export default function ProjectsPage() {
                             )
                         })}
                     </div>
-                </section>
-            </Scrollbar>
-        </motion.div>
+                </Scrollbar>
+            </section>
+        </motion.div >
     )
 }
