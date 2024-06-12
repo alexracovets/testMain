@@ -10,7 +10,7 @@ export default function ScrollPageImage() {
     const closeScrollImage = () => {
         setTimeout(() => {
             setIsScrollImageShown(false)
-        }, 600);
+        }, 300);
     }
 
     return (
@@ -18,8 +18,8 @@ export default function ScrollPageImage() {
             {isScrollImageShown ?
                 <motion.div
                     className={s.scroll__wrapper}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: .3 }}
+                    animate={{ opacity: 0.7 }}
+                    transition={{ duration: .5 }}
                     exit={{ opacity: 0 }}
                     onPointerMove={closeScrollImage}
                     onClick={closeScrollImage}
