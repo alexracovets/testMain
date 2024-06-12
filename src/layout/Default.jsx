@@ -29,9 +29,10 @@ export default function Default() {
     }), []);
 
     const checkPage = useCallback(() => {
+        setIsScrollAllowed(true)
         const pageId = pageRoutes[location.pathname] ?? -1;
         changeActivePage(pageId);
-    }, [location.pathname, pageRoutes, changeActivePage]);
+    }, [location.pathname, pageRoutes, changeActivePage, setIsScrollAllowed]);
 
     const routeTo = (to) => {
         const currentPath = location.pathname;

@@ -22,15 +22,16 @@ export default function ProjectsPage() {
             animate={{ opacity: 1, x: '0%' }}
             transition={{ duration: 0.5, delay: .1 }}
             exit={{ opacity: 0, x: '-20%' }}
-            onPointerEnter={() => setIsScrollAllowed(false)}
-            onPointerLeave={() => setIsScrollAllowed(true)}
         >
             <Scrollbar className={'scroll'} >
                 <section>
                     <h2>
                         Projects
                     </h2>
-                    <div className={s.projects}>
+                    <div className={s.projects}
+                        onMouseEnter={() => setIsScrollAllowed(false)}
+                        onMouseLeave={() => setIsScrollAllowed(true)}
+                    >
                         {projects.map((item, idx) => {
                             return (
                                 <NavLink to={`/projects/${item.pageName}`} key={idx} className={s.item}>

@@ -338,9 +338,8 @@ export default function Services({ mobile }) {
         <>
             {!mobile ? <Scrollbar className={'scroll'}>
                 <div className={s.services__wrapper}
-                    onPointerEnter={() => setIsScrollAllowed(false)}
-                    onPointerLeave={() => setIsScrollAllowed(true)}
-                    onMouseUp={setIsScrollAllowed(false)}
+                    onMouseEnter={() => setIsScrollAllowed(false)}
+                    onMouseLeave={() => setIsScrollAllowed(true)}
                 >
                     <ul className={s.services}>
                         {colapses.map((colapse) => {
