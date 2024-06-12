@@ -3,14 +3,14 @@ import { TextureLoader, Vector3 } from "three";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
-import { easing } from 'maath'; 
+import { easing } from 'maath';
 
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
 
-import matcap from '/default.png'; 
-import voxelsData from './voxel2.json';
+import matcap from '/default.png';
+import voxelsData from './voxel.json';
 import useActiveModel from "../../store/useActiveModel";
 import ServicesSlider from "../ServicesSlider/ServicesSlider";
 
@@ -69,7 +69,7 @@ export default function VoxelModel() {
                 0
             );
             const targetPosition = new Vector3(
-                (viewport.width / 2 - viewport.width / 4) * modelCoords[activeModel].target,
+                (viewport.width / 2 - viewport.width / 4) * modelCoords[activeModel].target + ((activeModel === 2) ? 1 : 0),
                 0,
                 0
             );
@@ -129,25 +129,22 @@ export default function VoxelModel() {
     });
 
     return (
-        <>
-            <Instances
-                limit={COUNT}
-                range={COUNT}
-                geometry={geometry}
-                ref={mainInstances}
-                scale={0.3}
-            >
-                <meshMatcapMaterial
-                    matcap={currentTexture}
-                />
-                {Array(COUNT).fill().map((_, idx) =>
-                    <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
-                        <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
-                    </group>
-                )}
-                <ServicesSlider />
-            </Instances>
-
-        </>
+        <Instances
+            limit={COUNT}
+            range={COUNT}
+            geometry={geometry}
+            ref={mainInstances}
+            scale={0.3}
+        >
+            <meshMatcapMaterial
+                matcap={currentTexture}
+            />
+            {Array(COUNT).fill().map((_, idx) =>
+                <group key={idx} ref={el => instancesItem.current.children[idx] = el}>
+                    <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
+                </group>
+            )}
+            <ServicesSlider />
+        </Instances>
     )
 } 

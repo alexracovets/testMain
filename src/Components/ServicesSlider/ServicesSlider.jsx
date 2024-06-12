@@ -169,7 +169,7 @@ export default function ServicesSlider() {
                         visible={false}
                     />
                     <mesh
-                        position={[1, 0, 0]}
+                        position={[0, 0, 0]}
                         ref={slidesRef}
                     >
                         {slides.map((item, index) => (
@@ -179,7 +179,7 @@ export default function ServicesSlider() {
                     <Html
                         as='div'
                         wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
-                        position={[0, -2.5, 6]}
+                        position={[-1.2, -2.9, 6]}
                         rotation={[0, 0.4, 0]}
                         transform
                         center
