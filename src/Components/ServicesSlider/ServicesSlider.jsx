@@ -38,6 +38,7 @@ const slidesCount = 5;
 const nearestAngleMultiplier = 2 * Math.PI / slidesCount;
 
 import s from './ServicesSlider.module.scss';
+import { useControls } from "leva";
 export default function ServicesSlider() {
     const currentIndexServices = useStoreServices((state) => state.activeServices);
     const getSliderServices = useStoreServices((state) => state.getSliderServices);
@@ -144,6 +145,12 @@ export default function ServicesSlider() {
         }
     });
 
+    const test = useControls({
+        x: 0,
+        y: 0,
+        z: 0
+    })
+
     return (
         <AnimatePresence>
             <motion.mesh
@@ -169,7 +176,7 @@ export default function ServicesSlider() {
                         visible={false}
                     />
                     <mesh
-                        position={[0, 0, 0]}
+                        position={[test.x, test.y, test.z]}
                         ref={slidesRef}
                     >
                         {slides.map((item, index) => (

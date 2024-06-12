@@ -2,19 +2,14 @@ const projectsData = [
     {
         pageName: `сonfigurator`,
         title: `Configurator`,
-        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Description`,
         tags: [
-            `Logistics`,
-            `Germany`,
-            `E-commerce`,
-            `Business Systems`,
-            `Software Product Development`,
-            `Mobile Development`,
-            `Support & Maintenance`,
-            `UI/UX Design`
+            `tag 1`,
+            `tag 2`,
+            `tag 3`
         ],
         logo: `logo.svg`,
-        logoName: `CompanyName`,
+        logoName: `Configurator`,
         keys_block: [
             {
                 name: 'Key Facts',
@@ -71,19 +66,14 @@ const projectsData = [
     {
         pageName: `3d_office`,
         title: `Office 3D Tour`,
-        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
+        description: `Description`,
         tags: [
-            `Logistics`,
-            `Germany`,
-            `E-commerce`,
-            `Business Systems`,
-            `Software Product Development`,
-            `Mobile Development`,
-            `Support & Maintenance`,
-            `UI/UX Design`
+            `tag 1`,
+            `tag 2`,
+            `tag 3`
         ],
         logo: `logo.svg`,
-        logoName: `CompanyName`,
+        logoName: `Office`,
         keys_block: [
             {
                 name: 'Key Facts',
@@ -138,21 +128,16 @@ const projectsData = [
         ]
     },
     {
-        pageName: `project3`,
-        title: `Last-mile delivery platform redesign and maintenance`,
+        pageName: `web_dev`,
+        title: `Website development`,
         description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
         tags: [
-            `Logistics`,
-            `Germany`,
-            `E-commerce`,
-            `Business Systems`,
-            `Software Product Development`,
-            `Mobile Development`,
-            `Support & Maintenance`,
-            `UI/UX Design`
+            `tag 1`,
+            `tag 2`,
+            `tag 3`
         ],
         logo: `logo.svg`,
-        logoName: `CompanyName`,
+        logoName: `WebDev`,
         keys_block: [
             {
                 name: 'Key Facts',
