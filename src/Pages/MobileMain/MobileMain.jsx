@@ -47,14 +47,10 @@ export default function MobileMain() {
             });
         }, { threshold: 0.5 });
 
-        if (firstSection.current) observer.observe(firstSection.current);
-        // if (secondSection.current) observer.observe(secondSection.current);
-        // if (thirdSection.current) observer.observe(thirdSection.current);
+        if (firstSection.current) observer.observe(firstSection.current); 
 
         return () => {
-            if (firstSection.current) observer.unobserve(firstSection.current);
-            // if (secondSection.current) observer.unobserve(secondSection.current);
-            // if (thirdSection.current) observer.unobserve(thirdSection.current);
+            if (firstSection.current) observer.unobserve(firstSection.current); 
         };
     }, []);
     useEffect(() => {

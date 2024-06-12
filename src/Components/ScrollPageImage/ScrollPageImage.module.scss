@@ -1,0 +1,99 @@
+@import '../../global/variable.scss';
+
+.scroll__wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 20;
+    background-color: #00000075;
+    // pointer-events: none;
+    overflow: hidden;
+
+    .svg_image {
+        width: 8rem;
+
+        svg {
+            width: 100%;
+            animation: moveDownSlow 2s infinite;
+            filter: drop-shadow(0 0 4rem $color-white);
+
+            .animate_arrow {
+                animation: moveDown 2s infinite;
+                opacity: 0;
+
+                &.first {
+                    animation-delay: 0ms;
+                }
+
+                &.second {
+                    animation-delay: 300ms;
+                }
+            }
+
+            .animate_cursor {
+                animation: cursor 2s infinite;
+            }
+        }
+    }
+}
+
+
+@keyframes moveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+        fill: $color-white;
+    }
+
+    25% {
+        opacity: 1;
+        fill: $color-white;
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(0.5em);
+    }
+
+    90% {
+        opacity: 0;
+        transform: translateY(0.5em);
+        fill: $color-primary;
+    }
+}
+
+@keyframes moveDownSlow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(0.2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        transform: translateY(0);
+        fill: $color-primary;
+    }
+
+    50% {
+        transform: translateY(0.1em);
+        fill: $color-white;
+    }
+
+    100% {
+        transform: translateY(0);
+        fill: $color-primary;
+    }
+}

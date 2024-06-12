@@ -19,7 +19,7 @@ import ContactsForm from "../../modal/ContactsForm/ContactsForm";
 
 export default function PagerRoutes() {
     const location = useLocation();
-
+    console.log(location)
     return (
         <>
             <AnimatePresence mode="wait">
