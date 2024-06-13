@@ -12,6 +12,11 @@ export default function AboutPage() {
             exit={{ opacity: 0, x: '20%' }}
         >
             <section>
+                <div className={s.title_block}>
+                    <h2>
+                        About Us
+                    </h2>
+                </div>
                 <div className={s.content}>
                     <div className={s.lies_info}>
                         <h3>
@@ -25,7 +30,7 @@ export default function AboutPage() {
                             We know how to operate with a high demand traffic and marketing budgets over 30K$
                         </h4>
                     </div>
-                    {/* <Strengths /> */}
+                    <Strengths />
                 </div>
             </section>
         </motion.div>

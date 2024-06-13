@@ -3,12 +3,12 @@ import SplitFlapDisplay from "react-split-flap-display";
 import { ALPHA } from "react-split-flap-display/constants";
 
 const sentences = [
-    'INTERACTIVEWEBSITE DEV',
+    'INTERACTIVEWEB DEV    ',
+    'AI         CHATBOTS   ',
     'AR VR XR   DEVELOPMENT',
     'DIGITAL    MARKETING  '
 ];
 import './Fliper.scss'
-// import s from './Fliper.scss';
 export default function Fliper() {
     const [activeSentences, setActiveSentences] = useState(0);
 

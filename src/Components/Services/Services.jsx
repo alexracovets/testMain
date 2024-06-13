@@ -13,8 +13,8 @@ const colapses = [
         title: 'Interactive Website Dev',
         colapse: [
             {
-                type: 'bold',
-                value: 'Is your website failing to engage visitors? Our interactive website development services provide the solution:'
+                type: 'text',
+                value: 'Is your website failing to engage visitors?'
             },
             {
                 type: 'list',
@@ -72,8 +72,8 @@ const colapses = [
         title: 'Custom AI Bots',
         colapse: [
             {
-                type: 'bold',
-                value: 'Feeling overwhelmed by repetitive tasks and missed opportunities? Our custom AI bot development service is here to streamline your processes and unlock new possibilities:'
+                type: 'text',
+                value: 'Overwhelmed by repetitive tasks?'
             },
             {
                 type: 'list',
@@ -131,8 +131,8 @@ const colapses = [
         title: 'AR VR XR Development',
         colapse: [
             {
-                type: 'bold',
-                value: 'Tired of traditional marketing methods falling flat? Our AR VR XR development service offers a new dimension of engagement for your audience:'
+                type: 'text',
+                value: 'Tired of traditional marketing methods falling flat?'
             },
             {
                 type: 'list',
@@ -181,7 +181,7 @@ const colapses = [
             },
             {
                 type: 'text',
-                value: `Ready to leave a lasting impression on your audience? Contact us today to explore how our AR VR XR solutions can elevate your brand and drive results!`
+                value: `Contact us today to explore how our AR VR XR solutions can elevate your brand and drive results!`
             },
         ],
         idx: 2
@@ -191,7 +191,7 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Struggling to stand out online? Our digital marketing services are designed to solve your visibility problems and drive real results:'
+                value: 'Amplify Your Brand with Digital Marketing Excellence'
             },
             {
                 type: 'list',
@@ -260,7 +260,7 @@ const colapses = [
         colapse: [
             {
                 type: 'bold',
-                value: 'Struggling to make an impact in a crowded digital landscape? Our bespoke video production service offers tailored solutions to help your brand shine:'
+                value: 'Our bespoke video production service offers tailored solutions to help your brand shine'
             },
             {
                 type: 'list',
@@ -309,7 +309,7 @@ const colapses = [
             },
             {
                 type: 'text',
-                value: `Don't settle for ordinary. Ready to elevate your brand with extraordinary video content? Contact us today to discuss your project and discover the power of personalized video solutions!`
+                value: `Don't settle for ordinary! Contact us today to discuss your project and discover the power of personalized video solutions!`
             },
         ],
         idx: 4
