@@ -5,7 +5,6 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useActiveModel from "../store/useActiveModel";
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
-import ScrollPageImage from "../Components/ScrollPageImage/ScrollPageImage";
 
 import useScrollPageNavigation from '../store/useScrollPageNavigation';
 import pathsScrollDesktop from "../data/pathsScrollDesktop";
@@ -65,7 +64,7 @@ export default function Default() {
     useEffect(() => {
         !isDesktop && navigate('/mobile');
     }, [isDesktop, navigate]);
-    
+
     return (
         <ReactScrollWheelHandler
             upHandler={() => routeTo('toUp')}
@@ -77,7 +76,6 @@ export default function Default() {
                 <Outlet />
             </main>
             <Footer />
-            <ScrollPageImage />
         </ReactScrollWheelHandler>
     );
 }

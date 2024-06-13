@@ -36,6 +36,12 @@ export default function MainPage() {
                         <UI_Button text={'DISCOVER US'} arrow />
                     </div>
                     <Developments />
+                    <div className={s.controller__wrapper}>
+                        <div className={s.controller}>
+                            <div className={s.circle}></div>
+                            <div className={s.dot}></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </motion.div>
