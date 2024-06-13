@@ -2,18 +2,21 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import arrowImage from '/image/icons/ui/arrow.svg';
-import clickBtn from '/sounds/clickBtn.wav';
-import hoverBtn from '/sounds/hoverBtn.wav';
+import hoverBtn from '/sounds/hover.wav';
+
+import useUserInteracted from '../../store/useUserInteracted';
 
 import s from './UI_Button.module.scss';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
-    const [userInteracted, setUserInteracted] = useState(false);
+    const userInteracted = useUserInteracted((state) => state.userInteracted);
+    const setUserInteracted = useUserInteracted((state) => state.setUserInteracted);
     const [isBtn, setIsBtn] = useState(false);
-    const clickSound = new Audio(clickBtn);
     const hoverSound = new Audio(hoverBtn);
 
     const playSound = (music) => {
         if (userInteracted) {
+            music.pause();
+            music.currentTime = 0;
             music.play();
         }
     }
@@ -46,8 +49,7 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
                     (disabled ? s.button + ' ' + s.disabled : s.button)}
             type={submit ? 'submit' : 'button'}
             disabled={disabled}
-            onClick={() => playSound(clickSound)}
-            onPointerEnter={() => playSound(hoverSound)}
+            onMouseEnter={() => playSound(hoverSound)}
         >
             <span className={s.text}>
                 {text}

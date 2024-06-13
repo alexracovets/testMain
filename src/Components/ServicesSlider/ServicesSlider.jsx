@@ -9,7 +9,6 @@ import Slide from "./Slide/Slide";
 import useActiveModel from '../../store/useActiveModel';
 import useStoreServices from '../../store/useStoreServices';
 
-
 const slides = [
     {
         image: './test/test.png',
