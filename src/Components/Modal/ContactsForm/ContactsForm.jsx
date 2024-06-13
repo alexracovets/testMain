@@ -1,14 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
-import close_icon from '/image/icons/form/close.svg';
+import { useEffect, useState } from "react";
 
 import UI_Button from '../../UI_Button/UI_Button';
 import ContactsFormInput from './ContactsFormInput/ContactsFormInput';
 import ContactsFormTextArea from './ContactsFormTextArea/ContactsFormTextArea';
-
 import useModalForm from '../../../store/useModalForm';
 
 import s from './ContactsForm.module.scss';
-import { useEffect, useState } from "react";
 export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
@@ -50,8 +48,6 @@ export default function ContactsForm() {
             alert('Failed to send email.');
         }
     };
-
-
 
     useEffect(() => {
         const allValid = Object.values(userForm).every(field => field.isValid && field.value !== '');
