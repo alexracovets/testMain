@@ -23,7 +23,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; 
+            flex-direction: column;
+
+            h2 {
+                width: 100%;
+                font-family: $font-DM_Sans;
+                color: $color-primary;
+                font-weight: 800;
+                font-size: 3.625rem;
+                line-height: 4.16875rem;
+                margin-bottom: 0rem;
+                text-transform: uppercase;
+                letter-spacing: 0.125rem;
+                padding-top: 3.25rem; 
+            }
+        }
+
+        .btn {
+            width: 16rem;
+            height: 6rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            margin-right: 3rem;
+
+            @media (max-width:$width-shortDesktop) {
+                width: 11.34625rem;
+                height: 3rem;
+            }
+
+            @media (max-width: $width-table) {
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
         }
     }
 }

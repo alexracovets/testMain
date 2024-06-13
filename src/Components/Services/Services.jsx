@@ -336,32 +336,33 @@ export default function Services({ mobile }) {
 
     return (
         <>
-            {!mobile ? <Scrollbar className={'scroll'}>
-                <div className={s.services__wrapper}
-                    onMouseEnter={() => setIsScrollAllowed(false)}
-                    onMouseOver={() => setIsScrollAllowed(false)}
-                    onMouseLeave={() => setIsScrollAllowed(true)}
-                    onMouseOut={() => setIsScrollAllowed(true)}
-                >
-                    <ul className={s.services}>
-                        {colapses.map((colapse) => {
-                            return (
-                                <ServicesItem
-                                    key={colapse.idx}
-                                    index={colapse.idx}
-                                    title={colapse.title}
-                                    colapse={colapse.colapse}
-                                    currentService={currentService}
-                                    setCurrentService={setCurrentService}
-                                />
-                            )
-                        })}
-                    </ul>
-                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                        <UI_Button text={`LET'S TALK`} arrow />
-                    </div>
+            {!mobile ?
+                <div className={s.services_box}>
+                    <Scrollbar className={'scroll'}>
+                        <div className={s.services__wrapper}
+                            onMouseEnter={() => setIsScrollAllowed(false)}
+                            onMouseOver={() => setIsScrollAllowed(false)}
+                            onMouseLeave={() => setIsScrollAllowed(true)}
+                            onMouseOut={() => setIsScrollAllowed(true)}
+                        >
+                            <ul className={s.services}>
+                                {colapses.map((colapse) => {
+                                    return (
+                                        <ServicesItem
+                                            key={colapse.idx}
+                                            index={colapse.idx}
+                                            title={colapse.title}
+                                            colapse={colapse.colapse}
+                                            currentService={currentService}
+                                            setCurrentService={setCurrentService}
+                                        />
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    </Scrollbar>
                 </div>
-            </Scrollbar> :
+                :
                 <>
                     <div className={s.services__wrapper}>
                         <ul className={s.services}>

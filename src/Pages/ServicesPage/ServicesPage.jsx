@@ -1,9 +1,12 @@
-import Services from '../../Components/Services/Services';
 import { motion } from "framer-motion";
 
-import s from './ServicesPage.module.scss';
+import UI_Button from '../../Components/UI_Button/UI_Button';
+import Services from '../../Components/Services/Services';
+import useModalForm from '../../store/useModalForm';
 
+import s from './ServicesPage.module.scss';
 export default function ServicesPage() {
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     return (
         <motion.div className={s.wrapper}
@@ -14,7 +17,13 @@ export default function ServicesPage() {
         >
             <section>
                 <div className={s.content}>
+                    <h2>
+                        About Us
+                    </h2>
                     <Services />
+                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                        <UI_Button text={`LET'S TALK`} arrow />
+                    </div>
                 </div>
             </section>
         </motion.div>

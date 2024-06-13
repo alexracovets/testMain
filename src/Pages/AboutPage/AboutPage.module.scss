@@ -34,13 +34,8 @@
                 font-weight: 800;
                 font-size: 3.625rem;
                 line-height: 4.16875rem;
-                margin-bottom: 3.5rem;
                 text-transform: uppercase;
                 letter-spacing: 0.125rem;
-
-                @media (max-width: $width-shortDesktop) {
-                    margin-bottom: 3.5rem;
-                }
             }
         }
 
