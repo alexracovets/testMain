@@ -1,7 +1,7 @@
 const playSound = (music) => {
     music.pause();
     music.currentTime = 0;
-    music.play();
+    // music.play();
 };
 
 export default playSound
