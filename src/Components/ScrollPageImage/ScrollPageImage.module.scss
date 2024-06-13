@@ -10,9 +10,8 @@
     justify-content: center;
     align-items: flex-end;
     z-index: 20;
-    background-color: #00000075;
-    // pointer-events: none;
-    overflow: hidden; 
+    background-color: #00000075; 
+    overflow: hidden;
 
     .svg_image {
         width: 8rem;
@@ -38,6 +37,38 @@
             .animate_cursor {
                 animation: cursor 2s infinite;
             }
+        }
+    }
+
+    .controller {
+        width: 6rem;
+        height: 13rem;
+        border: 0.4rem solid $color-white;
+        border-radius: 5rem;
+        margin-bottom: 7rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        .circle {
+            width: 4.3rem;
+            height: 4.3rem;
+            border-radius: 4rem;
+            border: 0.4rem solid $color-white;
+            margin-top: 0.5rem;
+        }
+
+        .dot {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: $color-white;
+            position: absolute;
+            left: calc(50% - 1rem);
+            top: calc(50% - 1rem);
+            animation: controllerDotAnimation 2s infinite;
         }
     }
 }
@@ -95,5 +126,20 @@
     100% {
         transform: translateY(0);
         fill: $color-primary;
+    }
+}
+
+
+@keyframes controllerDotAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4.4em);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
