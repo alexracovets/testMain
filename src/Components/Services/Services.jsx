@@ -363,7 +363,7 @@ export default function Services({ mobile }) {
                     </Scrollbar>
                 </div>
                 :
-                <>
+                <div className={s.services_box}>
                     <div className={s.services__wrapper}>
                         <ul className={s.services}>
                             {colapses.map((colapse) => {
@@ -383,7 +383,7 @@ export default function Services({ mobile }) {
                             <UI_Button text={`LET'S TALK`} small arrow />
                         </div>
                     </div>
-                </>
+                </div>
             }
 
         </>
