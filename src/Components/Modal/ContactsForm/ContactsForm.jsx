@@ -70,7 +70,11 @@ export default function ContactsForm() {
                 >
                     <div className={s.form__wrapper} onClick={(e) => e.stopPropagation()}>
                         <div className={s.cross} onClick={() => setIsActiveForm(false)}>
-                            <img src={close_icon} alt="close" />
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.001 5.28296L5.00098 19.283" stroke="#A3A4AB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M5.00098 5.28296L19.001 19.283" stroke="#A3A4AB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+
                         </div>
                         <div className={s.title}>
                             Contact Us

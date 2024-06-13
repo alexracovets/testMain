@@ -41,12 +41,6 @@
             padding: 1.25rem;
         }
 
-        &:hover {
-            &::before {
-                background-color: rgb(255 248 97 / 7%);
-            }
-        }
-
         &::before {
             content: '';
             position: absolute;
@@ -57,7 +51,6 @@
             z-index: -1;
             backdrop-filter: blur(0.3rem);
             transition: all ease-in-out 300ms;
-            background-color: #fec53200;
         }
 
         .cross {
@@ -80,9 +73,22 @@
                 top: 0.5rem;
             }
 
-            img {
-                width: 1.5rem;
+            &:hover {
+                svg {
+                    path {
+                        stroke: $color-primary;
+                    }
+                }
+            }
+
+            svg {
+                width: 100%;
                 height: auto;
+
+                path {
+                    stroke: $color-white;
+                    transition: all ease-in-out 300ms;
+                }
             }
         }
 
