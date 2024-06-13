@@ -95,7 +95,7 @@ export default function ContactsForm() {
                             <ContactsFormTextArea
                                 name={`textarea`}
                                 label={`Comment`}
-                                placeholder={`Add some text`}
+                                placeholder={`Add your comment or short project description`}
                                 type={`textarea`}
                                 setUserForm={setUserForm}
                                 userForm={userForm}
