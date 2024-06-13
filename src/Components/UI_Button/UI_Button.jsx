@@ -7,19 +7,12 @@ import hoverBtn from '/sounds/hover.wav';
 import useUserInteracted from '../../store/useUserInteracted';
 
 import s from './UI_Button.module.scss';
+import playSound from '../../utils/playSound';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const setUserInteracted = useUserInteracted((state) => state.setUserInteracted);
     const [isBtn, setIsBtn] = useState(false);
     const hoverSound = new Audio(hoverBtn);
-
-    const playSound = (music) => {
-        if (userInteracted) {
-            music.pause();
-            music.currentTime = 0;
-            music.play();
-        }
-    }
 
     useEffect(() => {
         arrow ? setIsBtn(true) : setIsBtn(false);
@@ -49,7 +42,7 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
                     (disabled ? s.button + ' ' + s.disabled : s.button)}
             type={submit ? 'submit' : 'button'}
             disabled={disabled}
-            onMouseEnter={() => playSound(hoverSound)}
+            onMouseEnter={() => { userInteracted && playSound(hoverSound) }}
         >
             <span className={s.text}>
                 {text}

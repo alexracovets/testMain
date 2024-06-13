@@ -1,21 +1,17 @@
 import { useState, useEffect } from 'react';
 
-import hoverBtn from '/sounds/hover.wav';
 import useToast from "../../store/useToast";
+import playSound from '../../utils/playSound';
+import hover2 from '/sounds/hover2.wav';
 
 import s from './CopyButton.module.scss';
 export default function CopyButton() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
     const toastPlay = useToast(state => state.setIsPlay);
-    const hoverSound = new Audio(hoverBtn);
-
-    const playSound = (music) => {
-        music.pause();
-        music.currentTime = 0;
-        music.play();
-    }
+    const hover2Sound = new Audio(hover2);
 
     const handleCopyEmail = () => {
+        playSound(hover2Sound)
         setIsBtnFocus(true);
         const email = 'info@spotium360.com';
         navigator.clipboard.writeText(email).then(() => {
@@ -37,7 +33,6 @@ export default function CopyButton() {
             <div
                 className={isBtnFocus ? `${s.contactBtn} ${s.focus}` : s.contactBtn}
                 onClick={handleCopyEmail}
-                onMouseEnter={() => playSound(hoverSound)}
             >
                 <button className={s.text}>
                     info@spotium360.com
