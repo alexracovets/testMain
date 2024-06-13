@@ -25,8 +25,6 @@
             background-color: $color-neutral-100;
             padding-top: 6.25rem;
             z-index: 20;
-            box-shadow: 0 0 20rem #696969da,
-                0 0 1rem #ffffff41 inset;
         }
     }
 
@@ -37,8 +35,7 @@
         background-color: $color-neutral-100;
         padding-top: 6.25rem;
         z-index: 20;
-        box-shadow: 0 0 0 #696969da,
-            0 0 0 #ffffff41 inset;
+        box-shadow: 0 0 1.5rem 1.5rem rgb(0 0 0 / 40%), 0rem 0 10rem 3rem rgb(255 255 255 / 10%);
         transition: all ease-in-out 400ms;
         transition-delay: 200ms;
 

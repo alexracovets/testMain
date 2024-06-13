@@ -114,8 +114,6 @@
                 }
             }
 
-           
-
             .burger {
                 position: relative;
                 width: 2.75rem;
@@ -123,7 +121,6 @@
                 margin-left: 1.4375rem;
                 z-index: 11;
                 margin-top: -0.875rem;
-                // display: none;
 
                 @media (max-width:$width-shortDesktop) {
                     width: 2.75rem;
