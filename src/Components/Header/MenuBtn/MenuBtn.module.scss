@@ -38,6 +38,10 @@
         align-items: center;
         cursor: pointer;
 
+        @media (max-width:$width-mobile) {
+            margin-right: 0.2rem;
+        }
+
         .figure {
             width: 3.975rem;
             height: 2.675rem;
@@ -45,11 +49,6 @@
             border-radius: 3rem;
             position: relative;
             z-index: 11;
-
-            @media (max-width:$width-mobile) {
-                width: 2.7825rem;
-                height: 1.8725rem;
-            }
 
             &::before {
                 content: '';
@@ -61,11 +60,6 @@
                 background-color: $color-neutral-100;
                 border-radius: 50%;
                 z-index: 2;
-
-                @media (max-width:$width-mobile) {
-                    width: 0.4375rem;
-                    height: 0.4375rem;
-                }
             }
 
 
