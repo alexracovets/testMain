@@ -23,7 +23,6 @@
         border-radius: 1.5rem;
         overflow: hidden;
         border: 2px solid $color-neutral-20;
-        background: #393939d6;
         position: relative;
         box-shadow: 0 0 4rem inset rgb(85 85 85 / 46%);
 
@@ -42,6 +41,12 @@
             padding: 1.25rem;
         }
 
+        &:hover {
+            &::before {
+                background-color: rgb(255 224 7 / 9%);
+            }
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -49,9 +54,10 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgb(67 67 67 / 69%);
             z-index: -1;
-            filter: blur(0.625rem);
+            backdrop-filter: blur(0.625rem);
+            transition: all ease-in-out 300ms;
+            background-color: #fec53200;
         }
 
         .cross {
