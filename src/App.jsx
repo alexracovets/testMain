@@ -11,9 +11,11 @@ import Loader from "./Components/Loader/Loader";
 import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 import useLoader from './store/useLoader';
+import useUserInteracted from './store/useUserInteracted';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
+  const userInteracted = useUserInteracted((state) => state.userInteracted);
   const isLoaded = useLoader((state) => state.isLoaded);
 
   useEffect(() => {
@@ -42,7 +44,7 @@ function App() {
           {!isMobile ? <VoxelModel /> : null}
         </Suspense>
         <Suspense fallback={null}>
-          {/* {isMobile ? <MobileModel /> : null} */}
+          {isMobile && userInteracted ? <MobileModel /> : null}
         </Suspense>
         <Suspense fallback={null}>
           <Pager />
