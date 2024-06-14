@@ -44,6 +44,12 @@
             }
         }
 
+        &:last-of-type {
+            @media (max-width:$width-mobile) {
+                margin-bottom: 1rem;
+            }
+        }
+
         img {
             width: 1.125rem;
             margin-right: 1rem;
@@ -97,8 +103,43 @@
 
 .expertiseBtn {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     color: $color-white;
     padding: 1rem 0;
-    font-family: $font-JB_Mono;
+    font-family: $font-Bebas;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.lines {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .line {
+        height: 2px;
+        width: 100%;
+        max-width: 100%;
+        background-color: $color-white;
+    }
+
+    .circle {
+        width: 2rem;
+        min-width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 2px solid $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background-color: $color-white;
+        }
+    }
 }

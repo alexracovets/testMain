@@ -19,7 +19,7 @@
         padding: 3.125rem 0;
 
         @media (max-width:$width-mobile) {
-            padding: 2.375rem 0;
+            padding: 1.5rem 0;
         }
 
         .content {
@@ -36,7 +36,7 @@
                 pointer-events: none;
 
                 @media (max-width:$width-mobile) {
-                    height: 13.5rem;
+                    height: 23.5rem;
                 }
             }
 
