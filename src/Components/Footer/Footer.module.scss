@@ -57,12 +57,16 @@ footer {
                 font-weight: 900;
                 text-transform: uppercase;
                 display: flex;
-                justify-content: flex-start;
-
+                justify-content: flex-start; 
                 transition: all ease-in-out 400ms;
 
                 &:hover {
                     color: $color-primary;
+                }
+
+                @media (max-width:$width-table) {
+                  text-align: center;
+                  margin-bottom: 1rem;
                 }
             }
 
@@ -85,10 +89,8 @@ footer {
                     font-weight: 800;
                     font-family: $font-DM_Sans;
 
-                    @media (max-width:$width-mobile) {
-                        font-size: 2rem;
-                        line-height: 2.3rem;
-                        margin-bottom: 2.125rem;
+                    @media (max-width:$width-table) {
+                        display: none;
                     }
                 }
 
