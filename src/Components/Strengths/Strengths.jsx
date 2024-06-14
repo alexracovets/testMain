@@ -89,7 +89,7 @@ export default function Strengths() {
                             )
                         })}
                     </ul>
-                    <div className={s.lines}>
+                    <div {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.lines}>
                         <div className={s.line}></div>
                         <div className={s.circle}>
                             <div className={s.dot}></div>
