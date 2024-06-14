@@ -43,6 +43,7 @@
             flex-direction: column;
 
             .item {
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
@@ -50,6 +51,7 @@
                 text-align: left;
 
                 .info {
+                    width: 100%;
                     display: flex;
                     justify-content: flex-start;
                     align-items: flex-start;
@@ -94,6 +96,7 @@
                         margin-left: -0.4375rem;
 
                         .item {
+                            width: auto;
                             font-size: 0.75rem;
                             color: $color-white;
                             font-family: $font-JB_Mono;
