@@ -15,7 +15,7 @@ export default function FullMenu({ isDesktop }) {
 
     const links = [
         { path: "/services", name: "Services" },
-        { path: "/projects", name: "Projects" },
+        { path: "/cases", name: "Сases" },
         { path: "/about", name: "About Us" },
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact Us" }
@@ -43,7 +43,7 @@ export default function FullMenu({ isDesktop }) {
                     }) :
                         <>
                             <li onMouseEnter={() => playSound(hover1Sound)}><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
-                            <li onMouseEnter={() => playSound(hover1Sound)}><NavLink to={'/mobile/projects'} onClick={() => setBurger(false)}> Projects </NavLink></li>
+                            <li onMouseEnter={() => playSound(hover1Sound)}><NavLink to={'/mobile/cases'} onClick={() => setBurger(false)}> Сases </NavLink></li>
                             <li onMouseEnter={() => playSound(hover1Sound)}><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About Us</NavLink></li>
                             <li onMouseEnter={() => playSound(hover1Sound)}><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
                             <li onMouseEnter={() => playSound(hover1Sound)}><NavLink onClick={() => anchorLink('contacts')} > Contacts Us</NavLink></li>

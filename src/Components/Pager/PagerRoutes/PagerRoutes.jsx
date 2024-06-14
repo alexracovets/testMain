@@ -34,14 +34,14 @@ export default function PagerRoutes() {
                         <Route path="services" element={<ServicesPage />} />
                         <Route path="industries" element={<IndustriesPage />} />
                         <Route path="contact" element={<ContactPage />} />
-                        <Route path="projects" element={<ProjectsPage />} />
-                        <Route path="projects/:id" element={<ProjectCase />} />
+                        <Route path="cases" element={<ProjectsPage />} />
+                        <Route path="cases/:id" element={<ProjectCase />} />
                         <Route path="q&a" element={<QAPage />} />
                     </Route>
                     <Route path="/mobile" element={<Mobile />}>
                         <Route index element={<MobileMain />} />
-                        <Route path="projects" element={<MobileProjectsPage />} />
-                        <Route path="projects/:id" element={<MobileProjectCase />} />
+                        <Route path="cases" element={<MobileProjectsPage />} />
+                        <Route path="cases/:id" element={<MobileProjectCase />} />
                         <Route path="q&a" element={<MobileQAPage />} />
                     </Route>
                 </Routes>

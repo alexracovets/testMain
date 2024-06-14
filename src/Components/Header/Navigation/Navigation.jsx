@@ -1,20 +1,13 @@
 import PropTypes from 'prop-types';
-import Burger from "../Burger/Burger"; 
+
+import MenuBtn from '../MenuBtn/MenuBtn';
 
 import s from '../Header.module.scss';
-import MenuBtn from '../MenuBtn/MenuBtn';
-export default function Navigation({ isDesktop }) {
- 
+export default function Navigation() {
+
     return (
         <nav className={s.navigation}>
-            {isDesktop ? <> 
-                <MenuBtn /> 
-            </>
-                :
-                // <Burger />
-                <MenuBtn /> 
-            }
-
+            <MenuBtn />
         </nav>
     )
 }

@@ -33,7 +33,7 @@ export default function MobileProjectsPage() {
         >
             <section>
                 <h2>
-                    Projects
+                    Сases
                 </h2>
                 <div className={s.projects}>
                     {projects.map((item, idx) => {

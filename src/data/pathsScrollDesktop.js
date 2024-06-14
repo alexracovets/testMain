@@ -7,16 +7,16 @@ const pathsScrollDesktop = [
     {
         pathname: '/services',
         toUp: '/',
-        toDown: '/projects'
+        toDown: '/cases'
     },
     {
-        pathname: '/projects',
+        pathname: '/cases',
         toUp: '/services',
         toDown: '/about'
     },
     {
         pathname: '/about',
-        toUp: '/projects',
+        toUp: '/cases',
         toDown: '/q&a'
     },
     {

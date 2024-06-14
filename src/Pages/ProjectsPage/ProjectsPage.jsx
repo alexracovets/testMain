@@ -25,7 +25,7 @@ export default function ProjectsPage() {
         >
             <section>
                 <h2>
-                    Projects
+                    Сases
                 </h2>
                 <Scrollbar className={'scroll'} >
                     <div className={s.projects}
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
                     >
                         {projects.map((item, idx) => {
                             return (
-                                <NavLink to={`/projects/${item.pageName}`} key={idx} className={s.item}>
+                                <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{item.title}</h3>
                                         <p>{item.description}</p>
