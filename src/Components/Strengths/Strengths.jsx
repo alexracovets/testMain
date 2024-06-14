@@ -78,7 +78,7 @@ export default function Strengths() {
                     })}
                 </ul> :
                 <>
-                    <button {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.expertiseBtn}>{`Our Expertise${isExpanded ? ':' : '...'}`}</button>
+                    <button {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.expertiseBtn}>{`Our Expertise`}</button>
                     <ul {...getCollapseProps()} className={s.strengths}>
                         {strengths.map((strength, i) => {
                             return (
