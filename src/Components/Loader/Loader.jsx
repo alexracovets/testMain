@@ -90,11 +90,11 @@ export default function Loader() {
                     @keyframes move-around {
                         0%, 100% {
                             transform: translate(0, 0);
-                            opacity: 0.6;
+                            opacity: 0.8;
                         }
                         50% {
                             transform: translate(@r(-100%, 100%), @r(-100%, 100%)); 
-                            opacity: 0.6;
+                            opacity: 0.8;
                         }
                     }
                 `}
