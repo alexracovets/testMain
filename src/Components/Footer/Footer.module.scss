@@ -78,6 +78,7 @@ footer {
 
                 @media (max-width:$width-mobile) {
                     flex-direction: column;
+                    margin: 1rem auto;
                 }
 
                 h2 {
