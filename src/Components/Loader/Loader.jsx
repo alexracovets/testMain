@@ -17,7 +17,7 @@ export default function Loader() {
     const isLoaded = useLoader((state) => state.isLoaded);
     const setIsLoaded = useLoader((state) => state.setIsLoaded);
 
-    useEffect(() => {
+    useEffect(() => { 
         if (progress === '100') {
             setTimeout(() => {
                 setActiveBtn(true);
@@ -34,46 +34,37 @@ export default function Loader() {
 
     return (
         <AnimatePresence>
-            {!isLoaded ?
-                <motion.div className={s.loader__wrapper}
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    exit={{ opacity: 0, scale: 2 }}
+            {!isLoaded ? <motion.div className={s.loader__wrapper}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                exit={{ opacity: 0, scale: 2 }}
+            >
+                <div className={s.circle}>
+                    <div className={s.mask}></div>
+                    <div className={s.dot}></div>
+                </div>
+                <div className={s.loader__progress}>
+                    <CountUp end={progress} />%
+                </div>
+                <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
+                    <UI_Button text={'To Explore'} arrow />
+                </div>
+                <css-doodle
+                    style={{
+                        position: 'absolute',
+                        left: '0',
+                        top: '0',
+                        width: '100%',
+                        height: '100%',
+                        zIndex: '-1'
+                    }}
                 >
-                    <div className={s.circle}>
-                        <div className={s.mask}></div>
-                        <div className={s.dot}></div>
-                    </div>
-                    <div className={s.loader__progress}>
-                        <CountUp end={progress} />%
-                    </div>
-                    <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
-                        <UI_Button text={'To Explore'} arrow />
-                    </div>
-                    <css-doodle
-                        style={{
-                            position: 'absolute',
-                            left: '0',
-                            top: '0',
-                            width: '100%',
-                            height: '100%',
-                            zIndex: '-1'
-                        }}
-                    >
-                        {`
+                    {`
                     :doodle {
                         @grid: 10x1 / 100vw 100vh / transparent;
                         --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A, #E4E4E7, #FEC532, #E4E4E7;
-                        --color2: #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532; 
-                    }
-
-                    @media (max-width: 430px) {
-                        :doodle {
-                            @grid: 5x1 / 100vw 100vh / transparent;
-                            --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A;
-                            --color2: #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
-                        }
+                        --color2:#E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
                     }
 
                     :after, :before {
@@ -105,10 +96,23 @@ export default function Loader() {
                             opacity: 0.8;
                         }
                     }
+
+                     @media (max-width: 430px) { 
+                        :after, :before { 
+                            @size: @r(2rem, 4rem);
+                        }
+                        background: @m10(
+                            radial-gradient(@p(--color2) 30%, transparent 0)
+                            @r(0%, 100%) @r(0%, 100%) / 1rem 1rem
+                            no-repeat
+                        );
+                        animation: move-around @r(100s, 200s) linear infinite; 
+                    }
                 `}
-                    </css-doodle>
-                </motion.div>
-                : null}
+                </css-doodle>
+            </motion.div> :
+                null
+            }
         </AnimatePresence>
     );
 }
