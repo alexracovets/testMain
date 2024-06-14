@@ -42,7 +42,7 @@ function App() {
           {!isMobile ? <VoxelModel /> : null}
         </Suspense>
         <Suspense fallback={null}>
-          {isMobile ? <MobileModel /> : null}
+          {/* {isMobile ? <MobileModel /> : null} */}
         </Suspense>
         <Suspense fallback={null}>
           <Pager />
