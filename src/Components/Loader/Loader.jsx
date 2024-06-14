@@ -42,6 +42,7 @@ export default function Loader() {
             >
                 <div className={s.circle}>
                     <div className={s.mask}></div>
+                    <div className={s.dot}></div>
                 </div>
                 <div className={s.loader__progress}>
                     <CountUp end={progress} />%

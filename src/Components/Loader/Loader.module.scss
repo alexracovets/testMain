@@ -15,12 +15,11 @@ $random100: random(100);
     overflow: hidden;
 
     .circle {
-        box-shadow: 0 0 7rem #ffffff85
-        // , 0 0 7rem white inset
-        ;
+        box-shadow: 0 0 7rem #ffffff85;
         border-radius: 50%;
         margin-bottom: 1rem;
         filter: blur(0.7px);
+        position: relative;
 
         .mask {
             width: 20rem;
@@ -30,6 +29,16 @@ $random100: random(100);
             -webkit-mask: radial-gradient(transparent 5.7rem, #000 5.8rem);
             mask: radial-gradient(transparent 5.7rem, #000 5.8rem);
             position: relative;
+        }
+
+        .dot {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 3rem;
+            height: 3rem;
+            background-color: $color-white;
+            border-radius: 50%;
         }
     }
 

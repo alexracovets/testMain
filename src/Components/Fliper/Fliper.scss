@@ -15,6 +15,10 @@
         width: 40.378125rem;
     }
 
+    @media (max-width:$width-tableBig) {
+        margin-bottom:1.5rem;
+    }
+
     @media (max-width:$width-table) {
         width: 40.25rem;
         margin: 0 auto;

@@ -10,40 +10,47 @@ export default function MainPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
     return (
-
-        <motion.div className={s.wrapper}
-            initial={{ opacity: 0, x: '-40%' }}
-            animate={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 0.3 }}
-            exit={{ opacity: 0, x: '-20%' }}
-        >
-            <section>
-                <div className={s.content}>
-                    {/* <h1>Reliable partner in</h1> */}
-                    <div className={s.we}>
-                        <p>
-                            We&#39;re Innovative
-                        </p>
-                        <p>
-                            We&#39;re Creative
-                        </p>
-                        <p>
-                            We&#39;re SPOTIUM 360
-                        </p>
-                    </div>
-                    <Fliper />
-                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                        <UI_Button text={'DISCOVER US'} arrow />
-                    </div>
-                    <Developments />
-                    <div className={s.controller__wrapper}>
-                        <div className={s.controller}>
-                            <div className={s.circle}></div>
-                            <div className={s.dot}></div>
+        <>
+            <motion.div className={s.wrapper}
+                initial={{ opacity: 0, x: '-40%' }}
+                animate={{ opacity: 1, x: '0%' }}
+                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: '-20%' }}
+            >
+                <section>
+                    <div className={s.content}>
+                        {/* <h1>Reliable partner in</h1> */}
+                        <div className={s.we}>
+                            <p>
+                                We&#39;re Innovative
+                            </p>
+                            <p>
+                                We&#39;re Creative
+                            </p>
+                            <p>
+                                We&#39;re SPOTIUM 360
+                            </p>
                         </div>
+                        <Fliper />
+                        <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                            <UI_Button text={'DISCOVER US'} arrow />
+                        </div>
+                        <Developments />
                     </div>
+                </section>
+            </motion.div>
+            <motion.div
+                className={s.controller__wrapper}
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0 }}
+            >
+                <div className={s.controller}>
+                    <div className={s.circle}></div>
+                    <div className={s.dot}></div>
                 </div>
-            </section>
-        </motion.div>
+            </motion.div>
+        </>
     )
 }
