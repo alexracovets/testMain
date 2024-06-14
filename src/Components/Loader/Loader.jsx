@@ -65,7 +65,15 @@ export default function Loader() {
                     :doodle {
                         @grid: 10x1 / 100vw 100vh / transparent;
                         --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A, #E4E4E7, #FEC532, #E4E4E7;
-                        --color2:#E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532; 
+                        --color2: #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532; 
+                    }
+
+                    @media (max-width: 430px) {
+                        :doodle {
+                            @grid: 5x1 / 100vw 100vh / transparent;
+                            --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A;
+                            --color2: #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
+                        }
                     }
 
                     :after, :before {
