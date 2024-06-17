@@ -18,7 +18,7 @@ export default function ServicesPage() {
             <section>
                 <div className={s.content}>
                     <h2>
-                        About Us
+                        Services
                     </h2>
                     <Services />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>

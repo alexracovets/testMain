@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from 'prop-types';
 
 import Navigation from "./Navigation/Navigation";
@@ -9,15 +9,28 @@ import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
 import s from './Header.module.scss';
 export default function Header({ isDesktop }) {
-    const headerRef = useRef();
     const getHeaderHeight = useStoreMobileScroll((state) => state.getHeaderHeight);
+    const scrollTop = useStoreMobileScroll((state) => state.scrollTop);
+    const [position, setPosition] = useState(0);
+    const [visible, setVisible] = useState(true);
+    const headerRef = useRef();
+
     useEffect(() => {
-        headerRef.current && getHeaderHeight(headerRef.current.clientHeight);
-    }, [headerRef, getHeaderHeight])
+        if (headerRef.current) {
+            getHeaderHeight(headerRef.current.clientHeight);
+        }
+    }, [headerRef, getHeaderHeight]);
+
+    useEffect(() => {
+        if (position !== scrollTop) {
+            setVisible(position > scrollTop);
+            setPosition(scrollTop);
+        }
+    }, [scrollTop]);
 
     return (
         <header ref={headerRef}>
-            <div className={s.wrapper}>
+            <div className={visible ? s.visible + ' ' + s.wrapper : s.hidden + ' ' + s.wrapper}>
                 <div className={s.header}>
                     <Logo isDesktop={isDesktop} />
                     <Navigation />
@@ -25,7 +38,7 @@ export default function Header({ isDesktop }) {
             </div>
             <FullMenu isDesktop={isDesktop} />
         </header>
-    )
+    );
 }
 
 Header.propTypes = {
