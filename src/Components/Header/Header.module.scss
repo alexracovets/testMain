@@ -14,15 +14,14 @@
     @media (max-width:$width-table) {
         z-index: 10;
         position: fixed;
-
+        transition-delay: 0ms;
+        
         &.visible {
-            top: 0;
-            transition: top 0.4s ease-out;
+            transform: translateY(0rem); 
         }
 
         &.hidden {
-            top: -80px;
-            transition: top 0.4s ease-out;
+            transform: translateY(-7rem);
         }
     }
 
