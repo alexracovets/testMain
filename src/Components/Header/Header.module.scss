@@ -9,6 +9,7 @@
 
     @media (max-width:$width-tableBig) {
         position: fixed;
+        backdrop-filter: blur(3px);
     }
 
     &.visible {
