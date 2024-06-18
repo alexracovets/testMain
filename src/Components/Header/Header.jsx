@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import FullMenu from "./FullMenu/FullMenu";
 import MenuBtn from "./MenuBtn/MenuBtn";
 
-import useStoreMobileScroll from '../../store/useStoreMobileScroll'; 
+import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
 import s from './Header.module.scss';
 export default function Header({ isDesktop }) {
@@ -19,10 +19,11 @@ export default function Header({ isDesktop }) {
     }, [headerRef, getHeaderHeight]);
 
     useEffect(() => {
-        if (position !== scrollTop) {
+        if ((position !== scrollTop) && (scrollTop > 100)) {
+            console.log(scrollTop)
             setVisible(position > scrollTop);
             setPosition(scrollTop);
-        }
+        } else setVisible(true)
     }, [scrollTop]);
 
     return (
