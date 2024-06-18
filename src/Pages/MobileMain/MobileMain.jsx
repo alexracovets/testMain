@@ -47,10 +47,10 @@ export default function MobileMain() {
             });
         }, { threshold: 0.5 });
 
-        if (firstSection.current) observer.observe(firstSection.current); 
+        if (firstSection.current) observer.observe(firstSection.current);
 
         return () => {
-            if (firstSection.current) observer.unobserve(firstSection.current); 
+            if (firstSection.current) observer.unobserve(firstSection.current);
         };
     }, []);
     useEffect(() => {
@@ -116,10 +116,14 @@ export default function MobileMain() {
                     <h2> About Us </h2>
                     <div className={s.lies_info}>
                         <h3>
-                            Our strength lies in our agile problem-solving approaches, delivering top-notch work with swift turnaround.
+                            In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
+                            Our partners know that we can move fast and focus on a result.
                         </h3>
                         <p>
-                            We specialize in software development and digital marketing, serving as a trusted partner for leading companies, providing expert support and deep industry knowledge.
+                            We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
+                        </p>
+                        <p>
+                            We know how to operate with a high demand traffic and marketing budgets over 30K$
                         </p>
                     </div>
                     <Strengths />
