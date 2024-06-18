@@ -50,6 +50,7 @@
             height: 100%;
             z-index: -1;
             backdrop-filter: blur(0.3rem);
+            -webkit-backdrop-filter: blur(0.3rem);
             transition: all ease-in-out 300ms;
         }
 
