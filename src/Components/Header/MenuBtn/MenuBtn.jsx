@@ -9,7 +9,7 @@ import useStoreNavigation from '../../../store/useStoreNavigation';
 
 import s from './MenuBtn.module.scss';
 import Logo from '../Logo/Logo';
-export default function MenuBtn() {
+export default function MenuBtn({ isDesktop }) {
     const setBurger = useStoreNavigation((state) => state.setBurger);
     const isBurger = useStoreNavigation((state) => state.isBurger);
     const [hasInteracted, setHasInteracted] = useState(false);
@@ -27,7 +27,7 @@ export default function MenuBtn() {
 
     return (
         <nav className={s.navigation}>
-            <Logo />
+            <Logo isDesktop={isDesktop} />
             <div className={s.menu}
                 onMouseEnter={() => {
                     setIsHovered(true);

@@ -19,7 +19,7 @@ export default function Header({ isDesktop }) {
     }, [headerRef, getHeaderHeight]);
 
     useEffect(() => {
-        if ((position !== scrollTop) && (scrollTop > 100)) { 
+        if ((position !== scrollTop) && (scrollTop > 100)) {
             setVisible(position > scrollTop);
             setPosition(scrollTop);
         } else setVisible(true)
@@ -27,7 +27,7 @@ export default function Header({ isDesktop }) {
 
     return (
         <header ref={headerRef} className={visible ? s.visible + ' ' + s.header : s.hidden + ' ' + s.header}>
-            <MenuBtn />
+            <MenuBtn isDesktop={isDesktop} />
             <FullMenu isDesktop={isDesktop} />
         </header>
     );
