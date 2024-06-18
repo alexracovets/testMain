@@ -1,207 +1,24 @@
 @import '../../global/variable.scss';
 
-.wrapper {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2.9375rem;
+.header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
     transition: all ease-in-out 300ms;
-    transition-delay: 600ms;
+    transform: translateY(0rem);
 
-    @media (max-width:$width-shortDesktop) {
-        padding: 0 3.125rem;
+    &.visible {
+        transform: translateY(0rem);
+
+        @media (max-width:$width-tableBig) {}
     }
 
-    @media (max-width:$width-table) {
-        z-index: 10;
-        position: fixed;
-        transition-delay: 0ms;
-        
-        &.visible {
-            transform: translateY(0rem); 
-        }
+    &.hidden {
+        transform: translateY(0rem);
 
-        &.hidden {
+        @media (max-width:$width-tableBig) {
             transform: translateY(-7rem);
         }
-    }
-
-    @media (max-width:$width-mobile) {
-        padding: 0 1.25rem;
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 11.088dvh;
-        border-bottom: 0.0625rem solid $color-white;
-        transition: all ease-in 300ms;
-
-        @media (max-width:$width-shortDesktop) {
-            height: 6.375rem;
-        }
-
-        @media (max-width:$width-table) {
-            height: 6.25rem;
-        }
-
-        @media (max-width:$width-mobile) {
-            height: 4.6875rem;
-        }
-
-        .logo {
-            width: 9.5rem;
-            height: auto;
-            max-height: 2.5625rem;
-            position: relative;
-            z-index: 11;
-
-            @media (max-width:$width-shortDesktop) {
-                width: 9.485625rem;
-                max-height: 2.5625rem;
-            }
-
-            @media (max-width:$width-table) {
-                width: 9.485625rem;
-                max-height: 2.5625rem;
-            }
-
-            @media (max-width:$width-mobile) {
-                width: 8.125rem;
-                max-height: 2.195rem;
-            }
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-
-            ul {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                @media (max-width:$width-table) {
-                    display: none;
-                }
-
-                li {
-                    padding: 0 1.4375rem;
-
-                    @media (max-width:$width-shortDesktop) {
-                        padding: 0 1.4375rem;
-                    }
-
-                    a {
-                        color: $color-white;
-                        font-size: 1rem;
-                        font-family: 'JetBrains Mono';
-                        text-transform: uppercase;
-                        padding-bottom: 0.625rem;
-                        border-bottom: 0.0625rem solid transparent;
-                        transition: all ease-in-out 300ms;
-                        text-shadow: 0 0 0 $color-white;
-                        display: block;
-
-                        &.active {
-                            text-shadow: 0 0 0.25rem $color-white;
-                            border-bottom: 0.0625rem solid $color-primary;
-                        }
-
-                        @media (max-width:$width-shortDesktop) {
-                            font-size: 1rem;
-                        }
-                    }
-
-                    &:hover {
-                        a {
-                            text-shadow: 0 0 0.25rem $color-white;
-                            border-bottom: 0.0625rem solid $color-primary
-                        }
-                    }
-                }
-            }
-
-            .burger {
-                position: relative;
-                width: 2.75rem;
-                height: 0.875rem;
-                margin-left: 1.4375rem;
-                z-index: 11;
-                margin-top: -0.875rem;
-
-                @media (max-width:$width-shortDesktop) {
-                    width: 2.75rem;
-                    height: 0.875rem;
-                    margin-left: 1.4375rem;
-                    margin-top: -0.4375rem;
-                }
-
-                @media (max-width:$width-table) {
-                    display: block;
-                    width: 2.75rem;
-                    height: 0.875rem;
-                    margin: 0;
-                }
-
-                @media (max-width:$width-mobile) {
-                    width: 2.75rem;
-                    height: 0.875rem;
-                }
-
-                span {
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $color-white;
-                    transition: all ease-in 300ms;
-                    right: 0;
-                    transform: rotate(0);
-
-                    @media (max-width:$width-mobile) {
-                        height: 3px;
-                    }
-
-                    &:nth-of-type(1) {
-                        top: 0;
-                    }
-
-                    &:nth-of-type(2) {
-                        top: calc(100%);
-                    }
-                }
-
-                &.active {
-                    span {
-                        &:nth-of-type(1) {
-                            top: calc(50%);
-                            transform: rotate(-14deg);
-                        }
-
-                        &:nth-of-type(2) {
-                            top: calc(50%);
-                            transform: rotate(14deg);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-.test {
-    font-family: $font-Bebas;
-    color: $color-white;
-    font-size: 4.5rem;
-    letter-spacing: 0rem;
-    transform: scale(1.7, 1);
-}
-
-@keyframes bgRotate {
-    100% {
-        transform: rotate(1turn);
     }
 }

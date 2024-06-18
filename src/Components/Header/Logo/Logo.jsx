@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import logo from '/image/logo.svg';
 import useStoreNavigation from '../../../store/useStoreNavigation';
 
-import s from '../Header.module.scss';
+import s from './Logo.module.scss';
 export default function Logo({ isDesktop }) {
     const setBurger = useStoreNavigation((state) => state.setBurger);
 
