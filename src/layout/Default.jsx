@@ -71,7 +71,7 @@ export default function Default() {
             downHandler={() => routeTo('toDown')}
             style={{ width: '100%', height: '100dvh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
         >
-            {/* <Header isDesktop={isDesktop} /> */}
+            <Header isDesktop={isDesktop} />
             <main>
                 <Outlet />
             </main>

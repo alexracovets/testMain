@@ -75,7 +75,7 @@ export default function Mobile() {
 
     return (
         <RSC className={'mobile_scroll'} ref={scrollRef} onScroll={(scrollRef) => getScroll(scrollRef)}>
-            {/* <Header isDesktop={isDesktop} /> */}
+            <Header isDesktop={isDesktop} />
             <main>
                 <Outlet />
             </main>
