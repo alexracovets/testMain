@@ -8,9 +8,7 @@
     transform: translateY(0rem);
 
     @media (max-width:$width-tableBig) {
-        position: fixed;
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
+        position: fixed; 
     }
 
     &.visible {

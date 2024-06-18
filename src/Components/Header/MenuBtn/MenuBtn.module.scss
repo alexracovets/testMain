@@ -6,11 +6,16 @@
     align-items: center;
     margin: 0 2.9375rem;
     height: 11.088dvh;
-    border-bottom: 1px solid $color-white; 
+    border-bottom: 1px solid $color-white;
 
     @media (max-width:$width-shortDesktop) {
         height: 6.375rem;
         margin: 0 3.125rem;
+    }
+
+    @media (max-width:$width-tableBig) {
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
     }
 
     @media (max-width:$width-table) {
@@ -26,7 +31,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-     
+
         .menu_text {
             font-size: 3rem;
             letter-spacing: 0.1rem;
