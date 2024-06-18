@@ -19,8 +19,7 @@ export default function Header({ isDesktop }) {
     }, [headerRef, getHeaderHeight]);
 
     useEffect(() => {
-        if ((position !== scrollTop) && (scrollTop > 100)) {
-            console.log(scrollTop)
+        if ((position !== scrollTop) && (scrollTop > 100)) { 
             setVisible(position > scrollTop);
             setPosition(scrollTop);
         } else setVisible(true)
