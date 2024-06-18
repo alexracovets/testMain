@@ -1,210 +1,210 @@
-@import '../../../global/variable.scss';
+// @import '../../../global/variable.scss';
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 2.9375rem;
-    height: 11.088dvh;
-    border-bottom: 1px solid $color-white; 
+// .navigation {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin: 0 2.9375rem;
+//     height: 11.088dvh;
+//     border-bottom: 1px solid $color-white; 
 
-    @media (max-width:$width-shortDesktop) {
-        height: 6.375rem;
-        margin: 0 3.125rem;
-    }
+//     @media (max-width:$width-shortDesktop) {
+//         height: 6.375rem;
+//         margin: 0 3.125rem;
+//     }
 
-    @media (max-width:$width-table) {
-        height: 6.25rem;
-    }
+//     @media (max-width:$width-table) {
+//         height: 6.25rem;
+//     }
 
-    @media (max-width:$width-mobile) {
-        height: 4.6875rem;
-        margin: 0 1.25rem;
-    }
+//     @media (max-width:$width-mobile) {
+//         height: 4.6875rem;
+//         margin: 0 1.25rem;
+//     }
 
-    .menu {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+//     .menu {
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
      
-        .menu_text {
-            font-size: 3rem;
-            letter-spacing: 0.1rem;
-            color: $color-white;
-            text-transform: uppercase;
-            font-family: $font-Bebas;
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 3.975rem;
-            padding-right: 1rem;
+//         .menu_text {
+//             font-size: 3rem;
+//             letter-spacing: 0.1rem;
+//             color: $color-white;
+//             text-transform: uppercase;
+//             font-family: $font-Bebas;
+//             position: relative;
+//             cursor: pointer;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 3.975rem;
+//             padding-right: 1rem;
 
 
-            @media (max-width:$width-tableBig) {
-                font-size: 3.3rem;
-            }
+//             @media (max-width:$width-tableBig) {
+//                 font-size: 3.3rem;
+//             }
 
-            @media (max-width:$width-mobile) {
-                font-size: 2rem;
-                display: none;
-            }
-        }
+//             @media (max-width:$width-mobile) {
+//                 font-size: 2rem;
+//                 display: none;
+//             }
+//         }
 
-        .menu_btn {
-            width: 3.975rem;
-            height: 3.975rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
+//         .menu_btn {
+//             width: 3.975rem;
+//             height: 3.975rem;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             cursor: pointer;
 
-            @media (max-width:$width-mobile) {
-                margin-right: 0.2rem;
-            }
+//             @media (max-width:$width-mobile) {
+//                 margin-right: 0.2rem;
+//             }
 
-            .figure {
-                width: 3.975rem;
-                height: 2.675rem;
-                background-color: $color-white;
-                border-radius: 3rem;
-                position: relative;
-                z-index: 11;
+//             .figure {
+//                 width: 3.975rem;
+//                 height: 2.675rem;
+//                 background-color: $color-white;
+//                 border-radius: 3rem;
+//                 position: relative;
+//                 z-index: 11;
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: calc(50% - 0.625rem/2 - 20%);
-                    top: calc(50% - 0.625rem/2);
-                    width: 0.625rem;
-                    height: 0.625rem;
-                    background-color: $btn-bg;
-                    border-radius: 50%;
-                    z-index: 2;
-                }
+//                 &::before {
+//                     content: '';
+//                     position: absolute;
+//                     left: calc(50% - 0.625rem/2 - 20%);
+//                     top: calc(50% - 0.625rem/2);
+//                     width: 0.625rem;
+//                     height: 0.625rem;
+//                     background-color: $btn-bg;
+//                     border-radius: 50%;
+//                     z-index: 2;
+//                 }
 
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: calc(50% - 0.625rem/2 + 20%);
-                    top: calc(50% - 0.625rem/2);
-                    width: 0.625rem;
-                    height: 0.625rem;
-                    background-color: $btn-bg;
-                    border-radius: 50%;
-                }
+//                 &::after {
+//                     content: '';
+//                     position: absolute;
+//                     left: calc(50% - 0.625rem/2 + 20%);
+//                     top: calc(50% - 0.625rem/2);
+//                     width: 0.625rem;
+//                     height: 0.625rem;
+//                     background-color: $btn-bg;
+//                     border-radius: 50%;
+//                 }
 
-                &.hover {
-                    animation: changeBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                 &.hover {
+//                     animation: changeBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
 
-                    &::before {
-                        animation: changeDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-                    }
+//                     &::before {
+//                         animation: changeDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                     }
 
-                    &::after {
-                        animation: changeDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-                    }
-                }
+//                     &::after {
+//                         animation: changeDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                     }
+//                 }
 
-                &.unhover {
-                    animation: revertBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                 &.unhover {
+//                     animation: revertBox 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
 
-                    &::before {
-                        animation: revertDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-                    }
+//                     &::before {
+//                         animation: revertDotBig 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                     }
 
-                    &::after {
-                        animation: revertDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-                    }
-                }
-            }
-        }
+//                     &::after {
+//                         animation: revertDotSmall 400ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+//                     }
+//                 }
+//             }
+//         }
 
-    }
-}
+//     }
+// }
 
-@keyframes changeBox {
-    from {
-        width: 3.975rem;
-        height: 2.675rem;
-    }
+// @keyframes changeBox {
+//     from {
+//         width: 3.975rem;
+//         height: 2.675rem;
+//     }
 
-    to {
-        width: 2.675rem;
-        height: 3.975rem;
-    }
-}
+//     to {
+//         width: 2.675rem;
+//         height: 3.975rem;
+//     }
+// }
 
-@keyframes revertBox {
-    from {
-        width: 2.675rem;
-        height: 3.975rem;
-    }
+// @keyframes revertBox {
+//     from {
+//         width: 2.675rem;
+//         height: 3.975rem;
+//     }
 
-    to {
-        width: 3.975rem;
-        height: 2.675rem;
-    }
-}
+//     to {
+//         width: 3.975rem;
+//         height: 2.675rem;
+//     }
+// }
 
-@keyframes changeDotBig {
-    from {
-        left: calc(50% - 0.625rem/2 - 20%);
-        top: calc(50% - 0.625rem/2);
-        width: 0.625rem;
-        height: 0.625rem;
-    }
+// @keyframes changeDotBig {
+//     from {
+//         left: calc(50% - 0.625rem/2 - 20%);
+//         top: calc(50% - 0.625rem/2);
+//         width: 0.625rem;
+//         height: 0.625rem;
+//     }
 
-    to {
-        left: calc(50% - 1.7rem/2);
-        top: calc(10%);
-        width: 1.7rem;
-        height: 1.7rem;
-    }
-}
+//     to {
+//         left: calc(50% - 1.7rem/2);
+//         top: calc(10%);
+//         width: 1.7rem;
+//         height: 1.7rem;
+//     }
+// }
 
-@keyframes revertDotBig {
-    from {
-        left: calc(50% - 1.7rem/2);
-        top: calc(10%);
-        width: 1.7rem;
-        height: 1.7rem;
-    }
+// @keyframes revertDotBig {
+//     from {
+//         left: calc(50% - 1.7rem/2);
+//         top: calc(10%);
+//         width: 1.7rem;
+//         height: 1.7rem;
+//     }
 
-    to {
-        left: calc(50% - 0.625rem/2 - 20%);
-        top: calc(50% - 0.625rem/2);
-        width: 0.625rem;
-        height: 0.625rem;
-    }
-}
+//     to {
+//         left: calc(50% - 0.625rem/2 - 20%);
+//         top: calc(50% - 0.625rem/2);
+//         width: 0.625rem;
+//         height: 0.625rem;
+//     }
+// }
 
-@keyframes changeDotSmall {
-    from {
-        left: calc(50% - 0.625rem/2 + 20%);
-        top: calc(50% - 0.625rem/2);
-        width: 0.625rem;
-        height: 0.625rem;
-    }
+// @keyframes changeDotSmall {
+//     from {
+//         left: calc(50% - 0.625rem/2 + 20%);
+//         top: calc(50% - 0.625rem/2);
+//         width: 0.625rem;
+//         height: 0.625rem;
+//     }
 
-    to {
-        left: calc(50% - 0.625rem/2);
-        top: calc(70%);
-        width: 0.625rem;
-        height: 0.625rem;
-    }
-}
+//     to {
+//         left: calc(50% - 0.625rem/2);
+//         top: calc(70%);
+//         width: 0.625rem;
+//         height: 0.625rem;
+//     }
+// }
 
-@keyframes revertDotSmall {
-    from {
-        left: calc(50% - 0.625rem/2);
-        top: calc(70%);
-    }
+// @keyframes revertDotSmall {
+//     from {
+//         left: calc(50% - 0.625rem/2);
+//         top: calc(70%);
+//     }
 
-    to {
-        left: calc(50% - 0.625rem/2 + 20%);
-        top: calc(50% - 0.625rem/2);
-    }
-}
+//     to {
+//         left: calc(50% - 0.625rem/2 + 20%);
+//         top: calc(50% - 0.625rem/2);
+//     }
+// }

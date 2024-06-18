@@ -1,26 +1,26 @@
-@import '../../global/variable.scss';
+// @import '../../global/variable.scss';
 
-.header {
-    z-index: 100;
-    left: 0;
-    top: 0;
-    transition: all ease-in-out 300ms;
-    transform: translateY(0rem);
+// .header {
+//     z-index: 100;
+//     left: 0;
+//     top: 0;
+//     transition: all ease-in-out 300ms;
+//     transform: translateY(0rem);
 
-    @media (max-width:$width-tableBig) {
-        position: fixed;
-        backdrop-filter: blur(3px);
-    }
+//     @media (max-width:$width-tableBig) {
+//         position: fixed;
+//         backdrop-filter: blur(3px);
+//     }
 
-    &.visible {
-        transform: translateY(0rem);
-    }
+//     &.visible {
+//         transform: translateY(0rem);
+//     }
 
-    &.hidden {
-        transform: translateY(0rem);
+//     &.hidden {
+//         transform: translateY(0rem);
 
-        @media (max-width:$width-tableBig) {
-            transform: translateY(-7rem);
-        }
-    }
-}
+//         @media (max-width:$width-tableBig) {
+//             transform: translateY(-7rem);
+//         }
+//     }
+// }

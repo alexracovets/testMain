@@ -1,24 +1,24 @@
-@import '../../../global/variable.scss';
+// @import '../../../global/variable.scss';
 
-.logo {
-    width: 9.5rem;
-    height: auto;
-    max-height: 2.5625rem;
-    position: relative;
-    z-index: 11;
+// .logo {
+//     width: 9.5rem;
+//     height: auto;
+//     max-height: 2.5625rem;
+//     position: relative;
+//     z-index: 11;
 
-    @media (max-width:$width-shortDesktop) {
-        width: 9.485625rem;
-        max-height: 2.5625rem;
-    }
+//     @media (max-width:$width-shortDesktop) {
+//         width: 9.485625rem;
+//         max-height: 2.5625rem;
+//     }
 
-    @media (max-width:$width-table) {
-        width: 9.485625rem;
-        max-height: 2.5625rem;
-    }
+//     @media (max-width:$width-table) {
+//         width: 9.485625rem;
+//         max-height: 2.5625rem;
+//     }
 
-    @media (max-width:$width-mobile) {
-        width: 8.125rem;
-        max-height: 2.195rem;
-    }
-}
+//     @media (max-width:$width-mobile) {
+//         width: 8.125rem;
+//         max-height: 2.195rem;
+//     }
+// }
