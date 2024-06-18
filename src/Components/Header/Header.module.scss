@@ -1,17 +1,18 @@
 @import '../../global/variable.scss';
 
 .header {
-    position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     transition: all ease-in-out 300ms;
     transform: translateY(0rem);
 
+    @media (max-width:$width-tableBig) {
+        position: fixed;
+    }
+
     &.visible {
         transform: translateY(0rem);
-
-        @media (max-width:$width-tableBig) {}
     }
 
     &.hidden {
