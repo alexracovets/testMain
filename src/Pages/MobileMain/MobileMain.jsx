@@ -14,6 +14,7 @@ import useModalForm from '../../store/useModalForm';
 
 import s from './MobileMain.module.scss';
 import CircleText from "../../Components/CircleText/CircleText";
+import TextTransitionTest from "../../Components/TextTransitionTest/TextTransitionTest";
 export default function MobileMain() {
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
     const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
@@ -107,6 +108,7 @@ export default function MobileMain() {
                     </div>
                     <Fliper />
                     <CircleText />
+                    <TextTransitionTest />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={'DISCOVER US'} arrow small />
                     </div>

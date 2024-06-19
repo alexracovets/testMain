@@ -1,0 +1,54 @@
+@import '../../global/variable.scss';
+
+.circle {
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+  --deg: calc(360deg / var(--numchs));
+  z-index: 1;
+  height: 10rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+
+  .char {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-family: $font-Bebas;
+    font-weight: 600;
+    font-size: 6rem;
+    text-transform: uppercase;
+    padding: 0em 0em;
+    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(2) scaleX(1);
+  }
+
+  &.test {
+    .char {
+      backface-visibility: hidden;
+    }
+  }
+
+  &.test2 {
+    animation: animate2 20s linear infinite;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateY(360deg) rotateX(15deg);
+  }
+
+  100% {
+    transform: rotateY(0deg) rotateX(15deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotateY(360deg) rotateX(15deg);
+  }
+
+  100% {
+    transform: rotateY(0deg) rotateX(15deg);
+  }
+}
