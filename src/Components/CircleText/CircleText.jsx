@@ -6,8 +6,8 @@ import './CircleText.scss';
 export default function CircleText() {
     const circleRef = useRef(null);
     const circleRef2 = useRef(null);
-    const circleRef3 = useRef(null);
-
+    const circleRef3 = useRef(null); 
+    
     const [isInitial, setIsInitial] = useState(false);
     useEffect(() => {
         Splitting();
@@ -34,7 +34,7 @@ export default function CircleText() {
         if (isInitial) {
             initial(circleRef.current)
             initial(circleRef2.current)
-            initial(circleRef3.current)
+            initial(circleRef3.current) 
         }
 
     }, [isInitial]);
@@ -50,7 +50,7 @@ export default function CircleText() {
             </div>
             <div ref={circleRef3} className="circle test2" data-splitting>
                 DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
-            </div>
+            </div> 
         </>
     );
 }

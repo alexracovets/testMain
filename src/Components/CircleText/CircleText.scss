@@ -6,8 +6,7 @@
   --deg: calc(360deg / var(--numchs));
   z-index: 1;
   height: 10rem;
-  margin: 0 auto;
-  margin-bottom: 10rem;
+  margin: 5rem auto;
 
   .char {
     position: absolute;
@@ -30,6 +29,10 @@
 
   &.test2 {
     animation: animate2 20s linear infinite;
+
+    .char {
+      backface-visibility: hidden;
+    }
   }
 }
 
@@ -45,10 +48,10 @@
 
 @keyframes animate2 {
   0% {
-    transform: rotateY(360deg) rotateX(15deg);
+    transform: rotateY(360deg) rotateX(0);
   }
 
   100% {
-    transform: rotateY(0deg) rotateX(15deg);
+    transform: rotateY(0deg) rotateX(0);
   }
 }

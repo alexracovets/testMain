@@ -106,7 +106,7 @@ export default function MobileMain() {
                             </p>
                         </div>
                     </div>
-                    <Fliper />
+                    {/* <Fliper /> */}
                     <CircleText />
                     <TextTransitionTest />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
