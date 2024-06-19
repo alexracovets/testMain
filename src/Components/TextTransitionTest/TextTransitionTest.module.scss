@@ -1,17 +1,17 @@
 @import '../../global/variable.scss';
 
 .text {
-    font-size: 5rem;
+    font-size: 1.8rem;
     font-family: $font-Bebas;
     color: $color-white;
-    font-weight: 400;
+    font-weight: 500;
     width: 100%;
-    letter-spacing: 0.1rem;
-    height: 7rem !important; 
+    letter-spacing: 0.2rem;
+    height: 5rem !important;
     margin: 0 auto;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transform: scaleY(1.8);
 }

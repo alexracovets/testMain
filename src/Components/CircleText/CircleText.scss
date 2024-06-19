@@ -6,7 +6,7 @@
   --deg: calc(360deg / var(--numchs));
   z-index: 1;
   height: 10rem;
-  margin: 5rem auto;
+  margin: 2rem auto;
 
   .char {
     position: absolute;
@@ -15,10 +15,10 @@
     color: white;
     font-family: $font-Bebas;
     font-weight: 600;
-    font-size: 6rem;
+    font-size: 3rem;
     text-transform: uppercase;
     padding: 0em 0em;
-    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(2) scaleX(1);
+    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(8rem) scaleY(2) scaleX(1);
   }
 
   &.test {
