@@ -1,0 +1,31 @@
+.circle {
+    transform-style: preserve-3d;
+    animation: animate 8s linear infinite;
+    --deg: calc(360deg / var(--numchs));
+    z-index: 1;
+    height: 10rem;
+    width: 100%;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(100rem) rotateY(360deg) rotateX(0);
+    }
+
+    100% {
+        transform: perspective(100rem) rotateY(0deg) rotateX(0);
+    }
+}
+
+.circle .char {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase; 
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(10rem);
+    font-family: 'Black Han Sans', sans-serif;
+}

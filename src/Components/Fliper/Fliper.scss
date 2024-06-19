@@ -16,7 +16,7 @@
     }
 
     @media (max-width:$width-tableBig) {
-        margin-bottom:1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     @media (max-width:$width-table) {
@@ -43,7 +43,7 @@
         height: 5.75rem;
         margin: 0.3125rem 0.08rem;
         border-radius: 3px;
-        border: 2px solid rgb(25 25 25 / 75%) !important;
+        border: 2px solid transparent !important;
         background-color: #2a2b2f;
         background-size: cover;
         padding: 0;
