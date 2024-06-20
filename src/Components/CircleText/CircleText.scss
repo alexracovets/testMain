@@ -2,9 +2,10 @@
 
 .wrapper {
   position: relative;
-  height: 19rem;
+  height: 0;
   margin: 0 auto;
   width: 19rem;
+  transform: translateY(-20rem);
 
   .wrapper__circle {
     position: absolute;

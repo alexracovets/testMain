@@ -111,7 +111,7 @@ export default function MobileModel() {
             >
                 <meshMatcapMaterial matcap={matcapTexture} />
                 {Array(COUNT).fill().map((_, idx) =>
-                    <group key={idx} ref={el => instancesItem.current.children[idx] = el} scale={size.width / 2500} >
+                    <group key={idx} ref={el => instancesItem.current.children[idx] = el} scale={size.width / 2000} >
                         <Instance ref={el => instances.current.children[idx] = el} scale={[0, 0, 0]} />
                     </group>
                 )}
