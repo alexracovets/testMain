@@ -92,8 +92,8 @@ export default function MobileMain() {
         >
             <section>
                 <div className={s.content}>
-                    <div className={s.model_space} ref={firstSection}></div>
                     <CircleText />
+                    {/* <div className={s.model_space} ref={firstSection}></div> */}
                     <div className={s.we_wrapper}>
                         <div className={s.we}>
                             <p>
@@ -107,7 +107,7 @@ export default function MobileMain() {
                             </p>
                         </div>
                     </div>
-                    {/* <Fliper /> */} 
+                    {/* <Fliper /> */}
                     <TextTransitionTest />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={'DISCOVER US'} arrow small />
