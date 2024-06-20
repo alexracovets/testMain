@@ -44,26 +44,34 @@ export default function CircleText() {
         <>
             <div className='wrapper'>
                 <div className='wrapper__circle'>
-                    <div ref={circleRef1} className="circle" data-splitting>
-                        DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                    <div className='inner__wrapper'>
+                        <div ref={circleRef1} className="circle" data-splitting>
+                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        </div>
                     </div>
                 </div>
                 <div className='wrapper__circle'>
-                    <div ref={circleRef2} className="circle" data-splitting>
-                        DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                    <div className='inner__wrapper'>
+                        <div ref={circleRef2} className="circle" data-splitting>
+                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        </div>
                     </div>
                 </div>
                 <div className='wrapper__circle reverse'>
-                    <div ref={circleRef3} className="circle" data-splitting>
-                        DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                    <div className='inner__wrapper'>
+                        <div ref={circleRef3} className="circle" data-splitting>
+                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        </div>
                     </div>
                 </div>
                 <div className='wrapper__circle reverse'>
-                    <div ref={circleRef4} className="circle" data-splitting>
-                        DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                    <div className='inner__wrapper'>
+                        <div ref={circleRef4} className="circle" data-splitting>
+                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </>
     );
 }
