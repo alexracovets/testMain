@@ -8,6 +8,7 @@
     max-width: 40rem;
     overflow: hidden;
     position: relative;
+    flex-wrap: nowrap;
 
     @media (max-width: $width-table) {
         margin: 3rem auto;
@@ -35,7 +36,14 @@
 
     .developments {
         display: flex;
-        width: 200%; 
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 200%;
+
+        @media (max-width: $width-table) {
+            width: 300%;
+        }
 
         &:hover {
             animation-play-state: paused;
@@ -43,8 +51,16 @@
 
         .developments__list {
             display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
             width: 100%;
             animation: scroll 20s linear infinite;
+
+            @media (max-width: $width-table) {
+                width: 150%;
+            }
+
             li {
                 display: flex;
                 justify-content: center;
