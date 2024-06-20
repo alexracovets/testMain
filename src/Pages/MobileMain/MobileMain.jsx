@@ -109,10 +109,10 @@ export default function MobileMain() {
                     </div> */}
                     {/* <Fliper /> */}
                     <TextTransitionTest />
+                    <Developments />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={'DISCOVER US'} arrow small />
                     </div>
-                    <Developments />
                 </div>
             </section>
             <section ref={scrollAbout}>

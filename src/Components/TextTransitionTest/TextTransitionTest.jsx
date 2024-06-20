@@ -1,7 +1,7 @@
 import React from 'react';
-import TextTransition, { presets } from 'react-text-transition';
+import TextTransition from 'react-text-transition';
 
-const TEXTS = [`We're Innovative`, `We're Creative`, `We're SPOTIUM 360`];
+const TEXTS = [` Innovative`, ` Creative`, ` SPOTIUM 360`];
 
 
 
@@ -18,6 +18,9 @@ export default function TextTransitionTest() {
     }, []);
 
     return (
-        <TextTransition className={s.text} springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
+        <div className={s.text}>
+            {"We're "}
+            <TextTransition inline className={s.transition}>{TEXTS[index % TEXTS.length]}</TextTransition>
+        </div>
     );
 }

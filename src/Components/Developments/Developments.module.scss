@@ -6,12 +6,11 @@
     align-items: center;
 
     @media (max-width:$width-table) {
-        margin: 0 auto;
-        margin-top: 4.25rem;
+        margin: 4.25rem auto;
     }
 
     @media (max-width:$width-mobile) {
-        display: none;
+        margin: 2rem auto;
     }
 
     li {
