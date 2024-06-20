@@ -2,13 +2,14 @@
 
 .wrapper {
   position: relative;
-  height: 19rem;
-  width: 19rem;
+  height: 30rem;
+  width: 30rem;
   margin: 0 auto;
+  margin-top: 5rem;
 
-  @media (max-width:$width-table) {
-    height: 30rem;
-    width: 30rem;
+  @media (max-width:$width-mobile) {
+    height: 19rem;
+    width: 19rem;
   }
 
 
@@ -41,7 +42,11 @@
       // transform: rotateZ(30deg) rotateX(30deg) translateX(-5%) translateY(5%); 
 
       .inner__wrapper {
-        transform: rotateZ(-30deg) translateY(7%);
+        transform: rotateZ(-30deg) translateY(10%) translateX(2%);
+
+        @media (max-width:$width-mobile) {
+          transform: rotateZ(-30deg) translateY(5%) translateX(2%);
+        }
 
         .circle {
           animation: animateReverse 20s linear infinite;
@@ -50,11 +55,15 @@
     }
 
     .inner__wrapper {
-      transform: rotateZ(30deg);
+      transform: rotateZ(30deg) translateX(-2%);
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (max-width:$width-mobile) {
+        transform: rotateZ(30deg) translateY(10%) translateX(-10%);
+      }
 
       .circle {
         transform-style: preserve-3d;
@@ -70,17 +79,17 @@
           color: white;
           font-family: $font-Bebas;
           font-weight: 400;
-          font-size: 3rem;
           text-transform: uppercase;
           padding: 0em 0em;
           backface-visibility: hidden;
           -webkit-text-stroke: 1px rgb(0, 0, 0);
-          transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(1.5) scaleX(1.5);
           text-shadow: 0px 0px 2px black;
+          font-size: 6.5rem;
+          transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(1.5) scaleX(1.5);
 
-          @media (max-width:$width-table) {
-            font-size: 6.5rem;
-            transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(1.5) scaleX(1.5);
+          @media (max-width:$width-mobile) {
+            font-size: 3rem;
+            transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(1.5) scaleX(1.5);
           }
         }
       }
