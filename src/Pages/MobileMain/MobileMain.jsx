@@ -109,7 +109,7 @@ export default function MobileMain() {
                             </p>
                         </div>
                     </div>
-                    <Fliper />
+                    {/* <Fliper /> */}
                     <TextTransitionTest />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={'DISCOVER US'} arrow small />
