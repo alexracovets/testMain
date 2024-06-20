@@ -50,69 +50,72 @@ export default function Loader() {
                 <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
                     <UI_Button text={'To Explore'} arrow />
                 </div>
-                <css-doodle
-                    style={{
-                        position: 'absolute',
-                        left: '0',
-                        top: '0',
-                        width: '100%',
-                        height: '100%',
-                        zIndex: '-1'
-                    }}
-                >
-                    {`
-                    :doodle {
-                        @grid: 10x1 / 100vw 100vh / transparent;
-                        --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A, #E4E4E7, #FEC532, #E4E4E7;
-                        --color2:#E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
-                    }
-
-                    :after, :before {
-                        content: '';
-                        background: @p(--color);
-                        @place: @r(100%) @r(100%);
-                        @size: @r(2rem, 4rem);
-                        @shape: circle;
-                    }
-
-                    @place: center;
-                    @size: 100vmax;
-
-                    background: @m100(
-                        radial-gradient(@p(--color2) 30%, transparent 0)
-                        @r(0%, 100%) @r(0%, 100%) / 1rem 1rem
-                        no-repeat
-                    );
-
-                    animation: move-around @r(100s, 200s) linear infinite; 
-
-                    @keyframes move-around {
-                        0%, 100% {
-                            transform: translate(0, 0);
-                            opacity: 0.8;
-                        }
-                        50% {
-                            transform: translate(@r(-100%, 100%), @r(-100%, 100%)); 
-                            opacity: 0.8;
-                        }
-                    }
-
-                     @media (max-width: 430px) { 
-                        :after, :before { 
-                            @size: @r(2rem, 4rem);
-                        }
-                        background: @m10(
-                            radial-gradient(@p(--color2) 30%, transparent 0)
-                            @r(0%, 100%) @r(0%, 100%) / 1rem 1rem
-                            no-repeat
-                        );
-                        animation: move-around @r(100s, 200s) linear infinite; 
-                    }
-                `}
-                </css-doodle>
+             
             </motion.div> :
                 null
             }
         </AnimatePresence>
     );
 }
+
+
+{/* <css-doodle
+style={{
+    position: 'absolute',
+    left: '0',
+    top: '0',
+    width: '100%',
+    height: '100%',
+    zIndex: '-1'
+}}
+>
+{`
+:doodle {
+    @grid: 10x1 / 100vw 100vh / transparent;
+    --color: #E4E4E7, #A3A4AB, #E4E4E7, #4B4D5A, #E4E4E7, #FEC532, #E4E4E7;
+    --color2:#E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #E4E4E7, #FEC532;
+}
+
+:after, :before {
+    content: '';
+    background: @p(--color);
+    @place: @r(100%) @r(100%);
+    @size: @r(2rem, 4rem);
+    @shape: circle;
+}
+
+@place: center;
+@size: 100vmax;
+
+background: @m100(
+    radial-gradient(@p(--color2) 30%, transparent 0)
+    @r(0%, 100%) @r(0%, 100%) / 1rem 1rem
+    no-repeat
+);
+
+animation: move-around @r(100s, 200s) linear infinite; 
+
+@keyframes move-around {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(@r(-100%, 100%), @r(-100%, 100%)); 
+        opacity: 0.8;
+    }
+}
+
+ @media (max-width: 430px) { 
+    :after, :before { 
+        @size: @r(2rem, 4rem);
+    }
+    background: @m10(
+        radial-gradient(@p(--color2) 30%, transparent 0)
+        @r(0%, 100%) @r(0%, 100%) / 1rem 1rem
+        no-repeat
+    );
+    animation: move-around @r(100s, 200s) linear infinite; 
+}
+`}
+</css-doodle> */}
