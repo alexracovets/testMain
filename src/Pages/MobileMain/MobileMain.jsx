@@ -94,7 +94,7 @@ export default function MobileMain() {
                 <div className={s.content}>
                     <CircleText />
                     {/* <div className={s.model_space} ref={firstSection}></div> */}
-                    <div className={s.we_wrapper}>
+                    {/* <div className={s.we_wrapper}>
                         <div className={s.we}>
                             <p>
                                 We&#39;re Innovative
@@ -106,7 +106,7 @@ export default function MobileMain() {
                                 We&#39;re SPOTIUM 360
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     {/* <Fliper /> */}
                     <TextTransitionTest />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>

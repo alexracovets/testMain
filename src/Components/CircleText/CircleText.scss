@@ -4,12 +4,12 @@
   position: relative;
   height: 30rem;
   width: 30rem;
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 2rem auto;
 
   @media (max-width:$width-mobile) {
-    height: 19rem;
-    width: 19rem;
+    height: 17rem;
+    width: 17rem;
+    margin: 0rem auto;
   }
 
 
@@ -39,13 +39,11 @@
     }
 
     &.reverse {
-      // transform: rotateZ(30deg) rotateX(30deg) translateX(-5%) translateY(5%); 
-
       .inner__wrapper {
         transform: rotateZ(-30deg) translateY(10%) translateX(2%);
 
         @media (max-width:$width-mobile) {
-          transform: rotateZ(-30deg) translateY(5%) translateX(2%);
+          transform: rotateZ(-30deg) translateY(41%) translateX(-2%);
         }
 
         .circle {
@@ -62,7 +60,7 @@
       align-items: center;
 
       @media (max-width:$width-mobile) {
-        transform: rotateZ(30deg) translateY(10%) translateX(-10%);
+        transform: rotateZ(30deg) translateY(38%) translateX(2%);
       }
 
       .circle {

@@ -1,7 +1,10 @@
 import React from 'react';
 import TextTransition, { presets } from 'react-text-transition';
 
-const TEXTS = ['INTERACTIVEWEB DEV', 'AI CHATBOTS', 'AR VR XR DEVELOPMENT', 'DIGITAL MARKETING'];
+const TEXTS = [`We're Innovative`, `We're Creative`, `We're SPOTIUM 360`];
+
+
+
 import s from './TextTransitionTest.module.scss';
 export default function TextTransitionTest() {
     const [index, setIndex] = React.useState(0);
