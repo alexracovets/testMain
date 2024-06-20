@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Splitting from 'splitting';
 import 'splitting/dist/splitting.css';
-import './CircleText.scss';
+
+import s from './CircleText.module.scss';
 
 export default function CircleText() {
     const circleRef1 = useRef(null);
@@ -24,7 +25,7 @@ export default function CircleText() {
 
         for (let i = 0; i < text.length; i++) {
             const charElement = document.createElement('div');
-            charElement.className = 'char';
+            charElement.className = s.char;
             charElement.style.setProperty('--char-index', i + 1);
             charElement.textContent = text.charAt(i);
             circle.appendChild(charElement);
@@ -42,31 +43,31 @@ export default function CircleText() {
     }, [isInitial]);
     return (
         <>
-            <div className='wrapper'>
-                <div className='wrapper__circle'>
-                    <div className='inner__wrapper'>
-                        <div ref={circleRef1} className="circle" data-splitting>
+            <div className={s.wrapper}>
+                <div className={s.wrapper__circle}>
+                    <div className={s.inner__wrapper}>
+                        <div ref={circleRef1} className={s.circle} data-splitting>
                             DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
                         </div>
                     </div>
                 </div>
-                <div className='wrapper__circle'>
-                    <div className='inner__wrapper'>
-                        <div ref={circleRef2} className="circle" data-splitting>
+                <div className={s.wrapper__circle}>
+                    <div className={s.inner__wrapper}>
+                        <div ref={circleRef2} className={s.circle}  data-splitting>
                             DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
                         </div>
                     </div>
                 </div>
-                <div className='wrapper__circle reverse'>
-                    <div className='inner__wrapper'>
-                        <div ref={circleRef3} className="circle" data-splitting>
+                <div className={s.wrapper__circle + ' ' + s.reverse}>
+                    <div className={s.inner__wrapper}>
+                        <div ref={circleRef3} className={s.circle}  data-splitting>
                             DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
                         </div>
                     </div>
                 </div>
-                <div className='wrapper__circle reverse'>
-                    <div className='inner__wrapper'>
-                        <div ref={circleRef4} className="circle" data-splitting>
+                <div className={s.wrapper__circle + ' ' + s.reverse}>
+                    <div className={s.inner__wrapper}>
+                        <div ref={circleRef4} className={s.circle}  data-splitting>
                             DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
                         </div>
                     </div>

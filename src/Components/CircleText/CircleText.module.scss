@@ -4,12 +4,11 @@
   position: relative;
   height: 30rem;
   width: 30rem;
-  margin: 2rem auto;
+  margin: 0 auto;
 
   @media (max-width:$width-mobile) {
     height: 17rem;
     width: 17rem;
-    margin: 0rem auto;
   }
 
 

@@ -1,76 +1,116 @@
 @import '../../global/variable.scss';
 
-.developments {
+.developments__wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    max-width: 40rem;
+    overflow: hidden;
+    position: relative;
 
-    @media (max-width:$width-table) {
-        margin: 4.25rem auto;
+    @media (max-width: $width-table) {
+        margin: 3rem auto;
     }
 
-    @media (max-width:$width-mobile) {
-        margin: 2rem auto;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 3rem;
+        height: 100%;
+        top: 0;
+        z-index: 1;
     }
 
-    li {
+    &::before {
+        left: 0;
+        background: linear-gradient(0.25turn, #08080a, #08080a00);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(-0.25turn, #08080a, #08080a00);
+    }
+
+    .developments {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 1.25rem;
+        width: 200%; 
 
-        @media (max-width:$width-shortDesktop) {
-            margin-right: 1.25rem
+        &:hover {
+            animation-play-state: paused;
         }
 
-        @media (max-width:$width-table) {
-            margin-right: 1.25rem;
-        }
-
-        &:last-of-type {
-            margin-right: 0;
-        }
-
-        img {
-            height: 1.5rem;
-            width: auto;
-            margin-right: 0.9375rem;
-
-            @media (max-width:$width-shortDesktop) {
-                height: 1.5rem;
-                margin-right: 0.9375rem;
-            }
-
-            @media (max-width:$width-table) {
-                height: 1.5rem;
-                margin-right: 0.9375rem;
-            }
-        }
-
-        .text {
+        .developments__list {
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
+            width: 100%;
+            animation: scroll 20s linear infinite;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 1.25rem;
 
-            span {
-                color: $color-neutral-10;
-                font-size: 0.75rem;
-                font-family: $font-DM_Sans;
-                font-weight: 700;
-                text-transform: uppercase;
-                line-height: 0.75rem;
-
-                @media (max-width:$width-shortDesktop) {
-                    font-size: 0.75rem;
-                    line-height: 0.75rem;
+                @media (max-width: $width-shortDesktop) {
+                    margin-right: 1.25rem;
                 }
 
-                @media (max-width:$width-table) {
-                    font-size: 0.75rem;
-                    line-height: 0.75rem;
+                @media (max-width: $width-table) {
+                    margin-right: 1.25rem;
+                }
+
+                img {
+                    height: 1.5rem;
+                    width: auto;
+                    margin-right: 0.9375rem;
+
+                    @media (max-width: $width-shortDesktop) {
+                        height: 1.5rem;
+                        margin-right: 0.9375rem;
+                    }
+
+                    @media (max-width: $width-table) {
+                        height: 2rem;
+                        margin-right: 0.9375rem;
+                    }
+                }
+
+                .text {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    span {
+                        color: $color-neutral-10;
+                        font-size: 0.75rem;
+                        font-family: $font-DM_Sans;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        line-height: 0.75rem;
+
+                        @media (max-width: $width-shortDesktop) {
+                            font-size: 0.75rem;
+                            line-height: 0.75rem;
+                        }
+
+                        @media (max-width: $width-table) {
+                            font-size: 1rem;
+                            line-height: 1rem;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }
