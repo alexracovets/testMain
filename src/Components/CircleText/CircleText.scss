@@ -17,11 +17,16 @@
     height: 19rem;
     transform: rotateZ(-30deg) rotateX(-30deg) translateX(5%) translateY(5%);
 
-    &:nth-of-type(2n-1) .circle .char {
-      color: transparent;
-      backface-visibility: visible;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
-
+    &:nth-of-type(2n-1) {
+      z-index: -1;
+      .circle {
+        .char {
+          color: transparent;
+          backface-visibility: visible;
+          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+          opacity: 0.5;
+        }
+      }
     }
 
     &.reverse {
@@ -56,7 +61,7 @@
         backface-visibility: hidden;
         -webkit-text-stroke: 1px rgb(0, 0, 0);
         transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(1.5) scaleX(1.5);
-        text-shadow: 0px 0px 1rem black;
+        text-shadow: 0px 0px 2px black;
       }
     }
   }

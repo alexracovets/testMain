@@ -57,6 +57,10 @@ main {
 main {
     height: 100%;
     overflow: hidden;
+
+    @media (max-width:$width-table) {
+        padding-top: 5rem;
+    }
 }
 
 html {
@@ -90,4 +94,3 @@ html {
         opacity: 1;
     }
 }
-
