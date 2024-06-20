@@ -1,57 +1,83 @@
 @import '../../global/variable.scss';
 
-.circle {
-  transform-style: preserve-3d;
-  animation: animate 20s linear infinite;
-  --deg: calc(360deg / var(--numchs));
-  z-index: 1;
-  height: 10rem;
-  margin: 2rem auto;
+.wrapper {
+  position: relative;
+  height: 19rem;
+  margin: 0 auto;
+  width: 19rem;
 
-  .char {
+  .wrapper__circle {
     position: absolute;
-    top: 0;
     left: 0;
-    color: white;
-    font-family: $font-Bebas;
-    font-weight: 600;
-    font-size: 3rem;
-    text-transform: uppercase;
-    padding: 0em 0em;
-    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(8rem) scaleY(2) scaleX(1);
-  }
+    top: 0;
+    width: 19rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19rem;
+    transform: rotateZ(-45deg) rotateX(-45deg) translateX(5%) translateY(5%);
+    opacity: 0.9;
 
-  &.test {
-    .char {
-      backface-visibility: hidden;
+    &:nth-of-type(2n-1) .circle .char {
+      opacity: 0.3;
+      color: transparent;
+      backface-visibility: visible;
     }
-  }
 
-  &.test2 {
-    animation: animate2 20s linear infinite;
+    &.reverse {
+      transform: rotateZ(45deg) rotateX(45deg) translateX(-5%) translateY(5%);
+      opacity: 1;
 
-    .char {
-      backface-visibility: hidden;
+      .circle {
+        animation: animateReverse 20s linear infinite;
+      }
+    }
+
+    .circle {
+      transform-style: preserve-3d;
+      animation: animate 20s linear infinite;
+      --deg: calc(360deg / var(--numchs));
+      color: white;
+      font-family: $font-Bebas;
+      font-weight: 600;
+      font-size: 3rem;
+      text-transform: uppercase;
+      z-index: 1;
+      height: 10rem;
+
+      .char {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        font-weight: 400;
+        font-size: 3rem;
+        text-transform: uppercase;
+        padding: 0em 0em;
+        backface-visibility: hidden;
+        -webkit-text-stroke: 1px white;
+        transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(2) scaleX(1.4);
+      }
     }
   }
 }
 
 @keyframes animate {
   0% {
-    transform: rotateY(360deg) rotateX(15deg);
+    transform: rotateY(360deg) rotateX(10deg);
   }
 
   100% {
-    transform: rotateY(0deg) rotateX(15deg);
+    transform: rotateY(0deg) rotateX(10deg);
   }
 }
 
-@keyframes animate2 {
+@keyframes animateReverse {
   0% {
-    transform: rotateY(360deg) rotateX(0);
+    transform: rotateY(0deg) rotateX(-10deg);
   }
 
   100% {
-    transform: rotateY(0deg) rotateX(0);
+    transform: rotateY(360deg) rotateX(-10deg);
   }
 }
