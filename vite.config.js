@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'http://backend:5000'
+      '/api': 'http://backend:3000'
     }
   }
 })

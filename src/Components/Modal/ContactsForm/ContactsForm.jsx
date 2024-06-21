@@ -25,11 +25,11 @@ export default function ContactsForm() {
             isValid: false
         },
     });
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        const response = await fetch('http://localhost:5000/send', {
+    
+        const response = await fetch('/send-mail.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,10 +37,14 @@ export default function ContactsForm() {
             body: JSON.stringify({
                 name: userForm.full_name.value,
                 email: userForm.email.value,
-                comment: userForm.textarea.value,
+                message: userForm.textarea.value,
+                formData: "Contact Form"
             }),
         });
-
+    
+        const responseData = await response.text();
+        console.log(responseData);
+    
         if (response.ok) {
             alert('Email sent successfully!');
             setIsActiveForm(false);
