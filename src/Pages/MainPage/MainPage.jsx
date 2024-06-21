@@ -6,6 +6,7 @@ import Fliper from '../../Components/Fliper/Fliper';
 import useModalForm from '../../store/useModalForm';
 
 import s from './MainPage.module.scss';
+import TextTransitionTest from '../../Components/TextTransitionTest/TextTransitionTest';
 export default function MainPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
 
@@ -20,7 +21,7 @@ export default function MainPage() {
                 <section>
                     <div className={s.content}>
                         {/* <h1>Reliable partner in</h1> */}
-                        <div className={s.we}>
+                        {/* <div className={s.we}>
                             <p>
                                 We&#39;re Innovative
                             </p>
@@ -30,7 +31,8 @@ export default function MainPage() {
                             <p>
                                 We&#39;re SPOTIUM 360
                             </p>
-                        </div>
+                        </div> */}
+                        <TextTransitionTest />
                         <Fliper />
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                             <UI_Button text={'DISCOVER US'} arrow />
