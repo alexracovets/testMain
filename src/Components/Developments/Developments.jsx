@@ -2,8 +2,6 @@ import ai from '/image/icons/developments/ai.svg';
 import xr from '/image/icons/developments/xr.svg';
 import dev from '/image/icons/developments/dev.svg';
 import digital from '/image/icons/developments/digital.svg';
-import Ticker from 'react-ticker'
-import TextLoop from "react-text-loop";
 import Marquee from "react-fast-marquee";
 import s from './Developments.module.scss';
 
