@@ -21,17 +21,17 @@
         width: 3rem;
         height: 100%;
         top: 0;
-        z-index: 1;
+        z-index: 2;
     }
 
     &::before {
         left: 0;
-        background: linear-gradient(0.25turn, #08080a, #08080a00);
+        background: linear-gradient(0.25turn, $btn-bg, #00000000);
     }
 
     &::after {
         right: 0;
-        background: linear-gradient(-0.25turn, #08080a, #08080a00);
+        background: linear-gradient(-0.25turn, $btn-bg, #00000000);
     }
 
     .developments {
