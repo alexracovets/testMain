@@ -42,17 +42,15 @@ export default function ProjectCase() {
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
-                                            Customer:
+                                            Technologies:
                                         </div>
                                         <div className={s.logo}>
-                                            <img src={`/image/projects/logo/${content.logo}`} />
-                                            <h3>{content.logoName}</h3>
+                                            <h3>React.JS, HTML5, CSS3, Node.JS, JS</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <div className={s.photo}>
-                                    <div className={s.image_wrapper} style={{ backgroundImage: 'url(/image/projects/main/main.jpg)' }}>
-                                    </div>
+                                    <div className={s.image_wrapper} style={{ backgroundImage: 'url(/image/projects/main/main.jpg)' }}></div>
                                 </div>
                             </section>
                             <section className={s.about_info}>
@@ -60,19 +58,31 @@ export default function ProjectCase() {
                                     {content.bussines_block.map((item, idx) => {
                                         return (
                                             <li key={idx}>
-                                                <div className={s.title}>
-                                                    {item.name}
-                                                </div>
+                                                <div className={s.title}>{item.name}</div>
                                                 <div className={s.content}>
-                                                    {item.content.map(() => {
-                                                        
+                                                    {item.content.map((item, idx) => {
+                                                        if (item.type === 'textList') {
+                                                            return (
+                                                                <div className={s.text_list} key={idx}>
+                                                                    {item.value.map((element, index) => <p key={index}>{element}</p>)}
+                                                                </div>
+                                                            )
+                                                        } else if (item.type === 'text') {
+                                                            return <p key={idx}>{item.value}</p>
+                                                        } else if (item.type === 'list') {
+                                                            return (
+                                                                <ul key={idx} className={s.list}>
+                                                                    {item.list.map((li, index) => <li key={index}><p><b>{li.title}</b> {li.value}</p></li>)}
+                                                                </ul>
+                                                            )
+                                                        }
                                                     })}
                                                 </div>
                                             </li>
                                         )
                                     })}
                                 </ul>
-                                <div className={s.message}>
+                                {/* <div className={s.message}>
                                     <div className={s.avatar}>
                                         <img src={`/image/projects/avatar/avatar.jpg`} />
                                     </div>
@@ -88,7 +98,7 @@ export default function ProjectCase() {
                                     <div className={s.company}>
                                         Company name
                                     </div>
-                                </div>
+                                </div> */}
                             </section>
                             <section className={s.keys_info}>
                                 <Keys content={content.keys_block} />

@@ -7,7 +7,7 @@
     transition: all ease-in-out 300ms;
     transform: translateY(0rem);
 
-    @media (max-width:$width-tableBig) {
+    @media (max-width:$width-table) {
         position: fixed; 
     }
 
@@ -18,7 +18,7 @@
     &.hidden {
         transform: translateY(0rem);
 
-        @media (max-width:$width-tableBig) {
+        @media (max-width:$width-table) {
             transform: translateY(-7rem);
         }
     }
