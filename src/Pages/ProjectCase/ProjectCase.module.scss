@@ -19,16 +19,11 @@
 
         section {
             width: 100%;
-            min-height: 80dvh;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
             padding: 3.25rem 0;
-
-            @media (max-width:$width-shortDesktop) {
-                min-height: 76.4dvh;
-            }
 
             @media (max-width: $width-tableBig) {
                 padding: 3.125rem 0;

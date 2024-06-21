@@ -55,6 +55,13 @@ export default function Keys({ content }) {
                                     return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
                                 } else if (item.type === 'list') {
                                     return <ul key={idx}>{item.li.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
+                                } else if (item.type === 'q_a') {
+                                    return (
+                                        <div key={idx} className={s.q_a}>
+                                            <p dangerouslySetInnerHTML={{ __html: item.question }} className={s.question} />
+                                            <p dangerouslySetInnerHTML={{ __html: item.answer }} className={s.answer} />
+                                        </div>
+                                    )
                                 }
                             })}
                         </div>
