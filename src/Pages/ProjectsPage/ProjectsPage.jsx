@@ -39,7 +39,13 @@ export default function ProjectsPage() {
                                 <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{item.title}</h3>
-                                        <p>{item.description}</p>
+                                        <div className={s.description}>
+                                            {item.description.map((desc, idx) => {
+                                                return (
+                                                    <p key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
+                                                )
+                                            })}
+                                        </div>
                                         <div className={s.tags}>
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                         </div>

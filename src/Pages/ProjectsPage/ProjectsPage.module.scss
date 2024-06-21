@@ -78,6 +78,16 @@
                         border-bottom: 1px solid $color-primary;
                     }
 
+                    .description {
+                        p {
+                            margin-bottom: 0.5rem;
+
+                            span {
+                                color: $color-primary;
+                            }
+                        }
+                    }
+
                     p {
                         display: block;
                         font-size: 0.875rem;

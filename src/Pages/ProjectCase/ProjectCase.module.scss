@@ -46,13 +46,17 @@
             }
 
             .description {
-                font-size: 2rem;
-                line-height: 2.8rem;
+                font-size: 1.5rem;
+                line-height: 2rem;
                 letter-spacing: -0.125rem;
                 font-weight: 400;
                 color: $color-white;
                 font-family: $font-JB_Mono;
                 margin-bottom: 2rem;
+
+                p {
+                    margin-bottom: 0.8rem;
+                }
 
                 @media (max-width:$width-shortDesktop) {
                     font-size: 1.25rem;

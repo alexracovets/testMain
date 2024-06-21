@@ -2,218 +2,108 @@ const projectsData = [
     {
         pageName: `сonfigurator`,
         title: `Configurator`,
-        description: `Description`,
+        description: [
+            `If your product has different options that customers can select.`,
+            `It&#8217;s perfect for businesses like <span>modular home manufacturers, custom furniture retailers, automotive companies</span>, and more.`,
+            `Imagine letting your customers design their own modular homes, choose custom furniture options, configure their dream car, or personalize jewelry.`,
+            `These interactive tools <span>boost engagement by 40%, increase sales by 30%</span>, and <span>reduce returns by 20%</span>.`
+        ],
         tags: [
-            `tag 1`,
-            `tag 2`,
-            `tag 3`
+            `Modular Home Manufacturing`,
+            `Custom Furniture Retailers`,
+            `Automotive Industry`,
+            'Personalized Jewelry',
+            'Bicycle Customization',
+            'Kitchen Cabinet Design',
+            'Fashion and Apparel',
+            'Footwear Customization',
+            'Computer and Electronics',
+            'Travel and Vacation Packages'
         ],
         logo: `logo.svg`,
         logoName: `Configurator`,
-        keys_block: [
+        bussines_block: [
             {
-                name: 'Key Facts',
+                name: `Bussiness need:`,
                 content: [
                     {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
-                    },
-                    {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                    {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
+                        type: `textList`,
+                        value: [
+                            `In today's digital world, businesses face the challenge of providing a personalized shopping experience.`,
+                            `Customers want to tailor products to their preferences, but without the right tools, this can be difficult.`,
+                            `Modular home builders, for example, need a way for buyers to design their dream homes easily and confidently.`
                         ]
                     }
-                ],
-                id: 0
+                ]
             },
             {
-                name: 'Applications for Drivers',
+                name: `Solution:`,
                 content: [
                     {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
+                        type: `text`,
+                        value: `That's where our configurator comes in. It allows customers to customize products in real-time, enhancing their shopping experience and increasing their likelihood of purchase. Key features include:`
+                    },
+                    {
+                        type: `list`,
+                        list: [
+                            {
+                                title: `Save and Share:`,
+                                value: `Customers can save their designs and share them with others.`
+                            },
+                            {
+                                title: `1.5 Second Load Time:`,
+                                value: `Quick load times ensure a smooth experience.`
+                            },
+                            {
+                                title: `100% Mobile Ready:`,
+                                value: `Perfect functionality on any device.`
+                            }
                         ]
                     }
-                ],
-                id: 1
+                ]
             },
             {
-                name: 'Technical due diligence',
+                name: `Result:`,
                 content: [
                     {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
+                        type: `text`,
+                        value: `Adding our configurator to your website can lead to impressive results:`
                     },
                     {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                ],
-                id: 2
+                        type: `list`,
+                        list: [
+                            {
+                                title: `30% More Sales:`,
+                                value: `Custom options mean more customers hit 'buy.'`
+                            },
+                            {
+                                title: `40% Better Experience:`,
+                                value: `Interactive and engaging, keeping customers interested.`
+                            },
+                            {
+                                title: `20% Fewer Returns:`,
+                                value: `When they see it first, they're happier with the result.`
+                            },
+                            {
+                                title: `25% Faster Ops:`,
+                                value: `Automation saves time and reduces errors.`
+                            }
+                        ]
+                    }
+                ]
             }
-        ]
-    },
-    {
-        pageName: `3d_office`,
-        title: `Office 3D Tour`,
-        description: `Description`,
-        tags: [
-            `tag 1`,
-            `tag 2`,
-            `tag 3`
         ],
-        logo: `logo.svg`,
-        logoName: `Office`,
         keys_block: [
             {
                 name: 'Key Facts',
                 content: [
                     {
                         type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
-                    },
-                    {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                    {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
+                        value: [
+                            `In today's digital world, businesses face the challenge of providing a personalized shopping experience.`,
+                            `Customers want to tailor products to their preferences, but without the right tools, this can be difficult.`,
+                            `Modular home builders, for example, need a way for buyers to design their dream homes easily and confidently.`
                         ]
-                    }
-                ],
-                id: 0
-            },
-            {
-                name: 'Applications for Drivers',
-                content: [
-                    {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
-                        ]
-                    }
-                ],
-                id: 1
-            },
-            {
-                name: 'Technical due diligence',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
-                    },
-                    {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                ],
-                id: 2
-            }
-        ]
-    },
-    {
-        pageName: `web_dev`,
-        title: `Website development`,
-        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
-        tags: [
-            `tag 1`,
-            `tag 2`,
-            `tag 3`
-        ],
-        logo: `logo.svg`,
-        logoName: `WebDev`,
-        keys_block: [
-            {
-                name: 'Key Facts',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
-                    },
-                    {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                    {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
-                        ]
-                    }
-                ],
-                id: 0
-            },
-            {
-                name: 'Applications for Drivers',
-                content: [
-                    {
-                        type: 'list',
-                        li: [
-                            'Web application for client operators to process delivery orders, assign drivers and plan tours',
-                            'Mobile application for drivers to check orders and updates, change shipment status, and scan package barcode',
-                            'Parcel tracking web page for end-users to track shipment time and status or request a delivery time change'
-                        ]
-                    }
-                ],
-                id: 1
-            },
-            {
-                name: 'Technical due diligence',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
-                    },
-                    {
-                        type: 'text',
-                        value: 'We focused on process optimization and used Camunda BMS to ensure that 7 core business processes across the organization were fully automated. We configured Camunda Process Orchestration that allowed handling 150K+ process instances per month, safeguarded real-time visibility into business processes, and provided 20% less time on teams’ collaboration process.'
-                    },
-                ],
-                id: 2
-            }
-        ]
-    },
-    {
-        pageName: `project4`,
-        title: `Last-mile delivery platform redesign and maintenance`,
-        description: `Transport management system extended into a mature platform that connects retailers, drivers & fleet owners and has already enabled timely, cost-efficient last-mile delivery for over 2 million orders`,
-        tags: [
-            `Logistics`,
-            `Germany`,
-            `E-commerce`,
-            `Business Systems`,
-            `Software Product Development`,
-            `Mobile Development`,
-            `Support & Maintenance`,
-            `UI/UX Design`
-        ],
-        logo: `logo.svg`,
-        logoName: `CompanyName`,
-        keys_block: [
-            {
-                name: 'Key Facts',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Client already had last-mile logistics software and wanted us to take over its support and maintenance. Apart from that, we streamlined business logic and made significant product improvements, including UI/UX redesign, a new mobile app launch, etc.'
                     },
                     {
                         type: 'text',

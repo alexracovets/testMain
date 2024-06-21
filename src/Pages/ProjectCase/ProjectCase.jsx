@@ -34,7 +34,11 @@ export default function ProjectCase() {
                                         {content.title}
                                     </h2>
                                     <div className={s.description}>
-                                        {content.description}
+                                        {content.description.map((desc, idx) => {
+                                            return (
+                                                <p key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
+                                            )
+                                        })}
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
@@ -53,22 +57,20 @@ export default function ProjectCase() {
                             </section>
                             <section className={s.about_info}>
                                 <ul className={s.points}>
-                                    <li>
-                                        <div className={s.title}>
-                                            Bussiness need:
-                                        </div>
-                                        <p>
-                                            Client was looking for a service provider who would safeguard sustainable operations of their tech platform, expand, and customize it according to the requirements of client.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <div className={s.title}>
-                                            Result:
-                                        </div>
-                                        <p>
-                                            Client was looking for a service provider who would safeguard sustainable operations of their tech platform, expand, and customize it according to the requirements of client.
-                                        </p>
-                                    </li>
+                                    {content.bussines_block.map((item, idx) => {
+                                        return (
+                                            <li key={idx}>
+                                                <div className={s.title}>
+                                                    {item.name}
+                                                </div>
+                                                <div className={s.content}>
+                                                    {item.content.map(() => {
+                                                        
+                                                    })}
+                                                </div>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                                 <div className={s.message}>
                                     <div className={s.avatar}>
