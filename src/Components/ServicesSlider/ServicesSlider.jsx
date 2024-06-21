@@ -11,24 +11,24 @@ import useStoreServices from '../../store/useStoreServices';
 
 const slides = [
     {
-        image: './test/test.png',
-        video: false
+        image: false,
+        video: './video/services/1.mp4'
     },
     {
         image: false,
-        video: './test/ar.mp4'
-    },
-    {
-        image: './test/test.png',
-        video: false
+        video: './video/services/2.mp4'
     },
     {
         image: false,
-        video: './test/production.mp4'
+        video: './video/services/3.mp4'
     },
     {
-        image: './test/test.png',
-        video: false
+        image: false,
+        video: './video/services/4.mp4'
+    },
+    {
+        image: false,
+        video: './video/services/5.mp4'
     }
 ];
 
@@ -185,7 +185,7 @@ export default function ServicesSlider() {
                         as='div'
                         wrapperClass={isActive ? s.count_360 + ' ' + s.active : s.count_360}
                         position={[-4, -4.8, 0]}
-                        rotation={[0, 0.4, 0]} 
+                        rotation={[0, 0.4, 0]}
                         zIndexRange={[0, 0]}
                     >
                         <div className={s.wrapper} >

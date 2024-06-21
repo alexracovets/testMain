@@ -9,7 +9,7 @@ const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 const step = 5;
 
-import matcap from '/default.png';
+import matcap from '/texture/voxel/white.png';
 import voxelsData from './voxel.json';
 import useActiveModel from "../../store/useActiveModel";
 import ServicesSlider from "../ServicesSlider/ServicesSlider";
