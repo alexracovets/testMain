@@ -12,6 +12,7 @@
     height: 3rem;
 
     @media (max-width:$width-table ) {
+        height: auto;
         font-size: 4rem;
         margin: 0 auto;
         margin-bottom: 2rem;
