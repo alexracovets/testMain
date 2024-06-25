@@ -32,6 +32,7 @@ const projectsData = [
             `Manufacturing and Industrial`
         ],
         logo: `logo.svg`,
+        logoName: `Web Sites`,
         bussines_block: [
             {
                 name: `Bussiness need:`,
@@ -186,7 +187,7 @@ const projectsData = [
             'Automotive Industry'
         ],
         logo: `logo.svg`,
-        logoName: `Configurator`,
+        logoName: `Marketing`,
         bussines_block: [
             {
                 name: `Bussiness need:`,
@@ -498,7 +499,7 @@ const projectsData = [
             'Travel and Vacation Packages'
         ],
         logo: `logo.svg`,
-        logoName: `Configurator`,
+        logoName: `Office`,
         bussines_block: [
             {
                 name: `Bussiness need:`,
