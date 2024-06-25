@@ -8,6 +8,7 @@ import Keys from "../../Components/Keys/Keys";
 import projectsData from "../../data/projectsData";
 
 import s from './ProjectCase.module.scss';
+import TextField from "../../Components/TextField/TextField";
 export default function ProjectCase() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
@@ -34,18 +35,14 @@ export default function ProjectCase() {
                                         {content.title}
                                     </h2>
                                     <div className={s.description}>
-                                        {content.description.map((desc, idx) => {
-                                            return (
-                                                <p key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
-                                            )
-                                        })}
+                                        <TextField texts={content.description} />
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
-                                            Technologies:
+                                            {content.techno}
                                         </div>
                                         <div className={s.logo}>
-                                            <h3>React.JS, HTML5, CSS3, Node.JS, JS</h3>
+                                            <h3> {content.technologies}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -60,45 +57,12 @@ export default function ProjectCase() {
                                             <li key={idx}>
                                                 <div className={s.title}>{item.name}</div>
                                                 <div className={s.content}>
-                                                    {item.content.map((item, idx) => {
-                                                        if (item.type === 'textList') {
-                                                            return (
-                                                                <div className={s.text_list} key={idx}>
-                                                                    {item.value.map((element, index) => <p key={index}>{element}</p>)}
-                                                                </div>
-                                                            )
-                                                        } else if (item.type === 'text') {
-                                                            return <p key={idx}>{item.value}</p>
-                                                        } else if (item.type === 'list') {
-                                                            return (
-                                                                <ul key={idx} className={s.list}>
-                                                                    {item.list.map((li, index) => <li key={index}><p><b>{li.title}</b> {li.value}</p></li>)}
-                                                                </ul>
-                                                            )
-                                                        }
-                                                    })}
+                                                    <TextField texts={item.content} />
                                                 </div>
                                             </li>
                                         )
                                     })}
                                 </ul>
-                                {/* <div className={s.message}>
-                                    <div className={s.avatar}>
-                                        <img src={`/image/projects/avatar/avatar.jpg`} />
-                                    </div>
-                                    <div className={s.text}>
-                                        Spotium 360 HAS SIGNIFICANTLY CONTRIBUTED TO THE SUCCESS OF OUR COMPANY GROWTH THROUGH OUTSTANDING COLLABORATION AND A PROFESSIONAL APPROACH. THANKS A LOT TO THE WHOLE TEAM.
-                                    </div>
-                                    <div className={s.name}>
-                                        John Johnson
-                                    </div>
-                                    <div className={s.position}>
-                                        CEO
-                                    </div>
-                                    <div className={s.company}>
-                                        Company name
-                                    </div>
-                                </div> */}
                             </section>
                             <section className={s.keys_info}>
                                 <Keys content={content.keys_block} />

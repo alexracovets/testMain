@@ -1,10 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
 import useAnchorScroll from '../../../store/useAnchorScroll';
 import playSound from "../../../utils/playSound";
 import hover1 from '/sounds/hover1.wav';
+
+import facebook from '/image/icons/social/facebook.svg';
+import instagram from '/image/icons/social/instagram.svg';
+import linkedin from '/image/icons/social/linkedin.svg';
 
 import s from './FullMenu.module.scss';
 export default function FullMenu({ isDesktop }) {
@@ -19,6 +23,12 @@ export default function FullMenu({ isDesktop }) {
         { path: "/about", name: "About Us" },
         { path: "/q&a", name: "Q&A" },
         { path: "/contact", name: "Contact Us" }
+    ]
+
+    const social = [
+        { path: 'https://www.instagram.com/spotium360?igsh=MXMzcDJnaDR6ZDdmcw%3D%3D&utm_source=qr', name: 'instagram', image: instagram },
+        { path: 'https://www.facebook.com/share/gCgVnDrZshvm25W4/?mibextid=LQQJ4d', name: 'facebook', image: facebook },
+        { path: 'https://www.linkedin.com/company/spotium-360/', name: 'linkedin', image: linkedin }
     ]
 
     const anchorLink = (name) => {
@@ -51,7 +61,9 @@ export default function FullMenu({ isDesktop }) {
                     }
                 </ul>
                 <div className={s.bottom}>
-
+                    {social.map((link, idx) => {
+                        return <Link target="_blank" key={idx} to={link.path}><img src={link.image} alt={link.name} /></Link>
+                    })}
                 </div>
             </div>
         </div>

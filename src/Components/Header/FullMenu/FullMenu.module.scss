@@ -22,9 +22,13 @@
     .full_menu {
         width: 30rem;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 0 3.125rem;
         background-color: $btn-bg;
         padding-top: 6.25rem;
+        padding-bottom: 2rem;
         z-index: 20;
         box-shadow: 0 0 1.5rem 1.5rem rgb(0 0 0 / 40%), 0rem 0 10rem 3rem rgb(255 255 255 / 10%);
         transition: all ease-in-out 400ms;
@@ -32,19 +36,17 @@
 
         @media (max-width:$width-shortDesktop) {
             width: 27.96875rem;
-            padding: 0 3.25rem;
-            padding-top: 6.5rem;
         }
 
         @media (max-width:$width-table) {
             width: 100%;
-            padding: 0 3.125rem;
-            padding-top: 6.25rem;
+            padding-bottom: 2rem;
         }
 
         @media (max-width:$width-mobile) {
             padding: 0 1.25rem;
             padding-top: 6.25rem;
+            padding-bottom: 2rem;
         }
 
         ul {
@@ -90,6 +92,34 @@
                     }
                 }
 
+            }
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            a {
+                padding: 0.5rem;
+                display: block;
+                margin-right: 1.25rem;
+                filter: grayscale(1);
+                transition: all ease-in-out 300ms;
+
+                &:hover {
+                    filter: grayscale(0);
+                }
+
+                img {
+                    width: 1.5rem;
+                    height: auto;
+                    min-width: 1rem;
+
+                    @media (max-width:$width-shortDesktop) {
+                        width: 2rem;
+                    }
+                }
             }
         }
     }

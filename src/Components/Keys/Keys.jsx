@@ -32,7 +32,7 @@ export default function Keys({ content }) {
                                 if (item.type === 'text') {
                                     return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
                                 } else if (item.type === 'list') {
-                                    return <ul key={idx}>{item.li.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
+                                    return <ul key={idx}>{item.list.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
                                 } else if (item.type === 'q_a') {
                                     return (
                                         <div key={idx} className={s.q_a}>
@@ -54,7 +54,7 @@ export default function Keys({ content }) {
                                 if (item.type === 'text') {
                                     return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
                                 } else if (item.type === 'list') {
-                                    return <ul key={idx}>{item.li.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
+                                    return <ul key={idx}>{item.list.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
                                 } else if (item.type === 'q_a') {
                                     return (
                                         <div key={idx} className={s.q_a}>

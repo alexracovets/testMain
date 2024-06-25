@@ -144,7 +144,7 @@ export default function ServicesSlider() {
 
     useFrame((state, delta) => {
         if (slidesRef.current && isActive) {
-            const rotateTo = 0.3 - fakeSlideIndex * nearestAngleMultiplier;
+            const rotateTo = -0.8 - fakeSlideIndex * nearestAngleMultiplier;
             const rotationVector = new Vector3(0, rotateTo, 0);
             easing.damp3(slidesRef.current.rotation, rotationVector, 0.5, delta);
         }

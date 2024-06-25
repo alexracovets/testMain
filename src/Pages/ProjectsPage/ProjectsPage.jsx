@@ -7,6 +7,7 @@ import projectsData from "../../data/projectsData";
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 import s from './ProjectsPage.module.scss';
+import TextField from "../../Components/TextField/TextField";
 
 export default function ProjectsPage() {
     const [projects, setProjects] = useState([]);
@@ -39,13 +40,7 @@ export default function ProjectsPage() {
                                 <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{item.title}</h3>
-                                        <div className={s.description}>
-                                            {item.description.map((desc, idx) => {
-                                                return (
-                                                    <p key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
-                                                )
-                                            })}
-                                        </div>
+                                        <div className={s.description}><TextField texts={item.description} /></div>
                                         <div className={s.tags}>
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                         </div>

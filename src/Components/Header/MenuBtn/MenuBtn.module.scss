@@ -7,6 +7,8 @@
     margin: 0 2.9375rem;
     height: 11.088dvh;
     border-bottom: 1px solid $color-white;
+    position: relative;
+    z-index: 12;
 
     @media (max-width:$width-shortDesktop) {
         height: 6.375rem;
