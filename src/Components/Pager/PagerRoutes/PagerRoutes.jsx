@@ -16,11 +16,11 @@ import ServicesPage from "../../../Pages/ServicesPage/ServicesPage";
 import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
 import MobileProjectCase from "../../../Pages/MobileProjectCase/MobileProjectCase";
 import MobileProjectsPage from "../../../Pages/MobileProjectsPage/MobileProjectsPage";
- 
+import OfficeFrame from "../../OfficeFrame/OfficeFrame";
 
 export default function PagerRoutes() {
     const location = useLocation();
- 
+
     return (
         <>
             <AnimatePresence mode="wait">
@@ -47,6 +47,7 @@ export default function PagerRoutes() {
                 </Routes>
             </AnimatePresence>
             <ContactsForm />
+            <OfficeFrame />
         </>
     )
 } 

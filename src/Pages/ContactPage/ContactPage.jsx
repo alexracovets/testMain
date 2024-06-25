@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
 
+import CopyButton from "../../Components/CopyButton/CopyButton";
 import UI_Button from '../../Components/UI_Button/UI_Button';
 import Socials from '../../Components/Socials/Socials';
+
 import useModalForm from '../../store/useModalForm';
+import useOffice from '../../store/useOffice';
 
 import s from './ContactPage.module.scss';
-import CopyButton from "../../Components/CopyButton/CopyButton";
 export default function ContactPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const setIsActiveOffice = useOffice((state) => state.setIsActive);
+
     return (
         <motion.div className={s.wrapper}
             initial={{ opacity: 0, x: '-40%' }}
@@ -31,7 +35,7 @@ export default function ContactPage() {
                         <div className={s.discover} onClick={() => setIsActiveForm(true)}>
                             <UI_Button text={'Talk to Team'} arrow small />
                         </div>
-                        <div className={s.office}>
+                        <div className={s.office} onClick={() => setIsActiveOffice(true)}>
                             <UI_Button text={'office 3d tour'} arrow small />
                         </div>
                     </div>
