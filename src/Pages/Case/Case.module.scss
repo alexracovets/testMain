@@ -53,8 +53,8 @@
 
                 .photo {
                     height: 100%;
-                    width: 64.625rem;
-                    min-width: 64.625rem;
+                    width: 50rem;
+                    min-width: 50rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -70,7 +70,7 @@
                     }
 
                     .image_wrapper {
-                        width: 50.875rem;
+                        width: 100%;
                         min-height: 68dvh;
                         height: 100%;
                         display: flex;
@@ -81,6 +81,7 @@
                         border-radius: 1.5rem;
                         background-size: cover;
                         background-position: center;
+                        margin: 0 3rem;
 
                         @media (max-width:$width-shortDesktop) {
                             width: 30.3125rem;
@@ -99,11 +100,12 @@
                     justify-content: flex-start;
                     align-items: flex-start;
                     flex-direction: column;
+                    margin-top: 2rem;
 
                     .customer {
                         font-size: 1.5rem;
                         line-height: 2.1rem;
-                        font-weight: 400;
+                        font-weight: 600;
                         color: $color-primary;
                         font-family: $font-JB_Mono;
                         margin-bottom: 0.875rem;
@@ -197,49 +199,49 @@
             }
         }
     }
-}
 
-p {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.1rem;
-    font-weight: 400;
-    color: $color-white;
-    font-family: $font-JB_Mono;
-    margin-bottom: 1rem;
-}
+    p {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        letter-spacing: -0.1rem;
+        font-weight: 400;
+        color: $color-white;
+        font-family: $font-JB_Mono;
+        margin-bottom: 1rem;
+    }
 
-ul {
-    width: 100%;
-    color: $color-white;
-    font-family: $font-JB_Mono;
+    ul {
+        width: 100%;
+        color: $color-white;
+        font-family: $font-JB_Mono;
 
-    li {
-        padding-left: 1rem;
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 0.5rem;
+        li {
+            padding-left: 1rem;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0.5rem;
 
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0.2rem;
-            top: calc(50% - 0.2rem);
-            width: 0.4rem;
-            height: 0.4rem;
-            background-color: $color-primary;
-            border-radius: 50%;
-        }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0.2rem;
+                top: calc(50% - 0.2rem);
+                width: 0.4rem;
+                height: 0.4rem;
+                background-color: $color-primary;
+                border-radius: 50%;
+            }
 
-        p {
-            margin-bottom: 0;
-            text-align: justify;
+            p {
+                margin-bottom: 0;
+                text-align: justify;
+            }
         }
     }
-}
 
-b {
-    color: $color-primary;
+    b {
+        color: $color-primary;
+    }
 }

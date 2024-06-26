@@ -37,7 +37,7 @@ export default function MenuBtn({ isDesktop }) {
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setBurger(!isBurger)}
             >
-                <div className={s.menu_text}>Menu</div>
+                <div className={isActive ? s.menu_text + ' ' + s.hide : s.menu_text}>Menu</div>
                 <div className={s.menu_btn} onMouseEnter={() => playSound(hover2Sound)}>
                     <div className={`${s.figure} ${hasInteracted ? (isActive ? s.hover : s.unhover) : ''}`}></div>
                 </div>

@@ -6,7 +6,6 @@
     align-items: center;
     margin: 0 2.9375rem;
     height: 11.088dvh;
-    border-bottom: 1px solid $color-white;
     position: relative;
     z-index: 12;
 
@@ -47,7 +46,11 @@
             align-items: center;
             height: 3.975rem;
             padding-right: 1rem;
+            transition: all ease-in-out 300ms;
 
+            &.hide {
+                opacity: 0;
+            }
 
             @media (max-width:$width-tableBig) {
                 font-size: 3.3rem;

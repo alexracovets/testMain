@@ -6,9 +6,10 @@
     top: 0;
     transition: all ease-in-out 300ms;
     transform: translateY(0rem);
+    border-bottom: 1px solid $color-white;
 
     @media (max-width:$width-table) {
-        position: fixed; 
+        position: fixed;
     }
 
     &.visible {

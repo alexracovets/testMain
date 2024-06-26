@@ -2,7 +2,7 @@ const projectsData = [
     {
         pageName: `web_converting`,
         title: `High-Converting Web Sites`,
-        techno: `Technologies`,
+        techno: `Technologies:`,
         technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
         description: [
             {
@@ -157,7 +157,7 @@ const projectsData = [
     {
         pageName: `digital_marketing`,
         title: `Digital Marketing`,
-        techno: `Technologies`,
+        techno: `Technologies:`,
         technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
         description: [
             {
@@ -320,7 +320,7 @@ const projectsData = [
     {
         pageName: `сonfigurator`,
         title: `Configurator`,
-        techno: `Technologies`,
+        techno: `Technologies:`,
         technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
         description: [
             {
@@ -473,7 +473,7 @@ const projectsData = [
     {
         pageName: `office`,
         title: `Office 3D Tour`,
-        techno: `Technologies`,
+        techno: `Technologies:`,
         technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
         description: [
             {
