@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import Footer from "../../Components/Footer/Footer";
+import TextField from "../../Components/TextField/TextField";
+
 import projectsData from "../../data/projectsData";
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
-import s from './MobileProjectsPage.module.scss';
-export default function MobileProjectsPage() {
+import s from './MobileAllCases.module.scss';
+export default function MobileAllCases() {
     const [projects, setProjects] = useState([]);
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
@@ -38,10 +40,10 @@ export default function MobileProjectsPage() {
                 <div className={s.projects}>
                     {projects.map((item, idx) => {
                         return (
-                            <NavLink to={`/mobile/projects/${item.pageName}`} key={idx} className={s.item}>
+                            <NavLink to={`/mobile/cases/${item.pageName}`} key={idx} className={s.item}>
                                 <div className={s.info}>
                                     <h3 className={s.title}>{item.title}</h3>
-                                    <p>{item.description}</p>
+                                    <div className={s.description}><TextField texts={item.description} /></div>
                                     <div className={s.tags}>
                                         {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                     </div>

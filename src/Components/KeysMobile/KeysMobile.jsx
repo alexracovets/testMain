@@ -42,21 +42,16 @@ const KeyItem = ({ index, title, colapse, currentItem, setCurrentItem }) => {
                 <div className={s.content}>
                     {colapse.map((item, idx) => {
                         if (item.type === 'text') {
-                            return (
-                                <p key={idx}>
-                                    {item.value}
-                                </p>
-                            );
+                            return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
                         } else if (item.type === 'list') {
+                            return <ul key={idx}>{item.list.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
+                        } else if (item.type === 'q_a') {
                             return (
-                                <ul key={idx}>
-                                    {item.li.map((li, idx) => {
-                                        return <li key={idx}>
-                                            {li}
-                                        </li>;
-                                    })}
-                                </ul>
-                            );
+                                <div key={idx} className={s.q_a}>
+                                    <p dangerouslySetInnerHTML={{ __html: item.question }} className={s.question} />
+                                    <p dangerouslySetInnerHTML={{ __html: item.answer }} className={s.answer} />
+                                </div>
+                            )
                         }
                         return null;
                     })}

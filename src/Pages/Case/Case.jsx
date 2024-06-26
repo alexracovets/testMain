@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import Keys from "../../Components/Keys/Keys";
+import TextField from "../../Components/TextField/TextField";
 
 import projectsData from "../../data/projectsData";
 
-import s from './ProjectCase.module.scss';
-import TextField from "../../Components/TextField/TextField";
-export default function ProjectCase() {
+import s from './Case.module.scss';
+export default function Case() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
 

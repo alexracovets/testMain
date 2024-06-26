@@ -1,22 +1,22 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+import Case from "../../../Pages/Case/Case";
 import Mobile from "../../../layout/Mobile";
 import Default from "../../../layout/Default";
 import QAPage from "../../../Pages/QAPage/QAPage";
 import MainPage from "../../../Pages/MainPage/MainPage";
+import AllCases from "../../../Pages/AllCases/AllCases";
+import OfficeFrame from "../../OfficeFrame/OfficeFrame";
 import AboutPage from "../../../Pages/AboutPage/AboutPage";
 import MobileMain from "../../../Pages/MobileMain/MobileMain";
+import MobileCase from "../../../Pages/MobileCase/MobileCase";
 import ContactsForm from "../../Modal/ContactsForm/ContactsForm";
-import ProjectCase from "../../../Pages/ProjectCase/ProjectCase";
 import ContactPage from "../../../Pages/ContactPage/ContactPage";
 import MobileQAPage from "../../../Pages/MobileQAPage/MobileQAPage";
-import ProjectsPage from "../../../Pages/ProjectsPage/ProjectsPage";
 import ServicesPage from "../../../Pages/ServicesPage/ServicesPage";
 import IndustriesPage from "../../../Pages/IndustriesPage/IndustriesPage";
-import MobileProjectCase from "../../../Pages/MobileProjectCase/MobileProjectCase";
-import MobileProjectsPage from "../../../Pages/MobileProjectsPage/MobileProjectsPage";
-import OfficeFrame from "../../OfficeFrame/OfficeFrame";
+import MobileAllCases from "../../../Pages/MobileAllCases/MobileAllCases";
 
 export default function PagerRoutes() {
     const location = useLocation();
@@ -34,14 +34,14 @@ export default function PagerRoutes() {
                         <Route path="services" element={<ServicesPage />} />
                         <Route path="industries" element={<IndustriesPage />} />
                         <Route path="contact" element={<ContactPage />} />
-                        <Route path="cases" element={<ProjectsPage />} />
-                        <Route path="cases/:id" element={<ProjectCase />} />
+                        <Route path="cases" element={<AllCases />} />
+                        <Route path="cases/:id" element={<Case />} />
                         <Route path="q&a" element={<QAPage />} />
                     </Route>
                     <Route path="/mobile" element={<Mobile />}>
                         <Route index element={<MobileMain />} />
-                        <Route path="cases" element={<MobileProjectsPage />} />
-                        <Route path="cases/:id" element={<MobileProjectCase />} />
+                        <Route path="cases" element={<MobileAllCases />} />
+                        <Route path="cases/:id" element={<MobileCase />} />
                         <Route path="q&a" element={<MobileQAPage />} />
                     </Route>
                 </Routes>

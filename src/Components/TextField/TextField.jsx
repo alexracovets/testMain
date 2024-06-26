@@ -23,5 +23,5 @@ export default function TextField({ texts }) {
 }
 
 TextField.propTypes = {
-    texts: PropTypes.bool
+    texts: PropTypes.array
 };

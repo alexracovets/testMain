@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import projectsData from "../../data/projectsData";
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
-import s from './ProjectsPage.module.scss';
+import s from './AllCases.module.scss';
 import TextField from "../../Components/TextField/TextField";
 
-export default function ProjectsPage() {
+export default function AllCases() {
     const [projects, setProjects] = useState([]);
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
 
