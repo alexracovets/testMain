@@ -131,23 +131,23 @@ const projectsData = [
                 content: [
                     {
                         type: 'q_a',
-                        question: '<b>Q1: How do your services help improve conversion rates?</b>',
-                        answer: '<b>A1:</b> By creating user-centric designs and optimizing conversion elements, we ensure more visitors become leads or customers.'
+                        question: '<b>Q: How do your services help improve conversion rates?</b>',
+                        answer: '<b>A:</b> By creating user-centric designs and optimizing conversion elements, we ensure more visitors become leads or customers.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q2: Can you guarantee fast load times for my website?</b>',
-                        answer: '<b>A2:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates.'
+                        question: '<b>Q: Can you guarantee fast load times for my website?</b>',
+                        answer: '<b>A:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q3: How does responsive design benefit my business?</b>',
-                        answer: '<b>A3:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience.'
+                        question: '<b>Q: How does responsive design benefit my business?</b>',
+                        answer: '<b>A:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q4: What kind of ROI can I expect from your services?</b>',
-                        answer: '<b>A4:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates.'
+                        question: '<b>Q: What kind of ROI can I expect from your services?</b>',
+                        answer: '<b>A:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates.'
                     }
                 ],
                 id: 2
@@ -442,28 +442,28 @@ const projectsData = [
                 content: [
                     {
                         type: 'q_a',
-                        question: '<b>Q1: How can a configurator increase my sales?</b>',
-                        answer: '<b>A1:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases.'
+                        question: '<b>Q: How can a configurator increase my sales?</b>',
+                        answer: '<b>A:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q2: Will the configurator work on mobile devices?</b>',
-                        answer: '<b>A2:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability.'
+                        question: '<b>Q: Will the configurator work on mobile devices?</b>',
+                        answer: '<b>A:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q3: How does the configurator help reduce returns?</b>',
-                        answer: '<b>A3:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery.'
+                        question: '<b>Q: How does the configurator help reduce returns?</b>',
+                        answer: '<b>A:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q4: What kind of products can benefit from a configurator?</b>',
-                        answer: '<b>A4:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator.'
+                        question: '<b>Q: What kind of products can benefit from a configurator?</b>',
+                        answer: '<b>A:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q5: How will the configurator integrate with my existing website?</b>',
-                        answer: '<b>A5:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem.'
+                        question: '<b>Q: How will the configurator integrate with my existing website?</b>',
+                        answer: '<b>A:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem.'
                     },
                 ],
                 id: 2
@@ -595,28 +595,28 @@ const projectsData = [
                 content: [
                     {
                         type: 'q_a',
-                        question: '<b>Q1: How can a configurator increase my sales?</b>',
-                        answer: '<b>A1:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases.'
+                        question: '<b>Q: How can a configurator increase my sales?</b>',
+                        answer: '<b>A:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q2: Will the configurator work on mobile devices?</b>',
-                        answer: '<b>A2:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability.'
+                        question: '<b>Q: Will the configurator work on mobile devices?</b>',
+                        answer: '<b>A:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q3: How does the configurator help reduce returns?</b>',
-                        answer: '<b>A3:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery.'
+                        question: '<b>Q: How does the configurator help reduce returns?</b>',
+                        answer: '<b>A:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q4: What kind of products can benefit from a configurator?</b>',
-                        answer: '<b>A4:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator.'
+                        question: '<b>Q: What kind of products can benefit from a configurator?</b>',
+                        answer: '<b>A:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q5: How will the configurator integrate with my existing website?</b>',
-                        answer: '<b>A5:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem.'
+                        question: '<b>Q: How will the configurator integrate with my existing website?</b>',
+                        answer: '<b>A:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem.'
                     },
                 ],
                 id: 2
