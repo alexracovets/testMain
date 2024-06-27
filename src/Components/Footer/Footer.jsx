@@ -37,13 +37,15 @@ export default function Footer() {
                     <CopyButton />
                 </div>
                 <Socials />
-                <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                    <UI_Button text={'Talk to Team'} arrow small />
+                <div className={s.btns}>
+                    <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                        <UI_Button text={'Talk to Team'} arrow small />
+                    </div>
+                    <div className={s.btn} onClick={() => setIsActiveOffice(true)}>
+                        <UI_Button text={'office 3d tour'} arrow small />
+                    </div>
                 </div>
-                <br />
-                <div className={s.btn} onClick={() => setIsActiveOffice(true)}>
-                    <UI_Button text={'office 3d tour'} arrow small />
-                </div>
+
             </div>
         </footer>
     )
