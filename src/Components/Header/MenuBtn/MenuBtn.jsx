@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import hover1 from '/sounds/hover1.wav';
-import hover2 from '/sounds/hover2.wav';
 import playSound from '../../../utils/playSound';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
@@ -15,10 +14,7 @@ export default function MenuBtn({ isDesktop }) {
     const [hasInteracted, setHasInteracted] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isActive, setIsActive] = useState(false);
-
-
     const hover1Sound = new Audio(hover1);
-    const hover2Sound = new Audio(hover2);
 
     useEffect(() => {
         if (window.innerWidth > 744 && !isBurger) setIsActive(isHovered)
@@ -38,7 +34,7 @@ export default function MenuBtn({ isDesktop }) {
                 onClick={() => setBurger(!isBurger)}
             >
                 <div className={isActive ? s.menu_text + ' ' + s.hide : s.menu_text}>Menu</div>
-                <div className={s.menu_btn} onMouseEnter={() => playSound(hover2Sound)}>
+                <div className={s.menu_btn} onMouseEnter={() => playSound(hover1Sound)}>
                     <div className={`${s.figure} ${hasInteracted ? (isActive ? s.hover : s.unhover) : ''}`}></div>
                 </div>
             </div>

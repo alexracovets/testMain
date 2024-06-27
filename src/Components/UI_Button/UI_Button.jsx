@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import arrowImage from '/image/icons/ui/arrow.svg';
-import hoverBtn from '/sounds/hover.wav';
+import hover1 from '/sounds/hover1.wav';
 
 import useUserInteracted from '../../store/useUserInteracted';
 
@@ -12,7 +12,7 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const setUserInteracted = useUserInteracted((state) => state.setUserInteracted);
     const [isBtn, setIsBtn] = useState(false);
-    const hoverSound = new Audio(hoverBtn);
+    const hoverSound = new Audio(hover1);
 
     useEffect(() => {
         arrow ? setIsBtn(true) : setIsBtn(false);
