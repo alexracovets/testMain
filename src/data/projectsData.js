@@ -471,32 +471,40 @@ const projectsData = [
         ]
     },
     {
-        pageName: `office`,
-        title: `Office 3D Tour`,
+        pageName: `сybersecurity`,
+        title: `Corporate Cybersecurity`,
         techno: `Technologies:`,
-        technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
+        technologies: `Identity and Access Management (IAM), Encryption Tools, Security Information and Event Management (SIEM), Python, Assembly Language`,
         description: [
             {
-                type: `textList`,
-                value: [
-                    `If your product has different options that customers can select.`,
-                    `It&#8217;s perfect for businesses like <span>modular home manufacturers, custom furniture retailers, automotive companies</span>, and more.`,
-                    `Imagine letting your customers design their own modular homes, choose custom furniture options, configure their dream car, or personalize jewelry.`,
-                    `These interactive tools <span>boost engagement by 40%, increase sales by 30%</span>, and <span>reduce returns by 20%</span>.`
+                type: `text`,
+                value: `<b>Businesses often encounter several critical pain points regarding cybersecurity:</b>`
+            },
+            {
+                type: 'list',
+                list: [
+                    `<b>Data Breaches:</b> 60% of small businesses close within six months of experiencing a data breach.`,
+                    `<b>Cyber Attacks:</b> 43% of cyber attacks target small businesses, leaving them vulnerable and often unprepared.`,
+                    `<b>Compliance Issues:</b> 48% of businesses struggle to keep up with regulatory requirements, risking heavy fines and reputational damage.`,
+                    `<b>Lack of Expertise:</b> 55% of businesses find it challenging to hire and retain skilled cybersecurity professionals.`
                 ]
-            }
+            },
+            {
+                type: `text`,
+                value: `These issues can lead to significant financial losses, operational disruptions, and damage to reputation. To overcome these challenges, robust and proactive cybersecurity measures are essential.`
+            },
         ],
         tags: [
-            `Modular Home Manufacturing`,
-            `Custom Furniture Retailers`,
-            `Automotive Industry`,
-            'Personalized Jewelry',
-            'Bicycle Customization',
-            'Kitchen Cabinet Design',
-            'Fashion and Apparel',
-            'Footwear Customization',
-            'Computer and Electronics',
-            'Travel and Vacation Packages'
+            `Healthcare`,
+            `Finance`,
+            `Government`,
+            'Critical Infrastructure',
+            'Retail',
+            'Education',
+            'Manufacturing',
+            'Energy',
+            'Law Firms and Legal Services',
+            'Professional Services'
         ],
         logo: `logo.svg`,
         logoName: `Office`,
@@ -505,11 +513,16 @@ const projectsData = [
                 name: `Bussiness need:`,
                 content: [
                     {
+                        type: `text`,
+                        value: `Businesses need comprehensive cybersecurity services to:`
+                    },
+                    {
                         type: `textList`,
                         value: [
-                            `In today's digital world, businesses face the challenge of providing a personalized shopping experience.`,
-                            `Customers want to tailor products to their preferences, but without the right tools, this can be difficult.`,
-                            `Modular home builders, for example, need a way for buyers to design their dream homes easily and confidently.`
+                            `Protect sensitive data from breaches and cyber attacks.`,
+                            `Ensure compliance with industry regulations and standards.`,
+                            `Minimize operational disruptions caused by security incidents.`,
+                            `Gain access to expert knowledge and resources.`
                         ]
                     }
                 ]
@@ -519,14 +532,17 @@ const projectsData = [
                 content: [
                     {
                         type: `text`,
-                        value: `That's where our configurator comes in. It allows customers to customize products in real-time, enhancing their shopping experience and increasing their likelihood of purchase. Key features include:`
+                        value: `Our cybersecurity services address these challenges by providing:`
                     },
                     {
                         type: 'list',
                         list: [
-                            `<b>Save and Share:</b> Customers can save their designs and share them with others.`,
-                            `<b>1.5 Second Load Time:</b> Quick load times ensure a smooth experience.`,
-                            `<b>100% Mobile Ready:</b> Perfect functionality on any device.`
+                            `<b>Threat Detection and Response:</b> Implement advanced threat detection systems that identify and respond to threats in real-time, reducing the risk of breaches by 80%.`,
+                            `<b>Data Encryption:</b> Secure sensitive data with strong encryption methods, protecting it from unauthorized access and reducing data breach risks by 70%.`,
+                            `<b>Security Audits:</b> Conduct comprehensive security audits to identify vulnerabilities and implement corrective actions, improving overall security posture by 60%.`,
+                            `<b>Incident Response Planning:</b> Develop and implement incident response plans to minimize downtime and losses during a security incident, reducing recovery time by 50%.`,
+                            `<b>Employee Training:</b> Provide cybersecurity awareness training for employees to recognize and prevent potential threats, decreasing the likelihood of successful phishing attacks by 40%.`,
+                            `<b>24/7 Monitoring:</b> Offer continuous monitoring of your network and systems to detect and mitigate threats as they arise, enhancing security coverage by 90%.`
                         ]
                     }
                 ]
@@ -536,15 +552,16 @@ const projectsData = [
                 content: [
                     {
                         type: `text`,
-                        value: `Adding our configurator to your website can lead to impressive results:`
+                        value: `Implementing our cybersecurity services can lead to:`
                     },
                     {
                         type: 'list',
                         list: [
-                            `<b>30% More Sales:</b> Custom options mean more customers hit 'buy.'`,
-                            `<b>40% Better Experience:</b> Interactive and engaging, keeping customers interested.`,
-                            `<b>20% Fewer Returns:</b> When they see it first, they're happier with the result.`,
-                            `<b>25% Faster Ops:</b> Automation saves time and reduces errors.`
+                            `<b>80% Reduction in Data Breaches:</b> Strong protective measures significantly lower the risk of data breaches.`,
+                            `<b>70% Lower Risk of Cyber Attacks:</b> Proactive threat detection and response systems mitigate potential attacks.`,
+                            `<b>90% Improved Compliance:</b> Stay ahead of regulatory requirements and avoid costly fines.`,
+                            `<b>50% Faster Incident Recovery:</b> Efficient incident response plans minimize downtime and losses.`,
+                            `<b>40% Decrease in Phishing Success:</b> Employee training reduces the likelihood of successful phishing attacks.`
                         ]
                     }
                 ]
@@ -556,21 +573,17 @@ const projectsData = [
                 content: [
                     {
                         type: 'text',
-                        value: `Picture this: a modular home builder uses our configurator. Buyers can:`
+                        value: `A mid-sized financial services firm was facing frequent cyber attacks and struggling with regulatory compliance. By implementing our comprehensive cybersecurity services, they saw a:`
                     },
                     {
                         type: 'list',
                         list: [
-                            `Customize layouts, materials, and finishes.`,
-                            `See real-time updates and prices.`,
-                            `Save designs and come back later.`,
-                            `Share their vision with friends and family.`
+                            `<b>75% Reduction in Cyber Attacks</b> within six months.`,
+                            `<b>85% Improvement in Compliance</b> with industry regulations, avoiding potential fines.`,
+                            `<b>50% Faster Recovery Time</b> during incidents due to effective response planning.`,
+                            `<b>40% Decrease in Phishing Attack Success</b> through targeted employee training.`
                         ]
-                    },
-                    {
-                        type: 'text',
-                        value: `This leads to a more engaged customer base, <b>30% higher</b> conversion rates, and happier customers.`
-                    },
+                    }
                 ],
                 id: 0
             },
@@ -578,13 +591,16 @@ const projectsData = [
                 name: 'Key Team Members',
                 content: [
                     {
+                        type: 'text',
+                        value: `Our cybersecurity team includes:`
+                    },
+                    {
                         type: 'list',
                         list: [
-                            `<b>Project Manager:</b> Oversee the entire development process, ensuring timelines are met and provide daily updates.`,
-                            `<b>Software Developer:</b> Front-End together with Back-End developer.`,
-                            `<b>UI/UX Designer:</b> Ensure the configurator is intuitive and visually appealing, enhancing the overall user experience.`,
-                            `<b>Quality Assurance Specialist:</b> Rigorously test the configurator to identify and fix any bugs or issues before launch.`,
-                            `<b>Customer Support:</b> Provide ongoing assistance to clients, helping them get the most out of their configurator.`,
+                            `<b>Alice Thompson, Cybersecurity Analyst:</b> Expert in threat detection and incident response with over 10 years of experience.`,
+                            `<b>Mark Davis, Compliance Specialist:</b> Specializes in regulatory compliance, ensuring businesses meet industry standards.`,
+                            `<b>Jessica Lee, Security Auditor:</b> Conducts thorough security audits to identify and mitigate vulnerabilities.`,
+                            `<b>Tom Harris, Training Coordinator:</b> Focuses on developing and delivering effective cybersecurity awareness training programs.`
                         ]
                     }
                 ],
@@ -595,29 +611,24 @@ const projectsData = [
                 content: [
                     {
                         type: 'q_a',
-                        question: '<b>Q: How can a configurator increase my sales?</b>',
-                        answer: '<b>A:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases.'
+                        question: '<b>Q: How do your services help reduce the risk of data breaches?</b>',
+                        answer: '<b>A:</b> We implement advanced threat detection, data encryption, and continuous monitoring to protect sensitive data and detect threats in real-time.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q: Will the configurator work on mobile devices?</b>',
-                        answer: '<b>A:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability.'
+                        question: '<b>Q: Can you help us stay compliant with industry regulations?</b>',
+                        answer: '<b>A:</b> Yes, our compliance management services ensure your business meets regulatory requirements, reducing the risk of fines and reputational damage.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q: How does the configurator help reduce returns?</b>',
-                        answer: '<b>A:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery.'
+                        question: '<b>Q: What is the benefit of having an incident response plan?</b>',
+                        answer: '<b>A:</b> An incident response plan helps minimize downtime and losses during a security incident, enabling faster recovery and reducing operational disruptions.'
                     },
                     {
                         type: 'q_a',
-                        question: '<b>Q: What kind of products can benefit from a configurator?</b>',
-                        answer: '<b>A:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator.'
-                    },
-                    {
-                        type: 'q_a',
-                        question: '<b>Q: How will the configurator integrate with my existing website?</b>',
-                        answer: '<b>A:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem.'
-                    },
+                        question: '<b>Q: How effective is employee training in preventing cyber attacks?</b>',
+                        answer: '<b>A:</b> Our training programs educate employees on recognizing and preventing potential threats, significantly reducing the likelihood of successful phishing attacks and other social engineering tactics.'
+                    }
                 ],
                 id: 2
             }
