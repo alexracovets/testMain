@@ -15,7 +15,7 @@ export default function Fliper() {
     useEffect(() => {
         setInterval(() => {
             setActiveSentences((prev) => (prev + 1) % sentences.length)
-        }, 1000000);
+        }, 10000);
     }, []);
 
     return (
