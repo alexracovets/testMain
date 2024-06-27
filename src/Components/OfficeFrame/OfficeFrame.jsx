@@ -18,7 +18,13 @@ export default function OfficeFrame() {
                     exit={{ opacity: 0 }}
                     onClick={() => setIsActiveOffice(false)}
                 >
-                    <iframe className={s.frame} src={officeLink} />
+                    <div className={s.frame_wrapper}>
+                        <iframe className={s.frame} src={officeLink} />
+                        <div className={s.cross}>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </motion.div> :
                 null
             }
