@@ -29,7 +29,7 @@
           .char {
             color: transparent;
             -webkit-backface-visibility: visible;
-                    backface-visibility: visible;
+            backface-visibility: visible;
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
             opacity: 0.5;
           }
@@ -80,19 +80,22 @@
           font-family: $font-Bebas;
           font-weight: 400;
           text-transform: uppercase;
-          padding: 0em 0em;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
           text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
-          font-size: 6.5rem;
-          transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(1.5) scaleX(1.5);
-          -webkit-transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(14rem) scaleY(1.5) scaleX(1.5);
+          font-size: 6rem;
+          transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(18rem) scaleY(1.5) scaleX(1.5);
+          -webkit-transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(18rem) scaleY(1.5) scaleX(1.5);
+
+          &:first-of-type {
+            opacity: 0;
+          }
 
           @media (max-width: $width-mobile) {
             font-size: 3rem;
-            transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(1.5) scaleX(1.5);
-            -webkit-transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(7.2rem) scaleY(1.5) scaleX(1.5);
+            transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(9rem) scaleY(1.5) scaleX(1.5);
+            -webkit-transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(9rem) scaleY(1.5) scaleX(1.5);
           }
         }
       }

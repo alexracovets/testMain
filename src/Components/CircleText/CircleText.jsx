@@ -31,7 +31,7 @@ export default function CircleText() {
             circle.appendChild(charElement);
         }
     }
-
+    const text = '.SOFTWARE DEVELOPMENT STUDIO'
     useEffect(() => {
         if (isInitial) {
             initial(circleRef1.current)
@@ -47,28 +47,28 @@ export default function CircleText() {
                 <div className={s.wrapper__circle}>
                     <div className={s.inner__wrapper}>
                         <div ref={circleRef1} className={s.circle} data-splitting>
-                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                            {text}
                         </div>
                     </div>
                 </div>
                 <div className={s.wrapper__circle}>
                     <div className={s.inner__wrapper}>
-                        <div ref={circleRef2} className={s.circle}  data-splitting>
-                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        <div ref={circleRef2} className={s.circle} data-splitting>
+                            {text}
                         </div>
                     </div>
                 </div>
                 <div className={s.wrapper__circle + ' ' + s.reverse}>
                     <div className={s.inner__wrapper}>
-                        <div ref={circleRef3} className={s.circle}  data-splitting>
-                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        <div ref={circleRef3} className={s.circle} data-splitting>
+                            {text}
                         </div>
                     </div>
                 </div>
                 <div className={s.wrapper__circle + ' ' + s.reverse}>
                     <div className={s.inner__wrapper}>
-                        <div ref={circleRef4} className={s.circle}  data-splitting>
-                            DIGITAL&nbsp;&nbsp;PRODUCTION&nbsp;&nbsp;STUDIO&nbsp;&nbsp;
+                        <div ref={circleRef4} className={s.circle} data-splitting>
+                            {text}
                         </div>
                     </div>
                 </div>
