@@ -1,5 +1,5 @@
 import ai from '/image/icons/developments/ai.svg';
-import xr from '/image/icons/developments/xr.svg';
+import xr from '/image/icons/developments/cyber.svg';
 import dev from '/image/icons/developments/dev.svg';
 import digital from '/image/icons/developments/digital.svg';
 import Marquee from "react-fast-marquee";
