@@ -31,13 +31,17 @@
 
             h2 {
                 font-size: 3.625rem;
-                line-height: 4.16875rem;
+                line-height: 1.1;
                 letter-spacing: 0.125rem;
                 font-weight: 800;
                 color: $color-primary;
                 font-family: $font-DM_Sans;
                 text-transform: uppercase;
                 margin-bottom: 1.75rem;
+
+                @media (max-width:$width-tableBig) {
+                    font-size: 3rem;
+                }
             }
 
             &.main_info {
@@ -89,8 +93,8 @@
                         }
 
                         @media (max-width:$width-tableBig) {
-                            width: 19.9375rem;
-                            min-height: 68dvh;
+                            width: 30rem;
+                            min-height: 61dvh;
                         }
                     }
                 }
@@ -102,6 +106,10 @@
                     flex-direction: column;
                     margin-top: 2rem;
 
+                    @media (max-width:$width-shortDesktop) {
+                        margin-top: 1rem;
+                    }
+
                     .customer {
                         font-size: 1.5rem;
                         line-height: 2.1rem;
@@ -109,6 +117,11 @@
                         color: $color-primary;
                         font-family: $font-JB_Mono;
                         margin-bottom: 0.875rem;
+
+                        @media (max-width:$width-shortDesktop) {
+                            font-size: 1.2rem;
+                            margin-bottom: 0.5rem;
+                        }
                     }
 
                     .logo {
@@ -128,6 +141,10 @@
                             font-weight: 700;
                             color: $color-white;
                             font-family: $font-DM_Sans;
+
+                            @media (max-width:$width-shortDesktop) {
+                                font-size: 1.2rem;
+                            }
                         }
                     }
                 }
@@ -162,11 +179,27 @@
 
                         p {
                             margin-bottom: 1rem;
+
+                            @media (max-width:$width-shortDesktop) {
+                                margin-bottom: 0.75rem;
+                            }
+
+                            @media (max-width:$width-tableBig) {
+                                margin-bottom: 0.5rem;
+                            }
                         }
 
                         ul li {
                             margin-bottom: 0.5rem;
                             padding-left: 1rem;
+
+                            @media (max-width:$width-shortDesktop) {
+                                padding-left: 1.5rem;
+                            }
+
+                            @media (max-width:$width-tableBig) {
+                                padding-left: 1rem;
+                            }
 
                             &::before {
                                 content: '';
@@ -185,11 +218,15 @@
                             width: 100%;
                             font-weight: 400;
                             font-size: 2rem;
-                            line-height: 2.8rem;
+                            line-height: 1.2;
                             color: $color-primary;
                             font-family: $font-JB_Mono;
                             padding-bottom: 0.75rem;
                             border-bottom: 1px solid $color-primary;
+
+                            @media (max-width:$width-shortDesktop) {
+                                font-size: 1.5rem;
+                            }
                         }
 
                         .content {
@@ -209,6 +246,16 @@
         color: $color-white;
         font-family: $font-JB_Mono;
         margin-bottom: 1rem;
+
+        @media (max-width:$width-shortDesktop) {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        @media (max-width:$width-tableBig) {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
     }
 
     ul {
@@ -223,6 +270,14 @@
             justify-content: flex-start;
             align-items: center;
             margin-bottom: 0.5rem;
+
+            @media (max-width:$width-shortDesktop) {
+                padding-left: 1.5rem;
+            }
+
+            @media (max-width:$width-tableBig) {
+                padding-left: 1rem;
+            }
 
             &::before {
                 content: '';
