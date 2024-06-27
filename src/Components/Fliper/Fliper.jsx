@@ -24,8 +24,9 @@ export default function Fliper() {
             characterSet={ALPHA}
             step={200}
             value={sentences[activeSentences]}
-            background={'#363636'}
-            borderWidth={'2px'}
+            background='#363636'
+            borderColor='transparent'
+            borderWidth='2px'
         />
     )
 } 

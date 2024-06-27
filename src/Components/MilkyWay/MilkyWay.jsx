@@ -23,7 +23,6 @@ export default function MilkyWay() {
     useFrame(({ clock }) => {
         if (milkyWayRef && milkyWayRef.current) milkyWayRef.current.rotation.z = clock.getElapsedTime() * 0.02;
     })
-
     return (
         <>
             {
@@ -49,9 +48,11 @@ export default function MilkyWay() {
                         depthWrite={false}
                         blending={AdditiveBlending}
                         vertexColors={true}
+                        transparent
+                    opacity={0.7}
                     />
                 </points>
             }
         </>
     )
-}import { Html } from "@react-three/drei";
+} 
