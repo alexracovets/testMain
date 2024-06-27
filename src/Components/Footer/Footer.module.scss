@@ -168,8 +168,7 @@ footer {
                 align-items: center;
 
                 @media (max-width:$width-mobile) {
-                    flex-direction: column;
-                    justify-content: center;
+                    flex-direction: column; 
                 }
 
                 .btn {
