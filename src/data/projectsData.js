@@ -326,12 +326,15 @@ const projectsData = [
         technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
         description: [
             {
-                type: `textList`,
-                value: [
-                    `If your product has different options that customers can select.`,
-                    `It&#8217;s perfect for businesses like <span>modular home manufacturers, custom furniture retailers, automotive companies</span>, and more.`,
+                type: `text`,
+                value: `<b>If your product has different options that customers can select.</b>`
+            },
+            {
+                type: 'list',
+                list: [
+                    `It’s perfect for businesses like <b>modular home manufacturers</b>, <b>custom furniture retailers</b>, <b>automotive companies</b>, and more.`,
                     `Imagine letting your customers design their own modular homes, choose custom furniture options, configure their dream car, or personalize jewelry.`,
-                    `These interactive tools <span>boost engagement by 40%, increase sales by 30%</span>, and <span>reduce returns by 20%</span>.`
+                    `These interactive tools <b>boost engagement by 40%</b>, <b>increase sales by 30%</b>, and <b>reduce returns by 20%</b>.`
                 ]
             }
         ],

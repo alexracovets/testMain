@@ -6,11 +6,15 @@ import ContactsFormInput from './ContactsFormInput/ContactsFormInput';
 import ContactsFormTextArea from './ContactsFormTextArea/ContactsFormTextArea';
 import useModalForm from '../../../store/useModalForm';
 
+import useToast from "../../../store/useToast";
+
 import s from './ContactsForm.module.scss';
 export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const [isBtnActive, setIsBtnActive] = useState(false);
+    const toastPlay = useToast(state => state.setIsPlay);
+
     const [userForm, setUserForm] = useState({
         full_name: {
             value: '',
@@ -25,10 +29,10 @@ export default function ContactsForm() {
             isValid: false
         },
     });
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
+
         const response = await fetch('/send-mail.php', {
             method: 'POST',
             headers: {
@@ -41,15 +45,12 @@ export default function ContactsForm() {
                 formData: "Contact Form"
             }),
         });
-    
-        const responseData = await response.text();
-        console.log(responseData);
-    
+
         if (response.ok) {
-            alert('Email sent successfully!');
+            toastPlay(true, "Email sent successfully!")
             setIsActiveForm(false);
         } else {
-            alert('Failed to send email.');
+            toastPlay(false, "Failed to send email.")
         }
     };
 
