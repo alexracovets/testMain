@@ -1,3 +1,5 @@
+
+
 const projectsData = [
     {
         pageName: `web_converting`,
@@ -7,16 +9,11 @@ const projectsData = [
         description: [
             {
                 type: `text`,
-                value: `Let’s build your 2024 website and avoid some common money loosing issues:`
+                value: `Increase your <b>lead generation by 50%</b> with our high-converting websites—experience <b>30% faster load times</b> and a <b>40% drop in bounce rates</b>.`
             },
             {
-                type: 'list',
-                list: [
-                    `<b>Low Conversion Rates:</b> 70% of websites fail to convert visitors into leads or customers effectively.`,
-                    `<b>High Bounce Rates:</b> 50% of visitors leave websites within the first 15 seconds due to poor user experience or irrelevant content.`,
-                    `<b>Ineffective Design:</b> 60% of businesses struggle with outdated or non-responsive designs, leading to lost opportunities.`,
-                    `<b>Slow Load Times:</b> 40% of visitors abandon a website that takes more than 3 seconds to load.`,
-                ]
+                type: `html`,
+                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
             }
         ],
         tags: [
@@ -163,16 +160,11 @@ const projectsData = [
         description: [
             {
                 type: `text`,
-                value: `Our B2B clients often face several pain points in their digital marketing efforts:`
+                value: `<b>Boost your B2B leads by 60%</b> with our digital marketing services—achieve <b>45% higher engagement</b> and a <b>35% increase in conversion rates</b>!`
             },
             {
-                type: 'list',
-                list: [
-                    `<b>Low Website Traffic:</b> 60% of B2B websites struggle to attract visitors.`,
-                    `<b>Poor Lead Quality:</b> 50% of leads are often not qualified, leading to wasted efforts and resources.`,
-                    `<b>Ineffective Content:</b> 70% of businesses find it challenging to create engaging content that resonates with their audience.`,
-                    `<b>Difficulty Measuring Success:</b> 40% of companies struggle to accurately measure the ROI of their marketing campaigns.`
-                ]
+                type: `html`,
+                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
             }
         ],
         tags: [
@@ -327,15 +319,11 @@ const projectsData = [
         description: [
             {
                 type: `text`,
-                value: `<b>If your product has different options that customers can select.</b>`
+                value: `Boost your modular home <b>sales by 40%</b> with our configurator—let customers customize and save their <b>dream home in just 5 minutes</b>!`
             },
             {
-                type: 'list',
-                list: [
-                    `It’s perfect for businesses like <b>modular home manufacturers</b>, <b>custom furniture retailers</b>, <b>automotive companies</b>, and more.`,
-                    `Imagine letting your customers design their own modular homes, choose custom furniture options, configure their dream car, or personalize jewelry.`,
-                    `These interactive tools <b>boost engagement by 40%</b>, <b>increase sales by 30%</b>, and <b>reduce returns by 20%</b>.`
-                ]
+                type: `html`,
+                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
             }
         ],
         tags: [
@@ -484,21 +472,12 @@ const projectsData = [
         description: [
             {
                 type: `text`,
-                value: `<b>Businesses often encounter several critical pain points regarding cybersecurity:</b>`
+                value: `<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance</b>!`
             },
             {
-                type: 'list',
-                list: [
-                    `<b>Data Breaches:</b> 60% of small businesses close within six months of experiencing a data breach.`,
-                    `<b>Cyber Attacks:</b> 43% of cyber attacks target small businesses, leaving them vulnerable and often unprepared.`,
-                    `<b>Compliance Issues:</b> 48% of businesses struggle to keep up with regulatory requirements, risking heavy fines and reputational damage.`,
-                    `<b>Lack of Expertise:</b> 55% of businesses find it challenging to hire and retain skilled cybersecurity professionals.`
-                ]
-            },
-            {
-                type: `text`,
-                value: `These issues can lead to significant financial losses, operational disruptions, and damage to reputation. To overcome these challenges, robust and proactive cybersecurity measures are essential.`
-            },
+                type: `html`,
+                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
+            }
         ],
         tags: [
             `Healthcare`,

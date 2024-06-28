@@ -319,8 +319,10 @@
         }
     }
 
-    b {
+    b,
+    a {
         color: $color-primary;
+        font-weight: bold;
     }
 
     .q_a p {
