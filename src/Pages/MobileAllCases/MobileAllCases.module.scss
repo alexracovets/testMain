@@ -100,9 +100,16 @@
                             }
 
                             span,
-                            b {
+                            b,
+                            a {
                                 color: $color-primary;
                             }
+                        }
+
+                        a {
+                            font-weight: bold;
+                            display: inline-block;
+                            margin: 1rem 0;
                         }
 
                         ul {

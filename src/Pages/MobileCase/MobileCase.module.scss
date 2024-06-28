@@ -94,7 +94,7 @@
                     justify-content: flex-start;
                     align-items: flex-start;
                     flex-direction: column;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
 
                     .customer {
                         font-size: 2rem;
@@ -304,8 +304,15 @@
             }
         }
 
-        b {
+        b,
+        a {
             color: $color-primary;
+        }
+
+        a {
+            font-weight: bold;
+            display: inline-block;
+            padding: 2rem 0;
         }
 
         .q_a p {
