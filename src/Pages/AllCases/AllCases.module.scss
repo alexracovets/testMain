@@ -186,12 +186,12 @@
                     box-shadow: 0 0 1rem 0 rgb(254 197 50 / 10%);
                     border-radius: 1rem;
                     background-color: $btn-bg;
-                    transition: all ease-in-out 300ms;
 
                     video {
                         width: 100%;
                         height: auto;
                         opacity: 0;
+                        transition: all ease-in-out 300ms;
 
                         &.active {
                             opacity: 1;
