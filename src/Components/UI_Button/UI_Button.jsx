@@ -7,7 +7,7 @@ import hover1 from '/sounds/hover1.wav';
 import useUserInteracted from '../../store/useUserInteracted';
 
 import s from './UI_Button.module.scss';
-import playSound from '../../utils/playSound';
+// import playSound from '../../utils/playSound';
 export default function UI_Button({ text, arrow, submit, small, disabled }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const setUserInteracted = useUserInteracted((state) => state.setUserInteracted);
@@ -34,6 +34,15 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
         };
     }, []);
 
+    const handleMouseEnter = () => {
+        if (userInteracted) {
+            hoverSound.currentTime = 0; // Запускаємо звук з початку
+            hoverSound.play().catch(error => {
+                console.error('Error during playback:', error);
+            });
+        }
+    };
+
     return (
         <button
             className={
@@ -42,7 +51,8 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
                     (disabled ? s.button + ' ' + s.disabled : s.button)}
             type={submit ? 'submit' : 'button'}
             disabled={disabled}
-            onMouseEnter={() => { userInteracted && playSound(hoverSound) }}
+            onMouseEnter={handleMouseEnter}
+            // onMouseEnter={() => { userInteracted && playSound(hoverSound) }}
         >
             <span className={s.text}>
                 {text}
