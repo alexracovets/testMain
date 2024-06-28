@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import s from '../Services.module.scss';
+import TextField from '../../TextField/TextField';
 
 export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
     const [isExpanded, setExpanded] = useState(false);
@@ -34,40 +35,7 @@ export default function ServicesItem({ index, title, colapse, currentService, se
             </div>
             <div {...getCollapseProps()} className={s.colapse}>
                 <div className={s.colapse__wrapper}>
-                    {colapse.map((item, idx) => {
-                        if (item.type === 'bold') {
-                            return (
-                                <b key={idx}>{item.value}</b>
-                            )
-                        } else if (item.type === 'text') {
-                            return (
-                                <p key={idx}>{item.value}</p>
-                            )
-                        } else if (item.type === 'list') {
-                            return (
-                                <ul key={idx}>
-                                    {item.value.map((li, index) => {
-                                        return (
-                                            <li key={index}>
-                                                <p> {li.map((text, id) => {
-                                                    if (text.type === 'bold') {
-                                                        return (
-                                                            <b key={id}>{text.value}</b>
-                                                        )
-                                                    } else if (text.type === 'text') {
-                                                        return (
-                                                            <span key={id}>{text.value}</span>
-                                                        )
-                                                    }
-                                                })}
-                                                </p>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            )
-                        }
-                    })}
+                    <TextField texts={colapse} />
                 </div>
             </div>
         </li>

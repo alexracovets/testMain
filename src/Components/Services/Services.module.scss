@@ -137,14 +137,7 @@
                         margin-bottom: 1rem;
 
                         b {
-                            display: block;
-                            font-size: 1rem;
-                            width: 100%;
-
-                            @media (max-width:$width-mobile) {
-                                font-size: 0.75rem;
-                                line-height: 1rem;
-                            }
+                            color: $color-primary;
                         }
 
                         p {
@@ -192,20 +185,6 @@
                                 &:hover {
                                     &::before {
                                         background-color: $color-primary;
-                                    }
-                                }
-
-                                b {
-                                    color: $color-white;
-                                    font-size: 1rem;
-                                    padding-right: 0.5rem;
-                                    width: auto;
-                                    display: inline;
-                                    line-height: 1.1;
-
-                                    @media (max-width:$width-mobile) {
-                                        font-size: 0.75rem;
-                                        line-height: 1rem;
                                     }
                                 }
 
