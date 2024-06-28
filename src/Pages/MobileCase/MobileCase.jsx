@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
-import KeysMobile from "../../Components/KeysMobile/KeysMobile"; 
+import KeysMobile from "../../Components/KeysMobile/KeysMobile";
 import TextField from "../../Components/TextField/TextField";
 import Footer from "../../Components/Footer/Footer";
 import projectsData from "../../data/projectsData";
@@ -14,9 +14,11 @@ import s from './MobileCase.module.scss';
 export default function MobileCase() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
+    const [isVideoLoad, setIsVideoLoad] = useState(false);
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const videoRef = useRef();
 
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);
@@ -28,6 +30,10 @@ export default function MobileCase() {
             getScrollTo(scrollHeight)
         }
     }, [scrollSection, getScrollTo, scrollHeight])
+
+    useEffect(() => {
+        videoRef.current && videoRef.current.play()
+    }, [videoRef])
 
     return (
         <>
@@ -57,7 +63,20 @@ export default function MobileCase() {
                                 </div>
                             </div>
                             <div className={s.photo}>
-                                <div className={s.image_wrapper} style={{ backgroundImage: 'url(/image/projects/main/main.jpg)' }}></div>
+                                <div className={s.photo}>
+                                    <div className={s.video__wrapper}>
+                                        <video
+                                            ref={videoRef}
+                                            src={`/video/cases/${content.video}`}
+                                            loop
+                                            autoPlay={true}
+                                            muted
+                                            type="video/mp4"
+                                            className={isVideoLoad ? s.active : null}
+                                            onCanPlay={() => setIsVideoLoad(true)}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </section>
                         <section className={s.about_info}>

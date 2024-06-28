@@ -1,5 +1,5 @@
 import { Scrollbar } from "react-scrollbars-custom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,11 +11,17 @@ import TextField from "../../Components/TextField/TextField";
 
 export default function AllCases() {
     const [projects, setProjects] = useState([]);
+    const [isVideoLoad, setIsVideoLoad] = useState(false);
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
+    const videoRef = useRef();
 
     useEffect(() => {
         setProjects(projectsData);
     }, []);
+
+    useEffect(() => {
+        videoRef.current && videoRef.current.play()
+    }, [videoRef])
 
     return (
         <motion.div className={s.wrapper}
@@ -45,9 +51,17 @@ export default function AllCases() {
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                         </div>
                                     </div>
-                                    <div className={s.logo}>
-                                        <img src={`/image/projects/logo/${item.logo}`} />
-                                        <h4>{item.logoName}</h4>
+                                    <div className={s.video}>
+                                        <video
+                                            ref={videoRef}
+                                            src={`/video/cases/${item.video}`}
+                                            loop
+                                            autoPlay={true}
+                                            muted
+                                            type="video/mp4"
+                                            className={isVideoLoad ? s.active : null}
+                                            onCanPlay={() => setIsVideoLoad(true)}
+                                        />
                                     </div>
                                 </NavLink>
                             )

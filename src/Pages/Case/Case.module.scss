@@ -80,7 +80,6 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        overflow: hidden;
                         position: relative;
                         border-radius: 1.5rem;
                         background-size: cover;
@@ -95,6 +94,29 @@
                         @media (max-width:$width-tableBig) {
                             width: 30rem;
                             min-height: 61dvh;
+                        }
+
+                        .video__wrapper {
+                            background-color: $btn-bg;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 2rem;
+                            box-shadow: 0 0 1rem 0.1rem rgb(254 197 50 / 40%);
+                            overflow: hidden;
+                            background-color: $btn-bg;
+                        }
+
+                        video {
+                            width: 100%;
+                            height: auto;
+                            opacity: 0;
+                            transition: all ease-in-out 300ms;
+
+                            &.active {
+                                opacity: 1;
+                            }
                         }
                     }
                 }

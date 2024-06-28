@@ -31,6 +31,7 @@ const projectsData = [
             `Technology and SaaS (Software as a Service)`,
             `Manufacturing and Industrial`
         ],
+        video: `website.mp4`,
         logo: `logo.svg`,
         logoName: `Web Sites`,
         bussines_block: [
@@ -186,6 +187,7 @@ const projectsData = [
             'Biotechnology and Pharmaceuticals',
             'Automotive Industry'
         ],
+        video: `digital.mp4`,
         logo: `logo.svg`,
         logoName: `Marketing`,
         bussines_block: [
@@ -345,6 +347,7 @@ const projectsData = [
             'Computer and Electronics',
             'Travel and Vacation Packages'
         ],
+        video: `configurator.mp4`,
         logo: `logo.svg`,
         logoName: `Configurator`,
         bussines_block: [
@@ -506,6 +509,7 @@ const projectsData = [
             'Law Firms and Legal Services',
             'Professional Services'
         ],
+        video: `tour.mp4`,
         logo: `logo.svg`,
         logoName: `Office`,
         bussines_block: [

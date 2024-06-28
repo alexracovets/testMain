@@ -60,27 +60,31 @@
                 }
 
                 .photo {
-                    height: 100%;
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    .image_wrapper {
+                    .video__wrapper {
                         width: 100%;
-                        min-height: 28.8rem;
-                        height: 100%;
+                        height: auto;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         overflow: hidden;
-                        position: relative;
                         border-radius: 1.5rem;
-                        background-size: cover;
-                        background-position: center;
+                        background-color: $btn-bg;
+                        box-shadow: 0 0 1rem 0.1rem rgb(254 197 50 / 30%);
 
-                        @media (max-width:$width-mobile) {
-                            min-height: 13rem;
+                        video {
+                            width: 100%;
+                            height: auto;
+                            opacity: 0;
+                            transition: all ease-in-out 300ms;
+
+                            &.active {
+                                opacity: 1;
+                            }
                         }
                     }
                 }

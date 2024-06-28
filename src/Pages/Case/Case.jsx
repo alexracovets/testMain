@@ -1,6 +1,6 @@
 import { Scrollbar } from "react-scrollbars-custom";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Keys from "../../Components/Keys/Keys";
@@ -12,11 +12,17 @@ import s from './Case.module.scss';
 export default function Case() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
-
+    const [isVideoLoad, setIsVideoLoad] = useState(false);
+    const videoRef = useRef();
+    
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);
         setContent(project)
     }, [id, setContent])
+
+    useEffect(() => {
+        videoRef.current && videoRef.current.play()
+    }, [videoRef])
 
     return (
         <>
@@ -47,7 +53,20 @@ export default function Case() {
                                     </div>
                                 </div>
                                 <div className={s.photo}>
-                                    <div className={s.image_wrapper} style={{ backgroundImage: 'url(/image/projects/main/main.jpg)' }}></div>
+                                    <div className={s.image_wrapper}>
+                                        <div className={s.video__wrapper}>
+                                            <video
+                                                ref={videoRef}
+                                                src={`/video/cases/${content.video}`}
+                                                loop
+                                                autoPlay={true}
+                                                muted
+                                                type="video/mp4"
+                                                className={isVideoLoad ? s.active : null}
+                                                onCanPlay={() => setIsVideoLoad(true)}
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
                             <section className={s.about_info}>
