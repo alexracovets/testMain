@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import hover from '/sounds/hover1.wav';
-import playSound from '../../../utils/playSound';
+// import playSound from '../../../utils/playSound';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
 import useUserInteracted from '../../../store/useUserInteracted';
