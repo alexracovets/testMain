@@ -55,11 +55,11 @@ export default function ContactsForm() {
         setIsBtnActive(allValid);
     }, [userForm]);
 
-    useEffect(() => {
-        if (isChoice) {
-            setTimeout(() => setIsChoice(false), 3000)
-        }
-    }, [isChoice])
+    // useEffect(() => {
+    //     if (isChoice) {
+    //         setTimeout(() => setIsChoice(false), 3000)
+    //     }
+    // }, [isChoice])
 
     return (
         <>

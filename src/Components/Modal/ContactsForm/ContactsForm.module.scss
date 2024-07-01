@@ -360,12 +360,14 @@
         padding: 1.875rem 3.125rem;
         box-shadow: 0 0 4rem inset rgb(85 85 85 / 40%);
         border: 2px solid $color-neutral-20;
-        color: $color-white;
+        color: $color-primary;
         font-family: $font-JB_Mono;
         text-align: center;
         text-transform: uppercase;
         font-size: 2rem;
         background-color: $color-neutral-100;
+        font-weight: bold;
+        border-radius: 0.5rem;
 
         @media (max-width:$width-tableBig) {
             width: 45rem;
