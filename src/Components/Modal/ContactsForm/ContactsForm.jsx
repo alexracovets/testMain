@@ -11,7 +11,7 @@ export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const [isBtnActive, setIsBtnActive] = useState(false);
-    const [isChoice, setIsChoice] = useState(true);
+    const [isChoice, setIsChoice] = useState(false);
 
     const [userForm, setUserForm] = useState({
         full_name: {
@@ -55,11 +55,11 @@ export default function ContactsForm() {
         setIsBtnActive(allValid);
     }, [userForm]);
 
-    // useEffect(() => {
-    //     if (isChoice) {
-    //         setTimeout(() => setIsChoice(false), 3000)
-    //     }
-    // }, [isChoice])
+    useEffect(() => {
+        if (isChoice) {
+            setTimeout(() => setIsChoice(false), 3000)
+        }
+    }, [isChoice])
 
     return (
         <>
