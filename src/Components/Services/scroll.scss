@@ -36,12 +36,12 @@
     }
 
     &::before {
-        top: 0;
-        background: linear-gradient(180deg, $btn-bg 30%, $btn-bg 70%, #00000000 100%);
+        top: -1.5rem;
+        background: linear-gradient(180deg, #00000000 0%, $btn-bg 30%, $btn-bg 70%, #00000000 100%);
     }
 
     &::after {
-        bottom: 0;
-        background: linear-gradient(0deg, $btn-bg 30%, $btn-bg 70%, #00000000 100%);
+        bottom: -1.5rem;
+        background: linear-gradient(180deg, #00000000 0%, $btn-bg 30%, $btn-bg 70%, #00000000 100%);
     }
 }
