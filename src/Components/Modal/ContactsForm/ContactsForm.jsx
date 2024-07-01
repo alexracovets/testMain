@@ -6,14 +6,12 @@ import ContactsFormInput from './ContactsFormInput/ContactsFormInput';
 import ContactsFormTextArea from './ContactsFormTextArea/ContactsFormTextArea';
 import useModalForm from '../../../store/useModalForm';
 
-import useToast from "../../../store/useToast";
-
 import s from './ContactsForm.module.scss';
 export default function ContactsForm() {
     const isActive = useModalForm((state) => state.isActive);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const [isBtnActive, setIsBtnActive] = useState(false);
-    const toastPlay = useToast(state => state.setIsPlay);
+    const [isChoice, setIsChoice] = useState(true);
 
     const [userForm, setUserForm] = useState({
         full_name: {
@@ -47,10 +45,8 @@ export default function ContactsForm() {
         });
 
         if (response.ok) {
-            toastPlay(true, "Email sent successfully!")
+            setIsChoice(true);
             setIsActiveForm(false);
-        } else {
-            toastPlay(false, "Failed to send email.")
         }
     };
 
@@ -58,6 +54,12 @@ export default function ContactsForm() {
         const allValid = Object.values(userForm).every(field => field.isValid && field.value !== '');
         setIsBtnActive(allValid);
     }, [userForm]);
+
+    useEffect(() => {
+        if (isChoice) {
+            setTimeout(() => setIsChoice(false), 3000)
+        }
+    }, [isChoice])
 
     return (
         <>
@@ -115,17 +117,21 @@ export default function ContactsForm() {
                     null
                 }
             </AnimatePresence >
-            {/* <AnimatePresence>
-                <motion.div className={s.modal}
+            <AnimatePresence>
+                {isChoice ? <motion.div className={s.modal}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                     exit={{ opacity: 0 }}
                     onClick={() => setIsActiveForm(false)}
                 >
-                  
-                </motion.div>
-            </AnimatePresence > */}
+                    <div className={s.choice}>
+                        Whoo! You just made the right choice!
+                    </div>
+                </motion.div> :
+                    null
+                }
+            </AnimatePresence >
         </>
     );
 }  

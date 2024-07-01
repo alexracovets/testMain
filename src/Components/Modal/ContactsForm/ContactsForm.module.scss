@@ -354,4 +354,33 @@
             }
         }
     }
+
+    .choice {
+        width: 36.5rem;
+        padding: 1.875rem 3.125rem;
+        box-shadow: 0 0 4rem inset rgb(85 85 85 / 40%);
+        border: 2px solid $color-neutral-20;
+        color: $color-white;
+        font-family: $font-JB_Mono;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+        background-color: $color-neutral-100;
+
+        @media (max-width:$width-tableBig) {
+            width: 45rem;
+            padding: 2rem;
+        }
+
+        @media (max-width:$width-table) {
+            width: 35rem;
+            padding: 2rem;
+        }
+
+        @media (max-width:$width-mobile) {
+            width: 17.25rem;
+            padding: 1.25rem;
+            font-size: 1rem;
+        }
+    }
 }
