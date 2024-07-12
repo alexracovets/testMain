@@ -9,6 +9,7 @@ import useUserInteracted from '../../../store/useUserInteracted';
 
 import s from './MenuBtn.module.scss';
 import Logo from '../Logo/Logo';
+import TextTransitionTest from '../../TextTransitionTest/TextTransitionTest';
 export default function MenuBtn({ isDesktop }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const setBurger = useStoreNavigation((state) => state.setBurger);
@@ -34,6 +35,7 @@ export default function MenuBtn({ isDesktop }) {
     return (
         <nav className={s.navigation}>
             <Logo isDesktop={isDesktop} />
+            {isDesktop ? <TextTransitionTest /> : null}
             <div className={s.menu}
                 onMouseEnter={() => {
                     setIsHovered(true);

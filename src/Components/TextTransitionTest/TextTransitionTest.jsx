@@ -1,9 +1,7 @@
 import React from 'react';
 import TextTransition from 'react-text-transition';
 
-const TEXTS = [` Innovative`, ` Creative`, ` SPOTIUM 360`];
-
-
+const TEXTS = [`LOOK WIDER`, ` CREATIVE`, ` INNOVATIVE`, ` SPOTIUM 360`];
 
 import s from './TextTransitionTest.module.scss';
 export default function TextTransitionTest() {
@@ -19,7 +17,7 @@ export default function TextTransitionTest() {
 
     return (
         <div className={s.text}>
-            {"We're "}
+            {index % TEXTS.length !== 0 ? `We're ` : ''}
             <TextTransition inline className={s.transition}>{TEXTS[index % TEXTS.length]}</TextTransition>
         </div>
     );

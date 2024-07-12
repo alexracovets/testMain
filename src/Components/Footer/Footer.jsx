@@ -21,6 +21,9 @@ export default function Footer() {
         <footer>
             <div className={s.wrapper}>
                 <div className={s.footer}>
+                    <div className={s.copy}>
+                        Software development studIo | Copyright © (2019-2024) SPOTIUM 360
+                    </div>
                     {/* <LangsSwither /> */}
                 </div>
             </div>
