@@ -20,7 +20,7 @@ export default function MainPage() {
                 <section>
                     <div className={s.content}>
                         <div className={s.click}>
-                            Click. Chat. Secure. We Make it Easy.
+                            Click. Chat. Secure. <span>We Make it Easy</span>.
                         </div>
                         <Fliper />
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>

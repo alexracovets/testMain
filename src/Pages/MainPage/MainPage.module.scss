@@ -45,6 +45,10 @@
                 @media (max-width:$width-table) {
                     font-size: 2.8rem;
                 }
+
+                span{
+                    color: $color-primary;
+                }
             }
 
             .btn {
