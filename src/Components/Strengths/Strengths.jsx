@@ -7,6 +7,7 @@ import eCom from '/image/icons/strengths/eCom_icon.svg';
 import dm from '/image/icons/strengths/dm_icon.svg';
 import bots from '/image/icons/strengths/bots_icon.svg';
 import analytics from '/image/icons/strengths/analytics_icon.svg';
+import cyber from '/image/icons/strengths/cyber_icon.svg';
 
 import s from './Strengths.module.scss';
 import { useEffect, useState } from 'react';
@@ -38,8 +39,8 @@ export default function Strengths() {
             img: web
         },
         {
-            name: 'Video Production',
-            img: eCom
+            name: 'Cybersecurity',
+            img: cyber
         },
         {
             name: 'Web applications',
