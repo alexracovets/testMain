@@ -22,7 +22,7 @@ export default function Fliper() {
         <SplitFlapDisplay
             className={'flip'}
             characterSet={ALPHA}
-            step={150}
+            step={100}
             value={sentences[activeSentences]}
             background='#363636'
             borderColor='transparent'
