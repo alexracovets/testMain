@@ -52,6 +52,17 @@
                 width: 41.25rem;
             }
 
+            .about_wrapper {
+                background-color: $color-servicesOpacity;
+                padding: 1rem;
+                border-radius: 1rem;
+                margin-bottom: 2.5rem;
+
+                @media (max-width:$width-shortDesktop) {
+                    margin-bottom: 2.6875rem;
+                }
+            }
+
             .lies_info {
                 width: 100%;
                 display: flex;
@@ -60,11 +71,9 @@
                 flex-direction: column;
                 border-left: 2px solid $color-primary;
                 padding-left: 2rem;
-                margin-bottom: 2.5rem;
 
                 @media (max-width:$width-shortDesktop) {
                     padding-left: 2rem;
-                    margin-bottom: 2.6875rem;
                 }
 
                 h3 {

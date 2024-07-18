@@ -93,21 +93,6 @@ export default function MobileMain() {
             <section>
                 <div className={s.content}>
                     <CircleText />
-                    {/* <div className={s.model_space} ref={firstSection}></div> */}
-                    {/* <div className={s.we_wrapper}>
-                        <div className={s.we}>
-                            <p>
-                                We&#39;re Innovative
-                            </p>
-                            <p>
-                                We&#39;re Creative
-                            </p>
-                            <p>
-                                We&#39;re SPOTIUM 360
-                            </p>
-                        </div>
-                    </div> */}
-                    {/* <Fliper /> */}
                     <TextTransitionTest />
                     <Developments />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
@@ -118,19 +103,23 @@ export default function MobileMain() {
             <section ref={scrollAbout}>
                 <div className={s.content}  >
                     <h2> About Us </h2>
-                    <div className={s.lies_info}>
-                        <h3>
-                            In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
-                            Our partners know that we can move fast and focus on a result.
-                        </h3>
-                        <p>
-                            We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
-                        </p>
-                        <p>
-                            We know how to operate with a high demand traffic and marketing budgets over 30K$
-                        </p>
+                    <div className={s.about_wrapper}>
+                        <div className={s.lies_info}>
+                            <h3>
+                                In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
+                                Our partners know that we can move fast and focus on a result.
+                            </h3>
+                            <p>
+                                We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
+                            </p>
+                            <p>
+                                We know how to operate with a high demand traffic and marketing budgets over 30K$
+                            </p>
+                        </div>
                     </div>
-                    <Strengths />
+                    <div className={s.about_wrapper}>
+                        <Strengths />
+                    </div>
                 </div>
             </section>
             <section ref={scrollServices}>

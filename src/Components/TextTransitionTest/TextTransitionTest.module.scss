@@ -13,11 +13,18 @@
 
     @media (max-width:$width-table ) {
         height: auto;
+        width: 100%;
+        min-height: 8rem;
         font-size: 4rem;
         line-height: 4rem;
         margin: 0 auto;
         margin-bottom: 2rem;
         margin-bottom: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
     }
 
     .transition {
