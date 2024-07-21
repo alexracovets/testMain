@@ -1,32 +1,26 @@
+import TextTransition from 'react-text-transition';
 import { useEffect, useState } from 'react';
-import gsap from 'gsap';
 
 import useLoader from '../../../store/useLoader';
 
+const TEXTS = [`00`, `11`, `22`, `33`, '32', '31', '30'];
+
 import s from '../TextTransitionTest.module.scss';
-import { CustomEase } from 'gsap/all';
 export default function AboutTransition() {
-    const [count, setCount] = useState(0);
+    const [index, setIndex] = useState(0);
     const isLoaded = useLoader((state) => state.isLoaded);
 
     useEffect(() => {
-        const countObj = { value: 0 };
-        if (isLoaded) {
+        if (index !== TEXTS.length - 1 && isLoaded) {
             setTimeout(() => {
-                gsap.to(countObj, {
-                    value: 30,
-                    duration: 2,
-                    ease: CustomEase.create("custom", "M0,0 C0,0.408 0.402,0.918 0.738,1.024 0.862,1.062 0.939,1.034 1,1 "),
-                    onUpdate: () => {
-                        setCount(countObj.value.toFixed(0)); // Оновлюємо стан на кожен кадр
-                    }
-                });
-            }, 500)
+                setIndex(prev => prev + 1)
+            }, 200)
         }
-
-    }, [isLoaded]);
+    }, [index, isLoaded])
 
     return (
-        <p>We launched {count} <span className={s.plus}></span> projects</p>
+        <>
+            We launched <TextTransition inline className={s.transition}>{TEXTS[index]}</TextTransition> <span className={s.plus}></span> projects
+        </>
     );
 }
