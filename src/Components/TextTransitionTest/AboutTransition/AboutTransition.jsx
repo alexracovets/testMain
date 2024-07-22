@@ -38,7 +38,7 @@ export default function AboutTransition() {
         if (isLoaded) {
             setTimeout(() => {
                 gsap.to(countObj, {
-                    value: 30,
+                    value: 34,
                     duration: 3,
                     ease: "power1.out",
                     onUpdate: () => {
@@ -51,6 +51,6 @@ export default function AboutTransition() {
     }, [isLoaded]);
 
     return (
-        <p>We launched <span className={s.count}> {count < 10 ? '0' + count : count}</span> <span className={s.plus}></span> projects</p>
+        <p>We launched <span className={s.count}> {count < 10 ? '0' + count : count}</span>  projects</p>
     );
 }
