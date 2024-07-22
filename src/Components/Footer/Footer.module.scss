@@ -175,7 +175,11 @@ footer {
                 justify-content: space-evenly;
                 align-items: center;
 
-
+                @media (max-width:$width-mobile) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
 
                 .btn {
                     width: 12.34625rem;
