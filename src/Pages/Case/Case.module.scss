@@ -75,7 +75,6 @@
 
                     .image_wrapper {
                         width: 100%;
-                        min-height: 68dvh;
                         height: 100%;
                         display: flex;
                         justify-content: center;
@@ -88,12 +87,10 @@
 
                         @media (max-width:$width-shortDesktop) {
                             width: 30.3125rem;
-                            min-height: 66dvh;
                         }
 
                         @media (max-width:$width-tableBig) {
                             width: 30rem;
-                            min-height: 61dvh;
                         }
 
                         .video__wrapper {
@@ -167,6 +164,33 @@
                             @media (max-width:$width-shortDesktop) {
                                 font-size: 1.2rem;
                             }
+                        }
+                    }
+                }
+
+                .btns_wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-top: 3rem;
+
+                    .btn_arrow {
+                        width: 10rem;
+                        height: 4.188rem;
+
+                        @media (max-width:$width-shortDesktop) {
+                            width: 11.34625rem;
+                            height: 3rem;
+                        }
+                    }
+
+                    .btn {
+                        width: 16.2rem;
+                        height: 4.188rem;
+
+                        @media (max-width:$width-shortDesktop) {
+                            width: 11.34625rem;
+                            height: 3rem;
                         }
                     }
                 }

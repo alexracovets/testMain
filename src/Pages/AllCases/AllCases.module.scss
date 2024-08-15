@@ -140,6 +140,27 @@
                         }
                     }
 
+                    .btn_wrapper {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        width: 100%;
+                        padding: 1rem 0;
+
+                        .btn {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 16.2rem;
+                            height: 4.188rem;
+
+                            @media (max-width:$width-shortDesktop) {
+                                width: 11.34625rem;
+                                height: 3rem;
+                            }
+                        }
+                    }
+
                     p {
                         display: block;
                         font-size: 0.875rem;
@@ -167,7 +188,6 @@
                             border: 1px solid $color-white;
                             border-radius: 3.125rem;
                             padding: 0.2rem 0.75rem;
-                            cursor: pointer;
                             margin: 0.4375rem;
                             margin-top: 0;
                             width: auto;

@@ -11,10 +11,10 @@ const projectsData = [
                 type: `text`,
                 value: `Increase your <b>lead generation by 50%</b> with our high-converting websites—experience <b>30% faster load times</b> and a <b>40% drop in bounce rates</b>.`
             },
-            {
-                type: `html`,
-                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            }
+            // {
+            //     type: `html`,
+            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
+            // }
         ],
         tags: [
             `E-Commerce`,
@@ -92,7 +92,7 @@ const projectsData = [
         ],
         keys_block: [
             {
-                name: 'Real-World Example',
+                name: 'Example',
                 content: [
                     {
                         type: 'text',
@@ -162,10 +162,10 @@ const projectsData = [
                 type: `text`,
                 value: `<b>Boost your B2B leads by 60%</b> with our digital marketing services—achieve <b>45% higher engagement</b> and a <b>35% increase in conversion rates</b>!`
             },
-            {
-                type: `html`,
-                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            }
+            // {
+            //     type: `html`,
+            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
+            // }
         ],
         tags: [
             `Technology and Software Development`,
@@ -243,7 +243,7 @@ const projectsData = [
         ],
         keys_block: [
             {
-                name: 'Real-World Example',
+                name: 'Example',
                 content: [
                     {
                         type: 'text',
@@ -321,10 +321,10 @@ const projectsData = [
                 type: `text`,
                 value: `Boost your modular home <b>sales by 40%</b> with our configurator—let customers customize and save their <b>dream home in just 5 minutes</b>!`
             },
-            {
-                type: `html`,
-                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            }
+            // {
+            //     type: `html`,
+            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
+            // }
         ],
         tags: [
             `Modular Home Manufacturing`,
@@ -393,7 +393,7 @@ const projectsData = [
         ],
         keys_block: [
             {
-                name: 'Real-World Example',
+                name: 'Example',
                 content: [
                     {
                         type: 'text',
@@ -474,10 +474,10 @@ const projectsData = [
                 type: `text`,
                 value: `<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance</b>!`
             },
-            {
-                type: `html`,
-                value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            }
+            // {
+            //     type: `html`,
+            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
+            // }
         ],
         tags: [
             `Healthcare`,
@@ -555,7 +555,7 @@ const projectsData = [
         ],
         keys_block: [
             {
-                name: 'Real-World Example',
+                name: 'Example',
                 content: [
                     {
                         type: 'text',

@@ -8,6 +8,7 @@ import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 import s from './AllCases.module.scss';
 import TextField from "../../Components/TextField/TextField";
+import UI_Button from "../../Components/UI_Button/UI_Button";
 
 export default function AllCases() {
     const [projects, setProjects] = useState([]);
@@ -43,15 +44,20 @@ export default function AllCases() {
                     >
                         {projects.map((item, idx) => {
                             return (
-                                <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.item}>
+                                <div key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{item.title}</h3>
                                         <div className={s.description}><TextField texts={item.description} /></div>
                                         <div className={s.tags}>
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
                                         </div>
+                                        <div className={s.btn_wrapper}>
+                                            <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.btn}>
+                                                <UI_Button text={'DISCOVER'} arrow />
+                                            </NavLink>
+                                        </div>
                                     </div>
-                                    <div className={s.video}>
+                                    <NavLink to={`/cases/${item.pageName}`} className={s.video}>
                                         <video
                                             ref={videoRef}
                                             src={`/video/cases/${item.video}`}
@@ -62,8 +68,8 @@ export default function AllCases() {
                                             className={isVideoLoad ? s.active : null}
                                             onCanPlay={() => setIsVideoLoad(true)}
                                         />
-                                    </div>
-                                </NavLink>
+                                    </NavLink>
+                                </div>
                             )
                         })}
                     </div>

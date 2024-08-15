@@ -1,12 +1,14 @@
 import { Scrollbar } from "react-scrollbars-custom";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Keys from "../../Components/Keys/Keys";
+import UI_Button from "../../Components/UI_Button/UI_Button";
 import TextField from "../../Components/TextField/TextField";
 
 import projectsData from "../../data/projectsData";
+import useModalForm from '../../store/useModalForm';
 
 import s from './Case.module.scss';
 export default function Case() {
@@ -14,7 +16,8 @@ export default function Case() {
     const [content, setContent] = useState(null);
     const [isVideoLoad, setIsVideoLoad] = useState(false);
     const videoRef = useRef();
-    
+    const setIsActiveForm = useModalForm((state) => state.setIsActive);
+
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);
         setContent(project)
@@ -49,6 +52,14 @@ export default function Case() {
                                         </div>
                                         <div className={s.logo}>
                                             <h3> {content.technologies}</h3>
+                                        </div>
+                                    </div>
+                                    <div className={s.btns_wrapper}>
+                                        <NavLink to={`/cases`} className={s.btn_arrow}>
+                                            <UI_Button text={'<---'} arrow={false} />
+                                        </NavLink>
+                                        <div className={s.btn} onClick={() => setIsActiveForm(true)}>
+                                            <UI_Button text={"LET'S TALK"} arrow />
                                         </div>
                                     </div>
                                 </div>
