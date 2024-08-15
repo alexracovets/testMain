@@ -12,22 +12,7 @@
     align-items: flex-start;
     flex-direction: column;
 
-    @media (max-width:$width-shortDesktop) {
-        font-size: 1rem;
-        line-height: 1.32rem;
-        margin-bottom: 1.25rem;
-    }
-
-    @media (max-width:$width-table) {
-        font-size: 1rem;
-        line-height: 1.32rem;
-        margin-bottom: 1.25rem;
-    }
-
     @media (max-width:$width-mobile) {
-        font-size: 1rem;
-        line-height: 1.32rem;
-        margin-bottom: 1.25rem;
         letter-spacing: -0.0625rem;
         text-align: left;
     }
@@ -41,6 +26,19 @@
         .day {
             width: 6.5rem;
         }
+    }
+}
+
+.phone {
+    font-family: $font-JB_Mono;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: $color-white;
+
+    a {
+        color: $color-primary;
+        font-weight: 500;
     }
 }
 

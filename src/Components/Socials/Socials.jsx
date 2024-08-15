@@ -30,7 +30,7 @@ export default function Socials() {
                         </li>
                     )
                 })}
-            </ul>
+            </ul> 
             <ul className={s.socials}>
                 <li className={s.socialsBtn}>
                     <Link target="_blank" to={"https://www.instagram.com/spotium360?igsh=MXMzcDJnaDR6ZDdmcw%3D%3D&utm_source=qr"}>
