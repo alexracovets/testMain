@@ -3,10 +3,10 @@ import SplitFlapDisplay from "react-split-flap-display";
 import { ALPHA } from "react-split-flap-display/constants";
 
 const sentences = [
-    'INTERACTIVEWEB DEV    ',
-    'AI         CHATBOTS   ',
-    'AR VR XR   DEVELOPMENT',
-    'DIGITAL    MARKETING  '
+    'WEB APP    DEVELOPMENT',
+    'INTERACTIVEWEBSITE DEV',
+    'DIGITAL    MARKETING  ',
+    'AI AND ML  DEVELOPMENT'
 ];
 import './Fliper.scss'
 export default function Fliper() {
@@ -15,7 +15,7 @@ export default function Fliper() {
     useEffect(() => {
         setInterval(() => {
             setActiveSentences((prev) => (prev + 1) % sentences.length)
-        }, 10000);
+        }, 5000);
     }, []);
 
     return (
