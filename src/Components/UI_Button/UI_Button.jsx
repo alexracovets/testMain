@@ -8,7 +8,7 @@ import useUserInteracted from '../../store/useUserInteracted';
 
 import s from './UI_Button.module.scss';
 // import playSound from '../../utils/playSound';
-export default function UI_Button({ text, arrow, submit, small, disabled }) {
+export default function UI_Button({ text, arrow, submit, small, disabled, back }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const setUserInteracted = useUserInteracted((state) => state.setUserInteracted);
     const [isBtn, setIsBtn] = useState(false);
@@ -46,18 +46,32 @@ export default function UI_Button({ text, arrow, submit, small, disabled }) {
     return (
         <button
             className={
-                small ?
-                    (disabled ? s.button + ' ' + s.disabled : s.button) + ' ' + s.small :
-                    (disabled ? s.button + ' ' + s.disabled : s.button)}
+                (disabled ? `${s.button} ${s.disabled}` : s.button) +
+                (small ? ` ${s.small}` : '') +
+                (back ? ` ${s.back}` : '')
+            }
             type={submit ? 'submit' : 'button'}
             disabled={disabled}
             onMouseEnter={handleMouseEnter}
-            // onMouseEnter={() => { userInteracted && playSound(hoverSound) }}
         >
-            <span className={s.text}>
-                {text}
-                {isBtn ? <div className={s.arrow__wrapper}><img src={arrowImage} alt="arrow" /></div> : null}
-            </span>
+            {text
+                ? <span className={s.text}>
+                    {text}
+                    {isBtn ? <div className={s.arrow__wrapper}><img src={arrowImage} alt="arrow" /></div> : null}
+                </span>
+                : null
+            }
+
+            {
+                back
+                    ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 13">
+                        <g id="Left-2" data-name="Left" transform="matrix(1, 0, 0, 1, -1, -6)">
+                            <polygon points="24 12.001 2.914 12.001 8.208 6.706 7.501 5.999 1 12.501 7.5 19.001 8.207 18.294 2.914 13.001 24 13.001 24 12.001" ></polygon>
+                        </g>
+
+                    </svg>
+                    : null
+            }
         </button>
     )
 }
@@ -67,5 +81,6 @@ UI_Button.propTypes = {
     arrow: PropTypes.bool,
     submit: PropTypes.bool,
     small: PropTypes.bool,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    back: PropTypes.bool
 }

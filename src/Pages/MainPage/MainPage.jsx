@@ -19,9 +19,6 @@ export default function MainPage() {
             >
                 <section>
                     <div className={s.content}>
-                        {/* <div className={s.click}>
-                            Click. Chat. Secure. <span>We Make it Easy</span>.
-                        </div> */}
                         <div className={s.click}>
                             Expert <span>Software</span> Development, <br />
                             Future-Proof Innovations

@@ -43,7 +43,7 @@
                     font-size: 2rem;
                 }
 
-                span{
+                span {
                     color: $color-primary;
                 }
             }
@@ -51,17 +51,16 @@
             .btn {
                 width: 16.2rem;
                 height: 4.188rem;
-                margin-bottom: 6.25rem;
+                margin-bottom: 3.125rem;
 
                 @media (max-width:$width-shortDesktop) {
                     width: 11.34625rem;
                     height: 3rem;
-                    margin-bottom: 4.25rem;
                 }
 
                 @media (max-width:$width-tableBig) {
                     margin-bottom: 2rem;
-                }
+                } 
             }
         }
     }

@@ -102,4 +102,15 @@
             transform: rotate(45deg) translateX(-1rem) translateY(1rem);
         }
     }
+
+    &.back {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            height: 60%;
+            width: auto;
+        }
+    }
 }

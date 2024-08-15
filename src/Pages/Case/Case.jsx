@@ -56,7 +56,7 @@ export default function Case() {
                                     </div>
                                     <div className={s.btns_wrapper}>
                                         <NavLink to={`/cases`} className={s.btn_arrow}>
-                                            <UI_Button text={'<---'} arrow={false} />
+                                            <UI_Button arrow={false} back={true} />
                                         </NavLink>
                                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                                             <UI_Button text={"LET'S TALK"} arrow />

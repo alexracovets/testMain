@@ -179,8 +179,19 @@
                         height: 4.188rem;
 
                         @media (max-width:$width-shortDesktop) {
-                            width: 11.34625rem;
+                            width: 7rem;
                             height: 3rem;
+                        }
+
+                        polygon {
+                            fill: $color-neutral-100;
+                            transition: all ease-in-out 400ms;
+                        }
+
+                        &:hover {
+                            polygon {
+                                fill: $color-primary;
+                            }
                         }
                     }
 
