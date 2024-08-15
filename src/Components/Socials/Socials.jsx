@@ -19,6 +19,8 @@ export default function Socials() {
             time: 'Day Off'
         }
     ]
+    const mobile = '+38 066 782 72 52';
+
     return (
         <>
             <ul className={s.work_days}>
@@ -30,7 +32,10 @@ export default function Socials() {
                         </li>
                     )
                 })}
-            </ul> 
+            </ul>
+            <div className={s.phone}>
+                Phone: <a href={"tel:" + mobile}>{mobile}</a>
+            </div>
             <ul className={s.socials}>
                 <li className={s.socialsBtn}>
                     <Link target="_blank" to={"https://www.instagram.com/spotium360?igsh=MXMzcDJnaDR6ZDdmcw%3D%3D&utm_source=qr"}>
@@ -59,4 +64,4 @@ export default function Socials() {
             </ul>
         </>
     )
-} 
+}
