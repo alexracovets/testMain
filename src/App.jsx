@@ -16,7 +16,7 @@ import useLoader from './store/useLoader';
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
   const isLoaded = useLoader((state) => state.isLoaded);
-  const TRACKING_ID = "G-SLMB59D1YP";
+  const TRACKING_ID = "G-BRJC7FGLR6";
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
     function handleResize() {
