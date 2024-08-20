@@ -4,6 +4,9 @@ import { immer } from 'zustand/middleware/immer';
 const useScrollPageNavigation = create(immer((set) => ({
     isNavigateStart: false,
     isScrollImageShown: true,
+    isScrollOnPage: false,
+    isTopScroll: false,
+    isBottomScroll: false,
     isScrollAllowed: true,
     setNavigateStart: (value) => set((state) => {
         state.isNavigateStart = value;
@@ -13,6 +16,15 @@ const useScrollPageNavigation = create(immer((set) => ({
     }),
     setIsScrollAllowed: (value) => set((state) => {
         state.isScrollAllowed = value;
+    }),
+    setIsScrollOnPage: (value) => set((state) => {
+        state.isScrollOnPage = value;
+    }),
+    setIsTopScroll: (value) => set((state) => {
+        state.isTopScroll = value;
+    }),
+    setIsBottomScroll: (value) => set((state) => {
+        state.isBottomScroll = value;
     })
 })));
 

@@ -18,6 +18,11 @@ export default function Default() {
     const setNavigateStart = useScrollPageNavigation((state) => state.setNavigateStart);
     const isScrollAllowed = useScrollPageNavigation((state) => state.isScrollAllowed);
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
+    const isTopScroll = useScrollPageNavigation((state) => state.isTopScroll);
+    const isBottomScroll = useScrollPageNavigation((state) => state.isBottomScroll);
+    const isScrollOnPage = useScrollPageNavigation((state) => state.isScrollOnPage);
+    const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+    const [isRouteStart, setIsRouterStart] = useState(true);
 
     const pageRoutes = useMemo(() => ({
         '/': 0,
@@ -33,13 +38,14 @@ export default function Default() {
         changeActivePage(pageId);
     }, [location.pathname, pageRoutes, changeActivePage, setIsScrollAllowed]);
 
-    const routeTo = (to) => {
+    const routeTo = (to) => { 
         const currentPath = location.pathname;
         const currentPathItem = pathsScrollDesktop.find(path => path.pathname === currentPath);
-        if (!isNavigateStart && isScrollAllowed) {
+        if (!isNavigateStart && isScrollAllowed) { 
             setNavigateStart(true);
             setIsScrollAllowed(false);
             if (currentPathItem && currentPathItem[to]) {
+                setIsScrollOnPage(false)
                 setTimeout(() => setNavigateStart(false), 1000);
                 navigate(currentPathItem[to]);
                 setIsScrollAllowed(true);
@@ -65,10 +71,46 @@ export default function Default() {
         !isDesktop && navigate('/mobile');
     }, [isDesktop, navigate]);
 
+    const scrollTop = (to) => {  
+        if (isScrollOnPage) { 
+            setIsScrollAllowed(true)
+            if (isTopScroll) { 
+                routeTo('toUp');
+                setIsRouterStart(true);
+            }
+            return
+        }
+ 
+        if (!isScrollOnPage && !isRouteStart) {
+            routeTo(to)
+        }
+    }
+    const scrollBottom = (to) => {
+        if (isScrollOnPage) {
+            setIsScrollAllowed(true)
+            if (isBottomScroll) {
+                routeTo('toDown');
+                setIsRouterStart(true);
+            }
+            return
+        }
+        if (!isScrollOnPage && !isRouteStart) {
+            routeTo(to)
+        }
+    }
+
+    useEffect(() => {
+        if (isRouteStart) {
+            setTimeout(() => {
+                setIsRouterStart(false)
+            }, 300);
+        }
+    }, [isRouteStart])
+
     return (
         <ReactScrollWheelHandler
-            upHandler={() => routeTo('toUp')}
-            downHandler={() => routeTo('toDown')}
+            upHandler={() => scrollTop('toUp')}
+            downHandler={() => scrollBottom('toDown')}
             style={{ width: '100%', height: '100dvh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
         >
             <Header isDesktop={isDesktop} />

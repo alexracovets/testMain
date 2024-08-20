@@ -20,6 +20,22 @@ export default function Services({ mobile }) {
     const [currentService, setCurrentService] = useState(sliderServices);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
+    const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
+    const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
+    const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+
+    const wheelPointer = (scroll) => {
+        setIsTopScroll(false);
+        setIsBottomScroll(false);
+        setIsScrollOnPage(true);
+        const isScrollBotoom = scroll.contentScrollHeight - scroll.clientHeight - scroll.scrollTop < 5;
+        const isScrollTop = scroll.scrollTop === 0;
+        if (isScrollBotoom) {
+            setIsBottomScroll(true);
+        } else if (isScrollTop) {
+            setIsTopScroll(true);
+        } else setIsScrollAllowed(false);
+    }
 
     useEffect(() => {
         setCurrentService(sliderServices);
@@ -29,16 +45,25 @@ export default function Services({ mobile }) {
         changeActiveServices(currentService);
     }, [currentService, changeActiveServices]);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsScrollOnPage(true);
+            setIsTopScroll(true);
+            setIsScrollAllowed(false);
+        }, 100);
+    }, [setIsScrollOnPage, setIsTopScroll, setIsScrollAllowed])
+
     return (
         <>
             {!mobile ?
                 <div className={s.services_box}>
-                    <Scrollbar className={'scroll'}>
+                    <Scrollbar
+                        className={'scroll'}
+                        onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
+                    >
                         <div className={s.services__wrapper}
                             onMouseEnter={() => setIsScrollAllowed(false)}
-                            onMouseOver={() => setIsScrollAllowed(false)}
                             onMouseLeave={() => setIsScrollAllowed(true)}
-                            onMouseOut={() => setIsScrollAllowed(true)}
                         >
                             <ul className={s.services}>
                                 {servicesData.map((colapse) => {
@@ -56,7 +81,7 @@ export default function Services({ mobile }) {
                             </ul>
                         </div>
                     </Scrollbar>
-                </div>
+                </div >
                 :
                 <div className={s.services_box}>
                     <div className={s.services__wrapper}>

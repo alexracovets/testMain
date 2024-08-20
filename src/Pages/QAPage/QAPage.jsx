@@ -83,8 +83,34 @@ const colapses = [
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 import s from './QAPage.module.scss';
+import { useEffect } from "react";
 export default function QAPage() {
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
+    const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
+    const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
+    const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+
+    const wheelPointer = (scroll) => {
+        setIsTopScroll(false);
+        setIsBottomScroll(false);
+        const isScrollBotoom = scroll.contentScrollHeight - scroll.clientHeight - scroll.scrollTop < 2;
+        const isScrollTop = scroll.scrollTop === 0;
+
+        if (isScrollBotoom) {
+            setIsBottomScroll(true);
+            setIsScrollAllowed(true);
+        } else if (isScrollTop) {
+            setIsTopScroll(true);
+            setIsScrollAllowed(true);
+        }
+    }
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setIsScrollOnPage(true);
+            setIsTopScroll(true);
+        }, 300);
+    }, [setIsScrollOnPage, setIsTopScroll])
 
     return (
         <motion.div className={s.wrapper}
@@ -97,13 +123,13 @@ export default function QAPage() {
                 <h2>
                     Q&A
                 </h2>
-                <Scrollbar className={'scroll'} >
-
+                <Scrollbar
+                    className={'scroll'}
+                    onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
+                >
                     <div className={s.question}
                         onMouseEnter={() => setIsScrollAllowed(false)}
-                        onMouseOver={() => setIsScrollAllowed(false)}
                         onMouseLeave={() => setIsScrollAllowed(true)}
-                        onMouseOut={() => setIsScrollAllowed(true)}
                     >
                         {colapses.map((colapse) => {
                             return (

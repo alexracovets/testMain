@@ -14,6 +14,9 @@ export default function AllCases() {
     const [projects, setProjects] = useState([]);
     const [isVideoLoad, setIsVideoLoad] = useState(false);
     const setIsScrollAllowed = useScrollPageNavigation((state) => state.setIsScrollAllowed);
+    const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
+    const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
+    const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
     const videoRef = useRef();
 
     useEffect(() => {
@@ -22,7 +25,28 @@ export default function AllCases() {
 
     useEffect(() => {
         videoRef.current && videoRef.current.play()
-    }, [videoRef])
+    }, [videoRef]);
+
+    const wheelPointer = (scroll) => {
+        setIsTopScroll(false);
+        setIsBottomScroll(false);
+        const isScrollBotoom = scroll.contentScrollHeight - scroll.clientHeight - scroll.scrollTop < 2;
+        const isScrollTop = scroll.scrollTop === 0;
+
+        if (isScrollBotoom) {
+            setIsBottomScroll(true);
+            setIsScrollAllowed(true);
+        } else if (isScrollTop) {
+            setIsTopScroll(true);
+            setIsScrollAllowed(true);
+        }
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            setIsScrollOnPage(true);
+            setIsTopScroll(true);
+        }, 300);
+    }, [setIsScrollOnPage, setIsTopScroll])
 
     return (
         <motion.div className={s.wrapper}
@@ -35,12 +59,13 @@ export default function AllCases() {
                 <h2>
                     Сases
                 </h2>
-                <Scrollbar className={'scroll'} >
+                <Scrollbar
+                    className={'scroll'}
+                    onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
+                >
                     <div className={s.projects}
                         onMouseEnter={() => setIsScrollAllowed(false)}
-                        onMouseOver={() => setIsScrollAllowed(false)}
                         onMouseLeave={() => setIsScrollAllowed(true)}
-                        onMouseOut={() => setIsScrollAllowed(true)}
                     >
                         {projects.map((item, idx) => {
                             return (
