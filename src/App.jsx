@@ -16,7 +16,7 @@ import useLoader from './store/useLoader';
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
   const isLoaded = useLoader((state) => state.isLoaded);
-  const TRACKING_ID = "G-BRJC7FGLR6";
+  const TRACKING_ID = import.meta.env.VITE_TRACKING_ID;
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
     function handleResize() {
@@ -27,8 +27,7 @@ function App() {
   }, []);
 
   ReactGA.initialize(TRACKING_ID);
-  ReactGA.send({ hitType: "pageview", page: window.location.pathname});
-  
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   return (
     <>
       <Loader />
