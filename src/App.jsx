@@ -1,5 +1,6 @@
-import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import ReactGA from "react-ga4";
 
 import Pager from "./Components/Pager/Pager";
 import MilkyWay from "./Components/MilkyWay/MilkyWay";
@@ -11,10 +12,11 @@ import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 import useLoader from './store/useLoader';
 
+
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
   const isLoaded = useLoader((state) => state.isLoaded);
-
+  const TRACKING_ID = "G-SLMB59D1YP";
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
     function handleResize() {
@@ -24,6 +26,8 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.send({ hitType: "pageview", page: "/", title: "Main" });
   return (
     <>
       <Loader />
