@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   ReactGA.initialize(TRACKING_ID);
-  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+ 
   return (
     <>
       <Loader />

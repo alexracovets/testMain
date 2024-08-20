@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import Footer from "../../Components/Footer/Footer";
 import TextField from "../../Components/TextField/TextField";
@@ -15,7 +16,12 @@ export default function MobileAllCases() {
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
-
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/mobile/cases",
+        title: "Cases Page(mobile)"
+    });
+    
     useEffect(() => {
         setProjects(projectsData);
     }, []);

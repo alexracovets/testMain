@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import ReactGA from "react-ga4";
 
 import QAItem from "./QAItem/QAItem";
 import Footer from "../../Components/Footer/Footer";
@@ -87,7 +88,12 @@ export default function MobileQAPage() {
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
-
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/mobile/q&a",
+        title: "Q&A Page(mobile)"
+    });
+    
     useEffect(() => {
         if (scrollSection === 'contacts') {
             getScrollTo(scrollHeight)

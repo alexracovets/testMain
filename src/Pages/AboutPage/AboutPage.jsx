@@ -1,8 +1,15 @@
 import Strengths from '../../Components/Strengths/Strengths';
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import s from './AboutPage.module.scss';
 export default function AboutPage() {
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/about",
+        title: "About Page"
+    });
 
     return (
         <motion.div className={s.wrapper}

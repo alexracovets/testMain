@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import CopyButton from "../../Components/CopyButton/CopyButton";
 import UI_Button from '../../Components/UI_Button/UI_Button';
@@ -11,6 +12,12 @@ import s from './ContactPage.module.scss';
 export default function ContactPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const setIsActiveOffice = useOffice((state) => state.setIsActive);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/contact",
+        title: "Contact Page"
+    });
 
     return (
         <motion.div className={s.wrapper}

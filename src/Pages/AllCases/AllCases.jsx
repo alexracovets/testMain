@@ -2,14 +2,16 @@ import { Scrollbar } from "react-scrollbars-custom";
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
+
+import TextField from "../../Components/TextField/TextField";
+import UI_Button from "../../Components/UI_Button/UI_Button";
 
 import projectsData from "../../data/projectsData";
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
-import s from './AllCases.module.scss';
-import TextField from "../../Components/TextField/TextField";
-import UI_Button from "../../Components/UI_Button/UI_Button";
 
+import s from './AllCases.module.scss';
 export default function AllCases() {
     const [projects, setProjects] = useState([]);
     const [isVideoLoad, setIsVideoLoad] = useState(false);
@@ -18,6 +20,11 @@ export default function AllCases() {
     const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
     const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
     const videoRef = useRef();
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/cases",
+        title: "Cases Page"
+    });
 
     useEffect(() => {
         setProjects(projectsData);

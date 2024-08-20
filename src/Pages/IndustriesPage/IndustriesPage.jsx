@@ -1,10 +1,15 @@
-
+import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import Industries from '../../Components/Industries/Industries';
-import { motion } from "framer-motion";
 
 import s from './IndustriesPage.module.scss';
 export default function IndustriesPage() {
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/industries",
+        title: "Industries Page"
+    });
 
     return (
         <motion.div className={s.wrapper}

@@ -1,13 +1,19 @@
-import UI_Button from '../../Components/UI_Button/UI_Button';
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import Developments from '../../Components/Developments/Developments';
+import UI_Button from '../../Components/UI_Button/UI_Button';
 import Fliper from '../../Components/Fliper/Fliper';
 import useModalForm from '../../store/useModalForm';
 
 import s from './MainPage.module.scss';
 export default function MainPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/",
+        title: "Main Page"
+    });
 
     return (
         <>

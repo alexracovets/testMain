@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-
+import ReactGA from "react-ga4";
 
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
@@ -19,6 +19,11 @@ export default function MobileCase() {
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const videoRef = useRef();
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/mobile/cases/${projectsData.find(project => project.pageName === id).pageName}`,
+        title: `${projectsData.find(project => project.pageName === id).logoName} Page(mobile)`
+    });
 
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);

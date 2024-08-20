@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import Fliper from "../../Components/Fliper/Fliper";
 import Footer from "../../Components/Footer/Footer";
@@ -22,6 +23,11 @@ export default function MobileMain() {
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollSection = useAnchorScroll((state) => state.section);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/mobile",
+        title: "Main Page(mobile)"
+    });
 
     const firstSection = useRef(null);
     const secondSection = useRef(null);

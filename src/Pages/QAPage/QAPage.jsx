@@ -1,6 +1,7 @@
 import { Scrollbar } from "react-scrollbars-custom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import QAItem from "./QAItem/QAItem";
 
@@ -89,6 +90,11 @@ export default function QAPage() {
     const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
     const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
     const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/q&a",
+        title: "Q&A Page"
+    });
 
     const wheelPointer = (scroll) => {
         setIsTopScroll(false);

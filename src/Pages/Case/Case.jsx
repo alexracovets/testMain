@@ -2,6 +2,7 @@ import { Scrollbar } from "react-scrollbars-custom";
 import { NavLink, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 import Keys from "../../Components/Keys/Keys";
 import UI_Button from "../../Components/UI_Button/UI_Button";
@@ -17,9 +18,15 @@ export default function Case() {
     const [isVideoLoad, setIsVideoLoad] = useState(false);
     const videoRef = useRef();
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/cases/${projectsData.find(project => project.pageName === id).pageName}`,
+        title: `${projectsData.find(project => project.pageName === id).logoName} Page`
+    });
 
     useEffect(() => {
         const project = projectsData.find(project => project.pageName === id);
+        console.log(project)
         setContent(project)
     }, [id, setContent])
 
