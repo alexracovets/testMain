@@ -2,19 +2,29 @@
 
 const projectsData = [
     {
-        pageName: `web_converting`,
+        pageName: `web_sites`,
         title: `High-Converting Web Sites`,
-        techno: `Technologies:`,
-        technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
+        techno: `Platform:`,
+        technologies: `Shopify, Amazon, Walmart`,
         description: [
             {
                 type: `text`,
-                value: `Increase your <b>lead generation by 50%</b> with our high-converting websites—experience <b>30% faster load times</b> and a <b>40% drop in bounce rates</b>.`
+                value: `Our <b>E-Commerce</b> client get up to 50% Higher Conversion Rate.`
             },
-            // {
-            //     type: `html`,
-            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            // }
+            {
+                type: `text`,
+                value: `Also we help to achieve <b>30% Faster Load Times</b> and up to <b>40% Drop in Bounce Rates</b>.`
+            },
+        ],
+        description_next: [
+            {
+                type: `text`,
+                value: `We <b>Guarantee</b> to <b>Boost Your Online Sales up to 50%</b> with a Conversion-Focused Website. Or we will give your money back!`
+            },
+            {
+                type: `text`,
+                value: `Or we will give your <b>money back</b>!`
+            },
         ],
         tags: [
             `E-Commerce`,
@@ -129,8 +139,8 @@ const projectsData = [
                 content: [
                     {
                         type: 'q_a',
-                        question: '<b>Q: How do your services help improve conversion rates?</b>',
-                        answer: '<b>A:</b> By creating user-centric designs and optimizing conversion elements, we ensure more visitors become leads or customers.'
+                        question: '<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>',
+                        answer: '<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses.'
                     },
                     {
                         type: 'q_a',
@@ -156,16 +166,26 @@ const projectsData = [
         pageName: `digital_marketing`,
         title: `Digital Marketing`,
         techno: `Technologies:`,
-        technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
+        technologies: `SEO, PPC, Social Media, Analytics, AI, Video Marketing`,
         description: [
             {
                 type: `text`,
-                value: `<b>Boost your B2B leads by 60%</b> with our digital marketing services—achieve <b>45% higher engagement</b> and a <b>35% increase in conversion rates</b>!`
+                value: `If you face <b>Weak brand awareness or Difficulty generating leads</b>! You are in the Right Place to fix it.`
             },
-            // {
-            //     type: `html`,
-            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            // }
+        ],
+        description_next: [
+            {
+                type: `text`,
+                value: `This result was achieved for our clients:`
+            },
+            {
+                type: 'list',
+                list: [
+                    `<b>Increased</b> website traffic by 35% through SEO optimization`,
+                    `<b>Generated</b> $150,000 in revenue from PPC campaigns`,
+                    `<b>Boosted</b> social media engagement by 200%`,
+                ]
+            }
         ],
         tags: [
             `Technology and Software Development`,
@@ -256,11 +276,7 @@ const projectsData = [
                             `<b>35% Boost in Conversion Rates</b> from optimized lead generation efforts.`,
                             `<b>60% Improvement in Engagement</b> due to compelling content and social media strategies.`
                         ]
-                    },
-                    {
-                        type: 'text',
-                        value: `This leads to a more engaged customer base, <b>30% higher</b> conversion rates, and happier customers.`
-                    },
+                    }
                 ],
                 id: 0
             },
@@ -315,16 +331,27 @@ const projectsData = [
         pageName: `сonfigurator`,
         title: `Configurator`,
         techno: `Technologies:`,
-        technologies: `React.JS, HTML5, CSS3, Node.JS, JS`,
+        technologies: `React, Node, HTML, CSS, JS`,
         description: [
             {
                 type: `text`,
-                value: `Boost your modular home <b>sales by 40%</b> with our configurator—let customers customize and save their <b>dream home in just 5 minutes</b>!`
+                value: `<b>Virtual Configurator</b> the proven solution If you have <b>Customizable Products</b> to Boost your sales!`
+            }
+        ],
+        description_next: [
+            {
+                type: `text`,
+                value: `Virtual Configurator: Boost Sales Fast`
             },
-            // {
-            //     type: `html`,
-            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            // }
+            {
+                type: 'list',
+                list: [
+                    `<b>Increase sales by 20%:</b> Let customers design their own products.`,
+                    `<b>Reduce returns by 30%:</b> Accurate product visualization.`,
+                    `<b>Upsell by 15%:</b> Showcase additional options.`,
+                    `<b>Improve customer satisfaction by 35%:</b> Create a unique shopping experience.`
+                ]
+            }
         ],
         tags: [
             `Modular Home Manufacturing`,
@@ -468,16 +495,18 @@ const projectsData = [
         pageName: `сybersecurity`,
         title: `Corporate Cybersecurity`,
         techno: `Technologies:`,
-        technologies: `Identity and Access Management (IAM), Encryption Tools, Security Information and Event Management (SIEM), Python, Assembly Language`,
+        technologies: `Network Security, Endpoint Security, Cloud Security, AI and Machine Learning`,
         description: [
             {
                 type: `text`,
-                value: `<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance</b>!`
+                value: `<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance!</b>`
             },
-            // {
-            //     type: `html`,
-            //     value: `<a target="_blank" href="https://calendly.com/spotium360/discovery-spotium360">Schedule a Free Call</a>`
-            // }
+        ],
+        description_next: [
+            {
+                type: `text`,
+                value: `We can <>bProtect</b> your <b>Data</b> and help you Develop business without any headache`
+            }
         ],
         tags: [
             `Healthcare`,

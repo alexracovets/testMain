@@ -51,7 +51,7 @@ export default function Case() {
                                         {content.title}
                                     </h2>
                                     <div className={s.description}>
-                                        <TextField texts={content.description} />
+                                        <TextField texts={content.description_next} />
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
