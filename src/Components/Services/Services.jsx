@@ -56,7 +56,7 @@ export default function Services({ mobile }) {
                 <div className={s.services_box}>
                     <Scrollbar
                         className={'scroll'}
-                        onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
+                        onUpdate={(prevScrollValues) => wheelPointer(prevScrollValues)}
                     >
                         <div className={s.services__wrapper}
                             onMouseEnter={() => setIsScrollAllowed(false)}

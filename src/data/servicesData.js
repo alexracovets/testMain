@@ -1,23 +1,25 @@
 const servicesData = [
     {
-        title: 'Custom AI Bots',
+        title: 'Custom Software Development',
         colapse: [
             {
                 type: `text`,
-                value: `<b>Let’s automate tasks and save your money!</b>`
+                value: `<b>We support startups in Fintech, E-commerce, Health and another niches:</b>`
             },
             {
                 type: 'list',
                 list: [
-                    `<b>Personalized Solutions:</b> From chatbots and virtual assistants to automation tools, we design and develop custom AI solutions tailored to your specific needs and objectives.`,
-                    `<b>Boost Efficiency:</b> Say goodbye to time-consuming tasks and human errors. Our AI bots can automate processes, saving you up to 60% in operational costs while ensuring accuracy and consistency.`,
-                    `<b>Stay Ahead of the Curve:</b> With access to cutting-edge technologies like natural language processing (NLP) and machine learning algorithms, our bots continuously learn and evolve to deliver smarter, more intuitive interactions.`,
-                    `<b>Expert Guidance:</b> Our team of AI specialists and developers work closely with you to understand your business goals and challenges, providing strategic insights and ongoing support to maximize the impact of your AI initiatives.`
+                    `<b>Rapid MVP Development:</b> Transform your <span>Startup</span> idea into a functional MVP quickly with our streamlined development process, ensuring you hit the market faster.`,
+                    `<b>Expertise:</b> You will get a Team with a Middle to Senior knowladge of <span>Python</span> and <span>Framework</span>, <span>Java</span> and <span>Node.js</span>.`,
+                    `<b>Cutting-Edge Solutions:</b> Leverage the latest in fintech technologies, including blockchain, AI, and advanced analytics, to create innovative and secure MVPs.`,
+                    `<b>Expert Team:</b> Our skilled developers and industry experts work closely with you to bring your fintech vision to life, providing guidance and expertise at every stage.`,
+                    `<b>Scalable Architecture:</b> Build a robust MVP that can easily scale as your user base grows, ensuring long-term success and flexibility.`,
+                    `<b>Compliance and Security:</b> Ensure your MVP adheres to all regulatory standards and employs top-notch security measures to protect sensitive financial data.`
                 ]
             },
             {
                 type: `text`,
-                value: `Don't let manual tasks hold you back. Contact us today to schedule a consultation and discover the power of custom AI bots!`
+                value: `<b>Contact Us</b> to schedule a consultation and unlock the full potential of custom software for your business!`
             },
         ],
         idx: 0
@@ -34,39 +36,62 @@ const servicesData = [
                 list: [
                     `<b>Complete Development:</b> From initial design concepts to full deployment, we offer a seamless, end-to-end process tailored to your needs.`,
                     `<b>Boost Engagement:</b> Increase user interaction by 60% with immersive, interactive elements that keep visitors on your site longer.`,
-                    `<b>Advanced Technologies:</b> Utilizing the latest in web development tools, including HTML5, CSS3, and JavaScript frameworks, we create dynamic and responsive websites.`,
-                    `<b>Creative Experts:</b> Our team of experienced designers and developers bring innovative ideas to life, ensuring your site stands out from the competition.`
+                    `<b>Advanced Technologies:</b> Utilizing the latest in web development tools, including React, Node.JS and JavaScript frameworks, we create dynamic and responsive websites.`,
+                    `<b>Creative Experts:</b> Our team of experienced designers and developers bring innovative ideas to life, ensuring your site stands out from the competition.`,
                 ]
             },
             {
                 type: `text`,
-                value: `Don't let your website become outdated. Contact us today and transform your online presence!`
+                value: `<b>Contact Us</b> and transform your online presence!`
             },
         ],
         idx: 1
+    },
+    {
+        title: 'Custom AI and ML Development',
+        colapse: [
+            {
+                type: `text`,
+                value: `<b>Let’s automate tasks and save your money!</b>`
+            },
+            {
+                type: 'list',
+                list: [
+                    `<b>Personalized Solutions:</b> From chatbots and virtual assistants to automation tools, we design and develop custom AI solutions tailored to your specific needs and objectives.`,
+                    `<b>Boost Efficiency:</b> Say goodbye to time-consuming tasks and human errors. AI and ML Development will automate processes, saving you up to 60% in operational costs while ensuring accuracy and consistency.`,
+                    `<b>Stay Ahead of the Curve:</b> With access to cutting-edge technologies like natural language processing (NLP) and machine learning algorithms, provides continuously learn and evolve to deliver smarter, more intuitive interactions.`,
+                    `<b>Expert Guidance:</b> Our team of AI and ML specialists and developers work closely with you to understand your business goals and challenges, providing strategic insights and ongoing support to maximize the impact of your AI initiatives.`
+                ]
+            },
+            {
+                type: `text`,
+                value: `<b>Contact Us</b> to schedule a consultation and discover the power of custom AI for your business!`
+            },
+        ],
+        idx: 2
     },
     {
         title: 'Cybersecurity',
         colapse: [
             {
                 type: `text`,
-                value: `<b>Data Breaches Costing You Clients? Let Us Protect Your Business!</b>`
+                value: `<b>Not If but When and How! Let Us Protect Your Business!</b>`
             },
             {
                 type: 'list',
                 list: [
-                    `<b>Tailored Cybersecurity Solutions:</b> From comprehensive threat assessments to robust defense mechanisms, we provide customized cybersecurity solutions designed to protect your specific digital environment and assets.`,
-                    `<b>Enhance Security:</b> Eliminate vulnerabilities and prevent breaches. Our state-of-the-art security systems can reduce the risk of cyber attacks by up to 75%, ensuring the safety and integrity of your data.`,
-                    `<b>Stay Ahead of Threats:</b> Utilizing advanced technologies like artificial intelligence and behavioral analysis, our systems continuously monitor and adapt to emerging threats, providing proactive and real-time protection.`,
-                    `<b>Expert Support:</b> Our team of cybersecurity experts collaborates with you to understand your security needs and challenges, offering strategic advice and ongoing support to strengthen your cybersecurity posture.`
+                    `<b>Comprehensive Security Solutions:</b> From initial risk assessment to full implementation, we provide a seamless, end-to-end cybersecurity strategy tailored to the unique needs of fintech startups.`,
+                    `<b>Enhance Protection:</b> Strengthen your security posture by 70% with advanced threat detection and prevention measures, safeguarding your MVP from cyber threats.`,
+                    `<b>Cutting-Edge Technologies:</b> Leveraging the latest in cybersecurity tools, including AI-driven threat intelligence, encryption, and multi-factor authentication, we ensure robust protection for your fintech MVP.`,
+                    `<b>Expert Team:</b> Our seasoned cybersecurity professionals bring extensive industry knowledge, ensuring your MVP is secure and compliant with the highest standards, giving you a competitive edge.`
                 ]
             },
             {
                 type: `text`,
-                value: `Don’t let cyber threats compromise your business. Contact us today to schedule a consultation and secure your digital future!`
+                value: `<b>Contact Us Today</b> to schedule a consultation and secure your digital future!`
             },
         ],
-        idx: 2
+        idx: 3
     },
     {
         title: 'Digital Marketing',
@@ -87,30 +112,7 @@ const servicesData = [
             },
             {
                 type: `text`,
-                value: `Ready to take your brand to the next level? Contact us today and watch your growth soar!`
-            },
-        ],
-        idx: 3
-    },
-    {
-        title: 'Custom Software Development',
-        colapse: [
-            {
-                type: `text`,
-                value: `<b>Losing 30% Efficiency Due to Generic Software? Transform Your Operations!</b>`
-            },
-            {
-                type: 'list',
-                list: [
-                    `<b>Custom Software Solutions:</b> From tailored applications to integrated systems, we design and develop custom software to meet your unique business needs and objectives.`,
-                    `<b>Boost Productivity:</b> Eliminate inefficiencies and workarounds. Our custom software can streamline operations, increase productivity by up to 50%, and enhance user experience, driving significant improvement in workflow efficiency.`,
-                    `<b>Stay Ahead with Innovation:</b> Leveraging cutting-edge technologies like AI, cloud computing, and IoT, our solutions keep you 20% ahead of the competition, adapting to your evolving business requirements.`,
-                    `<b>Expert Collaboration:</b> Our team of experienced developers and consultants work closely with you to understand your challenges and goals, providing strategic insights and continuous support to ensure your software maximizes its potential.`,
-                ]
-            },
-            {
-                type: `text`,
-                value: `<b>Contact Us</b> today to schedule a consultation and unlock the full potential of custom software for your business!`
+                value: `<b>Contact Us Today</b> and watch your growth soar!`
             },
         ],
         idx: 4

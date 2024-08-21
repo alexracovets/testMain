@@ -159,7 +159,7 @@ export default function QAPage() {
                 </h2>
                 <Scrollbar
                     className={'scroll'}
-                    onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
+                    onUpdate={(prevScrollValues) => wheelPointer(prevScrollValues)}
                 >
                     <div className={s.question}
                         onMouseEnter={() => setIsScrollAllowed(false)}
