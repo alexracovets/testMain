@@ -2,9 +2,9 @@ import { useCollapse } from 'react-collapsed';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
+import TextField from '../../../Components/TextField/TextField';
 
 import s from '../QAPage.module.scss';
-
 export default function QAItem({ title, content }) {
     const [isExpanded, setExpanded] = useState(false);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
@@ -16,13 +16,7 @@ export default function QAItem({ title, content }) {
             </h3>
             <div className={s.content}  {...getCollapseProps()}>
                 <div className={s.content__wrapper}>
-                    {content.map((item, idx) => {
-                        if (item.type === 'text') {
-                            return <p key={idx}>{item.value}</p>
-                        } else if (item.type === 'html') {
-                            return <div key={idx}>{item.value}</div>
-                        }
-                    })}
+                    <TextField texts={content} />
                 </div>
             </div>
         </div>

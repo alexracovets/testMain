@@ -15,7 +15,7 @@ export default function TextField({ texts }) {
                         {item.list.map((li, index) => <li key={index}> <p key={idx} dangerouslySetInnerHTML={{ __html: li }} /></li>)}
                     </ul>
                 } else if (item.type === 'html') {
-                    return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
+                    return <div key={idx}>{item.value}</div>
                 }
             })}
         </>

@@ -8,9 +8,6 @@ import useStoreServices from '../../store/useStoreServices';
 import useModalForm from '../../store/useModalForm';
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
-
-
-
 import './scroll.scss';
 import s from './Services.module.scss';
 import servicesData from '../../data/servicesData';

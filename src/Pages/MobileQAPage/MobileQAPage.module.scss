@@ -98,6 +98,10 @@
                             color: $color-white;
                             font-family: $font-JB_Mono;
 
+                            span {
+                                color: $color-primary;
+                            }
+
                             a {
                                 color: $color-primary;
                                 font-weight: 600;
