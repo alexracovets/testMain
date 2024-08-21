@@ -505,7 +505,7 @@ const projectsData = [
         description_next: [
             {
                 type: `text`,
-                value: `We can <>bProtect</b> your <b>Data</b> and help you Develop business without any headache`
+                value: `We can <b>Protect</b> your <b>Data</b> and help you Develop business without any headache`
             }
         ],
         tags: [
