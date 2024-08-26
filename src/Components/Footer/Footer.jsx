@@ -8,6 +8,7 @@ import useOffice from '../../store/useOffice';
 
 import s from './Footer.module.scss';
 import CopyButton from '../CopyButton/CopyButton';
+import LangsSwither from '../LangsSwither/LangsSwither';
 export default function Footer() {
     const [isBtnFocus, setIsBtnFocus] = useState(false);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
@@ -24,7 +25,7 @@ export default function Footer() {
                     <div className={s.copy}>
                         Software development studIo | Copyright © (2019-2024) SPOTIUM 360
                     </div>
-                    {/* <LangsSwither /> */}
+                    <LangsSwither />
                 </div>
             </div>
             <div className={s.wrapper + ' ' + s.mobile}>

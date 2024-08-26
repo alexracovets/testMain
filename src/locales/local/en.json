@@ -1,0 +1,167 @@
+{
+    "language": "EN",
+    "hello_text": "Expert <span>Software</span> Development, <br /> Future-Proof Innovations",
+    "discover_us": "DISCOVER US",
+    "pages": {
+        "services": "Services",
+        "cases": "Сases",
+        "about": "About Us",
+        "qa": "Q&A",
+        "contact": "Contact Us"
+    },
+    "textTransition": {
+        "we": "We ",
+        "first": "LOOK WIDER",
+        "second": " CREATIVE",
+        "third": " INNOVATIVE",
+        "fourth": " SPOTIUM 360"
+    },
+    "services": {
+        "first": {
+            "title": "Custom Software Development",
+            "colapse": {
+                "first": {
+                    "0": "<b>We support startups in Fintech, E-commerce, Health and another niches:</b>"
+                },
+                "second": {
+                    "0": "<b>Rapid MVP Development:</b> Transform your <span>Startup</span> idea into a functional MVP quickly with our streamlined development process, ensuring you hit the market faster.",
+                    "1": "<b>Expertise:</b> You will get a Team with a Middle to Senior knowladge of <span>Python</span> and <span>Framework</span>, <span>Java</span> and <span>Node.js</span>.",
+                    "2": "<b>Cutting-Edge Solutions:</b> Leverage the latest in fintech technologies, including blockchain, AI, and advanced analytics, to create innovative and secure MVPs.",
+                    "3": "<b>Expert Team:</b> Our skilled developers and industry experts work closely with you to bring your fintech vision to life, providing guidance and expertise at every stage.",
+                    "4": "<b>Scalable Architecture:</b> Build a robust MVP that can easily scale as your user base grows, ensuring long-term success and flexibility.",
+                    "5": "<b>Compliance and Security:</b> Ensure your MVP adheres to all regulatory standards and employs top-notch security measures to protect sensitive financial data."
+                },
+                "third": {
+                    "0": "<b>Contact Us</b> to schedule a consultation and unlock the full potential of custom software for your business!"
+                }
+            }
+        },
+        "second": {
+            "title": "High-Converting Website Dev",
+            "colapse": {
+                "first": {
+                    "0": "<b>Is your website failing to engage visitors?</b>"
+                },
+                "second": {
+                    "0": "<b>Complete Development:</b> From initial design concepts to full deployment, we offer a seamless, end-to-end process tailored to your needs.",
+                    "1": "<b>Boost Engagement:</b> Increase user interaction by 60% with immersive, interactive elements that keep visitors on your site longer.",
+                    "2": "<b>Advanced Technologies:</b> Utilizing the latest in web development tools, including React, Node.JS and JavaScript frameworks, we create dynamic and responsive websites.",
+                    "3": "<b>Creative Experts:</b> Our team of experienced designers and developers bring innovative ideas to life, ensuring your site stands out from the competition."
+                },
+                "third": {
+                    "0": "<b>Contact Us</b> and transform your online presence!"
+                }
+            }
+        },
+        "third": {
+            "title": "Custom AI and ML Development",
+            "colapse": {
+                "first": {
+                    "0": "<b>Let’s automate tasks and save your money!</b>"
+                },
+                "second": {
+                    "0": "<b>Personalized Solutions:</b> From chatbots and virtual assistants to automation tools, we design and develop custom AI solutions tailored to your specific needs and objectives.",
+                    "1": "<b>Boost Efficiency:</b> Say goodbye to time-consuming tasks and human errors. AI and ML Development will automate processes, saving you up to 60% in operational costs while ensuring accuracy and consistency.",
+                    "2": "<b>Stay Ahead of the Curve:</b> With access to cutting-edge technologies like natural language processing (NLP) and machine learning algorithms, provides continuously learn and evolve to deliver smarter, more intuitive interactions.",
+                    "3": "<b>Expert Guidance:</b> Our team of AI and ML specialists and developers work closely with you to understand your business goals and challenges, providing strategic insights and ongoing support to maximize the impact of your AI initiatives."
+                },
+                "third": {
+                    "0": "<b>Contact Us</b> to schedule a consultation and discover the power of custom AI for your business!"
+                }
+            }
+        },
+        "fourth": {
+            "title": "Cybersecurity",
+            "colapse": {
+                "first": {
+                    "0": "<b>Not If but When and How! Let Us Protect Your Business!</b>"
+                },
+                "second": {
+                    "0": "<b>Comprehensive Security Solutions:</b> From initial risk assessment to full implementation, we provide a seamless, end-to-end cybersecurity strategy tailored to the unique needs of fintech startups.",
+                    "1": "<b>Enhance Protection:</b> Strengthen your security posture by 70% with advanced threat detection and prevention measures, safeguarding your MVP from cyber threats.",
+                    "2": "<b>Cutting-Edge Technologies:</b> Leveraging the latest in cybersecurity tools, including AI-driven threat intelligence, encryption, and multi-factor authentication, we ensure robust protection for your fintech MVP.",
+                    "3": "<b>Expert Team:</b> Our seasoned cybersecurity professionals bring extensive industry knowledge, ensuring your MVP is secure and compliant with the highest standards, giving you a competitive edge."
+                },
+                "third": {
+                    "0": "<b>Contact Us Today</b> to schedule a consultation and secure your digital future!"
+                }
+            }
+        },
+        "fifth": {
+            "title": "Digital Marketing",
+            "colapse": {
+                "first": {
+                    "0": "<b>Amplify Your Brand with Digital Marketing Excellence</b>"
+                },
+                "second": {
+                    "0": "<b>Comprehensive Approach:</b> From SEO to social media, we handle everything, providing a seamless experience.",
+                    "1": "<b>Increase Visibility by 70%:</b> Our targeted campaigns ensure your brand reaches the right audience, increasing your online presence significantly.",
+                    "2": "<b>Cutting-Edge Strategies:</b> Utilizing the latest in analytics, AI, and automation, we optimize every campaign for maximum ROI.",
+                    "3": "<b>Expert Team:</b> With over 10 years of industry experience, our skilled professionals are dedicated to driving your success.",
+                    "4": "<b>Don't Get Left Behind:</b> The digital landscape is evolving fast. Stay ahead of your competitors with our innovative solutions."
+                },
+                "third": {
+                    "0": "<b>Contact Us Today</b> and watch your growth soar!"
+                }
+            }
+        }
+    },
+    "cases": {
+        "first": {
+            "pageName": "web_sites",
+            "video": "website.mp4",
+            "title": "High-Converting Web Sites",
+            "techno": "Platform",
+            "technologies": "Shopify, Amazon, Walmart",
+            "description": {
+                "first": "Our <b>E-Commerce</b> client get up to 50% Higher Conversion Rate.",
+                "second": "Also we help to achieve <b>30% Faster Load Times</b> and up to <b>40% Drop in Bounce Rates</b>."
+            },
+            "description_next": {
+                "first": "We <b>Guarantee</b> to <b>Boost Your Online Sales up to 50%</b> with a Conversion-Focused Website. Or we will give your money back!",
+                "second": "Or we will give your <b>money back</b>!"
+            },
+            "tags": {
+                "0": "E-Commerce",
+                "1": "Healthcare and Medical Services",
+                "2": "Education and E-Learning",
+                "3": "Financial Services",
+                "4": "Real Estate",
+                "5": "Professional Services (Legal, Accounting, Consulting)",
+                "6": "Travel and Hospitality",
+                "7": "Nonprofits and Charities",
+                "8": "Technology and SaaS (Software as a Service)",
+                "9": "Manufacturing and Industrial"
+            },
+            "bussines_block": {
+                "first": {
+                    "name": "Bussiness need:",
+                    "content": {
+                        "first": "Businesses need a highly convertible website to:",
+                        "second": {
+                            "0": "Enhance user experience and engagement.",
+                            "1": "Increase conversion rates and generate more leads.",
+                            "2": "Reduce bounce rates by retaining visitors.",
+                            "3": "Optimize website performance across all devices."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Solution:",
+                    "content": {
+                        "first": "Your highly convertible website is:",
+                        "second": {
+                            "0": "<b>Responsive Design:</b> Ensure your website looks and functions perfectly on all devices, reducing bounce rates by up to 40%.",
+                            "1": "<b>Fast Load Times:</b> Optimize website performance to achieve load times under 2 seconds, decreasing abandonment rates by 30%.",
+                            "2": "<b>User-Centric Design:</b> Create intuitive and engaging designs that improve user experience, leading to a 25% increase in conversion rates.",
+                            "3": "<b>SEO Optimization:</b> Implement best SEO practices to improve search engine rankings, driving 50% more organic traffic.",
+                            "4": "<b>Conversion Rate Optimization (CRO):</b> Use data-driven strategies to enhance conversion elements, resulting in a 20% boost in lead generation.",
+                            "5": "<b>Content Management Systems (CMS):</b> Provide easy-to-use CMS for seamless content updates, increasing website efficiency by 30%.",
+                            "6": "<b>Analytics and A/B Testing:</b> Utilize advanced analytics and A/B testing to continuously optimize website performance, improving ROI by 15%."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

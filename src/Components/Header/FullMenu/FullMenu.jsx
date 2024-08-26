@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 
 import useStoreNavigation from '../../../store/useStoreNavigation';
@@ -18,13 +19,14 @@ export default function FullMenu({ isDesktop }) {
     const setBurger = useStoreNavigation((state) => state.setBurger);
     const getSection = useAnchorScroll((state) => state.getSection);
     const hoverSound = new Audio(hover1);
+    const { t } = useTranslation();
 
     const links = [
-        { path: "/services", name: "Services" },
-        { path: "/cases", name: "Сases" },
-        { path: "/about", name: "About Us" },
-        { path: "/q&a", name: "Q&A" },
-        { path: "/contact", name: "Contact Us" }
+        { path: "/services", name: t("pages.services") },
+        { path: "/cases", name: t("pages.cases") },
+        { path: "/about", name: t("pages.about") },
+        { path: "/q&a", name: t("pages.qa") },
+        { path: "/contact", name: t("pages.contact") }
     ]
 
     const social = [
@@ -63,11 +65,11 @@ export default function FullMenu({ isDesktop }) {
                         )
                     }) :
                         <>
-                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile'} onClick={() => anchorLink('services')} > Services </NavLink></li>
-                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile/cases'} onClick={() => setBurger(false)}> Сases </NavLink></li>
-                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile'} onClick={() => anchorLink('about')} > About Us</NavLink></li>
-                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}> Q&A </NavLink></li>
-                            <li onMouseEnter={handleMouseEnter}><NavLink onClick={() => anchorLink('contacts')} > Contacts Us</NavLink></li>
+                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile'} onClick={() => anchorLink('services')}>{t("pages.services")}</NavLink></li>
+                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile/cases'} onClick={() => setBurger(false)}>{t("pages.cases")}</NavLink></li>
+                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile'} onClick={() => anchorLink('about')}>{t("pages.about")}</NavLink></li>
+                            <li onMouseEnter={handleMouseEnter}><NavLink to={'/mobile/q&a'} onClick={() => setBurger(false)}>{t("pages.qa")}</NavLink></li>
+                            <li onMouseEnter={handleMouseEnter}><NavLink onClick={() => anchorLink('contacts')} >{t("pages.contact")}</NavLink></li>
                         </>
                     }
                 </ul>

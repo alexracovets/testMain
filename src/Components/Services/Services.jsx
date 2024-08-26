@@ -2,15 +2,15 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import UI_Button from '../UI_Button/UI_Button';
 import ServicesItem from './ServicesItem/ServicesItem';
-import useStoreServices from '../../store/useStoreServices';
+import UI_Button from '../UI_Button/UI_Button';
+import servicesData from '../../data/servicesData';
 import useModalForm from '../../store/useModalForm';
+import useStoreServices from '../../store/useStoreServices';
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 import './scroll.scss';
 import s from './Services.module.scss';
-import servicesData from '../../data/servicesData';
 export default function Services({ mobile }) {
     const changeActiveServices = useStoreServices((state) => state.changeActiveServices);
     const sliderServices = useStoreServices((state) => state.sliderServices);

@@ -30,6 +30,7 @@ footer {
             border-top-width: 0.0626rem;
             border-top-style: solid;
             border-top-color: $color-white;
+            position: relative;
 
             @media (max-width:$width-table) {
                 height: 5rem;

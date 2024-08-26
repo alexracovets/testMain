@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
@@ -9,6 +10,7 @@ import useModalForm from '../../store/useModalForm';
 import s from './MainPage.module.scss';
 export default function MainPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const { t } = useTranslation();
     ReactGA.send({
         hitType: "pageview",
         page: "/",
@@ -25,13 +27,10 @@ export default function MainPage() {
             >
                 <section>
                     <div className={s.content}>
-                        <div className={s.click}>
-                            Expert <span>Software</span> Development, <br />
-                            Future-Proof Innovations
-                        </div>
+                        <div className={s.click} dangerouslySetInnerHTML={{ __html: t(`hello_text`) }} />
                         <Fliper />
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={'DISCOVER US'} arrow />
+                            <UI_Button text={t(`discover_us`)} arrow />
                         </div>
                         <Developments />
                     </div>

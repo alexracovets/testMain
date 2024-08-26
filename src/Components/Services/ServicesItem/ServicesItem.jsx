@@ -1,13 +1,16 @@
+import { useTranslation } from "react-i18next";
 import { useCollapse } from 'react-collapsed';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import s from '../Services.module.scss';
-import TextField from '../../TextField/TextField';
+import TextFieldI18 from '../../TextField/TextFieldI18';
 
+import s from '../Services.module.scss';
 export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
     const [isExpanded, setExpanded] = useState(false);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+    const { t } = useTranslation();
+    
     const handler = () => {
         if (currentService !== index) {
             setExpanded(true);
@@ -30,12 +33,10 @@ export default function ServicesItem({ index, title, colapse, currentService, se
             })}
             className={isExpanded ? s.active : null}
         >
-            <div className={s.title}>
-                {title}
-            </div>
+            <div className={s.title} dangerouslySetInnerHTML={{ __html: t(title) }} />
             <div {...getCollapseProps()} className={s.colapse}>
                 <div className={s.colapse__wrapper}>
-                    <TextField texts={colapse} />
+                    <TextFieldI18 texts={colapse} />
                 </div>
             </div>
         </li>
