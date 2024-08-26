@@ -1,12 +1,13 @@
 import { Scrollbar } from "react-scrollbars-custom";
 import { NavLink, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
 import Keys from "../../Components/Keys/Keys";
 import UI_Button from "../../Components/UI_Button/UI_Button";
-import TextField from "../../Components/TextField/TextField";
+import TextFieldI18 from "../../Components/TextField/TextFieldI18";
 
 import projectsData from "../../data/projectsData";
 import useModalForm from '../../store/useModalForm';
@@ -18,11 +19,12 @@ export default function Case() {
     const [isVideoLoad, setIsVideoLoad] = useState(false);
     const videoRef = useRef();
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const { t } = useTranslation();
 
     const casesData = [
         {
-            pageName: "cases.first.pageName",
-            video: "cases.first.video",
+            pageName: "web_sites",
+            video: "website.mp4",
             title: "cases.first.title",
             techno: "cases.first.techno",
             technologies: "cases.first.technologies",
@@ -87,31 +89,31 @@ export default function Case() {
                         {
                             type: 'list',
                             list: [
-                                `<b>Responsive Design:</b> Ensure your website looks and functions perfectly on all devices, reducing bounce rates by up to 40%.`,
-                                `<b>Fast Load Times:</b> Optimize website performance to achieve load times under 2 seconds, decreasing abandonment rates by 30%.`,
-                                `<b>User-Centric Design:</b> Create intuitive and engaging designs that improve user experience, leading to a 25% increase in conversion rates.`,
-                                `<b>SEO Optimization:</b> Implement best SEO practices to improve search engine rankings, driving 50% more organic traffic.`,
-                                `<b>Conversion Rate Optimization (CRO):</b> Use data-driven strategies to enhance conversion elements, resulting in a 20% boost in lead generation.`,
-                                `<b>Content Management Systems (CMS):</b> Provide easy-to-use CMS for seamless content updates, increasing website efficiency by 30%.`,
-                                `<b>Analytics and A/B Testing:</b> Utilize advanced analytics and A/B testing to continuously optimize website performance, improving ROI by 15%.`
+                                "cases.first.bussines_block.second.content.second.0",
+                                "cases.first.bussines_block.second.content.second.1",
+                                "cases.first.bussines_block.second.content.second.2",
+                                "cases.first.bussines_block.second.content.second.3",
+                                "cases.first.bussines_block.second.content.second.4",
+                                "cases.first.bussines_block.second.content.second.5",
+                                "cases.first.bussines_block.second.content.second.6",
                             ]
                         }
                     ]
                 },
                 {
-                    name: `Result:`,
+                    name: "cases.first.bussines_block.third.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Implementing our highly convertible website development service can lead to:`
+                            value: "cases.first.bussines_block.third.content.first",
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>50% Increase in Conversion Rates:</b> More visitors become leads or customers.`,
-                                `<b>30% Reduction in Bounce Rates:</b> Visitors stay longer and engage more.`,
-                                `<b>40% Faster Load Times:</b> Improved user experience with load times under 2 seconds.`,
-                                `<b>50% More Organic Traffic:</b> Better SEO practices drive more visitors.`
+                                "cases.first.bussines_block.third.content.second.0",
+                                "cases.first.bussines_block.third.content.second.1",
+                                "cases.first.bussines_block.third.content.second.2",
+                                "cases.first.bussines_block.third.content.second.3",
                             ]
                         }
                     ]
@@ -119,60 +121,60 @@ export default function Case() {
             ],
             keys_block: [
                 {
-                    name: 'Example',
+                    name: "cases.first.keys_block.first.name",
                     content: [
                         {
                             type: 'text',
-                            value: `A mid-sized B2B consulting firm struggling with low conversion rates and high bounce rates used our website development service. By creating a highly convertible website with responsive design and optimized performance, they saw a:`
+                            value: "cases.first.keys_block.first.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>50% Increase in Conversion Rates</b> within three months.`,
-                                `<b>35% Reduction in Bounce Rates</b> due to improved user experience.`,
-                                `<b>40% Increase in Organic Traffic</b> from enhanced SEO practices.`
+                                "cases.first.keys_block.first.content.second.0",
+                                "cases.first.keys_block.first.content.second.1",
+                                "cases.first.keys_block.first.content.second.2",
                             ]
                         }
                     ],
                     id: 0
                 },
                 {
-                    name: 'Key Team Members',
+                    name: "cases.first.keys_block.second.name",
                     content: [
                         {
                             type: 'list',
                             list: [
-                                `<b>Web Development Lead:</b> Expert in creating high-performance, responsive websites.`,
-                                `<b>UX/UI Designer:</b> Specializes in user-centric designs that enhance engagement and conversion rates.`,
-                                `<b>SEO Specialist:</b> Ensures websites are optimized for search engines to drive organic traffic.`,
-                                `<b>Front-End and Back-End:</b> Full stack team`
+                                "cases.first.keys_block.second.content.first.0",
+                                "cases.first.keys_block.second.content.first.1",
+                                "cases.first.keys_block.second.content.first.2",
+                                "cases.first.keys_block.second.content.first.3"
                             ]
                         }
                     ],
                     id: 1
                 },
                 {
-                    name: 'Q&A',
+                    name: "cases.first.keys_block.third.name",
                     content: [
                         {
                             type: 'q_a',
-                            question: '<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>',
-                            answer: '<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses.'
+                            question: "cases.first.keys_block.third.content.0.question",
+                            answer: "cases.first.keys_block.third.content.0.answer",
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: Can you guarantee fast load times for my website?</b>',
-                            answer: '<b>A:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates.'
+                            question: "cases.first.keys_block.third.content.1.question",
+                            answer: "cases.first.keys_block.third.content.1.answer",
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: How does responsive design benefit my business?</b>',
-                            answer: '<b>A:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience.'
+                            question: "cases.first.keys_block.third.content.2.question",
+                            answer: "cases.first.keys_block.third.content.2.answer",
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: What kind of ROI can I expect from your services?</b>',
-                            answer: '<b>A:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates.'
+                            question: "cases.first.keys_block.third.content.3.question",
+                            answer: "cases.first.keys_block.third.content.3.answer",
                         }
                     ],
                     id: 2
@@ -181,98 +183,96 @@ export default function Case() {
         },
         {
             pageName: `digital_marketing`,
-            title: `Digital Marketing`,
-            techno: `Technologies:`,
-            technologies: `SEO, PPC, Social Media, Analytics, AI, Video Marketing`,
+            video: `digital.mp4`,
+            title: "cases.second.title",
+            techno: "cases.second.techno",
+            technologies: "cases.second.technologies",
             description: [
                 {
                     type: `text`,
-                    value: `If you face <b>Weak brand awareness or Difficulty generating leads</b>! You are in the Right Place to fix it.`
+                    value: "cases.second.description.first"
                 },
             ],
             description_next: [
                 {
                     type: `text`,
-                    value: `This result was achieved for our clients:`
+                    value: "cases.second.description_next.first"
                 },
                 {
                     type: 'list',
                     list: [
-                        `<b>Increased</b> website traffic by 35% through SEO optimization`,
-                        `<b>Generated</b> $150,000 in revenue from PPC campaigns`,
-                        `<b>Boosted</b> social media engagement by 200%`,
+                        "cases.second.description_next.second.0",
+                        "cases.second.description_next.second.1",
+                        "cases.second.description_next.second.2",
                     ]
                 }
             ],
             tags: [
-                `Technology and Software Development`,
-                `Manufacturing`,
-                `Healthcare and Medical Devices`,
-                'Financial Services',
-                'Professional Services (Legal, Accounting, Consulting)',
-                'Education and E-Learning',
-                'Real Estate and Property Management',
-                'Logistics and Supply Chain Management',
-                'Biotechnology and Pharmaceuticals',
-                'Automotive Industry'
+                "cases.second.tags.0",
+                "cases.second.tags.1",
+                "cases.second.tags.2",
+                "cases.second.tags.3",
+                "cases.second.tags.4",
+                "cases.second.tags.5",
+                "cases.second.tags.6",
+                "cases.second.tags.7",
+                "cases.second.tags.8",
+                "cases.second.tags.9",
             ],
-            video: `digital.mp4`,
-            logo: `logo.svg`,
-            logoName: `Marketing`,
             bussines_block: [
                 {
-                    name: `Bussiness need:`,
+                    name: "cases.second.bussines_block.first.name",
                     content: [
                         {
                             type: `text`,
-                            value: `With our marketing team You will get:`
+                            value: "cases.second.bussines_block.first.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `Enhance brand visibility and reputation.`,
-                                `Drive high-quality traffic to their website.`,
-                                `Convert website visitors into qualified leads.`,
-                                `Engage with their audience through content marketing, social media, and email campaigns.`
+                                "cases.second.bussines_block.first.content.second.0",
+                                "cases.second.bussines_block.first.content.second.1",
+                                "cases.second.bussines_block.first.content.second.2",
+                                "cases.second.bussines_block.first.content.second.3",
                             ]
                         }
                     ]
                 },
                 {
-                    name: `Solution:`,
+                    name: "cases.second.bussines_block.second.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Our digital marketing services for B2B businesses address these challenges by:`
+                            value: "cases.second.bussines_block.second.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>SEO Optimization:</b> Improve search engine rankings to increase organic traffic by up to 50%.`,
-                                `<b>PPC Campaigns:</b> Drive immediate traffic with targeted pay-per-click advertising, achieving a 200% increase in click-through rates.`,
-                                `<b>Content Marketing:</b> Create engaging and relevant content to attract and nurture leads, resulting in a 60% boost in audience engagement.`,
-                                `<b>Social Media Management:</b> Enhance social media presence with targeted strategies, leading to a 50% increase in follower growth and engagement.`,
-                                `<b>Email Marketing:</b> Develop effective email campaigns to nurture leads, achieving open rates of up to 30% and click-through rates of 15%.`,
-                                `<b>Advanced Analytics and Tracking:</b> Implement tools to measure and optimize campaign performance, improving marketing ROI by 20%.`,
-                                `<b>A/B Testing:</b> Optimize ad copy, images, and call-to-actions, resulting in a 25% improvement in conversion rates.`
+                                "cases.second.bussines_block.second.content.second.0",
+                                "cases.second.bussines_block.second.content.second.1",
+                                "cases.second.bussines_block.second.content.second.2",
+                                "cases.second.bussines_block.second.content.second.3",
+                                "cases.second.bussines_block.second.content.second.4",
+                                "cases.second.bussines_block.second.content.second.5",
+                                "cases.second.bussines_block.second.content.second.6"
                             ]
                         }
                     ]
                 },
                 {
-                    name: `Result:`,
+                    name: "cases.second.bussines_block.third.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Implementing our digital marketing services can lead to:`
+                            value: "cases.second.bussines_block.third.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>40% Increase in Website Traffic:</b> Attract more high-quality visitors with targeted strategies.`,
-                                `<b>30% Higher Conversion Rates:</b> Optimize lead generation and conversion processes.`,
-                                `<b>50% Improved Engagement:</b> Engage your audience with compelling content and social media strategies.`,
-                                `<b>20% Better ROI on Marketing Spend:</b> Make data-driven decisions to maximize campaign effectiveness.`
+                                "cases.second.bussines_block.third.content.second.0",
+                                "cases.second.bussines_block.third.content.second.1",
+                                "cases.second.bussines_block.third.content.second.2",
+                                "cases.second.bussines_block.third.content.second.3"
                             ]
                         }
                     ]
@@ -670,13 +670,12 @@ export default function Case() {
 
     ReactGA.send({
         hitType: "pageview",
-        page: `/cases/${projectsData.find(project => project.pageName === id).pageName}`,
-        title: `${projectsData.find(project => project.pageName === id).logoName} Page`
+        page: `/cases/${casesData.find(meCase => meCase.pageName === id).pageName}`,
+        title: `${casesData.find(meCase => meCase.pageName === id).logoName} Page`
     });
 
     useEffect(() => {
-        const project = projectsData.find(project => project.pageName === id);
-        console.log(project)
+        const project = casesData.find(meCase => meCase.pageName === id);
         setContent(project)
     }, [id, setContent])
 
@@ -698,17 +697,17 @@ export default function Case() {
                             <section className={s.main_info}>
                                 <div className={s.content}>
                                     <h2>
-                                        {content.title}
+                                        {t(content.title)}
                                     </h2>
                                     <div className={s.description}>
-                                        <TextField texts={content.description_next} />
+                                        <TextFieldI18 texts={content.description_next} />
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
-                                            {content.techno}
+                                            {t(content.techno)}
                                         </div>
                                         <div className={s.logo}>
-                                            <h3> {content.technologies}</h3>
+                                            <h3> {t(content.technologies)}</h3>
                                         </div>
                                     </div>
                                     <div className={s.btns_wrapper}>
@@ -742,9 +741,9 @@ export default function Case() {
                                     {content.bussines_block.map((item, idx) => {
                                         return (
                                             <li key={idx}>
-                                                <div className={s.title}>{item.name}</div>
+                                                <div className={s.title}>{t(item.name)}</div>
                                                 <div className={s.content}>
-                                                    <TextField texts={item.content} />
+                                                    <TextFieldI18 texts={item.content} />
                                                 </div>
                                             </li>
                                         )

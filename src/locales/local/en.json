@@ -108,8 +108,6 @@
     },
     "cases": {
         "first": {
-            "pageName": "web_sites",
-            "video": "website.mp4",
             "title": "High-Converting Web Sites",
             "techno": "Platform",
             "technologies": "Shopify, Amazon, Walmart",
@@ -158,6 +156,177 @@
                             "4": "<b>Conversion Rate Optimization (CRO):</b> Use data-driven strategies to enhance conversion elements, resulting in a 20% boost in lead generation.",
                             "5": "<b>Content Management Systems (CMS):</b> Provide easy-to-use CMS for seamless content updates, increasing website efficiency by 30%.",
                             "6": "<b>Analytics and A/B Testing:</b> Utilize advanced analytics and A/B testing to continuously optimize website performance, improving ROI by 15%."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Result:",
+                    "content": {
+                        "first": "Implementing our highly convertible website development service can lead to:",
+                        "second": {
+                            "0": "<b>50% Increase in Conversion Rates:</b> More visitors become leads or customers.",
+                            "1": "<b>30% Reduction in Bounce Rates:</b> Visitors stay longer and engage more.",
+                            "2": "<b>40% Faster Load Times:</b> Improved user experience with load times under 2 seconds.",
+                            "3": "<b>50% More Organic Traffic:</b> Better SEO practices drive more visitors."
+                        }
+                    }
+                }
+            },
+            "keys_block": {
+                "first": {
+                    "name": "Example",
+                    "content": {
+                        "first": "A mid-sized B2B consulting firm struggling with low conversion rates and high bounce rates used our website development service. By creating a highly convertible website with responsive design and optimized performance, they saw a:",
+                        "second": {
+                            "0": "<b>50% Increase in Conversion Rates</b> within three months.",
+                            "1": "<b>35% Reduction in Bounce Rates</b> due to improved user experience.",
+                            "2": "<b>40% Increase in Organic Traffic</b> from enhanced SEO practices."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Key Team Members",
+                    "content": {
+                        "first": {
+                            "0": "<b>Web Development Lead:</b> Expert in creating high-performance, responsive websites.",
+                            "1": "<b>UX/UI Designer:</b> Specializes in user-centric designs that enhance engagement and conversion rates.",
+                            "2": "<b>SEO Specialist:</b> Ensures websites are optimized for search engines to drive organic traffic.",
+                            "3": "<b>Front-End and Back-End:</b> Full stack team"
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Q&A",
+                    "content": {
+                        "0": {
+                            "question": "<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>",
+                            "answer": "<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses."
+                        },
+                        "1": {
+                            "question": "<b>Q: Can you guarantee fast load times for my website?</b>",
+                            "answer": "<b>A:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates."
+                        },
+                        "2": {
+                            "question": "<b>Q: How does responsive design benefit my business?</b>",
+                            "answer": "<b>A:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience."
+                        },
+                        "3": {
+                            "question": "<b>Q: What kind of ROI can I expect from your services?</b>",
+                            "answer": "<b>A:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates."
+                        }
+                    }
+                }
+            }
+        },
+        "second": {
+            "title": "Digital Marketing",
+            "techno": "Technologies:",
+            "technologies": "SEO, PPC, Social Media, Analytics, AI, Video Marketing",
+            "description": {
+                "first": "If you face <b>Weak brand awareness or Difficulty generating leads</b>! You are in the Right Place to fix it."
+            },
+            "description_next": {
+                "first": "This result was achieved for our clients:",
+                "second": {
+                    "0": "<b>Increased</b> website traffic by 35% through SEO optimization",
+                    "1": "<b>Generated</b> $150,000 in revenue from PPC campaigns",
+                    "2": "<b>Boosted</b> social media engagement by 200%"
+                }
+            },
+            "tags": {
+                "0": "Technology and Software Development",
+                "1": "Manufacturing",
+                "2": "Healthcare and Medical Devices",
+                "3": "Financial Services",
+                "4": "Professional Services (Legal, Accounting, Consulting)",
+                "5": "Education and E-Learning",
+                "6": "Real Estate and Property Management",
+                "7": "Logistics and Supply Chain Management",
+                "8": "Biotechnology and Pharmaceuticals",
+                "9": "Automotive Industry"
+            },
+            "bussines_block": {
+                "first": {
+                    "name": "Bussiness need:",
+                    "content": {
+                        "first": "With our marketing team You will get:",
+                        "second": {
+                            "0": "Enhance brand visibility and reputation.",
+                            "1": "Drive high-quality traffic to their website.",
+                            "2": "Convert website visitors into qualified leads.",
+                            "3": "Engage with their audience through content marketing, social media, and email campaigns."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Solution:",
+                    "content": {
+                        "first": "Our digital marketing services for B2B businesses address these challenges by:",
+                        "second": {
+                            "0": "<b>SEO Optimization:</b> Improve search engine rankings to increase organic traffic by up to 50%.",
+                            "1": "<b>PPC Campaigns:</b> Drive immediate traffic with targeted pay-per-click advertising, achieving a 200% increase in click-through rates.",
+                            "2": "<b>Content Marketing:</b> Create engaging and relevant content to attract and nurture leads, resulting in a 60% boost in audience engagement.",
+                            "3": "<b>Social Media Management:</b> Enhance social media presence with targeted strategies, leading to a 50% increase in follower growth and engagement.",
+                            "4": "<b>Email Marketing:</b> Develop effective email campaigns to nurture leads, achieving open rates of up to 30% and click-through rates of 15%.",
+                            "5": "<b>Advanced Analytics and Tracking:</b> Implement tools to measure and optimize campaign performance, improving marketing ROI by 20%.",
+                            "6": "<b>A/B Testing:</b> Optimize ad copy, images, and call-to-actions, resulting in a 25% improvement in conversion rates."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Result:",
+                    "content": {
+                        "first": "Implementing our digital marketing services can lead to:",
+                        "second": {
+                            "0": "<b>40% Increase in Website Traffic:</b> Attract more high-quality visitors with targeted strategies.",
+                            "1": "<b>30% Higher Conversion Rates:</b> Optimize lead generation and conversion processes.",
+                            "2": "<b>50% Improved Engagement:</b> Engage your audience with compelling content and social media strategies.",
+                            "3": "<b>20% Better ROI on Marketing Spend:</b> Make data-driven decisions to maximize campaign effectiveness."
+                        }
+                    }
+                }
+            },
+            "keys_block": {
+                "first": {
+                    "name": "Example",
+                    "content": {
+                        "first": "A mid-sized B2B consulting firm struggling with low conversion rates and high bounce rates used our website development service. By creating a highly convertible website with responsive design and optimized performance, they saw a:",
+                        "second": {
+                            "0": "<b>50% Increase in Conversion Rates</b> within three months.",
+                            "1": "<b>35% Reduction in Bounce Rates</b> due to improved user experience.",
+                            "2": "<b>40% Increase in Organic Traffic</b> from enhanced SEO practices."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Key Team Members",
+                    "content": {
+                        "first": {
+                            "0": "<b>Web Development Lead:</b> Expert in creating high-performance, responsive websites.",
+                            "1": "<b>UX/UI Designer:</b> Specializes in user-centric designs that enhance engagement and conversion rates.",
+                            "2": "<b>SEO Specialist:</b> Ensures websites are optimized for search engines to drive organic traffic.",
+                            "3": "<b>Front-End and Back-End:</b> Full stack team"
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Q&A",
+                    "content": {
+                        "0": {
+                            "question": "<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>",
+                            "answer": "<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses."
+                        },
+                        "1": {
+                            "question": "<b>Q: Can you guarantee fast load times for my website?</b>",
+                            "answer": "<b>A:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates."
+                        },
+                        "2": {
+                            "question": "<b>Q: How does responsive design benefit my business?</b>",
+                            "answer": "<b>A:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience."
+                        },
+                        "3": {
+                            "question": "<b>Q: What kind of ROI can I expect from your services?</b>",
+                            "answer": "<b>A:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates."
                         }
                     }
                 }
