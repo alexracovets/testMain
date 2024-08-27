@@ -174,17 +174,6 @@
             },
             "keys_block": {
                 "first": {
-                    "name": "Example",
-                    "content": {
-                        "first": "A mid-sized B2B consulting firm struggling with low conversion rates and high bounce rates used our website development service. By creating a highly convertible website with responsive design and optimized performance, they saw a:",
-                        "second": {
-                            "0": "<b>50% Increase in Conversion Rates</b> within three months.",
-                            "1": "<b>35% Reduction in Bounce Rates</b> due to improved user experience.",
-                            "2": "<b>40% Increase in Organic Traffic</b> from enhanced SEO practices."
-                        }
-                    }
-                },
-                "second": {
                     "name": "Key Team Members",
                     "content": {
                         "first": {
@@ -195,7 +184,7 @@
                         }
                     }
                 },
-                "third": {
+                "second": {
                     "name": "Q&A",
                     "content": {
                         "0": {
@@ -290,17 +279,6 @@
             },
             "keys_block": {
                 "first": {
-                    "name": "Example",
-                    "content": {
-                        "first": "A mid-sized B2B technology firm struggling with low website traffic and lead quality used our digital marketing services. By implementing targeted SEO, PPC, and content marketing strategies, they saw a:",
-                        "second": {
-                            "0": "<b>45% Increase in Website Traffic</b> within three months.",
-                            "1": "<b>35% Boost in Conversion Rates</b> from optimized lead generation efforts.",
-                            "2": "<b>60% Improvement in Engagement</b> due to compelling content and social media strategies."
-                        }
-                    }
-                },
-                "second": {
                     "name": "Key Team Members",
                     "content": {
                         "first": {
@@ -311,7 +289,7 @@
                         }
                     }
                 },
-                "third": {
+                "second": {
                     "name": "Q&A",
                     "content": {
                         "0": {
@@ -405,19 +383,6 @@
             },
             "keys_block": {
                 "first": {
-                    "name": "Example",
-                    "content": {
-                        "first": "Picture this: a modular home builder uses our configurator. Buyers can:",
-                        "second": {
-                            "0": "Customize layouts, materials, and finishes.",
-                            "1": "See real-time updates and prices.",
-                            "2": "Save designs and come back later.",
-                            "3": "Share their vision with friends and family."
-                        },
-                        "third": "This leads to a more engaged customer base, <b>30% higher</b> conversion rates, and happier customers."
-                    }
-                },
-                "second": {
                     "name": "Key Team Members",
                     "content": {
                         "first": {
@@ -429,7 +394,7 @@
                         }
                     }
                 },
-                "third": {
+                "second": {
                     "name": "Q&A",
                     "content": {
                         "0": {
@@ -520,18 +485,6 @@
             },
             "keys_block": {
                 "first": {
-                    "name": "Example",
-                    "content": {
-                        "first": "A mid-sized financial services firm was facing frequent cyber attacks and struggling with regulatory compliance. By implementing our comprehensive cybersecurity services, they saw a:",
-                        "second": {
-                            "0": "<b>75% Reduction in Cyber Attacks</b> within six months.",
-                            "1": "<b>85% Improvement in Compliance</b> with industry regulations, avoiding potential fines.",
-                            "2": "<b>50% Faster Recovery Time</b> during incidents due to effective response planning.",
-                            "3": "<b>40% Decrease in Phishing Attack Success</b> through targeted employee training."
-                        }
-                    }
-                },
-                "second": {
                     "name": "Key Team Members",
                     "content": {
                         "first": "Our cybersecurity team includes:",
@@ -543,7 +496,7 @@
                         }
                     }
                 },
-                "third": {
+                "second": {
                     "name": "Q&A",
                     "content": {
                         "0": {

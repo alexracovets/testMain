@@ -124,15 +124,12 @@ export default function Case() {
                     name: "cases.first.keys_block.first.name",
                     content: [
                         {
-                            type: 'text',
-                            value: "cases.first.keys_block.first.content.first"
-                        },
-                        {
                             type: 'list',
                             list: [
-                                "cases.first.keys_block.first.content.second.0",
-                                "cases.first.keys_block.first.content.second.1",
-                                "cases.first.keys_block.first.content.second.2",
+                                "cases.first.keys_block.first.content.first.0",
+                                "cases.first.keys_block.first.content.first.1",
+                                "cases.first.keys_block.first.content.first.2",
+                                "cases.first.keys_block.first.content.first.3"
                             ]
                         }
                     ],
@@ -142,42 +139,27 @@ export default function Case() {
                     name: "cases.first.keys_block.second.name",
                     content: [
                         {
-                            type: 'list',
-                            list: [
-                                "cases.first.keys_block.second.content.first.0",
-                                "cases.first.keys_block.second.content.first.1",
-                                "cases.first.keys_block.second.content.first.2",
-                                "cases.first.keys_block.second.content.first.3"
-                            ]
+                            type: 'q_a',
+                            question: "cases.first.keys_block.second.content.0.question",
+                            answer: "cases.first.keys_block.second.content.0.answer",
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.first.keys_block.second.content.1.question",
+                            answer: "cases.first.keys_block.second.content.1.answer",
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.first.keys_block.second.content.2.question",
+                            answer: "cases.first.keys_block.second.content.2.answer",
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.first.keys_block.second.content.3.question",
+                            answer: "cases.first.keys_block.second.content.3.answer",
                         }
                     ],
                     id: 1
-                },
-                {
-                    name: "cases.first.keys_block.third.name",
-                    content: [
-                        {
-                            type: 'q_a',
-                            question: "cases.first.keys_block.third.content.0.question",
-                            answer: "cases.first.keys_block.third.content.0.answer",
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.first.keys_block.third.content.1.question",
-                            answer: "cases.first.keys_block.third.content.1.answer",
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.first.keys_block.third.content.2.question",
-                            answer: "cases.first.keys_block.third.content.2.answer",
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.first.keys_block.third.content.3.question",
-                            answer: "cases.first.keys_block.third.content.3.answer",
-                        }
-                    ],
-                    id: 2
                 }
             ]
         },
@@ -291,15 +273,12 @@ export default function Case() {
                     name: "cases.second.keys_block.first.name",
                     content: [
                         {
-                            type: 'text',
-                            value: "cases.second.keys_block.first.content.first"
-                        },
-                        {
                             type: 'list',
                             list: [
-                                "cases.second.keys_block.first.content.second.0",
-                                "cases.second.keys_block.first.content.second.1",
-                                "cases.second.keys_block.first.content.second.2"
+                                "cases.second.keys_block.first.content.first.0",
+                                "cases.second.keys_block.first.content.first.1",
+                                "cases.second.keys_block.first.content.first.2",
+                                "cases.second.keys_block.first.content.first.3"
                             ]
                         }
                     ],
@@ -309,46 +288,31 @@ export default function Case() {
                     name: "cases.second.keys_block.second.name",
                     content: [
                         {
-                            type: 'list',
-                            list: [
-                                "cases.second.keys_block.second.content.first.0",
-                                "cases.second.keys_block.second.content.first.1",
-                                "cases.second.keys_block.second.content.first.2",
-                                "cases.second.keys_block.second.content.first.3"
-                            ]
-                        }
-                    ],
-                    id: 1
-                },
-                {
-                    name: "cases.second.keys_block.third.name",
-                    content: [
-                        {
                             type: 'q_a',
-                            question: "cases.second.keys_block.third.content.0.question",
-                            answer: "cases.second.keys_block.third.content.0.answer"
+                            question: "cases.second.keys_block.second.content.0.question",
+                            answer: "cases.second.keys_block.second.content.0.answer"
                         },
                         {
                             type: 'q_a',
-                            question: "cases.second.keys_block.third.content.1.question",
-                            answer: "cases.second.keys_block.third.content.1.answer"
+                            question: "cases.second.keys_block.second.content.1.question",
+                            answer: "cases.second.keys_block.second.content.1.answer"
                         },
                         {
                             type: 'q_a',
-                            question: "cases.second.keys_block.third.content.2.question",
-                            answer: "cases.second.keys_block.third.content.2.answer"
+                            question: "cases.second.keys_block.second.content.2.question",
+                            answer: "cases.second.keys_block.second.content.2.answer"
                         },
                         {
                             type: 'q_a',
-                            question: "cases.second.keys_block.third.content.3.question",
-                            answer: "cases.second.keys_block.third.content.3.answer"
+                            question: "cases.second.keys_block.second.content.3.question",
+                            answer: "cases.second.keys_block.second.content.3.answer"
                         },
                         {
                             type: `text`,
-                            value: "cases.second.keys_block.third.content.4.value"
+                            value: "cases.second.keys_block.second.content.4.value"
                         }
                     ],
-                    id: 2
+                    id: 1
                 }
             ]
         },
@@ -455,22 +419,15 @@ export default function Case() {
                     name: "cases.third.keys_block.first.name",
                     content: [
                         {
-                            type: 'text',
-                            value: "cases.third.keys_block.first.content.first"
-                        },
-                        {
                             type: 'list',
                             list: [
-                                "cases.third.keys_block.first.content.second.0",
-                                "cases.third.keys_block.first.content.second.1",
-                                "cases.third.keys_block.first.content.second.2",
-                                "cases.third.keys_block.first.content.second.3"
+                                "cases.third.keys_block.first.content.first.0",
+                                "cases.third.keys_block.first.content.first.1",
+                                "cases.third.keys_block.first.content.first.2",
+                                "cases.third.keys_block.first.content.first.3",
+                                "cases.third.keys_block.first.content.first.4",
                             ]
-                        },
-                        {
-                            type: 'text',
-                            value: "cases.third.keys_block.first.content.third"
-                        },
+                        }
                     ],
                     id: 0
                 },
@@ -478,48 +435,32 @@ export default function Case() {
                     name: "cases.third.keys_block.second.name",
                     content: [
                         {
-                            type: 'list',
-                            list: [
-                                "cases.third.keys_block.second.content.first.0",
-                                "cases.third.keys_block.second.content.first.1",
-                                "cases.third.keys_block.second.content.first.2",
-                                "cases.third.keys_block.second.content.first.3",
-                                "cases.third.keys_block.second.content.first.4",
-                            ]
-                        }
+                            type: 'q_a',
+                            question: "cases.third.keys_block.second.content.0.question",
+                            answer: "cases.third.keys_block.second.content.0.answer"
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.third.keys_block.second.content.1.question",
+                            answer: "cases.third.keys_block.second.content.1.answer"
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.third.keys_block.second.content.2.question",
+                            answer: "cases.third.keys_block.second.content.2.answer"
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.third.keys_block.second.content.3.question",
+                            answer: "cases.third.keys_block.second.content.3.answer"
+                        },
+                        {
+                            type: 'q_a',
+                            question: "cases.third.keys_block.second.content.4.question",
+                            answer: "cases.third.keys_block.second.content.4.answer"
+                        },
                     ],
                     id: 1
-                },
-                {
-                    name: "cases.third.keys_block.third.name",
-                    content: [
-                        {
-                            type: 'q_a',
-                            question: "cases.third.keys_block.third.content.0.question",
-                            answer: "cases.third.keys_block.third.content.0.answer"
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.third.keys_block.third.content.1.question",
-                            answer: "cases.third.keys_block.third.content.1.answer"
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.third.keys_block.third.content.2.question",
-                            answer: "cases.third.keys_block.third.content.2.answer"
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.third.keys_block.third.content.3.question",
-                            answer: "cases.third.keys_block.third.content.3.answer"
-                        },
-                        {
-                            type: 'q_a',
-                            question: "cases.third.keys_block.third.content.4.question",
-                            answer: "cases.third.keys_block.third.content.4.answer"
-                        },
-                    ],
-                    id: 2
                 }
             ]
         },
@@ -613,25 +554,6 @@ export default function Case() {
                 }
             ],
             keys_block: [
-                {
-                    name: 'Example',
-                    content: [
-                        {
-                            type: 'text',
-                            value: `A mid-sized financial services firm was facing frequent cyber attacks and struggling with regulatory compliance. By implementing our comprehensive cybersecurity services, they saw a:`
-                        },
-                        {
-                            type: 'list',
-                            list: [
-                                `<b>75% Reduction in Cyber Attacks</b> within six months.`,
-                                `<b>85% Improvement in Compliance</b> with industry regulations, avoiding potential fines.`,
-                                `<b>50% Faster Recovery Time</b> during incidents due to effective response planning.`,
-                                `<b>40% Decrease in Phishing Attack Success</b> through targeted employee training.`
-                            ]
-                        }
-                    ],
-                    id: 0
-                },
                 {
                     name: 'Key Team Members',
                     content: [
