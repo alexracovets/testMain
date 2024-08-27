@@ -200,7 +200,7 @@
                     "content": {
                         "0": {
                             "question": "<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>",
-                            "answer": "<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses."
+                            "answer": "<b>A:</b> To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses."
                         },
                         "1": {
                             "question": "<b>Q: Can you guarantee fast load times for my website?</b>",
@@ -223,7 +223,8 @@
             "techno": "Technologies:",
             "technologies": "SEO, PPC, Social Media, Analytics, AI, Video Marketing",
             "description": {
-                "first": "If you face <b>Weak brand awareness or Difficulty generating leads</b>! You are in the Right Place to fix it."
+                "first": "If you face <b>Weak brand awareness or Difficulty generating leads</b>! You are in the Right Place to fix it.",
+                "second": ""
             },
             "description_next": {
                 "first": "This result was achieved for our clients:",
@@ -231,7 +232,8 @@
                     "0": "<b>Increased</b> website traffic by 35% through SEO optimization",
                     "1": "<b>Generated</b> $150,000 in revenue from PPC campaigns",
                     "2": "<b>Boosted</b> social media engagement by 200%"
-                }
+                },
+                "third": ""
             },
             "tags": {
                 "0": "Technology and Software Development",
@@ -290,11 +292,11 @@
                 "first": {
                     "name": "Example",
                     "content": {
-                        "first": "A mid-sized B2B consulting firm struggling with low conversion rates and high bounce rates used our website development service. By creating a highly convertible website with responsive design and optimized performance, they saw a:",
+                        "first": "A mid-sized B2B technology firm struggling with low website traffic and lead quality used our digital marketing services. By implementing targeted SEO, PPC, and content marketing strategies, they saw a:",
                         "second": {
-                            "0": "<b>50% Increase in Conversion Rates</b> within three months.",
-                            "1": "<b>35% Reduction in Bounce Rates</b> due to improved user experience.",
-                            "2": "<b>40% Increase in Organic Traffic</b> from enhanced SEO practices."
+                            "0": "<b>45% Increase in Website Traffic</b> within three months.",
+                            "1": "<b>35% Boost in Conversion Rates</b> from optimized lead generation efforts.",
+                            "2": "<b>60% Improvement in Engagement</b> due to compelling content and social media strategies."
                         }
                     }
                 },
@@ -302,10 +304,10 @@
                     "name": "Key Team Members",
                     "content": {
                         "first": {
-                            "0": "<b>Web Development Lead:</b> Expert in creating high-performance, responsive websites.",
-                            "1": "<b>UX/UI Designer:</b> Specializes in user-centric designs that enhance engagement and conversion rates.",
-                            "2": "<b>SEO Specialist:</b> Ensures websites are optimized for search engines to drive organic traffic.",
-                            "3": "<b>Front-End and Back-End:</b> Full stack team"
+                            "0": "<b>Digital Marketing Strategist:</b> Expert in developing and implementing comprehensive B2B marketing plans.",
+                            "1": "<b>Data Analyst:</b> Specializes in analyzing campaign data to provide actionable insights.",
+                            "2": "<b>Content Marketing Manager:</b> Focuses on creating and managing engaging content for blogs, whitepapers, and social media.",
+                            "3": "<b>SEO Specialist:</b> Ensures websites are optimized for search engines to increase organic traffic."
                         }
                     }
                 },
@@ -313,20 +315,252 @@
                     "name": "Q&A",
                     "content": {
                         "0": {
-                            "question": "<b>Q: Imagine that you need to increase your sales in 1-3 months?</b>",
-                            "answer": "<b>A:</b>To achieve it we will do deep analytics of your Business model and Marketing. Base on this information we will find  crucial points where we can boost sales and reduce looses."
+                            "question": "<b>Q: How do your services help improve website traffic?</b>",
+                            "answer": "<b>A:</b> By tailoring your digital marketing strategy to target specific audiences, utilizing effective keywords, and optimizing your content, we help attract more high-quality visitors to your site."
                         },
                         "1": {
-                            "question": "<b>Q: Can you guarantee fast load times for my website?</b>",
-                            "answer": "<b>A:</b> Yes, we optimize website performance to achieve load times under 2 seconds, significantly reducing abandonment rates."
+                            "question": "<b>Q: Can I track the performance of my campaigns in real-time?</b>",
+                            "answer": "<b>A:</b> Yes, we provide advanced analytics and tracking tools so you can monitor your campaigns' performance and make necessary adjustments for better results."
                         },
                         "2": {
-                            "question": "<b>Q: How does responsive design benefit my business?</b>",
-                            "answer": "<b>A:</b> Responsive design ensures your website looks and functions perfectly on all devices, reducing bounce rates and improving user experience."
+                            "question": "<b>Q: How does content marketing work for B2B companies?</b>",
+                            "answer": "<b>A:</b> We create relevant and engaging content tailored to your target audience, helping to attract and nurture leads through blogs, whitepapers, case studies, and more."
                         },
                         "3": {
                             "question": "<b>Q: What kind of ROI can I expect from your services?</b>",
-                            "answer": "<b>A:</b> Clients typically see a 15% improvement in ROI due to enhanced website performance and increased conversion rates."
+                            "answer": "<b>A:</b> Clients typically see a 20% improvement in their marketing ROI due to more effective and optimized campaigns based on data-driven decisions."
+                        },
+                        "4": {
+                            "value": "By addressing key pain points and providing actionable solutions, our digital marketing services help B2B businesses achieve their goals and drive growth."
+                        }
+                    }
+                }
+            }
+        },
+        "third": {
+            "title": "Configurator",
+            "techno": "Technologies:",
+            "technologies": "React, Node, HTML, CSS, JS",
+            "description": {
+                "first": "<b>Virtual Configurator</b> the proven solution If you have <b>Customizable Products</b> to Boost your sales!"
+            },
+            "description_next": {
+                "first": "Virtual Configurator: Boost Sales Fast",
+                "second": {
+                    "0": "<b>Increase sales by 20%:</b> Let customers design their own products.",
+                    "1": "<b>Reduce returns by 30%:</b> Accurate product visualization.",
+                    "2": "<b>Upsell by 15%:</b> Showcase additional options.",
+                    "3": "<b>Improve customer satisfaction by 35%:</b> Create a unique shopping experience."
+                },
+                "third": ""
+            },
+            "tags": {
+                "0": "Modular Home Manufacturing",
+                "1": "Custom Furniture Retailers",
+                "2": "Automotive Industry",
+                "3": "Personalized Jewelry",
+                "4": "Bicycle Customization",
+                "5": "Kitchen Cabinet Design",
+                "6": "Fashion and Apparel",
+                "7": "Footwear Customization",
+                "8": "Computer and Electronics",
+                "9": "Travel and Vacation Packages"
+            },
+            "bussines_block": {
+                "first": {
+                    "name": "Bussiness need:",
+                    "content": {
+                        "first": "",
+                        "second": {
+                            "0": "In today's digital world, businesses face the challenge of providing a personalized shopping experience.",
+                            "1": "Customers want to tailor products to their preferences, but without the right tools, this can be difficult.",
+                            "2": "Modular home builders, for example, need a way for buyers to design their dream homes easily and confidently.",
+                            "3": ""
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Solution:",
+                    "content": {
+                        "first": "That's where our configurator comes in. It allows customers to customize products in real-time, enhancing their shopping experience and increasing their likelihood of purchase. Key features include:",
+                        "second": {
+                            "0": "<b>Save and Share:</b> Customers can save their designs and share them with others.",
+                            "1": "<b>1.5 Second Load Time:</b> Quick load times ensure a smooth experience.",
+                            "2": "<b>100% Mobile Ready:</b> Perfect functionality on any device."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Result:",
+                    "content": {
+                        "first": "Adding our configurator to your website can lead to impressive results:",
+                        "second": {
+                            "0": "<b>30% More Sales:</b> Custom options mean more customers hit 'buy.'",
+                            "1": "<b>40% Better Experience:</b> Interactive and engaging, keeping customers interested.",
+                            "2": "<b>20% Fewer Returns:</b> When they see it first, they're happier with the result.",
+                            "3": "<b>25% Faster Ops:</b> Automation saves time and reduces errors."
+                        }
+                    }
+                }
+            },
+            "keys_block": {
+                "first": {
+                    "name": "Example",
+                    "content": {
+                        "first": "Picture this: a modular home builder uses our configurator. Buyers can:",
+                        "second": {
+                            "0": "Customize layouts, materials, and finishes.",
+                            "1": "See real-time updates and prices.",
+                            "2": "Save designs and come back later.",
+                            "3": "Share their vision with friends and family."
+                        },
+                        "third": "This leads to a more engaged customer base, <b>30% higher</b> conversion rates, and happier customers."
+                    }
+                },
+                "second": {
+                    "name": "Key Team Members",
+                    "content": {
+                        "first": {
+                            "0": "<b>Project Manager:</b> Oversee the entire development process, ensuring timelines are met and provide daily updates.",
+                            "1": "<b>Software Developer:</b> Front-End together with Back-End developer.",
+                            "2": "<b>UI/UX Designer:</b> Ensure the configurator is intuitive and visually appealing, enhancing the overall user experience.",
+                            "3": "<b>Quality Assurance Specialist:</b> Rigorously test the configurator to identify and fix any bugs or issues before launch.",
+                            "4": "<b>Customer Support:</b> Provide ongoing assistance to clients, helping them get the most out of their configurator."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Q&A",
+                    "content": {
+                        "0": {
+                            "question": "<b>Q: How can a configurator increase my sales?</b>",
+                            "answer": "<b>A:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases."
+                        },
+                        "1": {
+                            "question": "<b>Q: Will the configurator work on mobile devices?</b>",
+                            "answer": "<b>A:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability."
+                        },
+                        "2": {
+                            "question": "<b>Q: How does the configurator help reduce returns?</b>",
+                            "answer": "<b>A:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery."
+                        },
+                        "3": {
+                            "question": "<b>Q: What kind of products can benefit from a configurator?</b>",
+                            "answer": "<b>A:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator."
+                        },
+                        "4": {
+                            "question": "<b>Q: How will the configurator integrate with my existing website?</b>",
+                            "answer": "<b>A:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem."
+                        }
+                    }
+                }
+            }
+        },
+        "fourth": {
+            "title": "Corporate Cybersecurity",
+            "techno": "Technologies:",
+            "technologies": "Network Security, Endpoint Security, Cloud Security, AI and Machine Learning",
+            "description": {
+                "first": "<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance!</b>"
+            },
+            "description_next": {
+                "first": "We can <b>Protect</b> your <b>Data</b> and help you Develop business without any headache"
+            },
+            "tags": {
+                "0": "Healthcare",
+                "1": "Finance",
+                "2": "Government",
+                "3": "Critical Infrastructure",
+                "4": "Retail",
+                "5": "Education",
+                "6": "Manufacturing",
+                "7": "Energy",
+                "8": "Law Firms and Legal Services",
+                "9": "Professional Services"
+            },
+            "bussines_block": {
+                "first": {
+                    "name": "Businesses need comprehensive cybersecurity services to:",
+                    "content": {
+                        "first": {
+                            "0": "Protect sensitive data from breaches and cyber attacks.",
+                            "1": "Ensure compliance with industry regulations and standards.",
+                            "2": "Minimize operational disruptions caused by security incidents.",
+                            "3": "Gain access to expert knowledge and resources."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Solution:",
+                    "content": {
+                        "first": "Our cybersecurity services address these challenges by providing:",
+                        "second": {
+                            "0": "<b>Threat Detection and Response:</b> Implement advanced threat detection systems that identify and respond to threats in real-time, reducing the risk of breaches by 80%.",
+                            "1": "<b>Data Encryption:</b> Secure sensitive data with strong encryption methods, protecting it from unauthorized access and reducing data breach risks by 70%.",
+                            "2": "<b>Security Audits:</b> Conduct comprehensive security audits to identify vulnerabilities and implement corrective actions, improving overall security posture by 60%.",
+                            "3": "<b>Incident Response Planning:</b> Develop and implement incident response plans to minimize downtime and losses during a security incident, reducing recovery time by 50%.",
+                            "4": "<b>Employee Training:</b> Provide cybersecurity awareness training for employees to recognize and prevent potential threats, decreasing the likelihood of successful phishing attacks by 40%.",
+                            "5": "<b>24/7 Monitoring:</b> Offer continuous monitoring of your network and systems to detect and mitigate threats as they arise, enhancing security coverage by 90%."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Result:",
+                    "content": {
+                        "first": "Implementing our cybersecurity services can lead to:",
+                        "second": {
+                            "0": "<b>80% Reduction in Data Breaches:</b> Strong protective measures significantly lower the risk of data breaches.",
+                            "1": "<b>70% Lower Risk of Cyber Attacks:</b> Proactive threat detection and response systems mitigate potential attacks.",
+                            "2": "<b>90% Improved Compliance:</b> Stay ahead of regulatory requirements and avoid costly fines.",
+                            "3": "<b>50% Faster Incident Recovery:</b> Efficient incident response plans minimize downtime and losses.",
+                            "4": "<b>40% Decrease in Phishing Success:</b> Employee training reduces the likelihood of successful phishing attacks."
+                        }
+                    }
+                }
+            },
+            "keys_block": {
+                "first": {
+                    "name": "Example",
+                    "content": {
+                        "first": "A mid-sized financial services firm was facing frequent cyber attacks and struggling with regulatory compliance. By implementing our comprehensive cybersecurity services, they saw a:",
+                        "second": {
+                            "0": "<b>75% Reduction in Cyber Attacks</b> within six months.",
+                            "1": "<b>85% Improvement in Compliance</b> with industry regulations, avoiding potential fines.",
+                            "2": "<b>50% Faster Recovery Time</b> during incidents due to effective response planning.",
+                            "3": "<b>40% Decrease in Phishing Attack Success</b> through targeted employee training."
+                        }
+                    }
+                },
+                "second": {
+                    "name": "Key Team Members",
+                    "content": {
+                        "first": "Our cybersecurity team includes:",
+                        "second": {
+                            "0": "<b>Alice Thompson, Cybersecurity Analyst:</b> Expert in threat detection and incident response with over 10 years of experience.",
+                            "1": "<b>Mark Davis, Compliance Specialist:</b> Specializes in regulatory compliance, ensuring businesses meet industry standards.",
+                            "2": "<b>Jessica Lee, Security Auditor:</b> Conducts thorough security audits to identify and mitigate vulnerabilities.",
+                            "3": "<b>Tom Harris, Training Coordinator:</b> Focuses on developing and delivering effective cybersecurity awareness training programs."
+                        }
+                    }
+                },
+                "third": {
+                    "name": "Q&A",
+                    "content": {
+                        "0": {
+                            "question": "<b>Q: How do your services help reduce the risk of data breaches?</b>",
+                            "answer": "<b>A:</b> We implement advanced threat detection, data encryption, and continuous monitoring to protect sensitive data and detect threats in real-time."
+                        },
+                        "1": {
+                            "question": "<b>Q: Can you help us stay compliant with industry regulations?</b>",
+                            "answer": "<b>A:</b> Yes, our compliance management services ensure your business meets regulatory requirements, reducing the risk of fines and reputational damage."
+                        },
+                        "2": {
+                            "question": "<b>Q: What is the benefit of having an incident response plan?</b>",
+                            "answer": "<b>A:</b> An incident response plan helps minimize downtime and losses during a security incident, enabling faster recovery and reducing operational disruptions."
+                        },
+                        "3": {
+                            "question": "<b>Q: How effective is employee training in preventing cyber attacks?</b>",
+                            "answer": "<b>A:</b> Our training programs educate employees on recognizing and preventing potential threats, significantly reducing the likelihood of successful phishing attacks and other social engineering tactics."
                         }
                     }
                 }
