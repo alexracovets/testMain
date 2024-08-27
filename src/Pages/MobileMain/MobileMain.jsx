@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
@@ -23,6 +24,8 @@ export default function MobileMain() {
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollSection = useAnchorScroll((state) => state.section);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const { t } = useTranslation();
+
     ReactGA.send({
         hitType: "pageview",
         page: "/mobile",
@@ -102,7 +105,7 @@ export default function MobileMain() {
                     <TextTransitionTest />
                     <Developments />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                        <UI_Button text={'DISCOVER US'} arrow small />
+                        <UI_Button text={t('btn.discover_us')} arrow small />
                     </div>
                 </div>
             </section>

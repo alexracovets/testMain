@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
@@ -12,6 +13,7 @@ import s from './ContactPage.module.scss';
 export default function ContactPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const setIsActiveOffice = useOffice((state) => state.setIsActive);
+    const { t } = useTranslation();
 
     ReactGA.send({
         hitType: "pageview",
@@ -40,10 +42,10 @@ export default function ContactPage() {
                     <Socials />
                     <div className={s.sub_btns}>
                         <div className={s.discover} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={'Talk to Team'} arrow small />
+                            <UI_Button text={t('btn.talk_to_team')} arrow small />
                         </div>
                         <div className={s.office} onClick={() => setIsActiveOffice(true)}>
-                            <UI_Button text={'office 3d tour'} arrow small />
+                            <UI_Button text={t('btn.office')} arrow small />
                         </div>
                     </div>
                 </div>

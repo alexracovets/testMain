@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
@@ -8,6 +9,7 @@ import useModalForm from '../../store/useModalForm';
 import s from './ServicesPage.module.scss';
 export default function ServicesPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
+    const { t } = useTranslation();
     ReactGA.send({
         hitType: "pageview",
         page: "/services",
@@ -28,7 +30,7 @@ export default function ServicesPage() {
                     </h2>
                     <Services />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                        <UI_Button text={`LET'S TALK`} arrow />
+                        <UI_Button text={t('btn.lets_talk')} arrow />
                     </div>
                 </div>
             </section>

@@ -1,5 +1,6 @@
 import { Scrollbar } from "react-scrollbars-custom";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
@@ -19,7 +20,9 @@ export default function AllCases() {
     const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
     const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
     const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+    const { t } = useTranslation();
     const videoRef = useRef();
+    
     ReactGA.send({
         hitType: "pageview",
         page: "/cases",
@@ -63,9 +66,7 @@ export default function AllCases() {
             exit={{ opacity: 0, x: '-20%' }}
         >
             <section>
-                <h2>
-                    Сases
-                </h2>
+                <h2> Сases </h2>
                 <Scrollbar
                     className={'scroll'}
                     onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
@@ -85,7 +86,7 @@ export default function AllCases() {
                                         </div>
                                         <div className={s.btn_wrapper}>
                                             <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.btn}>
-                                                <UI_Button text={'DISCOVER'} arrow />
+                                                <UI_Button text={t('btn.discover')} arrow />
                                             </NavLink>
                                         </div>
                                     </div>

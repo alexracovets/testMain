@@ -1,7 +1,6 @@
 {
     "language": "EN",
     "hello_text": "Expert <span>Software</span> Development, <br /> Future-Proof Innovations",
-    "discover_us": "DISCOVER US",
     "pages": {
         "services": "Services",
         "cases": "Сases",
@@ -15,6 +14,13 @@
         "second": " CREATIVE",
         "third": " INNOVATIVE",
         "fourth": " SPOTIUM 360"
+    },
+    "btn": {
+        "discover_us": "DISCOVER US",
+        "lets_talk": "LET'S TALK",
+        "discover": "DISCOVER",
+        "talk_to_team": "Talk to Team",
+        "office": "office 3d tour"
     },
     "services": {
         "first": {
@@ -109,7 +115,7 @@
     "cases": {
         "first": {
             "title": "High-Converting Web Sites",
-            "techno": "Platform",
+            "techno": "Platform:",
             "technologies": "Shopify, Amazon, Walmart",
             "description": {
                 "first": "Our <b>E-Commerce</b> client get up to 50% Higher Conversion Rate.",
@@ -445,9 +451,10 @@
             },
             "bussines_block": {
                 "first": {
-                    "name": "Businesses need comprehensive cybersecurity services to:",
+                    "name": "Bussiness need:",
                     "content": {
-                        "first": {
+                        "first": "Businesses need comprehensive cybersecurity services to:",
+                        "second": {
                             "0": "Protect sensitive data from breaches and cyber attacks.",
                             "1": "Ensure compliance with industry regulations and standards.",
                             "2": "Minimize operational disruptions caused by security incidents.",

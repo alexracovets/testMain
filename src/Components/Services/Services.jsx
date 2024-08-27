@@ -1,4 +1,5 @@
 import { Scrollbar } from 'react-scrollbars-custom';
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -20,6 +21,7 @@ export default function Services({ mobile }) {
     const setIsTopScroll = useScrollPageNavigation((state) => state.setIsTopScroll);
     const setIsBottomScroll = useScrollPageNavigation((state) => state.setIsBottomScroll);
     const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
+    const { t } = useTranslation();
 
     const wheelPointer = (scroll) => {
         setIsTopScroll(false);
@@ -97,7 +99,7 @@ export default function Services({ mobile }) {
                             })}
                         </ul>
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={`LET'S TALK`} small arrow />
+                            <UI_Button text={t('btn.lets_talk')} small arrow />
                         </div>
                     </div>
                 </div>

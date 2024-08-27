@@ -1,7 +1,6 @@
 {
     "language": "EN",
     "hello_text": "Розробка <span>Програмного</span> <br/> Забезпечення",
-    "discover_us": "DISCOVER US",
     "pages": {
         "services": "Services",
         "cases": "Сases",
@@ -15,6 +14,13 @@
         "second": " Креативні",
         "third": " Інноваційні",
         "fourth": " SPOTIUM 360"
+    },
+    "btn": {
+        "discover_us": "Зв’язатись",
+        "lets_talk": "Поговоримо",
+        "discover": "DISCOVER",
+        "talk_to_team": "Talk to Team",
+        "office": "office 3d tour"
     },
     "services": {
         "first": {
@@ -109,8 +115,8 @@
     "cases": {
         "first": {
             "title": "Розробка Вебсайту",
-            "techno": "??????????????????????",
-            "technologies": "????????????????????????",
+            "techno": "Технології:",
+            "technologies": "React.JS, HTML5, CSS3, Node.JS, JS",
             "description": {
                 "first": "Наш <b>E-Commerce</b> клієнт отримав на 50% вищий коефіцієнт конверсії.",
                 "second": "Також ми допомогли скоротити час завантаження сайту на 30% та зменшити кількість відмов на 40% у кошику."
@@ -369,28 +375,28 @@
                     }
                 },
                 "third": {
-                    "name": "Result:",
+                    "name": "Результат:",
                     "content": {
-                        "first": "Adding our configurator to your website can lead to impressive results:",
+                        "first": "Ми досягли наступних результатів коли додали <b>Конфігуратор</b> на сайт:",
                         "second": {
-                            "0": "<b>30% More Sales:</b> Custom options mean more customers hit 'buy.'",
-                            "1": "<b>40% Better Experience:</b> Interactive and engaging, keeping customers interested.",
-                            "2": "<b>20% Fewer Returns:</b> When they see it first, they're happier with the result.",
-                            "3": "<b>25% Faster Ops:</b> Automation saves time and reduces errors."
+                            "0": "<b>26% більше продажів:</b> Кастомні опції - більше клієнтів натискають кнопку «купити». Порівняно з попереднім періодом за 2 місяці.",
+                            "1": "<b>Кращий користувацький досвід:</b> Інтерактивність та залучення, що зацікавлює клієнтів.",
+                            "2": "<b>На 20% менше відмов:</b> Коли клієнти бачать продукт першими, вони більш задоволені результатом.",
+                            "3": "<b>ROI:</b> 378% за 3 місяці."
                         }
                     }
                 }
             },
             "keys_block": {
                 "first": {
-                    "name": "Key Team Members",
+                    "name": "Команда",
                     "content": {
                         "first": {
-                            "0": "<b>Project Manager:</b> Oversee the entire development process, ensuring timelines are met and provide daily updates.",
-                            "1": "<b>Software Developer:</b> Front-End together with Back-End developer.",
-                            "2": "<b>UI/UX Designer:</b> Ensure the configurator is intuitive and visually appealing, enhancing the overall user experience.",
-                            "3": "<b>Quality Assurance Specialist:</b> Rigorously test the configurator to identify and fix any bugs or issues before launch.",
-                            "4": "<b>Customer Support:</b> Provide ongoing assistance to clients, helping them get the most out of their configurator."
+                            "0": "<b>Project Manager:</b> Контроль процесів розробки, забезпечення дотримання термінів та надання щоденних звітів.",
+                            "1": "<b>Software Developer:</b> Front-End разом з Back-End.",
+                            "2": "<b>UI/UX Designer:</b> Конфігуратор є інтуїтивно зрозумілим та візуально привабливим, покращуючи загальний користувацький досвід.",
+                            "3": "<b>Підтримка клієнтів:</b> Наш клієнт отримав 30 днів гарантованої підтримки проєкту після запуску! Також, ми продовжуємо співпрацювати по іншим напрямкам та надавати підтримку.",
+                            "4": ""
                         }
                     }
                 },
@@ -398,38 +404,38 @@
                     "name": "Q&A",
                     "content": {
                         "0": {
-                            "question": "<b>Q: How can a configurator increase my sales?</b>",
-                            "answer": "<b>A:</b> The configurator boosts sales by providing a highly engaging and interactive shopping experience. Customers can visualize and customize their products in real-time, which enhances their satisfaction and confidence in their purchase decisions. This leads to a <b>30% increase in sales</b> as more customers are likely to complete their purchases."
+                            "question": "<b>П: Як конфігуратор може збільшити мої продажі?</b>",
+                            "answer": "<b>В:</b> <b>Конфігуратор</b> збільшує продажі, забезпечуючи надзвичайно цікавий та інтерактивний досвід покупок. Клієнти можуть візуалізувати та налаштовувати свої продукти в режимі реального часу, що підвищує їх задоволеність та впевненість у прийнятті рішення про покупку. Це призводить до <b>30% збільшення продажів</b>, оскільки більше клієнтів завершують свої покупки."
                         },
                         "1": {
-                            "question": "<b>Q: Will the configurator work on mobile devices?</b>",
-                            "answer": "<b>A:</b> Yes, our configurator is <b>100% mobile ready</b>. It is designed to function seamlessly on any device, ensuring a smooth and enjoyable user experience whether your customers are shopping on a desktop, tablet, or smartphone. Quick load times of 1.5 seconds further enhance mobile usability."
+                            "question": "<b>П: Чи буде конфігуратор працювати на мобільних пристроях?</b>",
+                            "answer": "<b>В:</b> Так, наш <b>Конфігуратор</b> на <b>100% готовий до мобільних пристроїв</b>. Він розроблений для безперебійної роботи на будь-якому пристрої, забезпечуючи плавний і приємний користувацький досвід, незалежно від пристрою. Швидкий час завантаження (1,5 секунди) ще більше підвищує зручність використання на мобільних пристроях."
                         },
                         "2": {
-                            "question": "<b>Q: How does the configurator help reduce returns?</b>",
-                            "answer": "<b>A:</b> By allowing customers to visualize and customize their products before purchase, the configurator helps set accurate expectations. This reduces the likelihood of <b>returns by 20%</b>, as customers are more satisfied with their tailored products and are less likely to encounter surprises upon delivery."
+                            "question": "<b>П: Як конфігуратор допомагає зменшити кількість відмов?</b>",
+                            "answer": "<b>В:</b> Дозволяючи клієнтам візуалізувати та налаштовувати свої продукти до покупки, конфігуратор допомагає сформувати точні очікування. Це знижує ймовірність <b>відмови на 20%</b>, оскільки клієнти більш задоволені своїми індивідуальними продуктами і з меншою ймовірністю зіткнуться з сюрпризами при доставці."
                         },
                         "3": {
-                            "question": "<b>Q: What kind of products can benefit from a configurator?</b>",
-                            "answer": "<b>A:</b> Configurators are ideal for <b>modular homes, custom furniture, automobiles, personalized jewelry, bicycles, kitchen cabinets, fashion items, footwear, electronics, and travel packages</b>. Essentially, any product that can be tailored to individual preferences can benefit from a configurator."
+                            "question": "<b>П: Які продукти можуть отримати вигоду від конфігуратора?</b>",
+                            "answer": "<b>В:</b> Конфігуратори ідеально підходять для <b>Модульних Будинків, Меблів на замовлення, Автомобілів, Ювелірних виробів, Кухонь, Предметів Моди, Взуття, Туристичних Пакетів</b>. По суті, будь-який продукт, який можна пристосувати до індивідуальних переваг, може отримати вигоду від <b>Конфігуратора</b>."
                         },
                         "4": {
-                            "question": "<b>Q: How will the configurator integrate with my existing website?</b>",
-                            "answer": "<b>A:</b> We can easily develop the configurator wether it is custom website technologies or website builder platform. Our team of developers will work closely with you to ensure a smooth implementation process. <b>We provide comprehensive support throughout the integration</b>, ensuring that the configurator functions perfectly within your site’s framework and enhances your current digital ecosystem."
+                            "question": "<b>П: Як конфігуратор буде інтегрований з моїм існуючим веб-сайтом?</b>",
+                            "answer": "<b>В:</b> Ми можемо легко розробити Конфігуратор, незалежно від того, чи це індивідуальна технологія веб-сайту, чи платформа для створення веб-сайтів. Ми надаємо <b>всебічну підтримку протягом усього процесу інтеграції</b>, гарантуючи, що <b>Конфігуратор</b> ідеально функціонує в рамках вашого сайту і покращує вашу поточну цифрову екосистему."
                         }
                     }
                 }
             }
         },
         "fourth": {
-            "title": "Corporate Cybersecurity",
-            "techno": "Technologies:",
+            "title": "Корпоративна Кібербезпека",
+            "techno": "Технології:",
             "technologies": "Network Security, Endpoint Security, Cloud Security, AI and Machine Learning",
             "description": {
-                "first": "<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance!</b>"
+                "first": "Знизили ризики витоку даних на 80% за допомогою проведення консалтингових послуг з корпоративної <b>Кібербезпеки</b>!"
             },
             "description_next": {
-                "first": "We can <b>Protect</b> your <b>Data</b> and help you Develop business without any headache"
+                "first": "Ми розробили стратегію та тактичні заходи для <b>Юридичної компанії з України</b>. А також провели навчальні тренінги для персоналу по кібербезпеці."
             },
             "tags": {
                 "0": "Healthcare",
@@ -445,54 +451,55 @@
             },
             "bussines_block": {
                 "first": {
-                    "name": "Businesses need comprehensive cybersecurity services to:",
+                    "name": "Запит Бізнесу:",
                     "content": {
-                        "first": {
-                            "0": "Protect sensitive data from breaches and cyber attacks.",
-                            "1": "Ensure compliance with industry regulations and standards.",
-                            "2": "Minimize operational disruptions caused by security incidents.",
-                            "3": "Gain access to expert knowledge and resources."
+                        "first": "Компанії шукала комплексних рішень з кібербезпеки, щоб:",
+                        "second": {
+                            "0": "Захистити конфіденційні дані від витоків та кібератак.",
+                            "1": "Забезпечити відповідність галузевим нормам і стандартам.",
+                            "2": "Отримати доступ до експертних знань та ресурсів.",
+                            "3": "Мінімізувати операційні перебої, спричинені інцидентами безпеки."
                         }
                     }
                 },
                 "second": {
-                    "name": "Solution:",
+                    "name": "Рішення:",
                     "content": {
-                        "first": "Our cybersecurity services address these challenges by providing:",
+                        "first": "Наша команда проаналізувала можливі шляхи реалізації запиту та підготувала комплекс із заходів:",
                         "second": {
-                            "0": "<b>Threat Detection and Response:</b> Implement advanced threat detection systems that identify and respond to threats in real-time, reducing the risk of breaches by 80%.",
-                            "1": "<b>Data Encryption:</b> Secure sensitive data with strong encryption methods, protecting it from unauthorized access and reducing data breach risks by 70%.",
-                            "2": "<b>Security Audits:</b> Conduct comprehensive security audits to identify vulnerabilities and implement corrective actions, improving overall security posture by 60%.",
-                            "3": "<b>Incident Response Planning:</b> Develop and implement incident response plans to minimize downtime and losses during a security incident, reducing recovery time by 50%.",
-                            "4": "<b>Employee Training:</b> Provide cybersecurity awareness training for employees to recognize and prevent potential threats, decreasing the likelihood of successful phishing attacks by 40%.",
-                            "5": "<b>24/7 Monitoring:</b> Offer continuous monitoring of your network and systems to detect and mitigate threats as they arise, enhancing security coverage by 90%."
+                            "0": "<b>Виявлення та реагування на загрози:</b> Впровадили передові системи виявлення загроз, які виявляють та реагують на них у режимі реального часу.",
+                            "1": "<b>Шифрування даних:</b> Захистили конфіденційні дані за допомогою надійних методів шифрування, захистивши їх від несанкціонованого доступу та знизивши ризики витоку даних.",
+                            "2": "<b>Аудит безпеки:</b> Провели комплексні аудити безпеки для виявлення вразливостей і впровадження коригувальних заходів.",
+                            "3": "<b>Планування реагування на інциденти:</b> Розробили та впровадили плани реагування на інциденти, щоб мінімізувати час простою та втрати під час інциденту безпеки, скорочуючи час відновлення.",
+                            "4": "<b>Навчання співробітників:</b> Провели тренінги з <b>Кібербезпеки</b> для співробітників, щоб вони могли розпізнавати та запобігати потенційним загрозам, знижуючи ймовірність успішних <b>Фішингових Атак</b>.",
+                            "5": ""
                         }
                     }
                 },
                 "third": {
-                    "name": "Result:",
+                    "name": "Результат:",
                     "content": {
-                        "first": "Implementing our cybersecurity services can lead to:",
+                        "first": "Впровадження цих заходів та ПЗ дало наступні результати для нашого Клієнта:",
                         "second": {
-                            "0": "<b>80% Reduction in Data Breaches:</b> Strong protective measures significantly lower the risk of data breaches.",
-                            "1": "<b>70% Lower Risk of Cyber Attacks:</b> Proactive threat detection and response systems mitigate potential attacks.",
-                            "2": "<b>90% Improved Compliance:</b> Stay ahead of regulatory requirements and avoid costly fines.",
-                            "3": "<b>50% Faster Incident Recovery:</b> Efficient incident response plans minimize downtime and losses.",
-                            "4": "<b>40% Decrease in Phishing Success:</b> Employee training reduces the likelihood of successful phishing attacks."
+                            "0": "<b>Зменшення витоку даних:</b> Ефективні заходи захисту значно знизили ризик витоку даних.",
+                            "1": "<b>Зниження ризику кібератак:</b> Системи проактивного виявлення загроз і реагування на них зменшили потенційні атаки.",
+                            "2": "<b>Швидше відновлення після інцидентів:</b> Ефективні плани реагування на інциденти мінімізують час можливого простою та втрати.",
+                            "3": "<b>Зниження успішності фішингових атак:</b> Навчання співробітників знижує ймовірність успішних фішингових атак.",
+                            "4": ""
                         }
                     }
                 }
             },
             "keys_block": {
                 "first": {
-                    "name": "Key Team Members",
+                    "name": "Команда",
                     "content": {
                         "first": "Our cybersecurity team includes:",
                         "second": {
-                            "0": "<b>Alice Thompson, Cybersecurity Analyst:</b> Expert in threat detection and incident response with over 10 years of experience.",
-                            "1": "<b>Mark Davis, Compliance Specialist:</b> Specializes in regulatory compliance, ensuring businesses meet industry standards.",
-                            "2": "<b>Jessica Lee, Security Auditor:</b> Conducts thorough security audits to identify and mitigate vulnerabilities.",
-                            "3": "<b>Tom Harris, Training Coordinator:</b> Focuses on developing and delivering effective cybersecurity awareness training programs."
+                            "0": "<b>Аналітик з кібербезпеки:</b> Експерт з виявлення загроз та реагування на інциденти з більш ніж 10-річним досвідом роботи.",
+                            "1": "<b>Спеціаліст з комплаєнсу:</b> Спеціалізується на дотриманні нормативних вимог, забезпечуючи відповідність бізнесу галузевим стандартам.",
+                            "2": "<b>Аудитор безпеки:</b> Проводить ретельний аудит безпеки для виявлення та усунення вразливостей.",
+                            "3": "<b>Координатор тренінгів:</b> Зосереджується на розробці та проведенні ефективних навчальних програм з підвищення обізнаності щодо кібербезпеки."
                         }
                     }
                 },
@@ -500,20 +507,20 @@
                     "name": "Q&A",
                     "content": {
                         "0": {
-                            "question": "<b>Q: How do your services help reduce the risk of data breaches?</b>",
-                            "answer": "<b>A:</b> We implement advanced threat detection, data encryption, and continuous monitoring to protect sensitive data and detect threats in real-time."
+                            "question": "<b>П: Як ваші послуги допомагають зменшити ризик витоку даних?</b>",
+                            "answer": "<b>В:</b> Ми впроваджуємо передові технології виявлення загроз, шифрування даних і безперервний моніторинг для захисту конфіденційних даних і виявлення загроз у режимі реального часу."
                         },
                         "1": {
-                            "question": "<b>Q: Can you help us stay compliant with industry regulations?</b>",
-                            "answer": "<b>A:</b> Yes, our compliance management services ensure your business meets regulatory requirements, reducing the risk of fines and reputational damage."
+                            "question": "<b>П: Яка користь від наявності плану реагування на інциденти?</b>",
+                            "answer": "<b>В:</b> План реагування на інциденти допомагає мінімізувати час простою та збитки під час інциденту безпеки, що сприяє швидшому відновленню та зменшенню операційних перебоїв."
                         },
                         "2": {
-                            "question": "<b>Q: What is the benefit of having an incident response plan?</b>",
-                            "answer": "<b>A:</b> An incident response plan helps minimize downtime and losses during a security incident, enabling faster recovery and reducing operational disruptions."
+                            "question": "<b>П: Наскільки ефективним є навчання співробітників щодо запобігання кібератакам?</b>",
+                            "answer": "<b>В:</b> Наші навчальні програми навчають співробітників розпізнавати та запобігати потенційним загрозам, що значно знижує ймовірність успішних фішингових атак та інших тактик соціальної інженерії."
                         },
                         "3": {
-                            "question": "<b>Q: How effective is employee training in preventing cyber attacks?</b>",
-                            "answer": "<b>A:</b> Our training programs educate employees on recognizing and preventing potential threats, significantly reducing the likelihood of successful phishing attacks and other social engineering tactics."
+                            "question": "",
+                            "answer": ""
                         }
                     }
                 }

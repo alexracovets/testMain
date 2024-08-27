@@ -467,87 +467,87 @@ export default function Case() {
         {
             pageName: `сybersecurity`,
             video: `tour.mp4`,
-            title: `Corporate Cybersecurity`,
-            techno: `Technologies:`,
-            technologies: `Network Security, Endpoint Security, Cloud Security, AI and Machine Learning`,
+            title: "cases.fourth.title",
+            techno: "cases.fourth.techno",
+            technologies: "cases.fourth.technologies",
             description: [
                 {
                     type: `text`,
-                    value: `<b>Reduce your risk of data breaches by 80%</b> with our corporate cybersecurity services—experience <b>70% faster threat detection</b> and a <b>50% increase in compliance!</b>`
+                    value: "cases.fourth.description.first"
                 },
             ],
             description_next: [
                 {
                     type: `text`,
-                    value: `We can <b>Protect</b> your <b>Data</b> and help you Develop business without any headache`
+                    value: "cases.fourth.description_next.first"
                 }
             ],
             tags: [
-                `Healthcare`,
-                `Finance`,
-                `Government`,
-                'Critical Infrastructure',
-                'Retail',
-                'Education',
-                'Manufacturing',
-                'Energy',
-                'Law Firms and Legal Services',
-                'Professional Services'
+                "cases.fourth.tags.0",
+                "cases.fourth.tags.1",
+                "cases.fourth.tags.2",
+                "cases.fourth.tags.3",
+                "cases.fourth.tags.4",
+                "cases.fourth.tags.5",
+                "cases.fourth.tags.6",
+                "cases.fourth.tags.7",
+                "cases.fourth.tags.8",
+                "cases.fourth.tags.9",
             ],
             bussines_block: [
                 {
-                    name: `Bussiness need:`,
+                    name: "cases.fourth.bussines_block.first.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Businesses need comprehensive cybersecurity services to:`
+                            value: "cases.fourth.bussines_block.first.content.first"
                         },
                         {
                             type: `textList`,
                             value: [
-                                `Protect sensitive data from breaches and cyber attacks.`,
-                                `Ensure compliance with industry regulations and standards.`,
-                                `Minimize operational disruptions caused by security incidents.`,
-                                `Gain access to expert knowledge and resources.`
+                                "cases.fourth.bussines_block.first.content.second.0",
+                                "cases.fourth.bussines_block.first.content.second.1",
+                                "cases.fourth.bussines_block.first.content.second.2",
+                                "cases.fourth.bussines_block.first.content.second.3"
                             ]
                         }
                     ]
                 },
                 {
-                    name: `Solution:`,
+                    name: "cases.fourth.bussines_block.second.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Our cybersecurity services address these challenges by providing:`
+                            value: "cases.fourth.bussines_block.second.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>Threat Detection and Response:</b> Implement advanced threat detection systems that identify and respond to threats in real-time, reducing the risk of breaches by 80%.`,
-                                `<b>Data Encryption:</b> Secure sensitive data with strong encryption methods, protecting it from unauthorized access and reducing data breach risks by 70%.`,
-                                `<b>Security Audits:</b> Conduct comprehensive security audits to identify vulnerabilities and implement corrective actions, improving overall security posture by 60%.`,
-                                `<b>Incident Response Planning:</b> Develop and implement incident response plans to minimize downtime and losses during a security incident, reducing recovery time by 50%.`,
-                                `<b>Employee Training:</b> Provide cybersecurity awareness training for employees to recognize and prevent potential threats, decreasing the likelihood of successful phishing attacks by 40%.`,
-                                `<b>24/7 Monitoring:</b> Offer continuous monitoring of your network and systems to detect and mitigate threats as they arise, enhancing security coverage by 90%.`
+                                "cases.fourth.bussines_block.second.content.second.0",
+                                "cases.fourth.bussines_block.second.content.second.1",
+                                "cases.fourth.bussines_block.second.content.second.2",
+                                "cases.fourth.bussines_block.second.content.second.3",
+                                "cases.fourth.bussines_block.second.content.second.4",
+                                "cases.fourth.bussines_block.second.content.second.5"
                             ]
                         }
                     ]
                 },
                 {
-                    name: `Result:`,
+                    name: "cases.fourth.bussines_block.third.name",
                     content: [
                         {
                             type: `text`,
-                            value: `Implementing our cybersecurity services can lead to:`
+                            value: "cases.fourth.bussines_block.third.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>80% Reduction in Data Breaches:</b> Strong protective measures significantly lower the risk of data breaches.`,
-                                `<b>70% Lower Risk of Cyber Attacks:</b> Proactive threat detection and response systems mitigate potential attacks.`,
-                                `<b>90% Improved Compliance:</b> Stay ahead of regulatory requirements and avoid costly fines.`,
-                                `<b>50% Faster Incident Recovery:</b> Efficient incident response plans minimize downtime and losses.`,
-                                `<b>40% Decrease in Phishing Success:</b> Employee training reduces the likelihood of successful phishing attacks.`
+                                "cases.fourth.bussines_block.third.content.second.0",
+                                "cases.fourth.bussines_block.third.content.second.1",
+                                "cases.fourth.bussines_block.third.content.second.2",
+                                "cases.fourth.bussines_block.third.content.second.3",
+                                "cases.fourth.bussines_block.third.content.second.4"
                             ]
                         }
                     ]
@@ -555,49 +555,49 @@ export default function Case() {
             ],
             keys_block: [
                 {
-                    name: 'Key Team Members',
+                    name: "cases.fourth.keys_block.first.name",
                     content: [
                         {
                             type: 'text',
-                            value: `Our cybersecurity team includes:`
+                            value: "cases.fourth.keys_block.first.content.first"
                         },
                         {
                             type: 'list',
                             list: [
-                                `<b>Alice Thompson, Cybersecurity Analyst:</b> Expert in threat detection and incident response with over 10 years of experience.`,
-                                `<b>Mark Davis, Compliance Specialist:</b> Specializes in regulatory compliance, ensuring businesses meet industry standards.`,
-                                `<b>Jessica Lee, Security Auditor:</b> Conducts thorough security audits to identify and mitigate vulnerabilities.`,
-                                `<b>Tom Harris, Training Coordinator:</b> Focuses on developing and delivering effective cybersecurity awareness training programs.`
+                                "cases.fourth.keys_block.first.content.second.0",
+                                "cases.fourth.keys_block.first.content.second.1",
+                                "cases.fourth.keys_block.first.content.second.2",
+                                "cases.fourth.keys_block.first.content.second.3",
                             ]
                         }
                     ],
-                    id: 1
+                    id: 0
                 },
                 {
-                    name: 'Q&A',
+                    name: "cases.fourth.keys_block.second.name",
                     content: [
                         {
                             type: 'q_a',
-                            question: '<b>Q: How do your services help reduce the risk of data breaches?</b>',
-                            answer: '<b>A:</b> We implement advanced threat detection, data encryption, and continuous monitoring to protect sensitive data and detect threats in real-time.'
+                            question: "cases.fourth.keys_block.second.content.0.question",
+                            answer: "cases.fourth.keys_block.second.content.0.answer"
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: Can you help us stay compliant with industry regulations?</b>',
-                            answer: '<b>A:</b> Yes, our compliance management services ensure your business meets regulatory requirements, reducing the risk of fines and reputational damage.'
+                            question: "cases.fourth.keys_block.second.content.1.question",
+                            answer: "cases.fourth.keys_block.second.content.1.answer"
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: What is the benefit of having an incident response plan?</b>',
-                            answer: '<b>A:</b> An incident response plan helps minimize downtime and losses during a security incident, enabling faster recovery and reducing operational disruptions.'
+                            question: "cases.fourth.keys_block.second.content.2.question",
+                            answer: "cases.fourth.keys_block.second.content.2.answer"
                         },
                         {
                             type: 'q_a',
-                            question: '<b>Q: How effective is employee training in preventing cyber attacks?</b>',
-                            answer: '<b>A:</b> Our training programs educate employees on recognizing and preventing potential threats, significantly reducing the likelihood of successful phishing attacks and other social engineering tactics.'
+                            question: "cases.fourth.keys_block.second.content.3.question",
+                            answer: "cases.fourth.keys_block.second.content.3.answer"
                         }
                     ],
-                    id: 2
+                    id: 1
                 }
             ]
         }
@@ -652,7 +652,7 @@ export default function Case() {
                                             <UI_Button arrow={false} back={true} />
                                         </NavLink>
                                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                                            <UI_Button text={"LET'S TALK"} arrow />
+                                            <UI_Button text={t('btn.lets_talk')} arrow />
                                         </div>
                                     </div>
                                 </div>

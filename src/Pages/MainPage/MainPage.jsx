@@ -30,7 +30,7 @@ export default function MainPage() {
                         <div className={s.click} dangerouslySetInnerHTML={{ __html: t(`hello_text`) }} />
                         <Fliper />
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
-                            <UI_Button text={t(`discover_us`)} arrow />
+                            <UI_Button text={t('btn.discover_us')} arrow />
                         </div>
                         <Developments />
                     </div>
