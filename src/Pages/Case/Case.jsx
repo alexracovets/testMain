@@ -717,7 +717,9 @@ export default function Case() {
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
-                                            {t(content.techno)}
+                                            <b>
+                                                {t(content.techno)}
+                                            </b>
                                         </div>
                                         <div className={s.logo}>
                                             <h3> {t(content.technologies)}</h3>
