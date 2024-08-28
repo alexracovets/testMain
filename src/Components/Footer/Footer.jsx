@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import LangsSwither from '../LangsSwither/LangsSwither';
 import CopyButton from '../CopyButton/CopyButton';
 import UI_Button from '../UI_Button/UI_Button';
-import Socials from '../Socials/Socials'; 
+import Socials from '../Socials/Socials';
 import useOffice from '../../store/useOffice';
 import useModalForm from '../../store/useModalForm';
 
@@ -31,14 +31,10 @@ export default function Footer() {
             </div>
             <div className={s.wrapper + ' ' + s.mobile}>
                 <div className={s.together}>
-                    <span>
-                        Let’s Work Together!
-                    </span>
+                    <span>  {t('contact.work_together')}  </span>
                 </div>
                 <div className={s.contacts}>
-                    <h2>
-                        Contacts
-                    </h2>
+                    <h2>{t('contact.contact')}</h2>
                     <CopyButton />
                 </div>
                 <Socials />

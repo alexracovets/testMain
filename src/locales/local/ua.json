@@ -18,9 +18,9 @@
     "btn": {
         "discover_us": "Зв’язатись",
         "lets_talk": "Поговоримо",
-        "discover": "DISCOVER",
-        "talk_to_team": "Talk to Team",
-        "office": "office 3d tour"
+        "discover": "Детальніше",
+        "talk_to_team": "Маю Проєкт",
+        "office": "3D Тур Офісом"
     },
     "services": {
         "first": {
@@ -526,5 +526,24 @@
                 }
             }
         }
+    },
+    "contact": {
+        "work_together": "Давайте Обговоримо ваш проєкт",
+        "contact": "Контакти",
+        "days": {
+            "0": {
+                "day": "Пон - Пт:",
+                "time": "09:00 - 18:00"
+            },
+            "1": {
+                "day": "Субота:",
+                "time": "10:00 - 15:00"
+            },
+            "2": {
+                "day": "Неділля:",
+                "time": "Вихідний"
+            }
+        },
+        "phone": "Тел.:"
     }
 }

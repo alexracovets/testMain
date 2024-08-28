@@ -1,22 +1,26 @@
+import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
+
 import instagram from '/image/icons/social/instagram.svg';
 import facebook from '/image/icons/social/facebook.svg';
 import linkedin from '/image/icons/social/linkedin.svg';
 
 import s from './Socials.module.scss';
-import { Link } from 'react-router-dom';
 export default function Socials() {
+    const { t } = useTranslation();
+
     const days = [
         {
-            day: 'Mon - Fri:',
-            time: '10:00 AM - 6:00 PM'
+            day: t('contact.days.0.day'),
+            time: t('contact.days.0.time')
         },
         {
-            day: 'Sat:',
-            time: '10:00 AM - 3:00 PM'
+            day: t('contact.days.1.day'),
+            time: t('contact.days.1.time')
         },
         {
-            day: 'Sun:',
-            time: 'Day Off'
+            day: t('contact.days.2.day'),
+            time: t('contact.days.2.time')
         }
     ]
     const mobile = '+38 066 782 72 52';
@@ -34,7 +38,7 @@ export default function Socials() {
                 })}
             </ul>
             <div className={s.phone}>
-                Phone: <a href={"tel:" + mobile}>{mobile}</a>
+                {t('contact.phone')} <a href={"tel:" + mobile}>{mobile}</a>
             </div>
             <ul className={s.socials}>
                 <li className={s.socialsBtn}>

@@ -526,5 +526,24 @@
                 }
             }
         }
+    },
+    "contact": {
+        "work_together": "Let’s Work Together!",
+        "contact": "Contacts",
+        "days": {
+            "0": {
+                "day": "Mon - Fri:",
+                "time": "10:00 AM - 6:00 PM"
+            },
+            "1": {
+                "day": "Sat:",
+                "time": "10:00 AM - 3:00 PM"
+            },
+            "2": {
+                "day": "Sun:",
+                "time": "Day Off"
+            }
+        },
+        "phone": "Phone:"
     }
 }

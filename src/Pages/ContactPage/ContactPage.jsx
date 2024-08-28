@@ -31,12 +31,10 @@ export default function ContactPage() {
             <section>
                 <div className={s.content}>
                     <div className={s.together}>
-                        <span>
-                            Let’s Work Together!
-                        </span>
+                        <span>{t('contact.work_together')}</span>
                     </div>
                     <div className={s.contact_wrapper}>
-                        <h2>Contacts</h2>
+                        <h2>{t('contact.contact')}</h2>
                         <CopyButton />
                     </div>
                     <Socials />
