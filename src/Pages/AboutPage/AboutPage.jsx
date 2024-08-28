@@ -1,9 +1,12 @@
-import Strengths from '../../Components/Strengths/Strengths';
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
+import Strengths from '../../Components/Strengths/Strengths';
+
 import s from './AboutPage.module.scss';
 export default function AboutPage() {
+    const { t } = useTranslation();
 
     ReactGA.send({
         hitType: "pageview",
@@ -28,15 +31,11 @@ export default function AboutPage() {
                     <div className={s.about_wrapper}>
                         <div className={s.lies_info}>
                             <h3>
-                                In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
-                                Our partners know that we can move fast and focus on a result.
+                                {t('about.0')}  <br />
+                                {t('about.1')}
                             </h3>
-                            <h4>
-                                We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
-                            </h4>
-                            <h4>
-                                We know how to operate with a high demand traffic and marketing budgets over 30K$
-                            </h4>
+                            <h4>{t('about.2')}</h4>
+                            <h4>{t('about.3')}</h4>
                         </div>
                     </div>
                     <div className={s.about_wrapper}>
