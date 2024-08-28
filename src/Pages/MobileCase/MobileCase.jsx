@@ -63,10 +63,8 @@ export default function MobileCase() {
                                 </div>
                                 <div className={s.customer_block}>
                                     <div className={s.customer}>
-                                        {t(content.techno)}
-                                    </div>
-                                    <div className={s.logo}>
-                                        <h3> {t(content.technologies)}</h3>
+                                        <b>{t(content.techno)} </b>
+                                        {t(content.technologies)}
                                     </div>
                                 </div>
                             </div>

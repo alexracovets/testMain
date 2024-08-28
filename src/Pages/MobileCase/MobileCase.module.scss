@@ -99,24 +99,10 @@
                     .customer {
                         font-size: 2rem;
                         line-height: 1.5;
-                        font-weight: 400;
-                        color: $color-primary;
+                        font-weight: 600;
+                        color: $color-white;
                         font-family: $font-JB_Mono;
                         margin-bottom: 1rem;
-                    }
-
-                    .logo {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-
-                        h3 {
-                            font-size: 1.646875rem;
-                            line-height: 2.470625rem;
-                            font-weight: 700;
-                            color: $color-white;
-                            font-family: $font-DM_Sans;
-                        }
                     }
                 }
             }

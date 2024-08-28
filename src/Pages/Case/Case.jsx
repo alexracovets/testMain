@@ -57,12 +57,8 @@ export default function Case() {
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
-                                            <b>
-                                                {t(content.techno)}
-                                            </b>
-                                        </div>
-                                        <div className={s.logo}>
-                                            <h3> {t(content.technologies)}</h3>
+                                            <b>{t(content.techno)} </b>
+                                            {t(content.technologies)}
                                         </div>
                                     </div>
                                     <div className={s.btns_wrapper}>

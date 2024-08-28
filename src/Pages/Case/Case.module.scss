@@ -133,35 +133,11 @@
                         font-size: 1.5rem;
                         line-height: 2.1rem;
                         font-weight: 600;
-                        color: $color-primary;
-                        font-family: $font-JB_Mono; 
+                        font-family: $font-JB_Mono;
+                        color: $color-white;
 
                         @media (max-width:$width-shortDesktop) {
-                            font-size: 1.2rem; 
-                        }
-                    }
-
-                    .logo {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-
-                        img {
-                            width: 2.470625rem;
-                            height: auto;
-                            margin-right: 0.625rem;
-                        }
-
-                        h3 {
-                            font-size: 1.646875rem;
-                            line-height: 1;
-                            font-weight: 700;
-                            color: $color-white;
-                            font-family: $font-DM_Sans;
-
-                            @media (max-width:$width-shortDesktop) {
-                                font-size: 1.2rem;
-                            }
+                            font-size: 1.2rem;
                         }
                     }
                 }
