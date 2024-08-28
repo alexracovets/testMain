@@ -11,8 +11,7 @@ export default function TextTransitionTest() {
     const [index, setIndex] = useState(0);
     const location = useLocation();
     const [isAbout, setIsAbout] = useState(false);
-    const { t } = useTranslation();
-
+    const { t, i18n } = useTranslation();
     const TEXTS = [
         t("textTransition.first"),
         t("textTransition.second"),
@@ -33,7 +32,7 @@ export default function TextTransitionTest() {
     }, [location.pathname]);
 
     return (
-        <div className={s.text}>
+        <div className={i18n.language === 'ua' ? s.text + ' ' + s.ua : s.text}>
             {isAbout ?
                 <AboutTransition /> :
                 <>

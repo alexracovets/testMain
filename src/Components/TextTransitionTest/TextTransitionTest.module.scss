@@ -11,6 +11,10 @@
     line-height: 3rem;
     height: 3rem;
 
+    &.ua {
+        font-family: $font-JB_Mono;
+    }
+
     @media (max-width:$width-table ) {
         height: auto;
         width: 100%;
@@ -32,7 +36,7 @@
     }
 
     .count {
-        color: $color-primary; 
+        color: $color-primary;
     }
 
     .plus {
