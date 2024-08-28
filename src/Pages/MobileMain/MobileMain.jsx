@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
-import Fliper from "../../Components/Fliper/Fliper";
 import Footer from "../../Components/Footer/Footer";
 import Services from '../../Components/Services/Services';
 import UI_Button from "../../Components/UI_Button/UI_Button";
@@ -111,7 +110,7 @@ export default function MobileMain() {
             </section>
             <section ref={scrollAbout}>
                 <div className={s.content}  >
-                    <h2> About Us </h2>
+                    <h2>{t('pages.about')}</h2>
                     <div className={s.about_wrapper}>
                         <div className={s.lies_info}>
                             <h3>
@@ -129,7 +128,7 @@ export default function MobileMain() {
             </section>
             <section ref={scrollServices}>
                 <div className={s.content}>
-                    <h2> Services </h2>
+                    <h2>{t('pages.services')}</h2>
                     <Services mobile />
                 </div>
             </section>

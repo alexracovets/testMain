@@ -10,9 +10,10 @@ import useModalForm from '../../store/useModalForm';
 
 import s from './Footer.module.scss';
 export default function Footer() {
-    const [isBtnFocus, setIsBtnFocus] = useState(false);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const setIsActiveOffice = useOffice((state) => state.setIsActive);
+    const [isBtnHovered, setIsBtnHovered] = useState(false);
+    const [isBtnFocus, setIsBtnFocus] = useState(false);
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -30,12 +31,12 @@ export default function Footer() {
                 </div>
             </div>
             <div className={s.wrapper + ' ' + s.mobile}>
-                <div className={s.together}>
+                <div className={isBtnHovered ? s.active + ' ' + s.together : s.together}>
                     <span>  {t('contact.work_together')}  </span>
                 </div>
                 <div className={s.contacts}>
                     <h2>{t('contact.contact')}</h2>
-                    <CopyButton />
+                    <CopyButton setIsBtnHovered={setIsBtnHovered} />
                 </div>
                 <Socials />
                 <div className={s.btns}>

@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import ReactGA from "react-ga4";
 
 import CopyButton from "../../Components/CopyButton/CopyButton";
@@ -13,6 +14,7 @@ import s from './ContactPage.module.scss';
 export default function ContactPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const setIsActiveOffice = useOffice((state) => state.setIsActive);
+    const [isBtnHovered, setIsBtnHovered] = useState(false);
     const { t } = useTranslation();
 
     ReactGA.send({
@@ -30,12 +32,12 @@ export default function ContactPage() {
         >
             <section>
                 <div className={s.content}>
-                    <div className={s.together}>
+                    <div className={isBtnHovered ? s.active + ' ' + s.together : s.together}>
                         <span>{t('contact.work_together')}</span>
                     </div>
                     <div className={s.contact_wrapper}>
                         <h2>{t('contact.contact')}</h2>
-                        <CopyButton />
+                        <CopyButton setIsBtnHovered={setIsBtnHovered} />
                     </div>
                     <Socials />
                     <div className={s.sub_btns}>

@@ -69,7 +69,8 @@ footer {
                 justify-content: flex-start;
                 transition: all ease-in-out 400ms;
 
-                &:hover {
+
+                &.active {
                     color: $color-primary;
                 }
 

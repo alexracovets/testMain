@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import useToast from "../../store/useToast";
-// import playSound from '../../utils/playSound';
 import hover from '/sounds/hover1.wav';
 
 import useUserInteracted from '../../store/useUserInteracted';
 
 import s from './CopyButton.module.scss';
-export default function CopyButton() {
+export default function CopyButton({ setIsBtnHovered }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const [isBtnFocus, setIsBtnFocus] = useState(false);
     const toastPlay = useToast(state => state.setIsPlay);
     const hoverSound = new Audio(hover);
 
     const handleCopyEmail = () => {
-        // playSound(hoverSound)
         handleMouseEnter();
         setIsBtnFocus(true);
         const email = 'info@spotium360.com';
@@ -44,7 +43,9 @@ export default function CopyButton() {
         <>
             <div
                 className={isBtnFocus ? `${s.contactBtn} ${s.focus}` : s.contactBtn}
-                onClick={handleCopyEmail} 
+                onClick={handleCopyEmail}
+                onPointerEnter={() => setIsBtnHovered(true)}
+                onPointerLeave={() => setIsBtnHovered(false)}
             >
                 <button className={s.text}>
                     info@spotium360.com
@@ -55,4 +56,8 @@ export default function CopyButton() {
             </div>
         </>
     );
+}
+
+CopyButton.propTypes = {
+    setIsBtnHovered: PropTypes.func
 }

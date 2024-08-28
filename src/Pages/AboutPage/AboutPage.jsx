@@ -23,9 +23,7 @@ export default function AboutPage() {
         >
             <section>
                 <div className={s.title_block}>
-                    <h2>
-                        About Us
-                    </h2>
+                    <h2>{t('pages.about')}</h2>
                 </div>
                 <div className={s.content}>
                     <div className={s.about_wrapper}>

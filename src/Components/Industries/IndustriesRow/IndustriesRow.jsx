@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import { useCollapse } from 'react-collapsed';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import IndustriesItem from '../IndustriesItem/IndustriesItem';
 import useStoreIndustries from '../../../store/useStoreIndustries';

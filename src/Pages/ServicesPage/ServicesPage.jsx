@@ -25,9 +25,7 @@ export default function ServicesPage() {
         >
             <section>
                 <div className={s.content}>
-                    <h2>
-                        Services
-                    </h2>
+                    <h2>{t('pages.services')}</h2>
                     <Services />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={t('btn.lets_talk')} arrow />

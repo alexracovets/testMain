@@ -35,10 +35,10 @@
                 text-transform: uppercase;
                 display: flex;
                 justify-content: flex-start;
-
+                margin-bottom: 2rem;
                 transition: all ease-in-out 400ms;
 
-                &:hover {
+                &.active {
                     color: $color-primary;
                 }
             }
@@ -48,10 +48,6 @@
                 justify-content: flex-start;
                 align-items: center;
                 margin-bottom: 2rem;
-
-                @media (max-width:$width-shortDesktop) {
-                    margin-bottom: 2rem;
-                }
 
                 h2 {
                     color: $color-white;

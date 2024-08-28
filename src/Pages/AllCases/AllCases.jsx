@@ -66,7 +66,7 @@ export default function AllCases() {
             exit={{ opacity: 0, x: '-20%' }}
         >
             <section>
-                <h2> Сases </h2>
+                <h2>{t('pages.cases')}</h2>
                 <Scrollbar
                     className={'scroll'}
                     onScroll={(prevScrollValues) => wheelPointer(prevScrollValues)}
