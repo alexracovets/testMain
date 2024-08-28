@@ -7,7 +7,7 @@ import ReactGA from "react-ga4";
 
 import Keys from "../../Components/Keys/Keys";
 import UI_Button from "../../Components/UI_Button/UI_Button";
-import TextFieldI18 from "../../Components/TextField/TextFieldI18";
+import TextField from "../../Components/TextField/TextField";
 
 import casesData from "../../data/casesData";
 import useModalForm from '../../store/useModalForm';
@@ -53,7 +53,7 @@ export default function Case() {
                                         {t(content.title)}
                                     </h2>
                                     <div className={s.description}>
-                                        <TextFieldI18 texts={content.description_next} />
+                                        <TextField texts={content.description_next} />
                                     </div>
                                     <div className={s.customer_block}>
                                         <div className={s.customer}>
@@ -98,7 +98,7 @@ export default function Case() {
                                             <li key={idx}>
                                                 <div className={s.title}>{t(item.name)}</div>
                                                 <div className={s.content}>
-                                                    <TextFieldI18 texts={item.content} />
+                                                    <TextField texts={item.content} />
                                                 </div>
                                             </li>
                                         )

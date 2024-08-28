@@ -7,7 +7,7 @@ import ReactGA from "react-ga4";
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import KeysMobile from "../../Components/KeysMobile/KeysMobile";
-import TextFieldI18 from "../../Components/TextField/TextFieldI18";
+import TextField from "../../Components/TextField/TextField";
 import Footer from "../../Components/Footer/Footer";
 import casesData from "../../data/casesData";
 
@@ -59,7 +59,7 @@ export default function MobileCase() {
                                     {t(content.title)}
                                 </h2>
                                 <div className={s.description}>
-                                    <TextFieldI18 texts={content.description} />
+                                    <TextField texts={content.description} />
                                 </div>
                                 <div className={s.customer_block}>
                                     <div className={s.customer}>
@@ -94,7 +94,7 @@ export default function MobileCase() {
                                         <li key={idx}>
                                             <div className={s.title}>{t(item.name)}</div>
                                             <div className={s.content}>
-                                                <TextFieldI18 texts={item.content} />
+                                                <TextField texts={item.content} />
                                             </div>
                                         </li>
                                     )

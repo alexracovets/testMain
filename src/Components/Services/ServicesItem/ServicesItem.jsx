@@ -3,7 +3,7 @@ import { useCollapse } from 'react-collapsed';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import TextFieldI18 from '../../TextField/TextFieldI18';
+import TextField from '../../TextField/TextField';
 
 import s from '../Services.module.scss';
 export default function ServicesItem({ index, title, colapse, currentService, setCurrentService }) {
@@ -36,7 +36,7 @@ export default function ServicesItem({ index, title, colapse, currentService, se
             <div className={s.title} dangerouslySetInnerHTML={{ __html: t(title) }} />
             <div {...getCollapseProps()} className={s.colapse}>
                 <div className={s.colapse__wrapper}>
-                    <TextFieldI18 texts={colapse} />
+                    <TextField texts={colapse} />
                 </div>
             </div>
         </li>

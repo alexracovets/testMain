@@ -2,7 +2,7 @@ import { useCollapse } from 'react-collapsed';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-import TextFieldI18 from '../../../Components/TextField/TextFieldI18';
+import TextField from '../../../Components/TextField/TextField';
 
 import s from '../QAPage.module.scss';
 export default function QAItem({ title, content }) {
@@ -12,11 +12,11 @@ export default function QAItem({ title, content }) {
     return (
         <div className={s.item} {...getToggleProps({ onClick: () => setExpanded((prevExpanded) => !prevExpanded) })}>
             <h3 className={isExpanded ? s.title + " " + s.active : s.title}>
-                <TextFieldI18 texts={title} />
+                <TextField texts={title} />
             </h3>
             <div className={s.content}  {...getCollapseProps()}>
                 <div className={s.content__wrapper}>
-                    <TextFieldI18 texts={content} />
+                    <TextField texts={content} />
                 </div>
             </div>
         </div>

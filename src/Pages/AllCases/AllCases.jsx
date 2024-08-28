@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
-import TextFieldI18 from "../../Components/TextField/TextFieldI18";
+import TextField from "../../Components/TextField/TextField";
 import UI_Button from "../../Components/UI_Button/UI_Button";
 
 import casesData from "../../data/casesData";
@@ -80,7 +80,7 @@ export default function AllCases() {
                                 <div key={idx} className={s.item}>
                                     <div className={s.info}>
                                         <h3 className={s.title}>{t(item.title)}</h3>
-                                        <div className={s.description}><TextFieldI18 texts={item.description} /></div>
+                                        <div className={s.description}><TextField texts={item.description} /></div>
                                         <div className={s.tags}>
                                             {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{t(tag)}</div>)}
                                         </div>
