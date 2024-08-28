@@ -284,10 +284,6 @@ const casesData = [
                         type: 'q_a',
                         question: "cases.second.keys_block.second.content.3.question",
                         answer: "cases.second.keys_block.second.content.3.answer"
-                    },
-                    {
-                        type: `text`,
-                        value: "cases.second.keys_block.second.content.4.value"
                     }
                 ],
                 id: 1
@@ -346,8 +342,8 @@ const casesData = [
                         value: "cases.third.bussines_block.first.content.first"
                     },
                     {
-                        type: `textList`,
-                        value: [
+                        type: `list`,
+                        list: [
                             "cases.third.bussines_block.first.content.second.0",
                             "cases.third.bussines_block.first.content.second.1",
                             "cases.third.bussines_block.first.content.second.2",
@@ -458,6 +454,10 @@ const casesData = [
             {
                 type: `text`,
                 value: "cases.fourth.description_next.first"
+            },
+            {
+                type: `text`,
+                value: "cases.fourth.description_next.second"
             }
         ],
         tags: [
@@ -481,8 +481,8 @@ const casesData = [
                         value: "cases.fourth.bussines_block.first.content.first"
                     },
                     {
-                        type: `textList`,
-                        value: [
+                        type: `list`,
+                        list: [
                             "cases.fourth.bussines_block.first.content.second.0",
                             "cases.fourth.bussines_block.first.content.second.1",
                             "cases.fourth.bussines_block.first.content.second.2",
@@ -505,8 +505,7 @@ const casesData = [
                             "cases.fourth.bussines_block.second.content.second.1",
                             "cases.fourth.bussines_block.second.content.second.2",
                             "cases.fourth.bussines_block.second.content.second.3",
-                            "cases.fourth.bussines_block.second.content.second.4",
-                            "cases.fourth.bussines_block.second.content.second.5"
+                            "cases.fourth.bussines_block.second.content.second.4"
                         ]
                     }
                 ]
@@ -524,8 +523,7 @@ const casesData = [
                             "cases.fourth.bussines_block.third.content.second.0",
                             "cases.fourth.bussines_block.third.content.second.1",
                             "cases.fourth.bussines_block.third.content.second.2",
-                            "cases.fourth.bussines_block.third.content.second.3",
-                            "cases.fourth.bussines_block.third.content.second.4"
+                            "cases.fourth.bussines_block.third.content.second.3"
                         ]
                     }
                 ]
@@ -536,16 +534,12 @@ const casesData = [
                 name: "cases.fourth.keys_block.first.name",
                 content: [
                     {
-                        type: 'text',
-                        value: "cases.fourth.keys_block.first.content.first"
-                    },
-                    {
                         type: 'list',
                         list: [
-                            "cases.fourth.keys_block.first.content.second.0",
-                            "cases.fourth.keys_block.first.content.second.1",
-                            "cases.fourth.keys_block.first.content.second.2",
-                            "cases.fourth.keys_block.first.content.second.3",
+                            "cases.fourth.keys_block.first.content.first.0",
+                            "cases.fourth.keys_block.first.content.first.1",
+                            "cases.fourth.keys_block.first.content.first.2",
+                            "cases.fourth.keys_block.first.content.first.3",
                         ]
                     }
                 ],
