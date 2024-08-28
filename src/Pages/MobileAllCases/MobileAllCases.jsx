@@ -1,12 +1,13 @@
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
 import Footer from "../../Components/Footer/Footer";
-import TextField from "../../Components/TextField/TextField";
+import TextFieldI18 from "../../Components/TextField/TextFieldI18";
 
-import projectsData from "../../data/projectsData";
+import casesData from "../../data/casesData";
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 
@@ -16,6 +17,8 @@ export default function MobileAllCases() {
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const { t } = useTranslation();
+
     ReactGA.send({
         hitType: "pageview",
         page: "/mobile/cases",
@@ -23,7 +26,7 @@ export default function MobileAllCases() {
     });
     
     useEffect(() => {
-        setProjects(projectsData);
+        setProjects(casesData);
     }, []);
 
     useEffect(() => {
@@ -48,10 +51,10 @@ export default function MobileAllCases() {
                         return (
                             <NavLink to={`/mobile/cases/${item.pageName}`} key={idx} className={s.item}>
                                 <div className={s.info}>
-                                    <h3 className={s.title}>{item.title}</h3>
-                                    <div className={s.description}><TextField texts={item.description} /></div>
+                                    <h3 className={s.title}>{t(item.title)}</h3>
+                                    <div className={s.description}><TextFieldI18 texts={item.description} /></div>
                                     <div className={s.tags}>
-                                        {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
+                                        {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{t(tag)}</div>)}
                                     </div>
                                 </div>
                             </NavLink>

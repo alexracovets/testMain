@@ -115,15 +115,11 @@ export default function MobileMain() {
                     <div className={s.about_wrapper}>
                         <div className={s.lies_info}>
                             <h3>
-                                In the AI age the speed of distribution is crucial point to beat the competitors.  <br />
-                                Our partners know that we can move fast and focus on a result.
+                                {t('about.0')}  <br />
+                                {t('about.1')}
                             </h3>
-                            <p>
-                                We have successfully launch more than 30 project in AI, web development, AR and Digital Marketing. Our team achieve it by providing project tracking workspace with a daily updates.
-                            </p>
-                            <p>
-                                We know how to operate with a high demand traffic and marketing budgets over 30K$
-                            </p>
+                            <p>{t('about.2')}</p>
+                            <p>{t('about.3')}</p>
                         </div>
                     </div>
                     <div className={s.about_wrapper}>

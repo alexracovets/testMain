@@ -66,6 +66,12 @@
                     border-bottom-color: $color-white;
                     transition: all ease-in-out 400ms;
 
+                    span {
+                        text-transform: uppercase;
+                        color: $color-primary;
+                        font-weight: bold;
+                    }
+
                     &.active,
                     &:hover {
                         color: $color-primary;
@@ -99,13 +105,48 @@
                                 font-size: 0.875rem;
                                 line-height: 1.3125rem;
                             }
-                            span{
+
+                            span {
                                 color: $color-primary;
                             }
 
                             a {
                                 color: $color-primary;
                                 font-weight: 600;
+                            }
+                        }
+
+                        ul {
+                            width: 100%;
+                            color: $color-white;
+                            font-family: $font-JB_Mono;
+
+                            li {
+                                padding-left: 1rem;
+                                position: relative;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                margin-bottom: 0.5rem;
+
+                                @media (max-width:$width-shortDesktop) {
+                                    padding-left: 1.5rem;
+                                }
+
+                                @media (max-width:$width-tableBig) {
+                                    padding-left: 1rem;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0.2rem;
+                                    top: 0.8rem;
+                                    width: 0.4rem;
+                                    height: 0.4rem;
+                                    background-color: $color-primary;
+                                    border-radius: 50%;
+                                }
                             }
                         }
                     }

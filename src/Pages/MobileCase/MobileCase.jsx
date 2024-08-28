@@ -1,14 +1,15 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
 import useAnchorScroll from '../../store/useAnchorScroll';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
 import KeysMobile from "../../Components/KeysMobile/KeysMobile";
-import TextField from "../../Components/TextField/TextField";
+import TextFieldI18 from "../../Components/TextField/TextFieldI18";
 import Footer from "../../Components/Footer/Footer";
-import projectsData from "../../data/projectsData";
+import casesData from "../../data/casesData";
 
 import s from './MobileCase.module.scss';
 export default function MobileCase() {
@@ -18,15 +19,17 @@ export default function MobileCase() {
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
+    const { t } = useTranslation();
     const videoRef = useRef();
+
     ReactGA.send({
         hitType: "pageview",
-        page: `/mobile/cases/${projectsData.find(project => project.pageName === id).pageName}`,
-        title: `${projectsData.find(project => project.pageName === id).logoName} Page(mobile)`
+        page: `/mobile/cases/${casesData.find(project => project.pageName === id).pageName}`,
+        title: `${casesData.find(project => project.pageName === id).logoName} Page(mobile)`
     });
 
     useEffect(() => {
-        const project = projectsData.find(project => project.pageName === id);
+        const project = casesData.find(project => project.pageName === id);
         setContent(project)
     }, [id, setContent])
 
@@ -53,17 +56,17 @@ export default function MobileCase() {
                         <section className={s.main_info}>
                             <div className={s.content}>
                                 <h2>
-                                    {content.title}
+                                    {t(content.title)}
                                 </h2>
                                 <div className={s.description}>
-                                    <TextField texts={content.description} />
+                                    <TextFieldI18 texts={content.description} />
                                 </div>
                                 <div className={s.customer_block}>
                                     <div className={s.customer}>
-                                        {content.techno}
+                                        {t(content.techno)}
                                     </div>
                                     <div className={s.logo}>
-                                        <h3> {content.technologies}</h3>
+                                        <h3> {t(content.technologies)}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -89,9 +92,9 @@ export default function MobileCase() {
                                 {content.bussines_block.map((item, idx) => {
                                     return (
                                         <li key={idx}>
-                                            <div className={s.title}>{item.name}</div>
+                                            <div className={s.title}>{t(item.name)}</div>
                                             <div className={s.content}>
-                                                <TextField texts={item.content} />
+                                                <TextFieldI18 texts={item.content} />
                                             </div>
                                         </li>
                                     )

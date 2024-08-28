@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import s from './Keys.module.scss';
 export default function Keys({ content }) {
     const [expandedIndex, setExpandedIndex] = useState(0);
-    const { t } = useTranslation();
     const [texts, setTexts] = useState(null);
+    const { t } = useTranslation();
 
     const handleToggle = (index) => {
         setExpandedIndex(expandedIndex === index ? -1 : index);

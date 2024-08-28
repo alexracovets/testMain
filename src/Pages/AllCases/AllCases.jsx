@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
 
-import TextField from "../../Components/TextField/TextField";
+import TextFieldI18 from "../../Components/TextField/TextFieldI18";
 import UI_Button from "../../Components/UI_Button/UI_Button";
 
-import projectsData from "../../data/projectsData";
+import casesData from "../../data/casesData";
 import useScrollPageNavigation from '../../store/useScrollPageNavigation';
 
 
@@ -22,7 +22,7 @@ export default function AllCases() {
     const setIsScrollOnPage = useScrollPageNavigation((state) => state.setIsScrollOnPage);
     const { t } = useTranslation();
     const videoRef = useRef();
-    
+
     ReactGA.send({
         hitType: "pageview",
         page: "/cases",
@@ -30,7 +30,7 @@ export default function AllCases() {
     });
 
     useEffect(() => {
-        setProjects(projectsData);
+        setProjects(casesData);
     }, []);
 
     useEffect(() => {
@@ -79,10 +79,10 @@ export default function AllCases() {
                             return (
                                 <div key={idx} className={s.item}>
                                     <div className={s.info}>
-                                        <h3 className={s.title}>{item.title}</h3>
-                                        <div className={s.description}><TextField texts={item.description} /></div>
+                                        <h3 className={s.title}>{t(item.title)}</h3>
+                                        <div className={s.description}><TextFieldI18 texts={item.description} /></div>
                                         <div className={s.tags}>
-                                            {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{tag}</div>)}
+                                            {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{t(tag)}</div>)}
                                         </div>
                                         <div className={s.btn_wrapper}>
                                             <NavLink to={`/cases/${item.pageName}`} key={idx} className={s.btn}>

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 import s from './KeysMobile.module.scss';
 import { useCollapse } from 'react-collapsed';
@@ -28,6 +29,7 @@ export default function KeysMobile({ content }) {
 const KeyItem = ({ index, title, colapse, currentItem, setCurrentItem }) => {
     const isExpanded = currentItem === index;
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+    const { t } = useTranslation();
 
     const handler = () => {
         setCurrentItem(isExpanded ? null : index);
@@ -36,24 +38,28 @@ const KeyItem = ({ index, title, colapse, currentItem, setCurrentItem }) => {
     return (
         <div className={s.item}>
             <div className={isExpanded ? `${s.title} ${s.active}` : s.title} {...getToggleProps({ onClick: handler })}>
-                {title}
+                {t(title)}
             </div>
             <div className={s.colapse} {...getCollapseProps()}>
                 <div className={s.content}>
                     {colapse.map((item, idx) => {
                         if (item.type === 'text') {
-                            return <p key={idx} dangerouslySetInnerHTML={{ __html: item.value }} />
+                            return <p key={idx} dangerouslySetInnerHTML={{ __html: t(item.value) }} />
+
                         } else if (item.type === 'list') {
-                            return <ul key={idx}>{item.list.map((li, idx) => <li key={idx}><p dangerouslySetInnerHTML={{ __html: li }} /></li>)}</ul>
+                            return <ul key={idx}>{item.list.map((li, idx) => {
+                                const text = t(li);
+                                return <li key={idx}><p dangerouslySetInnerHTML={{ __html: text }} /></li>
+                            }
+                            )}</ul>
                         } else if (item.type === 'q_a') {
                             return (
                                 <div key={idx} className={s.q_a}>
-                                    <p dangerouslySetInnerHTML={{ __html: item.question }} className={s.question} />
-                                    <p dangerouslySetInnerHTML={{ __html: item.answer }} className={s.answer} />
+                                    <p dangerouslySetInnerHTML={{ __html: t(item.question) }} className={s.question} />
+                                    <p dangerouslySetInnerHTML={{ __html: t(item.answer) }} className={s.answer} />
                                 </div>
                             )
                         }
-                        return null;
                     })}
                 </div>
             </div>
