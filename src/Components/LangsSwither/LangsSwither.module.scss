@@ -13,6 +13,12 @@
     height: 100%;
     pointer-events: none;
 
+    @media (max-width:$width-table) {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
     button {
         display: flex;
         justify-content: center;
@@ -20,9 +26,10 @@
         padding: 0.5rem;
         margin-left: 0.375rem;
         pointer-events: auto;
+        height: 100%;
 
         @media (max-width:$width-table) {
-            padding: 0.75rem;
+            padding: 0.2rem;
         }
 
         &:nth-of-type(1) {

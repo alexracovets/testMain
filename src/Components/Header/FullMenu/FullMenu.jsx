@@ -13,6 +13,7 @@ import linkedin from '/image/icons/social/linkedin.svg';
 import useUserInteracted from '../../../store/useUserInteracted';
 
 import s from './FullMenu.module.scss';
+import LangsSwither from "../../LangsSwither/LangsSwither";
 export default function FullMenu({ isDesktop }) {
     const userInteracted = useUserInteracted((state) => state.userInteracted);
     const isActive = useStoreNavigation((state) => state.isBurger);
@@ -74,9 +75,14 @@ export default function FullMenu({ isDesktop }) {
                     }
                 </ul>
                 <div className={s.bottom}>
-                    {social.map((link, idx) => {
-                        return <Link target="_blank" key={idx} to={link.path}><img src={link.image} alt={link.name} /></Link>
-                    })}
+                    <div className={s.socials}>
+                        {social.map((link, idx) => {
+                            return <Link target="_blank" key={idx} to={link.path}><img src={link.image} alt={link.name} /></Link>
+                        })}
+                    </div>
+                    <div className={s.lang_swither}>
+                        <LangsSwither />
+                    </div>
                 </div>
             </div>
         </div>
