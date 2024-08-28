@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,6 +8,7 @@ import s from '../ContactsForm.module.scss';
 export default function ContactsFormInput({ name, label, placeholder, type, setUserForm, userForm }) {
     const [isValid, setIsValid] = useState(true);
     const [valueData, setValueData] = useState(userForm[name].value);
+    const { t } = useTranslation();
 
     const validateInput = (value) => {
         if (name === 'email') {
@@ -42,7 +44,7 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
         <div className={s.item__wraper}>
             <div className={s.label__wrapper}>
                 <label htmlFor={name}>{label}</label>
-                <div className={!isValid ? s.required + ' ' + s.active : s.required}>This field is required</div>
+                <div className={!isValid ? s.required + ' ' + s.active : s.required}>{t('modal.required')}</div>
             </div>
             <div className={s.input__wrapper}>
                 <div className={!isValid ? s.invalid + ' ' + s.active : s.invalid} style={{ backgroundImage: `url(${invalid})` }}></div>
@@ -56,7 +58,7 @@ export default function ContactsFormInput({ name, label, placeholder, type, setU
                     className={!isValid ? s.invalid_input : ''}
                 />
             </div>
-            <div className={!isValid ? s.required_mobile + ' ' + s.active : s.required_mobile}>This field is required</div>
+            <div className={!isValid ? s.required_mobile + ' ' + s.active : s.required_mobile}>{t('modal.required')}</div>
         </div>
     );
 }

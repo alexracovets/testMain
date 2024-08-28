@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 import UI_Button from '../../UI_Button/UI_Button';
@@ -12,6 +13,7 @@ export default function ContactsForm() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const [isBtnActive, setIsBtnActive] = useState(false);
     const [isChoice, setIsChoice] = useState(false);
+    const { t } = useTranslation();
 
     const [userForm, setUserForm] = useState({
         full_name: {
@@ -80,36 +82,34 @@ export default function ContactsForm() {
                                 </svg>
 
                             </div>
-                            <div className={s.title}>
-                                Contact Us
-                            </div>
+                            <div className={s.title}>{t('modal.contact')}</div>
                             <form onSubmit={handleSubmit}>
                                 <ContactsFormInput
                                     name={`full_name`}
-                                    label={`Full name`}
-                                    placeholder={`John Doe`}
+                                    label={t('modal.name')}
+                                    placeholder={t('modal.placeholder.name')}
                                     type={`text`}
                                     setUserForm={setUserForm}
                                     userForm={userForm}
                                 />
                                 <ContactsFormInput
                                     name={`email`}
-                                    label={`Email address`}
-                                    placeholder={`Enter your email`}
+                                    label={t('modal.mail')}
+                                    placeholder={t('modal.placeholder.email')}
                                     type={`email`}
                                     setUserForm={setUserForm}
                                     userForm={userForm}
                                 />
                                 <ContactsFormTextArea
                                     name={`textarea`}
-                                    label={`Comment`}
-                                    placeholder={`Add your comment or short project description`}
+                                    label={t('modal.comment')}
+                                    placeholder={t('modal.placeholder.comment')}
                                     type={`textarea`}
                                     setUserForm={setUserForm}
                                     userForm={userForm}
                                 />
                                 <div className={s.btn} type="submit">
-                                    <UI_Button text={'Contact me'} arrow submit small disabled={!isBtnActive} />
+                                    <UI_Button text={t('btn.contact')} arrow submit small disabled={!isBtnActive} />
                                 </div>
                             </form>
                         </div>
@@ -126,7 +126,7 @@ export default function ContactsForm() {
                     onClick={() => setIsActiveForm(false)}
                 >
                     <div className={s.choice}>
-                        Whoo! You just made the right choice!
+                        {t('modal.choice')}
                     </div>
                 </motion.div> :
                     null

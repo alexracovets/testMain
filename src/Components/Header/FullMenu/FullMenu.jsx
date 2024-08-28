@@ -57,7 +57,7 @@ export default function FullMenu({ isDesktop }) {
                     {isDesktop ? links.map((link, i) => {
                         return (
                             <li key={i} onClick={() => setBurger(false)}
-                                onMouseEnter={handleMouseEnter}
+                                onPointerEnter={handleMouseEnter}
                             >
                                 <NavLink to={link.path} className={location.pathname === link.path && s.active}>
                                     {link.name}

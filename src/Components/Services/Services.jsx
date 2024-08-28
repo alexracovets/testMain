@@ -35,6 +35,15 @@ export default function Services({ mobile }) {
             setIsTopScroll(true);
         } else setIsScrollAllowed(false);
     }
+    const pointerEnter = () => {
+        setIsScrollAllowed(false);
+        setIsScrollOnPage(true);
+    }
+
+    const pointerLeave = () => {
+        setIsScrollAllowed(true);
+        setIsScrollOnPage(false);
+    }
 
     useEffect(() => {
         setCurrentService(sliderServices);
@@ -43,14 +52,6 @@ export default function Services({ mobile }) {
     useEffect(() => {
         changeActiveServices(currentService);
     }, [currentService, changeActiveServices]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setIsScrollOnPage(true);
-            setIsTopScroll(true);
-            setIsScrollAllowed(false);
-        }, 100);
-    }, [setIsScrollOnPage, setIsTopScroll, setIsScrollAllowed])
 
     return (
         <>
@@ -61,8 +62,8 @@ export default function Services({ mobile }) {
                         onUpdate={(prevScrollValues) => wheelPointer(prevScrollValues)}
                     >
                         <div className={s.services__wrapper}
-                            onMouseEnter={() => setIsScrollAllowed(false)}
-                            onMouseLeave={() => setIsScrollAllowed(true)}
+                            onPointerEnter={() => pointerEnter()}
+                            onPointerLeave={() => pointerLeave()}
                         >
                             <ul className={s.services}>
                                 {servicesData.map((colapse) => {

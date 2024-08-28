@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -5,6 +6,7 @@ import s from '../ContactsForm.module.scss';
 export default function ContactsFormTextArea({ name, label, placeholder, type, setUserForm, userForm }) {
     const [isValid, setIsValid] = useState(true);
     const [valueData, setValueData] = useState(userForm[name].value);
+    const { t } = useTranslation();
 
     const validateInput = (value) => {
         if (name === 'textarea') {
@@ -36,7 +38,7 @@ export default function ContactsFormTextArea({ name, label, placeholder, type, s
         <div className={s.item__wraper}>
             <div className={s.label__wrapper}>
                 <label htmlFor={name}>{label}</label>
-                {!isValid && <div className={s.required}>This field is required</div>}
+                {!isValid && <div className={s.required}>{t('modal.required')}</div>}
             </div>
             <div className={s.input__wrapper}>
                 <textarea

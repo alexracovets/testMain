@@ -2,11 +2,11 @@
     "language": "EN",
     "hello_text": "Розробка <span>Програмного</span> <br/> Забезпечення",
     "pages": {
-        "services": "Services",
-        "cases": "Сases",
-        "about": "About Us",
+        "services": "Сервіси",
+        "cases": "Кейси",
+        "about": "Про Нас",
         "qa": "Q&A",
-        "contact": "Contact Us"
+        "contact": "Контакти"
     },
     "textTransition": {
         "we": "Ми ",
@@ -20,7 +20,8 @@
         "lets_talk": "Поговоримо",
         "discover": "Детальніше",
         "talk_to_team": "Маю Проєкт",
-        "office": "3D Тур Офісом"
+        "office": "3D Тур Офісом",
+        "contact": "Надіслати"
     },
     "services": {
         "first": {
@@ -598,5 +599,18 @@
                 }
             }
         }
+    },
+    "modal": {
+        "contact": "Звʼязатись з нами",
+        "name": "Імʼя",
+        "mail": "Email",
+        "comment": "Коментар",
+        "required": "Це поле обов’язково",
+        "placeholder": {
+            "name": "Ваше Імʼя",
+            "email": "Введіть email",
+            "comment": "Додайте важливу інформацію або про ваш проєкт"
+        },
+        "choice": "Вітаємо! Ви щойно зробили правильний вибір!"
     }
 }

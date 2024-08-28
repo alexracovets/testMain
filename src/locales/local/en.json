@@ -20,7 +20,8 @@
         "lets_talk": "LET'S TALK",
         "discover": "DISCOVER",
         "talk_to_team": "Talk to Team",
-        "office": "office 3d tour"
+        "office": "office 3d tour",
+        "contact": "Contact me"
     },
     "services": {
         "first": {
@@ -599,5 +600,18 @@
                 }
             }
         }
+    },
+    "modal": {
+        "contact": "Contact Us",
+        "name": "Full name",
+        "mail": "Email address",
+        "comment": "Comment",
+        "required": "This field is required",
+        "placeholder": {
+            "name": "John Doe",
+            "email": "Enter your email",
+            "comment": "Add your comment or short project description"
+        },
+        "choice": "Whoo! You just made the right choice!"
     }
 }
