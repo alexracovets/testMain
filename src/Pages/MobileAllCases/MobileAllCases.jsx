@@ -6,6 +6,7 @@ import ReactGA from "react-ga4";
 
 import Footer from "../../Components/Footer/Footer";
 import TextField from "../../Components/TextField/TextField";
+import UI_Button from "../../Components/UI_Button/UI_Button";
 
 import casesData from "../../data/casesData";
 import useAnchorScroll from '../../store/useAnchorScroll';
@@ -50,9 +51,11 @@ export default function MobileAllCases() {
                             <NavLink to={`/mobile/cases/${item.pageName}`} key={idx} className={s.item}>
                                 <div className={s.info}>
                                     <h3 className={s.title}>{t(item.title)}</h3>
-                                    <div className={s.description}><TextField texts={item.description} /></div>
-                                    <div className={s.tags}>
-                                        {item.tags.map((tag, idx) => <div key={idx} className={s.item}>{t(tag)}</div>)}
+                                    <div className={s.description}>
+                                        <TextField texts={item.description} />
+                                        <div className={s.btn}>
+                                            <UI_Button text={t('btn.discover')} arrow small />
+                                        </div>
                                     </div>
                                 </div>
                             </NavLink>
