@@ -75,10 +75,6 @@ const q_aData = [
             {
                 type: `text`,
                 value: "q_a.3.colapse.1"
-            },
-            {
-                type: `text`,
-                value: "q_a.3.colapse.2"
             }
         ],
         idx: 3
