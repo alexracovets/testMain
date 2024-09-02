@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
+import { clarity } from 'react-microsoft-clarity';
 import { Canvas } from "@react-three/fiber";
 import ReactGA from "react-ga4";
 
@@ -16,7 +17,9 @@ import useLoader from './store/useLoader';
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 744);
   const isLoaded = useLoader((state) => state.isLoaded);
-  const TRACKING_ID = import.meta.env.VITE_TRACKING_ID;
+  const ANALYTICS_ID = import.meta.env.VITE_ANALYTICS_ID;
+  const CLARITY_ID = import.meta.env.VITE_CLARITY_ID;
+
   useEffect(() => {
     setIsMobile(window.innerWidth <= 744);
     function handleResize() {
@@ -26,8 +29,11 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  ReactGA.initialize(TRACKING_ID);
- 
+  useEffect(() => {
+    ReactGA.initialize(ANALYTICS_ID);
+    clarity.init(CLARITY_ID);
+  }, [ANALYTICS_ID, CLARITY_ID]);
+
   return (
     <>
       {/* <Loader /> */}
