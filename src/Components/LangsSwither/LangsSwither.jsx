@@ -12,7 +12,7 @@ export default function LangsSwither() {
 
     const langs = [
         { name: 'en', img: en },
-        { name: 'ua', img: ua }
+        { name: 'uk', img: ua }
     ]
 
     const change = async (language) => {

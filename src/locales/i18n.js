@@ -14,10 +14,10 @@ i18n
         // Шлях до папки з перекладами
         resources: {
             'en': { translation: translationEN },
-            'ua': { translation: translationUA },
+            'uk': { translation: translationUA },
         },
         // Початкова мова
-        fallbackLng: 'ua',
+        fallbackLng: 'uk',
         // Отримання мови з браузера
         detection: {
             order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
