@@ -26,7 +26,7 @@ export default function LangsSwither() {
     useEffect(() => {
         setCurrentLanguage(i18n.language)
     }, [i18n.language])
-    console.log(currentLanguage)
+    
     return (
         <div className={s.lang_switcher}>
             {langs.map((lang, i) => {
@@ -35,7 +35,7 @@ export default function LangsSwither() {
                     className={currentLanguage === lang.name ? s.active : null}
                     onClick={() => change(lang.name)}
                 >
-                    <span>{lang.name}</span>
+                    <span>{lang.name === 'uk' ? "ua" : lang.name}</span>
                     <img src={lang.img} alt={lang.name} />
                 </button>
             })}
