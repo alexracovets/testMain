@@ -17,7 +17,7 @@ i18n
             'ua': { translation: translationUA },
         },
         // Початкова мова
-        fallbackLng: 'en',
+        fallbackLng: 'ua',
         // Отримання мови з браузера
         detection: {
             order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
