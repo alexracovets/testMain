@@ -25,7 +25,8 @@
         "discover": "DISCOVER",
         "talk_to_team": "Talk to Team",
         "office": "office 3d tour",
-        "contact": "Contact me"
+        "contact": "Contact me",
+        "loader": "To Explore"
     },
     "services": {
         "first": {

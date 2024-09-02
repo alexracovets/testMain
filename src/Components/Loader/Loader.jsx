@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useProgress } from "@react-three/drei";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 
 import UI_Button from '../UI_Button/UI_Button';
@@ -16,8 +17,9 @@ export default function Loader() {
     const [activeBtn, setActiveBtn] = useState(false);
     const isLoaded = useLoader((state) => state.isLoaded);
     const setIsLoaded = useLoader((state) => state.setIsLoaded);
+    const { t } = useTranslation();
 
-    useEffect(() => { 
+    useEffect(() => {
         if (progress === '100') {
             setTimeout(() => {
                 setActiveBtn(true);
@@ -48,9 +50,9 @@ export default function Loader() {
                     <CountUp end={progress} />%
                 </div>
                 <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
-                    <UI_Button text={'To Explore'} arrow />
+                    <UI_Button text={t("btn.loader")} arrow />
                 </div>
-             
+
             </motion.div> :
                 null
             }
