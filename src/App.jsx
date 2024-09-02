@@ -30,7 +30,7 @@ function App() {
  
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Canvas
         dpr={Math.min(window.devicePixelRatio, 2)}
         gl={{ preserveDrawingBuffer: true }}
