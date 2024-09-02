@@ -24,14 +24,17 @@
 //         </>
 //     );
 // }
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
-import useLoader from '../../../store/useLoader';
 import gsap from 'gsap';
+
+import useLoader from '../../../store/useLoader';
 
 import s from '../TextTransitionTest.module.scss';
 export default function AboutTransition() {
     const [count, setCount] = useState(0);
     const isLoaded = useLoader((state) => state.isLoaded);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const countObj = { value: 0 };
@@ -51,6 +54,6 @@ export default function AboutTransition() {
     }, [isLoaded]);
 
     return (
-        <p>We launched <span className={s.count}> {count < 10 ? '0' + count : count}</span>  projects</p>
+        <p>{t("textTransition.aboutTransition.0")} <span className={s.count}> {count < 10 ? '0' + count : count}</span>  {t("textTransition.aboutTransition.1")}</p>
     );
 }

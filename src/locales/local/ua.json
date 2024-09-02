@@ -13,7 +13,11 @@
         "first": "LOOK WIDER",
         "second": "Креативні",
         "third": "Інноваційні",
-        "fourth": "SPOTIUM 360"
+        "fourth": "SPOTIUM 360",
+        "aboutTransition": {
+            "0": "Ми Запустили",
+            "1": "Проєкти"
+        }
     },
     "btn": {
         "discover_us": "Зв’язатись",

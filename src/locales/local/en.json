@@ -13,7 +13,11 @@
         "first": "LOOK WIDER",
         "second": "CREATIVE",
         "third": "INNOVATIVE",
-        "fourth": "SPOTIUM 360"
+        "fourth": "SPOTIUM 360",
+        "aboutTransition": {
+            "0": "We launched",
+            "1": "projects"
+        }
     },
     "btn": {
         "discover_us": "DISCOVER US",
