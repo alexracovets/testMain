@@ -8,7 +8,7 @@
   <title>Spotium 360 - Software Development Studio</title>
   <meta property="og:title" content="Website|Web App|AI&ML|Digital Marketing|Cybersecurity" />
   <meta property="og:description"
-    content="SPOTIUM 360 Developing Websites|Web Apps|AI&ML|Digital Marketing|Cybersecurity" /> 
+    content="SPOTIUM 360 Developing Websites|Web Apps|AI&ML|Digital Marketing|Cybersecurity" />
   <meta property="og:image" content="https://spotium360.com/image/description.jpg" />
   <meta property="og:url" content="https://spotium360.com/" />
   <link
@@ -30,10 +30,16 @@
       width: 100%;
       height: 100%;
     }
+
+    @media (max-width: 430px) {
+      body::before {
+        box-shadow: none;
+      }
+    }
   </style>
 </head>
 
-<body> 
+<body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
