@@ -1,3 +1,7 @@
+import { useTranslation } from "react-i18next";
+import { useCollapse } from 'react-collapsed';
+import { useEffect, useState } from 'react';
+
 import ai from '/image/icons/strengths/ai_icon.svg';
 import mob from '/image/icons/strengths/mob_icon.svg';
 import srmBpm from '/image/icons/strengths/srmBpm_icon.svg';
@@ -9,13 +13,13 @@ import bots from '/image/icons/strengths/bots_icon.svg';
 import analytics from '/image/icons/strengths/analytics_icon.svg';
 import cyber from '/image/icons/strengths/cyber_icon.svg';
 
+
 import s from './Strengths.module.scss';
-import { useEffect, useState } from 'react';
-import { useCollapse } from 'react-collapsed';
 export default function Strengths() {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 430);
     const [isExpanded, setExpanded] = useState(false);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+    const { t } = useTranslation();
 
     const strengths = [
         {
@@ -79,7 +83,7 @@ export default function Strengths() {
                     })}
                 </ul> :
                 <>
-                    <button {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.expertiseBtn}>{`Our Expertise`}</button>
+                    <button {...getToggleProps({ onClick: () => setExpanded(!isExpanded) })} className={s.expertiseBtn}>{t("about.expertise")}</button>
                     <ul {...getCollapseProps()} className={s.strengths}>
                         {strengths.map((strength, i) => {
                             return (
