@@ -44,9 +44,9 @@ function App() {
         className={isLoaded ? 'experience active' : 'experience'}
       >
         <SceneAddition />
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <MilkyWay />
-        </Suspense>
+        </Suspense> */}
         <Suspense fallback={null}>
           {!isMobile ? <VoxelModel /> : null}
         </Suspense>
