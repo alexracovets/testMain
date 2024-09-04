@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useCollapse } from 'react-collapsed';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import TextField from '../../TextField/TextField';
@@ -10,7 +10,8 @@ export default function ServicesItem({ index, title, colapse, currentService, se
     const [isExpanded, setExpanded] = useState(false);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
     const { t } = useTranslation();
-    
+    const isFirstRender = useRef(true);
+
     const handler = () => {
         if (currentService !== index) {
             setExpanded(true);
@@ -23,7 +24,12 @@ export default function ServicesItem({ index, title, colapse, currentService, se
     }
 
     useEffect(() => {
-        setExpanded(currentService === index)
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
+
+        setExpanded(currentService === index);
     }, [currentService, index]);
 
     return (
