@@ -22,15 +22,15 @@ export default function MobileCase() {
     const { t } = useTranslation();
     const videoRef = useRef();
 
-    ReactGA.send({
-        hitType: "pageview",
-        page: `/mobile/cases/${casesData.find(project => project.pageName === id).pageName}`,
-        title: `${casesData.find(project => project.pageName === id).logoName} Page(mobile)`
-    });
-
     useEffect(() => {
         const project = casesData.find(project => project.pageName === id);
-        setContent(project)
+        setContent(project);
+        
+        ReactGA.send({
+            hitType: "pageview",
+            page: `/mobile/cases/${casesData.find(project => project.pageName === id).pageName}`,
+            title: `${casesData.find(project => project.pageName === id).logoName} Page(mobile)`
+        });
     }, [id, setContent])
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function MobileCase() {
     }, [scrollSection, getScrollTo, scrollHeight])
 
     useEffect(() => {
-        videoRef.current && videoRef.current.play()
+        videoRef && videoRef.current && videoRef.current.play()
     }, [videoRef])
 
     return (

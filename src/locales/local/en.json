@@ -1,6 +1,6 @@
 {
     "language": "EN",
-    "hello_text": "Expert <span>Software</span> Development, <br /> Future-Proof Innovations",
+    "hello_text": "Digital <span>Production</span> Studio",
     "pages": {
         "services": "Services",
         "cases": "Сases",
@@ -20,13 +20,13 @@
         }
     },
     "btn": {
-        "discover_us": "DISCOVER US",
-        "lets_talk": "LET'S TALK",
-        "discover": "DISCOVER",
+        "discover_us": "Discover Us",
+        "lets_talk": "Let's Talk",
+        "discover": "Discover",
         "talk_to_team": "Talk to Team",
-        "office": "office 3d tour",
-        "contact": "Contact me",
-        "loader": "To Explore"
+        "office": "Office 3d tour",
+        "contact": "Send",
+        "loader": "Explore"
     },
     "services": {
         "first": {

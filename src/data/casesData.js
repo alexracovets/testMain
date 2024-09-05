@@ -291,7 +291,7 @@ const casesData = [
         ]
     },
     {
-        pageName: `сonfigurator`,
+        pageName: `configurator`,
         video: `configurator.mp4`,
         title: "cases.third.title",
         techno: "cases.third.techno",
@@ -439,7 +439,7 @@ const casesData = [
         ]
     },
     {
-        pageName: `сybersecurity`,
+        pageName: `cybersecurity`,
         video: `tour.mp4`,
         title: "cases.fourth.title",
         techno: "cases.fourth.techno",

@@ -21,15 +21,14 @@ export default function Case() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const { t } = useTranslation();
 
-    ReactGA.send({
-        hitType: "pageview",
-        page: `/cases/${casesData.find(meCase => meCase.pageName === id).pageName}`,
-        title: `${casesData.find(meCase => meCase.pageName === id).logoName} Page`
-    });
-
     useEffect(() => {
         const project = casesData.find(meCase => meCase.pageName === id);
-        setContent(project)
+        setContent(project);
+        ReactGA.send({
+            hitType: "pageview",
+            page: `/cases/${casesData.find(meCase => meCase.pageName === id).pageName}`,
+            title: `${casesData.find(meCase => meCase.pageName === id).logoName} Page`
+        });
     }, [id, setContent])
 
     useEffect(() => {

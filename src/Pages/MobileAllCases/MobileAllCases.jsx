@@ -20,14 +20,13 @@ export default function MobileAllCases() {
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const { t } = useTranslation();
 
-    ReactGA.send({
-        hitType: "pageview",
-        page: "/mobile/cases",
-        title: "Cases Page(mobile)"
-    });
-
     useEffect(() => {
         setProjects(casesData);
+        ReactGA.send({
+            hitType: "pageview",
+            page: "/mobile/cases",
+            title: "Cases Page(mobile)"
+        });
     }, []);
 
     useEffect(() => {

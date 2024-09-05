@@ -23,14 +23,14 @@ export default function AllCases() {
     const { t } = useTranslation();
     const videoRef = useRef();
 
-    ReactGA.send({
-        hitType: "pageview",
-        page: "/cases",
-        title: "Cases Page"
-    });
-
     useEffect(() => {
         setProjects(casesData);
+
+        ReactGA.send({
+            hitType: "pageview",
+            page: "/cases",
+            title: "Cases Page"
+        });
     }, []);
 
     useEffect(() => {
