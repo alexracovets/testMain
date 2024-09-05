@@ -7,6 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 import Services from '../../Components/Services/Services';
 import UI_Button from "../../Components/UI_Button/UI_Button";
 import Strengths from '../../Components/Strengths/Strengths';
+import TextField from "../../Components/TextField/TextField";
 import Developments from "../../Components/Developments/Developments";
 
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
@@ -14,8 +15,6 @@ import useAnchorScroll from '../../store/useAnchorScroll';
 import useModalForm from '../../store/useModalForm';
 
 import s from './MobileMain.module.scss';
-import CircleText from "../../Components/CircleText/CircleText";
-import TextTransitionTest from "../../Components/TextTransitionTest/TextTransitionTest";
 export default function MobileMain() {
     const setActiveModel = useStoreMobileScroll((state) => state.setActiveModel);
     const getPageHeight = useStoreMobileScroll((state) => state.getPageHeight);
@@ -24,35 +23,25 @@ export default function MobileMain() {
     const scrollSection = useAnchorScroll((state) => state.section);
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const { t } = useTranslation();
-
-    ReactGA.send({
-        hitType: "pageview",
-        page: "/mobile",
-        title: "Main Page(mobile)"
-    });
-
     const firstSection = useRef(null);
-    const secondSection = useRef(null);
-    const thirdSection = useRef(null);
-
     const scrollAbout = useRef(null);
     const scrollServices = useRef(null);
     const scrollIndustries = useRef(null);
-
     const [isVisibleFirst, setVisibleFirst] = useState(false);
-    const [isVisibleSecond, setVisibleSecond] = useState(false);
-    const [isVisibleThird, setVisibleThird] = useState(false);
 
+    useEffect(() => {
+        ReactGA.send({
+            hitType: "pageview",
+            page: "/mobile",
+            title: "Main Page(mobile)"
+        });
+    }, [])
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.target === firstSection.current) {
                     setVisibleFirst(entry.isIntersecting);
-                } else if (entry.target === secondSection.current) {
-                    setVisibleSecond(entry.isIntersecting);
-                } else if (entry.target === thirdSection.current) {
-                    setVisibleThird(entry.isIntersecting);
                 }
             });
         }, { threshold: 0.5 });
@@ -63,18 +52,13 @@ export default function MobileMain() {
             if (firstSection.current) observer.unobserve(firstSection.current);
         };
     }, []);
+
     useEffect(() => {
         if (isVisibleFirst) {
             getPageHeight(firstSection.current.offsetTop + firstSection.current.clientHeight / 2);
             setActiveModel(0);
-        } else if (isVisibleSecond) {
-            getPageHeight(secondSection.current.offsetTop + secondSection.current.clientHeight / 2);
-            setActiveModel(2);
-        } else if (isVisibleThird) {
-            getPageHeight(thirdSection.current.offsetTop + thirdSection.current.clientHeight / 2);
-            setActiveModel(3);
         }
-    }, [isVisibleFirst, isVisibleSecond, isVisibleThird, setActiveModel, getPageHeight, scrollHeight]);
+    }, [isVisibleFirst, setActiveModel, getPageHeight, scrollHeight]);
 
     useEffect(() => {
         if (scrollSection === 'about' && scrollAbout.current) {
@@ -89,7 +73,8 @@ export default function MobileMain() {
         } else if (scrollSection === 'contacts') {
             getScrollTo(scrollHeight)
         }
-    }, [scrollSection, getScrollTo, scrollHeight])
+    }, [scrollSection, getScrollTo, scrollHeight]);
+
     return (
 
         <motion.div className={s.wrapper}
@@ -100,8 +85,16 @@ export default function MobileMain() {
         >
             <section>
                 <div className={s.content}>
-                    <CircleText />
-                    <TextTransitionTest />
+                    {/* <CircleText /> */}
+                    <div className={s.model_space} ref={firstSection}></div>
+                    <div className={s.slogan}>
+                        <TextField texts={
+                            [{
+                                type: "text",
+                                value: t('hello_text')
+                            }]
+                        } />
+                    </div>
                     <Developments />
                     <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                         <UI_Button text={t('btn.discover_us')} arrow small />

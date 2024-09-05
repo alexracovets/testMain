@@ -73,7 +73,25 @@
                 }
             }
 
+            .slogan {
+                p {
+                    font-size: 6rem;
+                    color: $color-neutral-10;
+                    font-family: $font-Bebas;
+                    text-transform: uppercase;
+                    line-height: 1;
+                    text-align: unset;
 
+                    @media (max-width:$width-mobile) {
+                        font-size: 3rem;
+                    }
+
+                    span {
+                        color: $color-primary;
+                    }
+                }
+
+            }
 
             h1 {
                 display: block;

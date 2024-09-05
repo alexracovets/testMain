@@ -5,7 +5,7 @@ import { Instances, Instance } from "@react-three/drei";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry";
 import { easing } from 'maath';
 
-const matcap = '/default.png';
+import matcap from '/texture/voxel/white.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
 // const step = 5;
@@ -49,7 +49,7 @@ export default function MobileModel() {
         const targetRotation = new Vector3(0, 1.1, 0);
         const targetPosition = new Vector3(
             0,
-         viewport.height / 2 + modelHeight / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
+            viewport.height / 2 + modelHeight / 2 + ((scrollHeight - size.height) - (scrollHeight - scrollTop - size.height + pageHeight + headerHeight)) * viewport.height / size.height,
             0
         )
         easing.damp3(mainInstances.current.position, targetPosition, 0.5, delta);

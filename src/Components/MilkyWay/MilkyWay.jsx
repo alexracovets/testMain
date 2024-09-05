@@ -48,8 +48,6 @@ export default function MilkyWay() {
                         depthWrite={false}
                         blending={AdditiveBlending}
                         vertexColors={true}
-                        transparent
-                    opacity={0.7}
                     />
                 </points>
             }

@@ -12,6 +12,7 @@ import Loader from "./Components/Loader/Loader";
 import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 import useLoader from './store/useLoader';
+import MobileModel from "./Components/MobileModel/MobileModel";
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <MilkyWay />
         </Suspense>
         <Suspense fallback={null}>
-          {!isMobile ? <VoxelModel /> : null}
+          {!isMobile ? <VoxelModel /> : <MobileModel />}
         </Suspense>
         <Suspense fallback={null}>
           <Pager />
