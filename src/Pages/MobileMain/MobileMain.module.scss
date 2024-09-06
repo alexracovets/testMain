@@ -31,12 +31,12 @@
             flex-direction: column;
 
             .model_space {
-                height: 31.25rem;
+                height: 3rem;
                 width: 100%;
                 pointer-events: none;
 
                 @media (max-width:$width-mobile) {
-                    height: 23.5rem;
+                    height: 20rem;
                 }
             }
 
