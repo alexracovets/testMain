@@ -8,11 +8,9 @@ import { easing } from 'maath';
 import matcap from '/texture/voxel/white.png';
 const COUNT = 1000;
 const sizes = [0.3, 0.38, 0.49, 0.54];
-// const step = 5;
 
 import voxelsData from './voxel.json';
 import useStoreMobileScroll from '../../store/useStoreMobileScroll';
-// import ServicesSliderMobile from "../ServicesSliderMobile/ServicesSliderMobile";
 const step = 2;
 export default function MobileModel() {
     const matcapTexture = useLoader(TextureLoader, matcap);
@@ -30,6 +28,13 @@ export default function MobileModel() {
     const mainInstances = useRef(null);
     const startTime = useRef(0);
     const [modelHeight, setModelHeight] = useState(0);
+    const [isModel, setIsModel] = useState(true);
+    const currentPath = window.location.pathname;
+
+    useEffect(() => {
+        setIsModel(currentPath === "/mobile")
+    }, [currentPath]);
+
     useEffect(() => {
         setIsBoom(true);
         setTimeout(() => {
@@ -66,7 +71,7 @@ export default function MobileModel() {
                     easing.damp3(inst.position, targetPosition, 0.5, delta);
                 isBoom ?
                     easing.damp3(inst.scale, [0, 0, 0], 0.3, delta) :
-                    easing.damp3(inst.scale, targetScale, 0.5, delta)
+                    easing.damp3(inst.scale, isModel ? targetScale : [0, 0, 0], 0.5, delta)
             }
         });
     });
@@ -95,12 +100,13 @@ export default function MobileModel() {
 
                 easing.damp3(inst.position, newPosition, 3, delta);
             } else if (elapsedTime >= 1 && elapsedTime < 1.1) {
-                easing.damp3(inst.position, initialPosition, 3, delta);
+                easing.damp3(inst.position, isModel ? initialPosition : [0, 0, 0], 3, delta);
             } else {
                 setAnimationStart(false);
             }
         });
     });
+
     return (
         <>
             <Instances

@@ -9,7 +9,6 @@ import VoxelModel from "./Components/VoxelModel/VoxelModel";
 import SceneAddition from "./Components/SceneAddition/SceneAddition";
 import UI_Toast from "./Components/UI_Toast/UI_Toast";
 import Loader from "./Components/Loader/Loader";
-import MainDoodle from "./Components/MainDoodle/MainDoodle";
 
 import useLoader from './store/useLoader';
 import MobileModel from "./Components/MobileModel/MobileModel";
@@ -54,7 +53,6 @@ function App() {
         <Suspense fallback={null}>
           <Pager />
         </Suspense>
-        <MainDoodle />
       </Canvas>
       <UI_Toast />
     </>

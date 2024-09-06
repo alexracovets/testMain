@@ -71,6 +71,7 @@
                         font-size: 2rem;
                         font-weight: 400;
                         font-family: $font-JB_Mono;
+                        text-align: center;
                         line-height: 1.2;
                         color: $color-primary;
                         letter-spacing: -0.04375rem;
@@ -86,6 +87,7 @@
 
                     p {
                         display: block;
+                        text-align: center;
                         line-height: 1.2rem;
                         color: $color-white;
                         font-family: $font-JB_Mono;
