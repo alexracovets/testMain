@@ -24,9 +24,11 @@
             align-items: flex-start;
             flex-direction: column;
             padding: 3rem 0;
+            padding-bottom: 0;
 
             @media (max-width:$width-mobile) {
                 padding: 2.375rem 0;
+                padding-bottom: 0;
             }
 
             h2 {
@@ -56,7 +58,6 @@
 
                 .content {
                     width: auto;
-                    margin-bottom: 3.125rem;
                 }
 
                 .photo {
@@ -102,7 +103,6 @@
                         font-weight: 600;
                         color: $color-white;
                         font-family: $font-JB_Mono;
-                        margin-bottom: 1rem;
                     }
                 }
             }

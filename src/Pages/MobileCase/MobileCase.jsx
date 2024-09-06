@@ -15,12 +15,12 @@ import s from './MobileCase.module.scss';
 export default function MobileCase() {
     const { id } = useParams();
     const [content, setContent] = useState(null);
-    const [isVideoLoad, setIsVideoLoad] = useState(false);
+    // const [isVideoLoad, setIsVideoLoad] = useState(false);
     const scrollSection = useAnchorScroll((state) => state.section);
     const getScrollTo = useAnchorScroll((state) => state.getScrollTo);
     const scrollHeight = useStoreMobileScroll((state) => state.scrollHeight);
     const { t } = useTranslation();
-    const videoRef = useRef();
+    // const videoRef = useRef();
 
     useEffect(() => {
         const project = casesData.find(project => project.pageName === id);
@@ -39,9 +39,9 @@ export default function MobileCase() {
         }
     }, [scrollSection, getScrollTo, scrollHeight])
 
-    useEffect(() => {
-        videoRef && videoRef.current && videoRef.current.play()
-    }, [videoRef])
+    // useEffect(() => {
+    //     videoRef && videoRef.current && videoRef.current.play()
+    // }, [videoRef])
 
     return (
         <>
@@ -68,7 +68,7 @@ export default function MobileCase() {
                                     </div>
                                 </div>
                             </div>
-                            <div className={s.photo}>
+                            {/* <div className={s.photo}>
                                 <div className={s.photo}>
                                     <div className={s.video__wrapper}>
                                         <video
@@ -83,7 +83,7 @@ export default function MobileCase() {
                                         />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </section>
                         <section className={s.about_info}>
                             <ul className={s.points}>
