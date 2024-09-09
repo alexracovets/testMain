@@ -27,7 +27,7 @@
 
             .click {
                 font-family: $font-Bebas;
-                font-size: 3rem;
+                font-size: 5rem;
                 line-height: 1;
                 font-weight: 400;
                 letter-spacing: 0.3rem;
@@ -37,10 +37,6 @@
 
                 @media (max-width:$width-shortDesktop) {
                     font-size: 3rem;
-                }
-
-                @media (max-width:$width-shortDesktop) {
-                    font-size: 2rem;
                 }
 
                 span {
@@ -60,7 +56,7 @@
 
                 @media (max-width:$width-tableBig) {
                     margin-bottom: 2rem;
-                } 
+                }
             }
         }
     }

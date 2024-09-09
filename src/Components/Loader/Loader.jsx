@@ -6,10 +6,9 @@ import { useEffect, useState } from 'react';
 import UI_Button from '../UI_Button/UI_Button';
 import CountUp from 'react-countup';
 
-import s from './Loader.module.scss';
-
 import useLoader from '../../store/useLoader';
 
+import s from './Loader.module.scss';
 export default function Loader() {
     const { loaded, total } = useProgress();
     const [progress, setProgress] = useState(0);
@@ -51,7 +50,6 @@ export default function Loader() {
                 <div className={activeBtn ? s.btn + ' ' + s.active : s.btn} onClick={() => setIsLoaded(true)}>
                     <UI_Button text={t("btn.loader")} arrow />
                 </div>
-
             </motion.div> :
                 null
             }

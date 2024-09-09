@@ -1,0 +1,19 @@
+@import '../../global/variable.scss';
+
+.main_text {
+    color: $color-white;
+    font-size: 3rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+    font-family: $font-JB_Mono;
+    font-weight: bold;
+    margin: 2rem 0;
+
+    @media (max-width: $width-shortDesktop) {
+        font-size: 2.8rem;
+    }
+
+    span {
+        color: $color-primary;
+    }
+}

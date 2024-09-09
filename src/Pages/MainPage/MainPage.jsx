@@ -4,10 +4,11 @@ import ReactGA from "react-ga4";
 
 import Developments from '../../Components/Developments/Developments';
 import UI_Button from '../../Components/UI_Button/UI_Button';
-import Fliper from '../../Components/Fliper/Fliper';
+// import Fliper from '../../Components/Fliper/Fliper';
 import useModalForm from '../../store/useModalForm';
 
 import s from './MainPage.module.scss';
+import MainTexts from "../../Components/MainTexts/MainTexts";
 export default function MainPage() {
     const setIsActiveForm = useModalForm((state) => state.setIsActive);
     const { t } = useTranslation();
@@ -28,7 +29,8 @@ export default function MainPage() {
                 <section>
                     <div className={s.content}>
                         <div className={s.click} dangerouslySetInnerHTML={{ __html: t(`hello_text`) }} />
-                        <Fliper />
+                        {/* <Fliper /> */}
+                        <MainTexts />
                         <div className={s.btn} onClick={() => setIsActiveForm(true)}>
                             <UI_Button text={t('btn.discover_us')} arrow />
                         </div>

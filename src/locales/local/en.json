@@ -1,6 +1,7 @@
 {
     "language": "EN",
-    "hello_text": "Digital <span>Production</span> Studio",
+    "hello_text": "Web <span>Pro</span>duction Studio",
+    "main_text": "We have been developing and </br>marketing <span>web projects</span> </br>since 20<span>19</span>",
     "pages": {
         "services": "Services",
         "cases": "Сases",
