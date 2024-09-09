@@ -52,58 +52,65 @@
                 width: 41.25rem;
             }
 
-            .about_wrapper {
-                background-color: $color-servicesOpacity;
-                padding: 1rem;
-                border-radius: 1rem;
-                margin-bottom: 2.5rem;
+            .content_wrapper {
+                margin: 2rem auto;
+                padding-right: 1rem;
 
-                @media (max-width:$width-shortDesktop) {
-                    margin-bottom: 2.6875rem;
-                }
-            }
 
-            .lies_info {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                border-left: 2px solid $color-primary;
-                padding-left: 2rem;
-
-                @media (max-width:$width-shortDesktop) {
-                    padding-left: 2rem;
-                }
-
-                h3 {
-                    font-family: $font-JB_Mono;
-                    color: $color-white;
-                    font-weight: 500;
-                    font-size: 1.625rem;
-                    line-height: 2.275rem;
-                    margin-bottom: 2rem;
+                .about_wrapper {
+                    background-color: $color-servicesOpacity;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    margin-bottom: 2.5rem;
 
                     @media (max-width:$width-shortDesktop) {
+                        margin-bottom: 2.6875rem;
+                    }
+                }
+
+                .lies_info {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    border-left: 2px solid $color-primary;
+                    padding-left: 2rem;
+
+                    @media (max-width:$width-shortDesktop) {
+                        padding-left: 2rem;
+                    }
+
+                    h3 {
+                        font-family: $font-JB_Mono;
+                        color: $color-white;
+                        font-weight: 500;
                         font-size: 1.625rem;
                         line-height: 2.275rem;
-                    }
-                }
-
-                h4 {
-                    font-family: $font-JB_Mono;
-                    color: $color-white;
-                    font-weight: 400;
-                    font-size: 1.25rem;
-                    line-height: 1.875rem;
-
-                    &:first-of-type {
                         margin-bottom: 2rem;
+
+                        @media (max-width:$width-shortDesktop) {
+                            font-size: 1.625rem;
+                            line-height: 2.275rem;
+                        }
                     }
 
-                    @media (max-width:$width-shortDesktop) {
+                    p {
+                        font-family: $font-JB_Mono;
+                        color: $color-white;
+                        font-weight: 400;
                         font-size: 1.25rem;
                         line-height: 1.875rem;
+                        margin: 0.5rem auto;
+
+                        @media (max-width:$width-shortDesktop) {
+                            font-size: 1.25rem;
+                            line-height: 1.875rem;
+                        }
+
+                        span {
+                            color: $color-primary;
+                        }
                     }
                 }
             }

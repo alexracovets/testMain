@@ -106,12 +106,13 @@ export default function MobileMain() {
                     <h2>{t('pages.about')}</h2>
                     <div className={s.about_wrapper}>
                         <div className={s.lies_info}>
-                            <h3>
-                                {t('about.0')}  <br />
-                                {t('about.1')}
-                            </h3>
-                            <p>{t('about.2')}</p>
-                            <p>{t('about.3')}</p>
+                            <h3 dangerouslySetInnerHTML={{ __html: t('about.0') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.1') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.2') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.3') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.4') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.5') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('about.6') }} />
                         </div>
                     </div>
                     <div className={s.about_wrapper}>
